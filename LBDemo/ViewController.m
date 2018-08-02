@@ -27,7 +27,7 @@
 
 //    开机后立刻就好
 //    lksdjf;sj
-
+//    as;lafsdsaf
     // Do any additional setup after loading the view, typically from a nib.
 }
 
