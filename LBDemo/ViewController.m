@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    开机后立刻就好
     // Do any additional setup after loading the view, typically from a nib.
 }
 
