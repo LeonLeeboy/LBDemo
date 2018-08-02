@@ -17,17 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    ABS(a
-//        a
-//        a
-//        a
-//        a
-//        a
-//        )
-
-//    开机后立刻就好
-//    lksdjf;sj
-
     // Do any additional setup after loading the view, typically from a nib.
 }
 
