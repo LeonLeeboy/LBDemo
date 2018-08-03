@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+//账号认吗？通过ssh
     // Do any additional setup after loading the view, typically from a nib.
 }
 
