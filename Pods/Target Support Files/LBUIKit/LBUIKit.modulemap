@@ -1,0 +1,6 @@
+framework module LBUIKit {
+  umbrella header "LBUIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

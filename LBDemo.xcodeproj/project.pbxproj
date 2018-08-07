@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C86F1422112D82F00DF516A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86F1412112D82F00DF516A /* AppDelegate.m */; };
-		2C86F1452112D82F00DF516A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86F1442112D82F00DF516A /* ViewController.m */; };
-		2C86F1482112D82F00DF516A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C86F1462112D82F00DF516A /* Main.storyboard */; };
 		2C86F14A2112D83500DF516A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C86F1492112D83500DF516A /* Assets.xcassets */; };
 		2C86F14D2112D83500DF516A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C86F14B2112D83500DF516A /* LaunchScreen.storyboard */; };
 		2C86F1502112D83500DF516A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86F14F2112D83500DF516A /* main.m */; };
 		2C86F15A2112D83600DF516A /* LBDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86F1592112D83600DF516A /* LBDemoTests.m */; };
 		2C86F1652112D83600DF516A /* LBDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86F1642112D83600DF516A /* LBDemoUITests.m */; };
+		2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5D96C2117F8EB007E2FB9 /* LBDemoDelegate.m */; };
+		2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5D9752117F9D7007E2FB9 /* LBHomeVC.m */; };
+		E0F45F7176B82EAF138FC476 /* Pods_LBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +36,6 @@
 
 /* Begin PBXFileReference section */
 		2C86F13D2112D82F00DF516A /* LBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C86F1402112D82F00DF516A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2C86F1412112D82F00DF516A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2C86F1432112D82F00DF516A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2C86F1442112D82F00DF516A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2C86F1472112D82F00DF516A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C86F1492112D83500DF516A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C86F14C2112D83500DF516A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C86F14E2112D83500DF516A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +46,14 @@
 		2C86F1602112D83600DF516A /* LBDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LBDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C86F1642112D83600DF516A /* LBDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBDemoUITests.m; sourceTree = "<group>"; };
 		2C86F1662112D83600DF516A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CB5D96B2117F8EB007E2FB9 /* LBDemoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDemoDelegate.h; sourceTree = "<group>"; };
+		2CB5D96C2117F8EB007E2FB9 /* LBDemoDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDemoDelegate.m; sourceTree = "<group>"; };
+		2CB5D9742117F9D7007E2FB9 /* LBHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeVC.h; sourceTree = "<group>"; };
+		2CB5D9752117F9D7007E2FB9 /* LBHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeVC.m; sourceTree = "<group>"; };
+		2CB5D9792118417B007E2FB9 /* LBPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBPrefixHeader.pch; sourceTree = "<group>"; };
+		499B2A141209DAA52AFCE560 /* Pods-LBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B353408141B2E20FA31FF409 /* Pods-LBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0F45F7176B82EAF138FC476 /* Pods_LBDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,8 @@
 				2C86F1582112D83600DF516A /* LBDemoTests */,
 				2C86F1632112D83600DF516A /* LBDemoUITests */,
 				2C86F13E2112D82F00DF516A /* Products */,
+				EF62B6FC41D44A84104DFF77 /* Pods */,
+				830ABFCCEC502B8152BFDF1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +107,9 @@
 		2C86F13F2112D82F00DF516A /* LBDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2C86F1402112D82F00DF516A /* AppDelegate.h */,
-				2C86F1412112D82F00DF516A /* AppDelegate.m */,
-				2C86F1432112D82F00DF516A /* ViewController.h */,
-				2C86F1442112D82F00DF516A /* ViewController.m */,
-				2C86F1462112D82F00DF516A /* Main.storyboard */,
-				2C86F1492112D83500DF516A /* Assets.xcassets */,
-				2C86F14B2112D83500DF516A /* LaunchScreen.storyboard */,
-				2C86F14E2112D83500DF516A /* Info.plist */,
-				2C86F14F2112D83500DF516A /* main.m */,
+				2CB5D96E2117F960007E2FB9 /* modules */,
+				2CB5D96A2117F8EB007E2FB9 /* Application */,
+				2CB5D9732117F995007E2FB9 /* supportingFiles */,
 			);
 			path = LBDemo;
 			sourceTree = "<group>";
@@ -132,6 +132,94 @@
 			path = LBDemoUITests;
 			sourceTree = "<group>";
 		};
+		2CB5D96A2117F8EB007E2FB9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2CB5D96B2117F8EB007E2FB9 /* LBDemoDelegate.h */,
+				2CB5D96C2117F8EB007E2FB9 /* LBDemoDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2CB5D96E2117F960007E2FB9 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				2CB5D977211840FA007E2FB9 /* generation */,
+				2CB5D96F2117F960007E2FB9 /* home */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		2CB5D96F2117F960007E2FB9 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				2CB5D9702117F960007E2FB9 /* controller */,
+				2CB5D9712117F960007E2FB9 /* model */,
+				2CB5D9722117F960007E2FB9 /* view */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		2CB5D9702117F960007E2FB9 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CB5D9742117F9D7007E2FB9 /* LBHomeVC.h */,
+				2CB5D9752117F9D7007E2FB9 /* LBHomeVC.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		2CB5D9712117F960007E2FB9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2CB5D9722117F960007E2FB9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2CB5D9732117F995007E2FB9 /* supportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2C86F1492112D83500DF516A /* Assets.xcassets */,
+				2C86F14B2112D83500DF516A /* LaunchScreen.storyboard */,
+				2C86F14E2112D83500DF516A /* Info.plist */,
+				2C86F14F2112D83500DF516A /* main.m */,
+				2CB5D9792118417B007E2FB9 /* LBPrefixHeader.pch */,
+			);
+			path = supportingFiles;
+			sourceTree = "<group>";
+		};
+		2CB5D977211840FA007E2FB9 /* generation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = generation;
+			path = LBDemo/generation;
+			sourceTree = SOURCE_ROOT;
+		};
+		830ABFCCEC502B8152BFDF1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF62B6FC41D44A84104DFF77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				499B2A141209DAA52AFCE560 /* Pods-LBDemo.debug.xcconfig */,
+				B353408141B2E20FA31FF409 /* Pods-LBDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C86F1692112D83600DF516A /* Build configuration list for PBXNativeTarget "LBDemo" */;
 			buildPhases = (
+				6F3453F5B465995B2B9E7360 /* [CP] Check Pods Manifest.lock */,
 				2C86F1392112D82F00DF516A /* Sources */,
 				2C86F13A2112D82F00DF516A /* Frameworks */,
 				2C86F13B2112D82F00DF516A /* Resources */,
+				B1B710D8B29833622151B6EB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,7 +327,6 @@
 			files = (
 				2C86F14D2112D83500DF516A /* LaunchScreen.storyboard in Resources */,
 				2C86F14A2112D83500DF516A /* Assets.xcassets in Resources */,
-				2C86F1482112D82F00DF516A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +346,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F3453F5B465995B2B9E7360 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LBDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1B710D8B29833622151B6EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/LBUIKit/LBUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C86F1392112D82F00DF516A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C86F1452112D82F00DF516A /* ViewController.m in Sources */,
+				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
+				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
 				2C86F1502112D83500DF516A /* main.m in Sources */,
-				2C86F1422112D82F00DF516A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +432,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2C86F1462112D82F00DF516A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C86F1472112D82F00DF516A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2C86F14B2112D83500DF516A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -431,11 +555,14 @@
 		};
 		2C86F16A2112D83600DF516A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 499B2A141209DAA52AFCE560 /* Pods-LBDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67F8UK8HS4;
-				INFOPLIST_FILE = LBDemo/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LBDemo/supportingFiles/LBPrefixHeader.pch";
+				INFOPLIST_FILE = LBDemo/supportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,11 +575,14 @@
 		};
 		2C86F16B2112D83600DF516A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B353408141B2E20FA31FF409 /* Pods-LBDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67F8UK8HS4;
-				INFOPLIST_FILE = LBDemo/Info.plist;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LBDemo/supportingFiles/LBPrefixHeader.pch";
+				INFOPLIST_FILE = LBDemo/supportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
