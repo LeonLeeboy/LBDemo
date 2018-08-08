@@ -2,8 +2,10 @@ platform:ios,'9.0'
 use_frameworks!
 
 target 'LBDemo' do
+pod 'SVProgressHUD'
 pod 'AFNetworking'
 pod 'LBUIKit'
+pod 'IQKeyboardManager'
 pod 'Masonry'
 end
 
