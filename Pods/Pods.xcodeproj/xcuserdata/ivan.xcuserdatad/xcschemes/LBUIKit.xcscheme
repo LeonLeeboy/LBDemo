@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AFD02EFBE8B186D1F912DBF45BF8A0C0"
+               BlueprintIdentifier = "E480766DC1379A0BE6E35161EBB32747"
                BlueprintName = "LBUIKit"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "LBUIKit.framework">

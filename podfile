@@ -4,7 +4,7 @@ use_frameworks!
 target 'LBDemo' do
 pod 'SVProgressHUD'
 pod 'AFNetworking'
-pod 'LBUIKit'
+pod 'LBUIKit', '~> 1.0.1'
 pod 'IQKeyboardManager'
 pod 'Masonry'
 end

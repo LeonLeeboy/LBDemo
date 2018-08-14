@@ -107,6 +107,7 @@
 		2C86F13F2112D82F00DF516A /* LBDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2CB5D977211840FA007E2FB9 /* generation */,
 				2CB5D96E2117F960007E2FB9 /* modules */,
 				2CB5D96A2117F8EB007E2FB9 /* Application */,
 				2CB5D9732117F995007E2FB9 /* supportingFiles */,
@@ -144,7 +145,6 @@
 		2CB5D96E2117F960007E2FB9 /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				2CB5D977211840FA007E2FB9 /* generation */,
 				2CB5D96F2117F960007E2FB9 /* home */,
 			);
 			path = modules;
@@ -574,6 +574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xsunt.LBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -594,6 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xsunt.LBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};

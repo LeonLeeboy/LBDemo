@@ -15,14 +15,14 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - IQKeyboardManager (6.1.1)
-  - LBUIKit (1.0.0)
+  - LBUIKit (1.0.1)
   - Masonry (1.1.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking
   - IQKeyboardManager
-  - LBUIKit
+  - LBUIKit (~> 1.0.1)
   - Masonry
   - SVProgressHUD
 
@@ -37,10 +37,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
-  LBUIKit: c8edda00901f07d6c510d244a926df69fce7b7a0
+  LBUIKit: bd4c7d5a21d33aa0eba173b43644682267349bc5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b9d73e984ff17ceb15e6903ee6e36f1b675f9722
+PODFILE CHECKSUM: 91dde931e6cba02b83f60d1e009bac183d0b1b90
 
 COCOAPODS: 1.5.3

@@ -13,6 +13,7 @@
 #import "UIButton+IBAppearance.h"
 #import "UIImage+LBExtend.h"
 #import "UIView+IBAppearance.h"
+#import "UIView+LBUIKit.h"
 #import "LBButton.h"
 #import "LBImageView.h"
 #import "LBTextView.h"
