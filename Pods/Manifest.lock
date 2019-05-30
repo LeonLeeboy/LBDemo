@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - CocoaAsyncSocket (7.6.3)
   - IQKeyboardManager (6.1.1)
   - LBUIKit (1.0.1)
   - Masonry (1.1.0)
@@ -21,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - CocoaAsyncSocket (~> 7.6.3)
   - IQKeyboardManager
   - LBUIKit (~> 1.0.1)
   - Masonry
@@ -29,6 +31,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - CocoaAsyncSocket
     - IQKeyboardManager
     - LBUIKit
     - Masonry
@@ -36,11 +39,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   LBUIKit: bd4c7d5a21d33aa0eba173b43644682267349bc5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 91dde931e6cba02b83f60d1e009bac183d0b1b90
+PODFILE CHECKSUM: 78d6b0f0648ac62e37d1176c014b859b7ab583fd
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
