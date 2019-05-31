@@ -174,21 +174,26 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * This method is the same as acceptOnPort:error: with the
  * additional option of specifying which interface to listen on.
  *
- * 这个方法和acceptOnPort:error 相同的 就添加了一个一个interface 去监听
+ * 这个方法和acceptOnPort:error 相同的 就添加了一个一个interface 去监听。
  *
  * For example, you could specify that the socket should only accept connections over ethernet,
  * and not other interfaces such as wifi.
  *
- * 
+ * 比如，你可以具体化socket 应该仅仅接受ethernet的连接，不接受其他方式的连接，比如Wi-Fi。
  *
  * The interface may be specified by name (e.g. "en1" or "lo0") or by IP address (e.g. "192.168.4.34").
  * You may also use the special strings "localhost" or "loopback" to specify that
  * the socket only accept connections from the local machine.
- * 
+ *
+ * the interface 可能会具体化的传进 en1 ， lo0 ，或者IP地址。你可能也需要用具体的string 比如：localhost 或者loopback
+ * 来指定一个具体的IP地址值。
+ *
  * You can see the list of interfaces via the command line utility "ifconfig",
  * or programmatically via the getifaddrs() function.
- * 
+ *
+ * 你可以看见interfaces 通过命令行命令： “ifconfig”，或者你可以通过函数来调用看返回结果。
  * To accept connections on any interface pass nil, or simply use the acceptOnPort:error: method.
+ * 为了让socket 连接到所有的interface，我们用这个方法的话，我们就传nil。
 **/
 - (BOOL)acceptOnInterface:(nullable NSString *)interface port:(uint16_t)port error:(NSError **)errPtr;
 
@@ -208,14 +213,15 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * 连接到指定的host主机的指定端口
  * This method invokes connectToHost:onPort:viaInterface:withTimeout:error:
  * and uses the default interface, and no timeout.
- 这个方法其实调用 connecttohost:onPort:viaInterface:withTimeout:error,bingqie 用的是默认interface，和timeout
+   这个方法其实调用 connecttohost:onPort:viaInterface:withTimeout:error,bingqie 用的是默认interface，和timeout
 **/
 - (BOOL)connectToHost:(NSString *)host onPort:(uint16_t)port error:(NSError **)errPtr;
 
 /**
  * Connects to the given host and port with an optional timeout.
- * 
+ * 连接到指定的host 的 指定端口。用指定的时间和 error
  * This method invokes connectToHost:onPort:viaInterface:withTimeout:error: and uses the default interface.
+ * 这个方法调用 connectToHost:onPort:viaInterface:withTimeout:error , 但是用的是默认的interface
 **/
 - (BOOL)connectToHost:(NSString *)host
                onPort:(uint16_t)port
@@ -224,26 +230,41 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
 
 /**
  * Connects to the given host & port, via the optional interface, with an optional timeout.
- * 
+ * 连接到指定的host的指定端口。通过可选的interface，可选的时间。
  * The host may be a domain name (e.g. "deusty.com") or an IP address string (e.g. "192.168.0.2").
+ * host 可能是一个域名或者是一个IP地址。
  * The host may also be the special strings "localhost" or "loopback" to specify connecting
  * to a service on the local machine.
- * 
+ *
+ * host 还有可能是一个特殊字符串 localhost 或者loopback ，去连接到本机器作为的服务器。
+ *
  * The interface may be a name (e.g. "en1" or "lo0") or the corresponding IP address (e.g. "192.168.4.35").
  * The interface may also be used to specify the local port (see below).
- * 
+ *。
+ * the interface 可能是一个名字 ，比如en0 或者lo0 。或者是一个正确的ip地址。
+ * interface 可能被用来具体本地接口。
  * To not time out use a negative time interval.
- * 
+ *
+ * 为了不超时用一个比较消极的时间间隔。
+ *。
  * This method will return NO if an error is detected, and set the error pointer (if one was given).
  * Possible errors would be a nil host, invalid interface, or socket is already connected.
- * 
+ *
+ *。 如果检测到错误，这个方法就会返回一个error。并且会让传进去的error 返回一个字符串，字符串可能是 nil host ，无效的interface，
+ *。 或者 socket is already connected。
+ *
  * If no errors are detected, this method will start a background connect operation and immediately return YES.
  * The delegate callbacks are used to notify you when the socket connects, or if the host was unreachable.
- * 
+ *
+ * 如果没有错误被检测到。这个方法将会开一个后台连接任务 ，并且立即返回yes。
+ * 当连接到服务器的时候我们会用代理来进行回调。或者连接的时候这个host 是不能找到的。
+ *
  * Since this class supports queued reads and writes, you can immediately start reading and/or writing.
  * All read/write operations will be queued, and upon socket connection,
  * the operations will be dequeued and processed in order.
  * 
+ *
+ *。
  * The interface may optionally contain a port number at the end of the string, separated by a colon.
  * This allows you to specify the local port that should be used for the outgoing connection. (read paragraph to end)
  * To specify both interface and local port: "en1:8082" or "192.168.4.35:2424".
