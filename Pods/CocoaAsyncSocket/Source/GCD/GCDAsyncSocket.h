@@ -262,8 +262,10 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * Since this class supports queued reads and writes, you can immediately start reading and/or writing.
  * All read/write operations will be queued, and upon socket connection,
  * the operations will be dequeued and processed in order.
- * 
  *
+ * 由于这个类支持队列读写，你可以立即开始read 或者 write。
+ * 所有的读/写 操作将会被放进队列，并且依据于连接。
+ * 所有的操作出列进列 按照一定的顺序
  *。
  * The interface may optionally contain a port number at the end of the string, separated by a colon.
  * This allows you to specify the local port that should be used for the outgoing connection. (read paragraph to end)
@@ -274,6 +276,9 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * If you think you need to, there is a very good chance you have a fundamental misunderstanding somewhere.
  * Local ports do NOT need to match remote ports. In fact, they almost never do.
  * This feature is here for networking professionals using very advanced techniques.
+ *
+ * the interface 可能可选的包含端口号再string的末尾，通过colon 分割
+ * 这个方法允许你
 **/
 - (BOOL)connectToHost:(NSString *)host
                onPort:(uint16_t)port
