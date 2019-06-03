@@ -114,7 +114,7 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
 @property (atomic, assign, readwrite, nullable) dispatch_queue_t delegateQueue;
 #endif
 
-- (void)getDelegate:(id<GCDAsyncSocketDelegate> __nullable * __nullable)delegate Ptr delegateQueue:(dispatch_queue_t __nullable * __nullable)delegateQueuePtr;
+- (void)getDelegate:(id<GCDAsyncSocketDelegate> __nullable * __nullable)delegatePtr delegateQueue:(dispatch_queue_t __nullable * __nullable)delegateQueuePtr;
 - (void)setDelegate:(nullable id<GCDAsyncSocketDelegate>)delegate delegateQueue:(nullable dispatch_queue_t)delegateQueue;
 
 /**
@@ -192,8 +192,11 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * or programmatically via the getifaddrs() function.
  *
  * 你可以看见interfaces 通过命令行命令： “ifconfig”，或者你可以通过函数来调用看返回结果。
+ *
  * To accept connections on any interface pass nil, or simply use the acceptOnPort:error: method.
+ *
  * 为了让socket 连接到所有的interface，我们用这个方法的话，我们就传nil。
+ *
 **/
 - (BOOL)acceptOnInterface:(nullable NSString *)interface port:(uint16_t)port error:(NSError **)errPtr;
 
@@ -210,18 +213,26 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
 
 /**
  * Connects to the given host and port.
+ *
  * 连接到指定的host主机的指定端口
+ *
  * This method invokes connectToHost:onPort:viaInterface:withTimeout:error:
  * and uses the default interface, and no timeout.
-   这个方法其实调用 connecttohost:onPort:viaInterface:withTimeout:error,bingqie 用的是默认interface，和timeout
+ *
+ * 这个方法其实调用 connecttohost:onPort:viaInterface:withTimeout:error,bingqie 用的是默认interface，和timeout
+ *
 **/
 - (BOOL)connectToHost:(NSString *)host onPort:(uint16_t)port error:(NSError **)errPtr;
 
 /**
  * Connects to the given host and port with an optional timeout.
+ *
  * 连接到指定的host 的 指定端口。用指定的时间和 error
+ *
  * This method invokes connectToHost:onPort:viaInterface:withTimeout:error: and uses the default interface.
+ *
  * 这个方法调用 connectToHost:onPort:viaInterface:withTimeout:error , 但是用的是默认的interface
+ *
 **/
 - (BOOL)connectToHost:(NSString *)host
                onPort:(uint16_t)port
@@ -278,7 +289,10 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * This feature is here for networking professionals using very advanced techniques.
  *
  * the interface 可能可选的包含端口号再string的末尾，通过colon 分割
- * 这个方法允许你
+ * 这个方法允许你具体化一个port ，这个port 用来作为外连接的端口。（阅读段落直到结束）
+ * 具体化 interface 和 本地port。的用法：“en1:8082” 或者 “192.168.4.35:2424”
+ * 只具体化本地port ":8082".
+ *
 **/
 - (BOOL)connectToHost:(NSString *)host
                onPort:(uint16_t)port
@@ -368,6 +382,16 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * [asyncSocket disconnect];
  * [asyncSocket setDelegate:self];
  * [asyncSocket connect...];
+ 
+ 
+ 立即断开连接，这是同步的。任何正准备读或者写的数据都会被drop。
+ 如果socket没有准备好断开连接。一个代理方法 “socketDidDixconnect:withError:”声明将会被异步安排进一个代理队列。（在前面代理队列里已经存在的方法的前面）
+ 换句话说 ,断开的代理方法 将会被调用，在z在这个方法返回之后。
+
+ 请注意推荐的方法 释放gcdAsyncSocket 对象的方法
+ [asyncSocket setDelegate:nil];
+ [asynSocket disConnect];
+ [asynSocket release];
 **/
 - (void)disconnect;
 
@@ -375,6 +399,11 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * Disconnects after all pending reads have completed.
  * After calling this, the read and write methods will do nothing.
  * The socket will disconnect even if there are still pending writes.
+ *
+ 
+ 在所有的read数据完成之后，断开连接。
+ 当调用这个方法，read 和 write 方法不会做什么。
+ socket 将会断开连接 即使还在添加writing数据。
 **/
 - (void)disconnectAfterReading;
 
@@ -382,12 +411,19 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * Disconnects after all pending writes have completed.
  * After calling this, the read and write methods will do nothing.
  * The socket will disconnect even if there are still pending reads.
+ 
+ 在所有的write数据都完成后，断开连接
+ 嗲用这个方法的时候，write和read没有做什么操作。
+ socket 将会断开连接，即使有要读的数据要加入到socket中。
 **/
 - (void)disconnectAfterWriting;
 
 /**
  * Disconnects after all pending reads and writes have completed.
  * After calling this, the read and write methods will do nothing.
+ *
+ 
+ 断开所有的连接，在完成之后。
 **/
 - (void)disconnectAfterReadingAndWriting;
 
@@ -460,6 +496,17 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * Reads the first available bytes that become available on the socket.
  * 
  * If the timeout value is negative, the read operation will not use a timeout.
+ 
+ 
+ 读数据 和 写数据，并不会阻塞，他们是异步的。
+ 
+ 当一个读的方法完成后，方法“socket:didReadData:withTag" 这个代理方法被分配到代理队列。
+ 当写的完成后，方法：“socket:didWriteDataWithTag:” 代理方法被分配到delegatequeue当中。
+ 你可能可选的设置时间限制 为读/写的任务。
+ 如果超出时间代理方法会先抛出一个方法socket:shouldTmeOUt... ,让你拓展延长时间。
+ 根据timeout ，socket:didDisConnectWithError 将会被调用。
+ tag是为我们的方便。我们可以用它作为数据idx ，等等。
+ 
 **/
 - (void)readDataWithTimeout:(NSTimeInterval)timeout tag:(long)tag;
 
@@ -478,6 +525,21 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * After completion, the data returned in socket:didReadData:withTag: will be a subset of the given buffer.
  * That is, it will reference the bytes that were appended to the given buffer via
  * the method [NSData dataWithBytesNoCopy:length:freeWhenDone:NO].
+ 
+ 
+ 阅读第一个可获得的字节，在socket中变成了可能。
+ 这个自己字节将会被添加到给定的字节缓冲区，start 从给定的偏移量开始。
+ 给定的缓冲区会自动增长空间，如果需要的话。
+ 
+ 如果timeout 是negative ，读的操作将不会用timeout。
+ 如果buffer 是空的话，socket 将会为你创建一个buffer。
+ 
+ 如果bufferOffet over 给定的buffer length ， 这个方法不会做什么事情。代理也不会被调用
+ 
+ 如果传入一个buffer ，你一定不能修改他，在socket 用他的时候。
+ 在完成之后，数据在方法"socket:didReadData:WithTag"方法中变成子集合 在给的buffer中
+ 因此，他将会将数据添加到给定的buffer中。
+ 
 **/
 - (void)readDataWithTimeout:(NSTimeInterval)timeout
 					 buffer:(nullable NSMutableData *)buffer
@@ -514,6 +576,11 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * If the timeout value is negative, the read operation will not use a timeout.
  * 
  * If the length is 0, this method does nothing and the delegate is not called.
+ 
+ 
+ 
+ 读取指定的byts ，如果lenght=0，这个方法不会做任何事情，和调用代理方法。
+ 
 **/
 - (void)readDataToLength:(NSUInteger)length withTimeout:(NSTimeInterval)timeout tag:(long)tag;
 
@@ -533,6 +600,17 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * After completion, the data returned in socket:didReadData:withTag: will be a subset of the given buffer.
  * That is, it will reference the bytes that were appended to the given buffer via
  * the method [NSData dataWithBytesNoCopy:length:freeWhenDone:NO].
+ 
+ 读取指定的长度的bytes。
+ bytes 将会被添加到bytes 的缓存区域。从buffer的offeset开始。
+ 给定的buffer 将会自动的增长，如果需要的话。
+ 
+ 如果timeoutvalue ，是negative，读的操作将会被用。
+ 如果bufferoffset 大于 buffer 的length，这个方法h不会做什么，也不会调用代理方法。
+ 如果lenght 为0如上。
+ 
+ 如果你传入了一个buffer ，无论如何你都不能修改在asyncSocket 用的时候。
+ 在完成之后，data 在delegate 中“socket didReadData:withTag”将会变成子集合于给定的buffer而言。
 **/
 - (void)readDataToLength:(NSUInteger)length
              withTimeout:(NSTimeInterval)timeout
@@ -560,6 +638,19 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * The given data (separator) parameter should be immutable.
  * For performance reasons, the socket will retain it, not copy it.
  * So if it is immutable, don't modify it while the socket is using it.
+ 
+ 
+ 读取bytes 直到传入的data 参数，这个参数作为分割符。
+ 
+ 如果timeout 值是负的，读的操作将不会用timeout。
+ 
+ 如果你穿入nil或者是 长度为0的打他，作为data 的实参。
+ 方法不会做什么（除了打印出警告），代理不会被调用“socket:didReadData:withTag”
+ 
+ 为了阅读行的数据，用分隔符作为data的实参。比如：CRLF对于http来说。
+ 如果你开发你自己的自定义的协议，确定你的分隔符不能产生理所当然的作为数据的分隔符号。
+ 
+ 举个列子，如果你要传递几个小的文件，用CRLF 作为分割符，这是非常不明智的。因为CRLF 很有可能出现在文档内部。
 **/
 - (void)readDataToData:(NSData *)data withTimeout:(NSTimeInterval)timeout tag:(long)tag;
 
@@ -713,6 +804,15 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * are finished. This allows one the option of sending a protocol dependent StartTLS message, and queuing
  * the upgrade to TLS at the same time, without having to wait for the write to finish.
  * Any reads or writes scheduled after this method is called will occur over the secured connection.
+ 
+ 
+ 
+ 保障连接的安全用SSL/TLS
+ 
+ 这个方法可能会在任何和时候被调用，并且TLS handshake 将会产生在所有挂起的读和写的内容完成后产生。
+ 这个允许有个选项，比如发送一个protocol 依据StarTLS 信息，并且入队TLS的升级，同时。
+ 任何读写操作在这个方法之后，再调用都是建立在安全的连接之上的。
+ 
  *
  * ==== The available TOP-LEVEL KEYS are:
  * 
@@ -731,6 +831,14 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  *     https://developer.apple.com/library/ios/technotes/tn2232/_index.html
  *     
  *     If unspecified, the default value is NO.
+ 
+ 
+    手动验证证书
+       value必须要是NSNumber类型，包装成一个bool值。
+        如果你你设置为yes ，底层的secure Transport 系统将不会验证 同一级别的SecTrustRef。
+        反而他反而通常会立即停止验证，并且允许我们处理安全验证 ，我们所认为的安全验证。
+        因此，GCDAsyncSocket will invoke the delegate method “socket：shouldTrustPeer:” 验证SecTrustRef；
+ ------------------------------------------------------------
  *
  * - GCDAsyncSocketUseCFStreamForTLS (iOS only)
  *     The value must be of type NSNumber, encapsulating a BOOL value.
@@ -748,6 +856,18 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  *     For more infomation on these keys, please see the documentation for kCFStreamPropertySSLSettings.
  *
  *     If unspecified, the default value is NO.
+ 
+        value 必须是nsNumber类型，包装的是一个boolvalue。
+        默认情况下，GCDAsyncSocket 将会用底层的 secureTransport层 去加密。
+        这个模式给了我们更多的控制 在安全协议上（一些更多的 configuration）
+        加上他允许我们优化例如 sys calls 和 buffer allocation
+ 
+        然而，如果你必须，你可以让GCDAsyncSocket 去用老的流行的加密技术，通过CFStream。而不是 secureTransport，GCDAsyncSocket 将会代替初始化
+        CFRead/CFWriteStream。
+ 
+        因此，所有的key 在给定的dictionary中，将会被GCDAsyncSocket忽略。
+        并且将会直接传入  CFReadStreamSetProperty / CFWriteStreamSetProperty. 并且传入给定的options到这个方法。
+ 
  *
  * ==== The available CONFIGURATION KEYS are:
  *
@@ -1114,6 +1234,11 @@ typedef NS_ENUM(NSInteger, GCDAsyncSocketError) {
  * For example, your implementation might look something like this:
  * dispatch_retain(myExistingQueue);
  * return myExistingQueue;
+ 
+ 
+ 这个方法立即调用在socket:didAcceptNewSocket:
+ 
+ 
 **/
 - (nullable dispatch_queue_t)newSocketQueueForConnectionFromAddress:(NSData *)address onSocket:(GCDAsyncSocket *)sock;
 
