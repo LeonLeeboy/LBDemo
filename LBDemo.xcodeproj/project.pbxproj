@@ -15,6 +15,8 @@
 		2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5D96C2117F8EB007E2FB9 /* LBDemoDelegate.m */; };
 		2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5D9752117F9D7007E2FB9 /* LBHomeVC.m */; };
 		E0F45F7176B82EAF138FC476 /* Pods_LBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */; };
+		EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */; };
+		EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6164222B8CC9000525050 /* LBModelHomeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		499B2A141209DAA52AFCE560 /* Pods-LBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B353408141B2E20FA31FF409 /* Pods-LBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.release.xcconfig"; sourceTree = "<group>"; };
+		EDC6163D22B8C8DE00525050 /* LBHomeViewControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeViewControllerViewModel.h; sourceTree = "<group>"; };
+		EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewControllerViewModel.m; sourceTree = "<group>"; };
+		EDC6164122B8CC9000525050 /* LBModelHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBModelHomeView.h; sourceTree = "<group>"; };
+		EDC6164222B8CC9000525050 /* LBModelHomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBModelHomeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +113,6 @@
 		2C86F13F2112D82F00DF516A /* LBDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2CB5D977211840FA007E2FB9 /* generation */,
 				2CB5D96E2117F960007E2FB9 /* modules */,
 				2CB5D96A2117F8EB007E2FB9 /* Application */,
 				2CB5D9732117F995007E2FB9 /* supportingFiles */,
@@ -153,9 +158,9 @@
 		2CB5D96F2117F960007E2FB9 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				EDC6164022B8CC6300525050 /* model */,
+				EDC6163C22B8C8A200525050 /* ViewModel */,
 				2CB5D9702117F960007E2FB9 /* controller */,
-				2CB5D9712117F960007E2FB9 /* model */,
-				2CB5D9722117F960007E2FB9 /* view */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -167,20 +172,6 @@
 				2CB5D9752117F9D7007E2FB9 /* LBHomeVC.m */,
 			);
 			path = controller;
-			sourceTree = "<group>";
-		};
-		2CB5D9712117F960007E2FB9 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		2CB5D9722117F960007E2FB9 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		2CB5D9732117F995007E2FB9 /* supportingFiles */ = {
@@ -195,20 +186,30 @@
 			path = supportingFiles;
 			sourceTree = "<group>";
 		};
-		2CB5D977211840FA007E2FB9 /* generation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = generation;
-			path = LBDemo/generation;
-			sourceTree = SOURCE_ROOT;
-		};
 		830ABFCCEC502B8152BFDF1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDC6163C22B8C8A200525050 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDC6163D22B8C8DE00525050 /* LBHomeViewControllerViewModel.h */,
+				EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EDC6164022B8CC6300525050 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EDC6164122B8CC9000525050 /* LBModelHomeView.h */,
+				EDC6164222B8CC9000525050 /* LBModelHomeView.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		EF62B6FC41D44A84104DFF77 /* Pods */ = {
@@ -377,6 +378,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/LBUIKit/LBUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -386,6 +388,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +403,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */,
 				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
+				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
 				2C86F1502112D83500DF516A /* main.m in Sources */,
 			);

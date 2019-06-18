@@ -23,9 +23,9 @@
 #import <Security/Security.h>
 
 typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
-    AFSSLPinningModeNone,
-    AFSSLPinningModePublicKey,
-    AFSSLPinningModeCertificate,
+    AFSSLPinningModeNone,           //用iOS 真机 ，内嵌的CA的publickey进行验证
+    AFSSLPinningModePublicKey,      //本地存放证书，用证书的key进行verify
+    AFSSLPinningModeCertificate,    //用本地证书进行验证
 };
 
 /**

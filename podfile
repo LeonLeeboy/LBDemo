@@ -8,5 +8,6 @@ pod 'LBUIKit', '~> 1.0.1'
 pod 'IQKeyboardManager'
 pod 'Masonry'
 pod 'CocoaAsyncSocket', '~> 7.6.3'
+pod 'ReactiveObjC', '~> 3.1.1'
 end
 
