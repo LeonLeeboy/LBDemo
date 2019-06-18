@@ -184,7 +184,7 @@ enum GCDAsyncSocketConfig
  * The prebuffer is entirely drained before we read from the socket again.
  * In other words, a large chunk of data is written is written to the prebuffer.
  * The prebuffer is then drained via a series of one or more reads (for subsequent read request(s)).
- * 
+ *   
  * A ring buffer was once used for this purpose.
  * But a ring buffer takes up twice as much memory as needed (double the size for mirroring).
  * In fact, it generally takes up more than twice the needed size as everything has to be rounded up to vm_page_size.

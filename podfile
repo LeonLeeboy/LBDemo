@@ -4,7 +4,7 @@ use_frameworks!
 target 'LBDemo' do
 pod 'SVProgressHUD'
 pod 'AFNetworking'
-pod 'LBUIKit', '~> 1.0.1'
+pod 'LBUIKit'
 pod 'IQKeyboardManager'
 pod 'Masonry'
 pod 'CocoaAsyncSocket', '~> 7.6.3'
