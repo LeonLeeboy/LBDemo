@@ -328,11 +328,14 @@ enum GCDAsyncSocketConfig
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * The GCDAsyncReadPacket encompasses the instructions for any given read.
+ * The GCDAsyncReadPacket encompasses（包括） the instructions（指令） for any given read.
  * The content of a read packet allows the code to determine if we're:
  *  - reading to a certain length
  *  - reading to a certain separator
- *  - or simply reading the first chunk of available data
+ *  - or simply reading the first chunk（块） of available data
+ 
+ GCDAsyncReadPacket 包括了任何给定的指令。
+ read 数据包的内容 允许我们阅读指定的长度，或者阅读到分隔符，或者简单的第一块简单k可获得的数据。
 **/
 @interface GCDAsyncReadPacket : NSObject
 {
@@ -834,6 +837,9 @@ enum GCDAsyncSocketConfig
 /**
  * The GCDAsyncSpecialPacket encompasses special instructions for interruptions in the read/write queues.
  * This class my be altered to support more than just TLS in the future.
+ 
+ 特殊的package 包括了特殊的指令，为了打断读写队列。
+ 这个类可能被用来支持TLS 在未来。
 **/
 @interface GCDAsyncSpecialPacket : NSObject
 {
@@ -931,6 +937,7 @@ enum GCDAsyncSocketConfig
 	return [self initWithDelegate:aDelegate delegateQueue:dq socketQueue:NULL];
 }
 
+//初始化核心方法。
 - (id)initWithDelegate:(id<GCDAsyncSocketDelegate>)aDelegate delegateQueue:(dispatch_queue_t)dq socketQueue:(dispatch_queue_t)sq
 {
 	if((self = [super init]))
@@ -975,9 +982,9 @@ enum GCDAsyncSocketConfig
 		// > any other value that allows you to identify the value uniquely.
 		//
 		// We're just going to use the memory address of an ivar.
-		// Specifically an ivar that is explicitly named for our purpose to make the code more readable.
+		// Specifically an ivar that is explicitly（明确的） named for our purpose to make the code more readable.
 		//
-		// However, it feels tedious (and less readable) to include the "&" all the time:
+		// However, it feels tedious(枯燥) (and less readable) to include the "&" all the time:
 		// dispatch_get_specific(&IsOnSocketQueueOrTargetQueueKey)
 		//
 		// So we're going to make it so it doesn't matter if we use the '&' or not,
@@ -2093,7 +2100,9 @@ enum GCDAsyncSocketConfig
 /**
  * This method runs through the various checks required prior to a connection attempt.
  * It is shared between the connectToHost and connectToAddress methods.
- * 
+ *
+ 
+ 这个方法提前检测connection，他被connectohost 和 connectToAddress 方法。
 **/
 - (BOOL)preConnectWithInterface:(NSString *)interface error:(NSError **)errPtr
 {
@@ -2190,6 +2199,7 @@ enum GCDAsyncSocketConfig
 	return YES;
 }
 
+//提前连接的时候进行相应的规则examine
 - (BOOL)preConnectWithUrl:(NSURL *)url error:(NSError **)errPtr
 {
 	NSAssert(dispatch_get_specific(IsOnSocketQueueOrTargetQueueKey), @"Must be dispatched on socketQueue");
@@ -2258,6 +2268,7 @@ enum GCDAsyncSocketConfig
 	return [self connectToHost:host onPort:port viaInterface:nil withTimeout:timeout error:errPtr];
 }
 
+//连接的核心代码
 - (BOOL)connectToHost:(NSString *)inHost
                onPort:(uint16_t)port
          viaInterface:(NSString *)inInterface
@@ -2266,6 +2277,7 @@ enum GCDAsyncSocketConfig
 {
 	LogTrace();
 	
+    //防止传入的是不可变对象。
 	// Just in case immutable objects were passed
 	NSString *host = [inHost copy];
 	NSString *interface = [inInterface copy];
@@ -2277,6 +2289,7 @@ enum GCDAsyncSocketConfig
 		
 		// Check for problems with host parameter
 		
+        //host 长度检测
 		if ([host length] == 0)
 		{
 			NSString *msg = @"Invalid host parameter (nil or \"\"). Should be a domain name or IP address string.";
@@ -2287,6 +2300,7 @@ enum GCDAsyncSocketConfig
 		
 		// Run through standard pre-connect checks
 		
+        //连接前的各种检查
 		if (![self preConnectWithInterface:interface error:&preConnectErr])
 		{
 			return_from_block;
@@ -6481,6 +6495,7 @@ enum GCDAsyncSocketConfig
 {
 	LogTrace();
 	
+    //为空则返回
 	if (tlsSettings == nil)
     {
         // Passing nil/NULL to CFReadStreamSetProperty will appear to work the same as passing an empty dictionary,
@@ -6494,10 +6509,13 @@ enum GCDAsyncSocketConfig
         tlsSettings = [NSDictionary dictionary];
     }
 	
+    //将传入的TLS 设置存进对象
 	GCDAsyncSpecialPacket *packet = [[GCDAsyncSpecialPacket alloc] initWithTLSSettings:tlsSettings];
-	
+    
+    
+	//异步开一一个线程在socketQueue中
 	dispatch_async(socketQueue, ^{ @autoreleasepool {
-		
+		//可以减少内存碎片化
         if ((self->flags & kSocketStarted) && !(self->flags & kQueuedTLS) && !(self->flags & kForbidReadsWrites))
 		{
             [self->readQueue addObject:packet];
