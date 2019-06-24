@@ -14,41 +14,63 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
   - CocoaAsyncSocket (7.6.3)
   - IQKeyboardManager (6.1.1)
   - LBUIKit (1.0.1)
   - Masonry (1.1.0)
+  - MJRefresh (3.1.16)
   - ReactiveObjC (3.1.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking
+  - BlocksKit
   - CocoaAsyncSocket (~> 7.6.3)
   - IQKeyboardManager
   - LBUIKit (~> 1.0.1)
   - Masonry
-  - ReactiveObjC (~> 3.1.1)
+  - MJRefresh
+  - ReactiveObjC
   - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - BlocksKit
     - CocoaAsyncSocket
     - IQKeyboardManager
     - LBUIKit
     - Masonry
+    - MJRefresh
     - ReactiveObjC
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   LBUIKit: bd4c7d5a21d33aa0eba173b43644682267349bc5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 836429a0a411e197b83eaf7ab951195882600251
+PODFILE CHECKSUM: 283c9491eabb89c81e8f9987462f16381e7dacac
 
 COCOAPODS: 1.6.1

@@ -41,13 +41,122 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/modules/home/controller/LBHomeVC.m"
-            timestampString = "582544375.642713"
+            filePath = "LBDemo/Modules/Login/CBLoginCenter.m"
+            timestampString = "583062935.827526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-fetchData"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-loginWithBlock:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CBLoginCenter loginWithBlock:]"
+                  moduleName = "LBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
+                  timestampString = "583057840.643952"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "758">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__Block_byref_object_copy_"
+                  moduleName = "LBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
+                  timestampString = "583057840.6455179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__Block_byref_object_dispose_"
+                  moduleName = "LBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
+                  timestampString = "583057840.647163"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[CBLoginCenter loginWithBlock:]_block_invoke"
+                  moduleName = "LBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
+                  timestampString = "583057840.649217"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_e8_32r40w"
+                  moduleName = "LBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
+                  timestampString = "583057840.651072"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBDemo/Modules/Login/ViewController/LoginViewController.m"
+            timestampString = "583062935.827589"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-setupView"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBDemo/Modules/Login/CBLoginCenter.m"
+            timestampString = "583062935.827853"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-loginWithBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

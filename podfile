@@ -3,11 +3,13 @@ use_frameworks!
 
 target 'LBDemo' do
 pod 'SVProgressHUD'
+pod 'BlocksKit'
 pod 'AFNetworking'
 pod 'LBUIKit', '~> 1.0.1'
 pod 'IQKeyboardManager'
 pod 'Masonry'
 pod 'CocoaAsyncSocket', '~> 7.6.3'
-pod 'ReactiveObjC', '~> 3.1.1'
+pod 'ReactiveObjC'
+pod 'MJRefresh'
 end
 

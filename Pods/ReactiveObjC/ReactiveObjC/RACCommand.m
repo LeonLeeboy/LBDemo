@@ -81,11 +81,13 @@ NSString * const RACUnderlyingCommandErrorKey = @"RACUnderlyingCommandErrorKey";
 	NSCParameterAssert(signalBlock != nil);
 
 	self = [super init];
-
+    //属性的暂存
 	_addedExecutionSignalsSubject = [RACSubject new];
 	_allowsConcurrentExecutionSubject = [RACSubject new];
 	_signalBlock = [signalBlock copy];
 
+    //生成执行信号
+    // 探究热信号和冷信号是如何实现的
 	_executionSignals = [[[self.addedExecutionSignalsSubject
 		map:^(RACSignal *signal) {
 			return [signal catchTo:[RACSignal empty]];
