@@ -9,6 +9,22 @@
 #import "LBHomeViewControllerViewModel.h"
 #import "LBModelHomeView.h"
 
+@interface LBModelCommon ()
+
+@property (assign , nonatomic , readwrite) BOOL hasMore;
+
+@property (strong , nonatomic , readwrite) NSArray *dataSource;
+@end
+
+@implementation LBModelCommon
+- (NSArray *)dataSource{
+    if (!_dataSource) {
+        _dataSource = [NSArray array];
+    }
+    return _dataSource;
+}
+@end
+
 @interface LBHomeViewControllerViewModel ()
 
 @property (strong , nonatomic, readwrite) RACCommand *fetchCommand;
@@ -17,9 +33,13 @@
 
 @property (strong , nonatomic, readwrite) RACSignal *signalDataList;
 
+@property (strong , nonatomic, readwrite) LBModelCommon *commonModel;
+
 @end
 
 @implementation LBHomeViewControllerViewModel
+
+static int count = 0;
 
 #pragma mark life cycle
 - (void)dealloc{
@@ -32,44 +52,62 @@
 #pragma mark private
 - (NSArray *)p_tableViewDataSource {
     NSMutableArray<LBModelHomeView *> *homeModels = [NSMutableArray array];
-    LBModelHomeView *m = LBModelHomeView.new;
-    m.displayName = @"RACCommand 改动";
     
-    LBModelHomeView *m1 = LBModelHomeView.new;
-    m1.displayName = @"RACCommand 改动";
-    
-    LBModelHomeView *m2 = LBModelHomeView.new;
-    m2.displayName = @"RACCommand 改动";
-    
-    LBModelHomeView *m3 = LBModelHomeView.new;
-    m3.displayName = @"RACCommand 改动";
-    
-    [homeModels addObject:m];
-    [homeModels addObject:m1];
-    [homeModels addObject:m2];
-    [homeModels addObject:m3];
+    for (int i = 0; i < 30; i++) {
+        LBModelHomeView *m = LBModelHomeView.new;
+        m.displayName = @"RACCommand 改动";
+        [homeModels addObject:m];
+    }
+//    LBModelHomeView *m = LBModelHomeView.new;
+//    m.displayName = @"RACCommand 改动";
+//
+//    LBModelHomeView *m1 = LBModelHomeView.new;
+//    m1.displayName = @"RACCommand 改动";
+//
+//    LBModelHomeView *m2 = LBModelHomeView.new;
+//    m2.displayName = @"RACCommand 改动";
+//
+//    LBModelHomeView *m3 = LBModelHomeView.new;
+//    m3.displayName = @"RACCommand 改动";
+//
+//    [homeModels addObject:m];
+//    [homeModels addObject:m1];
+//    [homeModels addObject:m2];
+//    [homeModels addObject:m3];
     return homeModels.copy;
 }
 
 - (void)p_dealData:(NSArray<LBModelHomeView *> *)models {
-    [self.subjectDataList sendNext:models];
+    self.commonModel.dataSource = [self.commonModel.dataSource arrayByAddingObjectsFromArray:models];
+    self.commonModel.hasMore = (models.count == 30) && (count < 3);
+    [self.subjectDataList sendNext:self.commonModel];
 }
 
 #pragma mark getter
 - (RACCommand *)fetchCommand {
     if (!_fetchCommand) {
         @weakify(self);
+        __block int pageIndex = 0;
         _fetchCommand =
         [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             return [RACSignal defer:^RACSignal * _Nonnull{
                 return [[[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
                             @strongify(self);
+                            if ([input boolValue]) {
+                                pageIndex = 1;
+                            }
                             [subscriber sendNext:[self p_tableViewDataSource]];
                             [subscriber sendCompleted];
                             return nil;
                          }]
                          doNext:^(id  _Nullable x) {
+                             if ([input boolValue]) { //第一次置空
+                                 self.commonModel = nil;
+                                 count = 0;
+                             }
                              [self p_dealData:x];
+                             pageIndex++;
+                             count++;
                          }] takeUntil:[self rac_signalForSelector:@selector(cancleFetch)]];
             }];
         }];
@@ -89,6 +127,17 @@
         _signalDataList = self.subjectDataList.replayLast;
     }
     return _signalDataList;
+}
+
+- (LBModelCommon *)commonModel{
+    if (!_commonModel) {
+        _commonModel = LBModelCommon.new;
+    }
+    return _commonModel;
+}
+
+- (void)setObject:(id)otherTerminal forKeyedSubscript:(NSString *)key {
+    [self setValue:otherTerminal forKeyPath:key];
 }
 
 

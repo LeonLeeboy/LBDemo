@@ -1,8 +1,8 @@
 #include <objc/runtime.h>
 
-#import "CBModelBase.h"
+#import "LBModelBase.h"
 
-@implementation CBModelBase
+@implementation LBModelBase
 
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key {}
 
@@ -112,10 +112,10 @@
     return result;
 }
 
-- (BOOL)isEqual:(CBModelBase*)object
+- (BOOL)isEqual:(LBModelBase*)object
 {
     BOOL resEqual = NO;
-    if ([object isKindOfClass:CBModelBase.class]) {
+    if ([object isKindOfClass:LBModelBase.class]) {
         resEqual = [self.archiveToData isEqualToData:object.archiveToData];
     }
     return resEqual;
@@ -123,6 +123,3 @@
 
 @end
 
-@implementation CBModelBaseList
-
-@end

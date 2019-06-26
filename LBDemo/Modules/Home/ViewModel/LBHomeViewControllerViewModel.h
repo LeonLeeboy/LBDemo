@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface LBModelCommon : NSObject
+
+@property (assign , nonatomic , readonly) BOOL hasMore;
+
+@property (strong , nonatomic , readonly) NSArray *dataSource;
+
+@end
+
 @interface LBHomeViewControllerViewModel : NSObject
 
 @property (strong , nonatomic, readonly) RACCommand *fetchCommand;
@@ -18,6 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)cancleFetch;
 
+
+
 @end
+
 
 NS_ASSUME_NONNULL_END

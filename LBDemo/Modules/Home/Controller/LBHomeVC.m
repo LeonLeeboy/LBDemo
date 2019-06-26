@@ -8,7 +8,7 @@
 #import "LBHomeVC.h"
 #import "LBHomeViewControllerViewModel.h"
 #import "LBHomeCell.h"
-#import "CBLoginCenter.h"
+#import "LBLoginCenter.h"
 
 @interface LBHomeVC ()<UITableViewDelegate , UITableViewDataSource>
 
@@ -32,6 +32,17 @@
     [self fetchData];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    if ([LBLoginCenter instance].loginState == LBLoginCenterStateLogin || [LBLoginCenter instance].loginState == LBLoginCenterStateLogining) {
+        return;
+    }
+    [[LBLoginCenter instance] loginWithBlock:^(BOOL loginSuccess) {
+        if (loginSuccess) {
+            [self.tbView.mj_header beginRefreshing];
+        }
+    }];
+}
+
 #pragma mark public
 /** init UI */
 - (void)configUI {
@@ -43,7 +54,7 @@
     @weakify(self);
     self.tbView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self);
-        [self.viewModel.fetchCommand execute:nil];
+        [self.viewModel.fetchCommand execute:@(YES)];
     }];
     
     if (@available(iOS 11.0, *)) {
@@ -54,25 +65,24 @@
 - (void)fetchData {
     self.viewModel = [[LBHomeViewControllerViewModel alloc] init];
     @weakify(self);
-    [self.viewModel.signalDataList subscribeNext:^(id  _Nullable x) {
+    [self.viewModel.signalDataList subscribeNext:^(LBModelCommon *  _Nullable x) {
         @strongify(self);
-        self.outputData = x;
+        if (x.hasMore) {
+            if (!self.tbView.mj_footer) {
+                self.tbView.mj_footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
+                    @strongify(self);
+                    [self.viewModel.fetchCommand execute:@(NO)];
+                }];
+            }
+            [self.tbView.mj_footer resetNoMoreData];
+        }else {
+             [self.tbView.mj_footer endRefreshingWithNoMoreData];
+        }
+        self.outputData = x.dataSource;
         [self.tbView reloadData];
         [self.tbView.mj_header endRefreshing];
     }];
 }
-
--(void)viewDidAppear:(BOOL)animated{
-    if ([CBLoginCenter instance].loginState == CBLoginCenterStateLogin || [CBLoginCenter instance].loginState == CBLoginCenterStateLogining) {
-        return;
-    }
-    [[CBLoginCenter instance] loginWithBlock:^(BOOL loginSuccess) {
-        if (loginSuccess) {
-            [self.tbView.mj_header beginRefreshing];
-        }
-    }];
-}
-
 
 #pragma mark private
 
@@ -104,13 +114,5 @@
     }
     return _tbView;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 
 @end

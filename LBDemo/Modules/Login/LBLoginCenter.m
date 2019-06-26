@@ -1,20 +1,26 @@
-
+//
+//  LBLoginCenter.m
+//  LBDemo
+//
+//  Created by 李兵 on 2019/6/25.
+//  Copyright © 2019 ivan. All rights reserved.
+//
 
 #import "LoginViewController.h"
 
-#import "CBLoginCenter.h"
+#import "LBLoginCenter.h"
 
-@interface CBLoginCenter ()
+@interface LBLoginCenter ()
 
-@property (nonatomic, assign, readwrite) CBLoginCenterState loginState;
-@property (nonatomic, strong, readwrite) CBModelLogin* sessionInfo;
+@property (nonatomic, assign, readwrite) LBLoginCenterState loginState;
+@property (nonatomic, strong, readwrite) LBModelLogin* sessionInfo;
 
 @end
 
 
-@implementation CBLoginCenter
+@implementation LBLoginCenter
 
-
+#pragma mark - life cycle
 + (instancetype)instance {
     static dispatch_once_t onceToken;
     static id _shareinstaben = nil;
@@ -27,27 +33,27 @@
 - (instancetype)init {
     if (self = [super init]) {
         [self dataLoad];
-        self.loginState = CBLoginCenterStateNotLogin;
+        self.loginState = LBLoginCenterStateNotLogin;
     }
     return self;
 }
 
-- (void)loginWithBlock:(CBLoginCenterResult)block {
-    if ( self.loginState == CBLoginCenterStateLogin
+- (void)loginWithBlock:(LBLoginCenterResult)block {
+    if ( self.loginState == LBLoginCenterStateLogin
         && self.sessionInfo.account.length
         && self.sessionInfo.userToken.length ) {
         if (block) {
             block(YES);
         }
-    } else if (self.loginState != CBLoginCenterStateLogining) {
+    } else if (self.loginState != LBLoginCenterStateLogining) {
         UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
         if (keyWindow.rootViewController) {
-            self.loginState = CBLoginCenterStateLogining;
+            self.loginState = LBLoginCenterStateLogining;
             @weakify(self);
-            __block LoginViewController* loginVC = [[LoginViewController alloc] initWithBlock:^(CBModelLogin *dataModel) {
+            __block LoginViewController* loginVC = [[LoginViewController alloc] initWithBlock:^(LBModelLogin *dataModel) {
                 @strongify(self);
                 self.sessionInfo = dataModel;
-                self.loginState = CBLoginCenterStateLogin;
+                self.loginState = LBLoginCenterStateLogin;
                 [loginVC dismissViewControllerAnimated:YES completion:nil];
                 block(YES);
             }];
@@ -59,17 +65,16 @@
 
 - (void)logout {
     self.sessionInfo = nil;
-    self.loginState = CBLoginCenterStateNotLogin;
+    self.loginState = LBLoginCenterStateNotLogin;
 }
 
-
-
+#pragma mark public
 - (void)dataLoad
 {
 #define dataLoadProperty(key) \
     { \
         NSData* data = [NSUserDefaults.standardUserDefaults dataForKey:NSStringFromSelector(@selector(key))]; \
-        self.key = (id)[CBModelBase unarchiveFromData:data]; \
+        self.key = (id)[LBModelBase unarchiveFromData:data]; \
     }
 
     
@@ -91,5 +96,6 @@
     
     [NSUserDefaults.standardUserDefaults synchronize];
 }
+
 
 @end

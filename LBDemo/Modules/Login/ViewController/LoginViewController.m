@@ -1,8 +1,15 @@
-
+//
+//  LoginViewController.m
+//  LBDemo
+//
+//  Created by 李兵 on 2019/6/25.
+//  Copyright © 2019 ivan. All rights reserved.
+//
 
 
 #import "LoginViewController.h"
 #import <BlocksKit+UIKit.h>
+#import "LBLoginViewModel.h"
 
 
 #define FontHeiti(fontSize) [UIFont fontWithName:@"STHeitiSC-Light" size:(fontSize)]
@@ -29,6 +36,7 @@ static inline UIColor *HexColor(int v) {
 
 @implementation LoginViewController
 
+#pragma mark life Cycle
 -(id)initWithBlock:(LoginBlock)block {
     self=[super init];
     if (self) {
@@ -40,11 +48,32 @@ static inline UIColor *HexColor(int v) {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    初始化顶端登录注册
-    [self setupView];
+    [self p_setupView];
 }
 
--(void)setupView {
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    IQKeyboardManager.sharedManager.enable = YES;
+    IQKeyboardManager.sharedManager.enableAutoToolbar = YES;
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+    IQKeyboardManager.sharedManager.enable = NO;
+    IQKeyboardManager.sharedManager.enableAutoToolbar = NO;
+}
+
+#pragma mark private
+///初始化view
+-(void)p_setupView {
     self.view.backgroundColor = [UIColor whiteColor];
     UIImageView *headerImg = UIImageView.new;
     headerImg.image = [UIImage imageNamed:@"loginLogo"];
@@ -198,8 +227,8 @@ static inline UIColor *HexColor(int v) {
         make.top.equalTo(forgetBtn.mas_bottom).offset(10);
         make.size.mas_equalTo(CGSizeMake(97, 30));
     }];
-    RAC(registBtn,enabled) = [self p_phoneNumberTextFieldEnabled];
-    RAC(registBtn,backgroundColor) = [self p_phonePWDFieldBackGroundColor];
+    RAC(registBtn,enabled) = [LBLoginViewModel registerButtonEnabled:[RACTwoTuple pack:self.nameText.rac_textSignal :self.pwdText.rac_textSignal]];
+    RAC(registBtn,backgroundColor) = [LBLoginViewModel registerButtonGroundColor:[RACTwoTuple pack:self.nameText.rac_textSignal :self.pwdText.rac_textSignal]];
     
     
     
@@ -218,8 +247,8 @@ static inline UIColor *HexColor(int v) {
     }];
     self.loginBtn = loginBtn;
     
-    RAC(self.loginBtn,enabled) = [self p_phoneNumberTextFieldEnabled];
-    RAC(self.loginBtn,backgroundColor) = [self p_phoneNumberTextFieldBackGroundColor];
+    RAC(self.loginBtn,enabled) = [LBLoginViewModel logInButtondEnabled:[RACTwoTuple pack:self.nameText.rac_textSignal :self.pwdText.rac_textSignal]];
+    RAC(self.loginBtn,backgroundColor) = [LBLoginViewModel logInButtondBackGroundColor:[RACTwoTuple pack:self.nameText.rac_textSignal :self.pwdText.rac_textSignal]];
     
     //登录的按钮事件
     [loginBtn bk_addEventHandler:^(id sender) {
@@ -234,7 +263,7 @@ static inline UIColor *HexColor(int v) {
         [SVProgressHUD show];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [SVProgressHUD dismiss];
-            CBModelLogin *m = CBModelLogin.new;
+            LBModelLogin *m = LBModelLogin.new;
             m.account = nameText.text;
             m.userToken = @"asdf";
             m.userId = @"number 1";
@@ -244,68 +273,8 @@ static inline UIColor *HexColor(int v) {
     
 }
 
-- (RACSignal *)p_phoneNumberTextFieldEnabled {
-    return [self.nameText.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
-        return @(value.length > 6);
-    }];
-}
-
-
-- (RACSignal *)p_phoneNumberTextFieldBackGroundColor {
-    return [self.nameText.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
-        UIColor *bgColor;
-        if (value.length > 6) {
-            bgColor = HexColor(0x1b6bb6);
-        }else {
-            bgColor = [UIColor lightGrayColor];
-        }
-        return bgColor;
-    }];
-}
-
-- (RACSignal *)p_phonePWDFieldEnabled {
-    return [[self.nameText.rac_textSignal combineLatestWith:self.pwdText.rac_textSignal] reduceEach:^id _Nonnull(NSString *account , NSString *pwd){
-        BOOL result = NO;
-        if (account.length > 6 && pwd.length > 3) {
-            result = YES;
-        }
-        return @(result);
-    }];
-}
-
-- (RACSignal *)p_phonePWDFieldBackGroundColor {
-    return [[self p_phonePWDFieldEnabled] map:^id _Nullable(id  _Nullable value) {
-        BOOL result = [(NSNumber *)value boolValue];
-        if (result) {
-            return HexColor(0x1b6bb6);
-        }else {
-            return UIColor.lightGrayColor;
-        }
-    }];
-}
 
 
 
-//视图将要出现时进行的一些操作
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
 
-//IQkeyboardManager//视图已经出现时进行的操作
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-
-    IQKeyboardManager.sharedManager.enable = YES;
-    IQKeyboardManager.sharedManager.enableAutoToolbar = YES;
-}
-
-//视图已经消失时进行的操作//必须加到self.view上，要不然previous／next按钮不会显示出来／另外在AppDelegate也需要配置一些东西
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    
-    IQKeyboardManager.sharedManager.enable = NO;
-    IQKeyboardManager.sharedManager.enableAutoToolbar = NO;
-}
 @end

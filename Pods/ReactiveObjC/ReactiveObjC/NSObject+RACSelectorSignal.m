@@ -180,6 +180,7 @@ static RACSignal *NSObjectRACSignalForSelector(NSObject *self, SEL selector, Pro
 		RACSubject *subject = objc_getAssociatedObject(self, aliasSelector);
 		if (subject != nil) return subject;
 
+        //方法交换
 		Class class = RACSwizzleClass(self);
 		NSCAssert(class != nil, @"Could not swizzle class of %@", self);
 
@@ -254,7 +255,6 @@ static const char *RACSignatureForUndefinedSelector(SEL selector) {
 	return signature.UTF8String;
 }
 
-//交换方法
 static Class RACSwizzleClass(NSObject *self) {
 	Class statedClass = self.class; // 获得当前的class
 	Class baseClass = object_getClass(self);  //获得当前的class
@@ -293,12 +293,12 @@ static Class RACSwizzleClass(NSObject *self) {
 
 		return baseClass;
 	}
-    //继续操作说明传进来的是对象
-
+    
+    //继续操作说明传进来的是正常对象
 	const char *subclassName = [className stringByAppendingString:RACSubclassSuffix].UTF8String;
 	Class subclass = objc_getClass(subclassName); // 直接获得一个class
 
-	if (subclass == nil) { //如果空
+	if (subclass == nil) { //如果空，就是说没有
         subclass = objc_allocateClassPair(baseClass, subclassName, 0); //创建一个class，继承自baseclass
 		if (subclass == nil) return nil;
 

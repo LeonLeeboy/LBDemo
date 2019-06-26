@@ -49,83 +49,6 @@
             endingLineNumber = "47"
             landmarkName = "-loginWithBlock:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[CBLoginCenter loginWithBlock:]"
-                  moduleName = "LBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
-                  timestampString = "583057840.643952"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "758">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__Block_byref_object_copy_"
-                  moduleName = "LBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
-                  timestampString = "583057840.6455179"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__Block_byref_object_dispose_"
-                  moduleName = "LBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
-                  timestampString = "583057840.647163"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[CBLoginCenter loginWithBlock:]_block_invoke"
-                  moduleName = "LBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
-                  timestampString = "583057840.649217"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_e8_32r40w"
-                  moduleName = "LBDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/Login/CBLoginCenter.m"
-                  timestampString = "583057840.651072"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -135,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LBDemo/Modules/Login/ViewController/LoginViewController.m"
-            timestampString = "583062935.827589"
+            timestampString = "583124204.865772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-setupView"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,6 +81,70 @@
             endingLineNumber = "36"
             landmarkName = "-loginWithBlock:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ReactiveObjC/ReactiveObjC/RACStream.m"
+            timestampString = "583138883.653179"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-flattenMap:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RACStream(Operations) flattenMap:]"
+                  moduleName = "ReactiveObjC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/Pods/ReactiveObjC/ReactiveObjC/RACStream.m"
+                  timestampString = "583206612.450452"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "74">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[RACStream(Operations) flattenMap:]_block_invoke"
+                  moduleName = "ReactiveObjC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/Pods/ReactiveObjC/ReactiveObjC/RACStream.m"
+                  timestampString = "583206612.4529409"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBDemo/Modules/Login/ViewController/LoginViewController.m"
+            timestampString = "583206629.334994"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
