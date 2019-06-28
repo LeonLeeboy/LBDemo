@@ -246,7 +246,6 @@ static inline UIColor *HexColor(int v) {
         make.size.equalTo(registBtn);
     }];
     self.loginBtn = loginBtn;
-    
     RAC(self.loginBtn,enabled) = [LBLoginViewModel logInButtondEnabled:[RACTwoTuple pack:self.nameText.rac_textSignal :self.pwdText.rac_textSignal]];
     RAC(self.loginBtn,backgroundColor) = [LBLoginViewModel logInButtondBackGroundColor:[RACTwoTuple pack:self.nameText.rac_textSignal :self.pwdText.rac_textSignal]];
     

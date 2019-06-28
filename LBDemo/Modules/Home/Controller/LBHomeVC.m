@@ -9,6 +9,7 @@
 #import "LBHomeViewControllerViewModel.h"
 #import "LBHomeCell.h"
 #import "LBLoginCenter.h"
+#import "LBModelHomeView.h"
 
 @interface LBHomeVC ()<UITableViewDelegate , UITableViewDataSource>
 
@@ -17,7 +18,7 @@
 
 @property (nonatomic , strong) LBHomeViewControllerViewModel *viewModel;
 
-@property (nonatomic , strong) NSArray *outputData;
+@property (nonatomic , strong) NSArray<LBModelHomeView *> *outputData;
 
 @end
 
@@ -36,11 +37,11 @@
     if ([LBLoginCenter instance].loginState == LBLoginCenterStateLogin || [LBLoginCenter instance].loginState == LBLoginCenterStateLogining) {
         return;
     }
-    [[LBLoginCenter instance] loginWithBlock:^(BOOL loginSuccess) {
-        if (loginSuccess) {
-            [self.tbView.mj_header beginRefreshing];
-        }
-    }];
+//    [[LBLoginCenter instance] loginWithBlock:^(BOOL loginSuccess) {
+//        if (loginSuccess) {
+//            [self.tbView.mj_header beginRefreshing];
+//        }
+//    }];
 }
 
 #pragma mark public
@@ -57,9 +58,9 @@
         [self.viewModel.fetchCommand execute:@(YES)];
     }];
     
-    if (@available(iOS 11.0, *)) {
-        self.tbView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }
+//    if (@available(iOS 11.0, *)) {
+//        self.tbView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    }
 }
 
 - (void)fetchData {
@@ -82,6 +83,8 @@
         [self.tbView reloadData];
         [self.tbView.mj_header endRefreshing];
     }];
+    
+     [self.tbView.mj_header beginRefreshing];
 }
 
 #pragma mark private
@@ -103,6 +106,13 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *targetName = [self.outputData objectAtIndex:indexPath.row].targetName;
+    if ([targetName isEqualToString:@""] || !targetName) {
+        return;
+    }
+    [self.navigationController pushViewController:[[NSClassFromString(targetName) alloc] init] animated:YES];
+}
 
 #pragma mark getter
 

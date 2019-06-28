@@ -19,6 +19,7 @@
 		ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCAD22C0B20A00E4D384 /* LBModelLogin.m */; };
 		ED0CCCB522C0B26B00E4D384 /* LBModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCB322C0B26B00E4D384 /* LBModelBase.m */; };
 		ED0CCCB922C1B08000E4D384 /* LBLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCB822C1B08000E4D384 /* LBLoginViewModel.m */; };
+		ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED203C6922C49EA100FF022D /* LBBlockVC.m */; };
 		EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */; };
 		EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6164222B8CC9000525050 /* LBModelHomeView.m */; };
 		EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC616A722C0A3C600525050 /* LBHomeCell.m */; };
@@ -70,6 +71,8 @@
 		ED0CCCB422C0B26B00E4D384 /* LBModelBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBModelBase.h; sourceTree = "<group>"; };
 		ED0CCCB722C1B08000E4D384 /* LBLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLoginViewModel.h; sourceTree = "<group>"; };
 		ED0CCCB822C1B08000E4D384 /* LBLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoginViewModel.m; sourceTree = "<group>"; };
+		ED203C6822C49EA100FF022D /* LBBlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBBlockVC.h; sourceTree = "<group>"; };
+		ED203C6922C49EA100FF022D /* LBBlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBBlockVC.m; sourceTree = "<group>"; };
 		EDC6163D22B8C8DE00525050 /* LBHomeViewControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeViewControllerViewModel.h; sourceTree = "<group>"; };
 		EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewControllerViewModel.m; sourceTree = "<group>"; };
 		EDC6164122B8CC9000525050 /* LBModelHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBModelHomeView.h; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ED203C6722C49E6000FF022D /* block */,
 				EDC616A922C0ACE300525050 /* Login */,
 				2CB5D96F2117F960007E2FB9 /* Home */,
 			);
@@ -240,6 +244,23 @@
 				ED0CCCB822C1B08000E4D384 /* LBLoginViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED203C6722C49E6000FF022D /* block */ = {
+			isa = PBXGroup;
+			children = (
+				ED203C6B22C49EA400FF022D /* Controllers */,
+			);
+			path = block;
+			sourceTree = "<group>";
+		};
+		ED203C6B22C49EA400FF022D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED203C6822C49EA100FF022D /* LBBlockVC.h */,
+				ED203C6922C49EA100FF022D /* LBBlockVC.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		EDC6163C22B8C8A200525050 /* ViewModel */ = {
@@ -493,6 +514,7 @@
 				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */,
+				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
 				2C86F1502112D83500DF516A /* main.m in Sources */,

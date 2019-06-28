@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 名称 */
 @property (nonatomic , copy) NSString *displayName;
 
+/** target */
+@property (nonatomic , copy) NSString *targetName;
+
 @end
 
 NS_ASSUME_NONNULL_END

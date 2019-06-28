@@ -8,6 +8,7 @@
 
 #import "LBHomeViewControllerViewModel.h"
 #import "LBModelHomeView.h"
+#import "LBBlockVC.h"
 
 @interface LBModelCommon ()
 
@@ -52,28 +53,24 @@ static int count = 0;
 #pragma mark private
 - (NSArray *)p_tableViewDataSource {
     NSMutableArray<LBModelHomeView *> *homeModels = [NSMutableArray array];
+
+    LBModelHomeView *m = LBModelHomeView.new;
+    m.displayName = @"控制器的中间vc剔除跳转";
     
-    for (int i = 0; i < 30; i++) {
-        LBModelHomeView *m = LBModelHomeView.new;
-        m.displayName = @"RACCommand 改动";
-        [homeModels addObject:m];
-    }
-//    LBModelHomeView *m = LBModelHomeView.new;
-//    m.displayName = @"RACCommand 改动";
-//
-//    LBModelHomeView *m1 = LBModelHomeView.new;
-//    m1.displayName = @"RACCommand 改动";
-//
-//    LBModelHomeView *m2 = LBModelHomeView.new;
-//    m2.displayName = @"RACCommand 改动";
-//
-//    LBModelHomeView *m3 = LBModelHomeView.new;
-//    m3.displayName = @"RACCommand 改动";
-//
-//    [homeModels addObject:m];
-//    [homeModels addObject:m1];
-//    [homeModels addObject:m2];
-//    [homeModels addObject:m3];
+    LBModelHomeView *m1 = LBModelHomeView.new;
+    m1.displayName = @"blcok 中是stack ，还是malloc";
+    m1.targetName = NSStringFromClass([LBBlockVC class]);
+
+    LBModelHomeView *m2 = LBModelHomeView.new;
+    m2.displayName = @"RACSignal 的基本操作";
+
+    LBModelHomeView *m3 = LBModelHomeView.new;
+    m3.displayName = @"深拷贝，浅拷贝的实现，以及YYKit中帮我们实现的玩意";
+
+    [homeModels addObject:m];
+    [homeModels addObject:m1];
+    [homeModels addObject:m2];
+    [homeModels addObject:m3];
     return homeModels.copy;
 }
 

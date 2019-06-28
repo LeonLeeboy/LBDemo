@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     LBHomeVC *homeVc = [[LBHomeVC alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    self.window.rootViewController = homeVc;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:homeVc];
     [self.window makeKeyAndVisible];
     return YES;
 }
