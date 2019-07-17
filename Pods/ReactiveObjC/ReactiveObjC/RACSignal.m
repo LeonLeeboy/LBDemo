@@ -193,6 +193,7 @@
 	}] setNameWithFormat:@"[%@] -concat: %@", self.name, signal];
 }
 
+// 将两个signal的value，zip 成一个RACTuple
 - (RACSignal *)zipWith:(RACSignal *)signal {
 	NSCParameterAssert(signal != nil);
 

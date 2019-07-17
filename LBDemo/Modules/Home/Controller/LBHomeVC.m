@@ -10,6 +10,8 @@
 #import "LBHomeCell.h"
 #import "LBLoginCenter.h"
 #import "LBModelHomeView.h"
+#import "ZampAppAnalytics.h"
+
 
 @interface LBHomeVC ()<UITableViewDelegate , UITableViewDataSource>
 
@@ -31,6 +33,11 @@
   
     [self configUI];
     [self fetchData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super  viewWillAppear:animated];
+    [ZampAppAnalytics onPageStart:@"首页"];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -57,10 +64,6 @@
         @strongify(self);
         [self.viewModel.fetchCommand execute:@(YES)];
     }];
-    
-//    if (@available(iOS 11.0, *)) {
-//        self.tbView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//    }
 }
 
 - (void)fetchData {

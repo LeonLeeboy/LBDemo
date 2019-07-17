@@ -66,11 +66,16 @@ static int count = 0;
 
     LBModelHomeView *m3 = LBModelHomeView.new;
     m3.displayName = @"深拷贝，浅拷贝的实现，以及YYKit中帮我们实现的玩意";
+    
+    LBModelHomeView *m4 = LBModelHomeView.new;
+    m4.displayName = @"Light weight GenericTypes and __kindof";
+    m4.targetName = @"LBGenericTypeViewController";
 
     [homeModels addObject:m];
     [homeModels addObject:m1];
     [homeModels addObject:m2];
     [homeModels addObject:m3];
+    [homeModels addObject:m4];
     return homeModels.copy;
 }
 

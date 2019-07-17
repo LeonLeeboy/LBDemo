@@ -20,10 +20,21 @@
 		ED0CCCB522C0B26B00E4D384 /* LBModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCB322C0B26B00E4D384 /* LBModelBase.m */; };
 		ED0CCCB922C1B08000E4D384 /* LBLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCB822C1B08000E4D384 /* LBLoginViewModel.m */; };
 		ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED203C6922C49EA100FF022D /* LBBlockVC.m */; };
+		ED2C1C2522DC08A90044893B /* libZampSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2422DC08A90044893B /* libZampSDK.a */; };
+		ED2C1C2722DC09950044893B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2622DC09950044893B /* AdSupport.framework */; };
+		ED2C1C2922DC09A10044893B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2822DC09A10044893B /* SystemConfiguration.framework */; };
+		ED2C1C2B22DC09B60044893B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2A22DC09B60044893B /* libsqlite3.0.tbd */; };
+		ED2C1C2D22DC09BF0044893B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2C22DC09BF0044893B /* CFNetwork.framework */; };
+		ED2C1C2F22DC09D10044893B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2E22DC09D10044893B /* libicucore.tbd */; };
+		ED2C1C3122DC09DC0044893B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C3022DC09DC0044893B /* CoreMotion.framework */; };
+		ED2C1C3322DC09E60044893B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C3222DC09E60044893B /* libz.tbd */; };
 		EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */; };
 		EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6164222B8CC9000525050 /* LBModelHomeView.m */; };
 		EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC616A722C0A3C600525050 /* LBHomeCell.m */; };
 		EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC616AC22C0AD7200525050 /* LoginViewController.m */; };
+		EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */; };
+		EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111522DEC8BE00E6B7FF /* Language.m */; };
+		EDEB111922DEC98500E6B7FF /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111822DEC98500E6B7FF /* People.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +84,15 @@
 		ED0CCCB822C1B08000E4D384 /* LBLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoginViewModel.m; sourceTree = "<group>"; };
 		ED203C6822C49EA100FF022D /* LBBlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBBlockVC.h; sourceTree = "<group>"; };
 		ED203C6922C49EA100FF022D /* LBBlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBBlockVC.m; sourceTree = "<group>"; };
+		ED2C1C2322DC08A20044893B /* ZampAppAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZampAppAnalytics.h; sourceTree = "<group>"; };
+		ED2C1C2422DC08A90044893B /* libZampSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZampSDK.a; sourceTree = "<group>"; };
+		ED2C1C2622DC09950044893B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		ED2C1C2822DC09A10044893B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ED2C1C2A22DC09B60044893B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		ED2C1C2C22DC09BF0044893B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		ED2C1C2E22DC09D10044893B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		ED2C1C3022DC09DC0044893B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		ED2C1C3222DC09E60044893B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		EDC6163D22B8C8DE00525050 /* LBHomeViewControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeViewControllerViewModel.h; sourceTree = "<group>"; };
 		EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewControllerViewModel.m; sourceTree = "<group>"; };
 		EDC6164122B8CC9000525050 /* LBModelHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBModelHomeView.h; sourceTree = "<group>"; };
@@ -81,6 +101,12 @@
 		EDC616A722C0A3C600525050 /* LBHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
 		EDC616AB22C0AD7100525050 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EDC616AC22C0AD7200525050 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EDEB111122DEC8A700E6B7FF /* LBGenericTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBGenericTypeViewController.h; sourceTree = "<group>"; };
+		EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBGenericTypeViewController.m; sourceTree = "<group>"; };
+		EDEB111422DEC8BE00E6B7FF /* Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Language.h; sourceTree = "<group>"; };
+		EDEB111522DEC8BE00E6B7FF /* Language.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Language.m; sourceTree = "<group>"; };
+		EDEB111722DEC98500E6B7FF /* People.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
+		EDEB111822DEC98500E6B7FF /* People.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +114,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2C1C3322DC09E60044893B /* libz.tbd in Frameworks */,
+				ED2C1C3122DC09DC0044893B /* CoreMotion.framework in Frameworks */,
+				ED2C1C2F22DC09D10044893B /* libicucore.tbd in Frameworks */,
+				ED2C1C2D22DC09BF0044893B /* CFNetwork.framework in Frameworks */,
+				ED2C1C2B22DC09B60044893B /* libsqlite3.0.tbd in Frameworks */,
+				ED2C1C2922DC09A10044893B /* SystemConfiguration.framework in Frameworks */,
+				ED2C1C2722DC09950044893B /* AdSupport.framework in Frameworks */,
+				ED2C1C2522DC08A90044893B /* libZampSDK.a in Frameworks */,
 				E0F45F7176B82EAF138FC476 /* Pods_LBDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +168,7 @@
 		2C86F13F2112D82F00DF516A /* LBDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ED2C1C1F22DC07EF0044893B /* Vendors */,
 				ED0CCCB222C0B25E00E4D384 /* General */,
 				2CB5D96E2117F960007E2FB9 /* Modules */,
 				2CB5D96A2117F8EB007E2FB9 /* Application */,
@@ -172,6 +207,7 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EDEB110D22DEC84E00E6B7FF /* GenericType */,
 				ED203C6722C49E6000FF022D /* block */,
 				EDC616A922C0ACE300525050 /* Login */,
 				2CB5D96F2117F960007E2FB9 /* Home */,
@@ -214,6 +250,13 @@
 		830ABFCCEC502B8152BFDF1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED2C1C3222DC09E60044893B /* libz.tbd */,
+				ED2C1C3022DC09DC0044893B /* CoreMotion.framework */,
+				ED2C1C2E22DC09D10044893B /* libicucore.tbd */,
+				ED2C1C2C22DC09BF0044893B /* CFNetwork.framework */,
+				ED2C1C2A22DC09B60044893B /* libsqlite3.0.tbd */,
+				ED2C1C2822DC09A10044893B /* SystemConfiguration.framework */,
+				ED2C1C2622DC09950044893B /* AdSupport.framework */,
 				A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */,
 			);
 			name = Frameworks;
@@ -263,6 +306,39 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		ED2C1C1F22DC07EF0044893B /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C1C2022DC080B0044893B /* zamp */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		ED2C1C2022DC080B0044893B /* zamp */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C1C2422DC08A90044893B /* libZampSDK.a */,
+				ED2C1C2122DC08A20044893B /* include */,
+			);
+			path = zamp;
+			sourceTree = "<group>";
+		};
+		ED2C1C2122DC08A20044893B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C1C2222DC08A20044893B /* ZampSDK */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		ED2C1C2222DC08A20044893B /* ZampSDK */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C1C2322DC08A20044893B /* ZampAppAnalytics.h */,
+			);
+			path = ZampSDK;
+			sourceTree = "<group>";
+		};
 		EDC6163C22B8C8A200525050 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +385,43 @@
 				EDC616AC22C0AD7200525050 /* LoginViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EDEB110D22DEC84E00E6B7FF /* GenericType */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB111022DEC87B00E6B7FF /* view */,
+				EDEB110F22DEC87400E6B7FF /* model */,
+				EDEB110E22DEC86300E6B7FF /* viewController */,
+			);
+			path = GenericType;
+			sourceTree = "<group>";
+		};
+		EDEB110E22DEC86300E6B7FF /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB111122DEC8A700E6B7FF /* LBGenericTypeViewController.h */,
+				EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		EDEB110F22DEC87400E6B7FF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EDEB111422DEC8BE00E6B7FF /* Language.h */,
+				EDEB111522DEC8BE00E6B7FF /* Language.m */,
+				EDEB111722DEC98500E6B7FF /* People.h */,
+				EDEB111822DEC98500E6B7FF /* People.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EDEB111022DEC87B00E6B7FF /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		EF62B6FC41D44A84104DFF77 /* Pods */ = {
@@ -514,10 +627,13 @@
 				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */,
+				EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */,
 				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
+				EDEB111922DEC98500E6B7FF /* People.m in Sources */,
 				2C86F1502112D83500DF516A /* main.m in Sources */,
+				EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +805,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LBDemo/Vendors/zamp",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xsunt.LBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -711,6 +831,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LBDemo/Vendors/zamp",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xsunt.LBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

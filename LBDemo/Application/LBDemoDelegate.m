@@ -8,6 +8,11 @@
 
 #import "LBDemoDelegate.h"
 #import "LBHomeVC.h"
+#import "ZampAppAnalytics.h"
+
+#define zampAppAnalyticsKey @"96782C42469FB44845BEF28BDFA6B580_604"
+#define zampAppAnalychannelId @"AppStore"
+
 
 @interface LBDemoDelegate ()
 
@@ -18,6 +23,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [ZampAppAnalytics initWithAppKey:zampAppAnalyticsKey channelId:zampAppAnalychannelId];
+    
+    
     LBHomeVC *homeVc = [[LBHomeVC alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:homeVc];
