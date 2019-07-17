@@ -10,7 +10,7 @@
 #import "LBHomeVC.h"
 #import "ZampAppAnalytics.h"
 
-#define zampAppAnalyticsKey @"96782C42469FB44845BEF28BDFA6B580_604"
+#define zampAppAnalyticsKey @""
 #define zampAppAnalychannelId @"AppStore"
 
 
