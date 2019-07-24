@@ -71,11 +71,16 @@ static int count = 0;
     m4.displayName = @"Light weight GenericTypes and __kindof";
     m4.targetName = @"LBGenericTypeViewController";
 
+    LBModelHomeView *m5 = LBModelHomeView.new;
+    m5.displayName = @"protocolAndSynthesize";
+    m5.targetName = @"LBProtocolDemoVC";
+
     [homeModels addObject:m];
     [homeModels addObject:m1];
     [homeModels addObject:m2];
     [homeModels addObject:m3];
     [homeModels addObject:m4];
+     [homeModels addObject:m5];
     return homeModels.copy;
 }
 

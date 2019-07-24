@@ -51,15 +51,17 @@
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
 	// Look for the selector as an optional instance method.
+    // types and sel
 	struct objc_method_description methodDescription = protocol_getMethodDescription(_protocol, selector, NO, YES);
 
 	if (methodDescription.name == NULL) {
 		// Then fall back to looking for a required instance
 		// method.
+        //向父类中寻找
 		methodDescription = protocol_getMethodDescription(_protocol, selector, YES, YES);
 		if (methodDescription.name == NULL) return [super methodSignatureForSelector:selector];
 	}
-
+    //get method signature
 	return [NSMethodSignature signatureWithObjCTypes:methodDescription.types];
 }
 
