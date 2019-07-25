@@ -194,6 +194,7 @@ static RACSignal *NSObjectRACSignalForSelector(NSObject *self, SEL selector, Pro
 		Class class = RACSwizzleClass(self);
 		NSCAssert(class != nil, @"Could not swizzle class of %@", self);
 
+        // 保存
 		subject = [[RACSubject subject] setNameWithFormat:@"%@ -rac_signalForSelector: %s", RACDescription(self), sel_getName(selector)];
 		objc_setAssociatedObject(self, aliasSelector, subject, OBJC_ASSOCIATION_RETAIN);
 

@@ -30,6 +30,7 @@
 		ED2C1C3322DC09E60044893B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C3222DC09E60044893B /* libz.tbd */; };
 		ED69179022E08F5200A919A4 /* LBProtocolDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69178F22E08F5200A919A4 /* LBProtocolDemoVC.m */; };
 		ED69179322E08FBF00A919A4 /* SEEDSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69179222E08FBF00A919A4 /* SEEDSelectModel.m */; };
+		ED69179A22E946A100A919A4 /* LBBlock5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69179922E946A100A919A4 /* LBBlock5ViewController.m */; };
 		EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */; };
 		EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6164222B8CC9000525050 /* LBModelHomeView.m */; };
 		EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC616A722C0A3C600525050 /* LBHomeCell.m */; };
@@ -99,6 +100,8 @@
 		ED69178F22E08F5200A919A4 /* LBProtocolDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBProtocolDemoVC.m; sourceTree = "<group>"; };
 		ED69179122E08FBF00A919A4 /* SEEDSelectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDSelectModel.h; sourceTree = "<group>"; };
 		ED69179222E08FBF00A919A4 /* SEEDSelectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEEDSelectModel.m; sourceTree = "<group>"; };
+		ED69179822E946A100A919A4 /* LBBlock5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBBlock5ViewController.h; sourceTree = "<group>"; };
+		ED69179922E946A100A919A4 /* LBBlock5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBBlock5ViewController.m; sourceTree = "<group>"; };
 		EDC6163D22B8C8DE00525050 /* LBHomeViewControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeViewControllerViewModel.h; sourceTree = "<group>"; };
 		EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewControllerViewModel.m; sourceTree = "<group>"; };
 		EDC6164122B8CC9000525050 /* LBModelHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBModelHomeView.h; sourceTree = "<group>"; };
@@ -213,6 +216,7 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ED9F102C22E93C7E0008DD24 /* Block5 */,
 				ED69178A22E08EF100A919A4 /* ProtocolAndSynthesize */,
 				EDEB110D22DEC84E00E6B7FF /* GenericType */,
 				ED203C6722C49E6000FF022D /* block */,
@@ -379,6 +383,23 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED69179722E9466F00A919A4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED69179822E946A100A919A4 /* LBBlock5ViewController.h */,
+				ED69179922E946A100A919A4 /* LBBlock5ViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ED9F102C22E93C7E0008DD24 /* Block5 */ = {
+			isa = PBXGroup;
+			children = (
+				ED69179722E9466F00A919A4 /* ViewControllers */,
+			);
+			path = Block5;
 			sourceTree = "<group>";
 		};
 		EDC6163C22B8C8A200525050 /* ViewModel */ = {
@@ -663,6 +684,7 @@
 			files = (
 				EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */,
 				ED0CCCAA22C0B1BD00E4D384 /* LBLoginCenter.m in Sources */,
+				ED69179A22E946A100A919A4 /* LBBlock5ViewController.m in Sources */,
 				ED0CCCB522C0B26B00E4D384 /* LBModelBase.m in Sources */,
 				EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */,
 				ED0CCCB922C1B08000E4D384 /* LBLoginViewModel.m in Sources */,

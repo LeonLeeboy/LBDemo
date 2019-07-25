@@ -68,19 +68,24 @@ static int count = 0;
     m3.displayName = @"深拷贝，浅拷贝的实现，以及YYKit中帮我们实现的玩意";
     
     LBModelHomeView *m4 = LBModelHomeView.new;
-    m4.displayName = @"Light weight GenericTypes and __kindof";
+    m4.displayName = @"Light weight GenericTypes || __kindof";
     m4.targetName = @"LBGenericTypeViewController";
 
     LBModelHomeView *m5 = LBModelHomeView.new;
     m5.displayName = @"protocolAndSynthesize";
     m5.targetName = @"LBProtocolDemoVC";
+    
+    LBModelHomeView *m6 = LBModelHomeView.new;
+    m6.displayName = @"LBBlock 引用计数加一，以及可能导致的崩溃";
+    m6.targetName = @"LBBlock5ViewController";
 
     [homeModels addObject:m];
     [homeModels addObject:m1];
     [homeModels addObject:m2];
     [homeModels addObject:m3];
     [homeModels addObject:m4];
-     [homeModels addObject:m5];
+    [homeModels addObject:m5];
+    [homeModels addObject:m6];
     return homeModels.copy;
 }
 
@@ -108,6 +113,7 @@ static int count = 0;
                             return nil;
                          }]
                          doNext:^(id  _Nullable x) {
+                             @strongify(self);
                              if ([input boolValue]) { //第一次置空
                                  self.commonModel = nil;
                                  count = 0;
