@@ -78,6 +78,12 @@ static int count = 0;
     LBModelHomeView *m6 = LBModelHomeView.new;
     m6.displayName = @"LBBlock 引用计数加一，以及可能导致的崩溃";
     m6.targetName = @"LBBlock5ViewController";
+    
+    LBModelHomeView *m7 = LBModelHomeView.new;
+    m7.displayName = @"iOS 各种锁";
+    m7.targetName = @"LBLockViewController";
+    
+    
 
     [homeModels addObject:m];
     [homeModels addObject:m1];
@@ -86,6 +92,7 @@ static int count = 0;
     [homeModels addObject:m4];
     [homeModels addObject:m5];
     [homeModels addObject:m6];
+    [homeModels addObject:m7];
     return homeModels.copy;
 }
 

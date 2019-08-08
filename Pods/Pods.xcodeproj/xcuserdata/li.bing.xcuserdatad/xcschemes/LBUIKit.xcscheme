@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5253C30E24D6181D5F43A3DEDBC7830"
+               BlueprintIdentifier = "3D91E44A82D00E90355C9F2CA3AA8B0C"
                BuildableName = "LBUIKit.framework"
                BlueprintName = "LBUIKit"
                ReferencedContainer = "container:Pods.xcodeproj">

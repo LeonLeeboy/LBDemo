@@ -9,6 +9,7 @@ pod 'LBUIKit'
 pod 'IQKeyboardManager'
 pod 'Masonry'
 pod 'CocoaAsyncSocket', '~> 7.6.3'
+pod 'YYKit', '~> 1.0.9'
 pod 'ReactiveObjC'
 pod 'MJRefresh'
 

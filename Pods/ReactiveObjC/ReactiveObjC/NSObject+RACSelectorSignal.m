@@ -190,7 +190,7 @@ static RACSignal *NSObjectRACSignalForSelector(NSObject *self, SEL selector, Pro
 		if (subject != nil) return subject;
 
         //无
-        // 交换class
+        // 交换class 里面的方法
 		Class class = RACSwizzleClass(self);
 		NSCAssert(class != nil, @"Could not swizzle class of %@", self);
 
@@ -203,7 +203,8 @@ static RACSignal *NSObjectRACSignalForSelector(NSObject *self, SEL selector, Pro
 		}]];
 
 		Method targetMethod = class_getInstanceMethod(class, selector);
-		if (targetMethod == NULL) {
+		if (targetMethod == NULL) { //交换后的class（何为交换后的Class） ， 没有这个方法
+            // get method signauture,type alias Encoding.
 			const char *typeEncoding;
 			if (protocol == NULL) {
 				typeEncoding = RACSignatureForUndefinedSelector(selector);
@@ -221,6 +222,7 @@ static RACSignal *NSObjectRACSignalForSelector(NSObject *self, SEL selector, Pro
 				typeEncoding = methodDescription.types;
 			}
 
+            // typeEncoding 必须是
 			RACCheckTypeEncoding(typeEncoding);
 
 			// Define the selector to call -forwardInvocation:.
@@ -233,6 +235,7 @@ static RACSignal *NSObjectRACSignalForSelector(NSObject *self, SEL selector, Pro
 				return [RACSignal error:[NSError errorWithDomain:RACSelectorSignalErrorDomain code:RACSelectorSignalErrorMethodSwizzlingRace userInfo:userInfo]];
 			}
 		} else if (method_getImplementation(targetMethod) != _objc_msgForward) {
+            // 不触发消息转发
 			// Make a method alias for the existing method implementation.
 			const char *typeEncoding = method_getTypeEncoding(targetMethod);
 
@@ -257,8 +260,11 @@ static SEL RACAliasForSelector(SEL originalSelector) {
 
 static const char *RACSignatureForUndefinedSelector(SEL selector) {
 	const char *name = sel_getName(selector);
+    //v:return value , @: self , ':':cmd
 	NSMutableString *signature = [NSMutableString stringWithString:@"v@:"];
 
+    // 在name里面搜索“ \" ”,有就在方法签名里添加一个 ":"
+    // strchr 返回的是寻找到这个地址的位置
 	while ((name = strchr(name, ':')) != NULL) {
 		[signature appendString:@"@"];
 		name++;
@@ -314,7 +320,7 @@ static Class RACSwizzleClass(NSObject *self) {
 	if (subclass == nil) { //如果没有
         subclass = objc_allocateClassPair(baseClass, subclassName, 0); //创建一个class，继承自baseclass
 		if (subclass == nil) return nil;
-        // 交换forwardInvocation
+        // 交换forwardInvocation （看有没有RAC 的 forwardInvocation，）
 		RACSwizzleForwardInvocation(subclass);
         //交换respose
 		RACSwizzleRespondsToSelector(subclass);

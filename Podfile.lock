@@ -36,17 +36,21 @@ PODS:
   - MJRefresh (3.1.16)
   - ReactiveObjC (3.1.1)
   - SVProgressHUD (2.2.5)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking
   - BlocksKit
   - CocoaAsyncSocket (~> 7.6.3)
   - IQKeyboardManager
-  - LBUIKit (~> 1.0.1)
+  - LBUIKit
   - Masonry
   - MJRefresh
   - ReactiveObjC
   - SVProgressHUD
+  - YYKit (~> 1.0.9)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -59,6 +63,7 @@ SPEC REPOS:
     - MJRefresh
     - ReactiveObjC
     - SVProgressHUD
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -70,7 +75,8 @@ SPEC CHECKSUMS:
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 283c9491eabb89c81e8f9987462f16381e7dacac
+PODFILE CHECKSUM: 766120ec62a048b08caeb91abefe94b44762875d
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.4
