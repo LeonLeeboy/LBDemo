@@ -56,7 +56,7 @@ static int count = 0;
 
     LBModelHomeView *m = LBModelHomeView.new;
     m.displayName = @"控制器的中间vc剔除跳转";
-    
+ 
     LBModelHomeView *m1 = LBModelHomeView.new;
     m1.displayName = @"blcok 中是stack ，还是malloc";
     m1.targetName = NSStringFromClass([LBBlockVC class]);
@@ -66,6 +66,7 @@ static int count = 0;
 
     LBModelHomeView *m3 = LBModelHomeView.new;
     m3.displayName = @"深拷贝，浅拷贝的实现，以及YYKit中帮我们实现的玩意";
+    m3.targetName = @"LBEHIDemoViewController";
     
     LBModelHomeView *m4 = LBModelHomeView.new;
     m4.displayName = @"Light weight GenericTypes || __kindof";
