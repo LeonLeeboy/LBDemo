@@ -32,6 +32,9 @@
 		ED2C1C3122DC09DC0044893B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C3022DC09DC0044893B /* CoreMotion.framework */; };
 		ED2C1C3322DC09E60044893B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C3222DC09E60044893B /* libz.tbd */; };
 		ED3126D122F80225007FAF47 /* SEEDSelecteView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3126CF22F80224007FAF47 /* SEEDSelecteView.m */; };
+		ED68526A2302632800E0B3D5 /* EHIHicarOperationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6852692302632800E0B3D5 /* EHIHicarOperationBottomView.m */; };
+		ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED68526D23029F1800E0B3D5 /* SEEDPasswordInputView.m */; };
+		ED6852752303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6852742303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m */; };
 		ED69179022E08F5200A919A4 /* LBProtocolDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69178F22E08F5200A919A4 /* LBProtocolDemoVC.m */; };
 		ED69179322E08FBF00A919A4 /* SEEDSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69179222E08FBF00A919A4 /* SEEDSelectModel.m */; };
 		ED69179A22E946A100A919A4 /* LBBlock5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69179922E946A100A919A4 /* LBBlock5ViewController.m */; };
@@ -115,6 +118,12 @@
 		ED3126D022F80224007FAF47 /* SEEDSelecteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDSelecteView.h; sourceTree = "<group>"; };
 		ED3126D322F80270007FAF47 /* LBAppDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBAppDefines.h; sourceTree = "<group>"; };
 		ED3126D422F8039C007FAF47 /* LBMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBMacro.h; sourceTree = "<group>"; };
+		ED6852682302632800E0B3D5 /* EHIHicarOperationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIHicarOperationBottomView.h; sourceTree = "<group>"; };
+		ED6852692302632800E0B3D5 /* EHIHicarOperationBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIHicarOperationBottomView.m; sourceTree = "<group>"; };
+		ED68526C23029F1800E0B3D5 /* SEEDPasswordInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDPasswordInputView.h; sourceTree = "<group>"; };
+		ED68526D23029F1800E0B3D5 /* SEEDPasswordInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDPasswordInputView.m; sourceTree = "<group>"; };
+		ED6852732303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIGetAndChangeCarInputView.h; sourceTree = "<group>"; };
+		ED6852742303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIGetAndChangeCarInputView.m; sourceTree = "<group>"; };
 		ED69178E22E08F5200A919A4 /* LBProtocolDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBProtocolDemoVC.h; sourceTree = "<group>"; };
 		ED69178F22E08F5200A919A4 /* LBProtocolDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBProtocolDemoVC.m; sourceTree = "<group>"; };
 		ED69179122E08FBF00A919A4 /* SEEDSelectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDSelectModel.h; sourceTree = "<group>"; };
@@ -247,6 +256,7 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ED6852712303D5C800E0B3D5 /* CGDemo */,
 				ED09726022FD2033002BE46C /* demo */,
 				ED09725B22FC13B7002BE46C /* Lock */,
 				EDC727A322F167FC00645DAD /* Load */,
@@ -350,6 +360,8 @@
 				ED09726722FD3F9A002BE46C /* EHiMemberShipRights.m */,
 				EDAB3CDE23010A7800C0225E /* EHIHiCarOperationTopView.h */,
 				EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */,
+				ED6852682302632800E0B3D5 /* EHIHicarOperationBottomView.h */,
+				ED6852692302632800E0B3D5 /* EHIHicarOperationBottomView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,6 +446,7 @@
 		ED3126CD22F801E7007FAF47 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED68526B23029EE900E0B3D5 /* SEEDPassWordTextField */,
 				ED3126CE22F80207007FAF47 /* SEEDSelectView */,
 			);
 			path = Tools;
@@ -455,6 +468,32 @@
 				ED3126D322F80270007FAF47 /* LBAppDefines.h */,
 			);
 			path = Defines;
+			sourceTree = "<group>";
+		};
+		ED68526B23029EE900E0B3D5 /* SEEDPassWordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				ED68526C23029F1800E0B3D5 /* SEEDPasswordInputView.h */,
+				ED68526D23029F1800E0B3D5 /* SEEDPasswordInputView.m */,
+			);
+			path = SEEDPassWordTextField;
+			sourceTree = "<group>";
+		};
+		ED6852712303D5C800E0B3D5 /* CGDemo */ = {
+			isa = PBXGroup;
+			children = (
+				ED6852722303D5DD00E0B3D5 /* Views */,
+			);
+			path = CGDemo;
+			sourceTree = "<group>";
+		};
+		ED6852722303D5DD00E0B3D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED6852732303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.h */,
+				ED6852742303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ED69178A22E08EF100A919A4 /* ProtocolAndSynthesize */ = {
@@ -836,6 +875,7 @@
 			files = (
 				EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */,
 				ED3126D122F80225007FAF47 /* SEEDSelecteView.m in Sources */,
+				ED6852752303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m in Sources */,
 				EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */,
 				ED0CCCAA22C0B1BD00E4D384 /* LBLoginCenter.m in Sources */,
 				ED69179A22E946A100A919A4 /* LBBlock5ViewController.m in Sources */,
@@ -844,12 +884,14 @@
 				ED09726522FD3F1A002BE46C /* LBEHIDemoViewController.m in Sources */,
 				ED09725F22FC13EC002BE46C /* LBLockViewController.m in Sources */,
 				ED0CCCB922C1B08000E4D384 /* LBLoginViewModel.m in Sources */,
+				ED68526A2302632800E0B3D5 /* EHIHicarOperationBottomView.m in Sources */,
 				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
 				EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */,
 				ED69179E22E9777D00A919A4 /* LBCodeViewController.m in Sources */,
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */,
 				EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */,
+				ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */,
 				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
 				ED69179022E08F5200A919A4 /* LBProtocolDemoVC.m in Sources */,

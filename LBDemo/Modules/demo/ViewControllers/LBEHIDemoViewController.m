@@ -8,8 +8,13 @@
 
 #import "LBEHIDemoViewController.h"
 #import "EHIHiCarOperationTopView.h"
+#import "EHIGetAndChangeCarInputView.h"
+
+#import "EHIHicarOperationBottomView.h"
 
 @interface LBEHIDemoViewController ()
+
+@property (nonatomic, strong) EHIGetAndChangeCarInputView *inputView;
 
 @end
 
@@ -17,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
     EHIHiCarOperationTopView *topView = [[EHIHiCarOperationTopView alloc] init];
     topView.didClickPhone = ^{
@@ -41,7 +46,56 @@
 
     //设置阴影的半径
     topView.layer.shadowRadius = 5;
-//
+    
+//    EHIGetAndChangeCarInputView *v = [[EHIGetAndChangeCarInputView alloc] init];
+//    
+//    [self.view addSubview:v];
+//    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(15);
+//        make.top.equalTo(topView.mas_bottom).with.offset(100);
+//        make.height.mas_equalTo(autoWidthOf6(39));
+//    }];
+//    
+//    self.inputView = v;
+    
+    
+    EHIHicarOperationBottomView *bottomView = [[EHIHicarOperationBottomView alloc] initWhtBottomViewWithStyle:EHIHicarBottomViewStyleAssigned];
+    bottomView.haveSearCar = YES;
+       [self.view addSubview:bottomView];
+    EHiWeakSelf(self)
+    bottomView.didClickBlock = ^(EHIHicarBottomEventType type) {
+        EHiStrongSelf(self)
+        [self doBottomJumpActionWithEvent:type];
+    };
+    
+    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.equalTo(topView.mas_bottom).with.offset(100);
+        make.height.mas_greaterThanOrEqualTo(autoHeightOf6(55));
+    }];
+}
+
+#pragma mark private
+- (void)doBottomJumpActionWithEvent:(EHIHicarBottomEventType)type {
+    
+    switch (type) {
+        case EHIHicarBottomEventTypeScan: {
+            NSLog(@"扫车牌取车");
+        }
+            break;
+        case EHIHicarBottomEventTypeConfirmGetCar: {
+            NSLog(@"确认取车事件");
+        }
+            break;
+        case EHIHicarBottomEventTypeChangeCar: {
+            NSLog(@" 更换车辆");
+        }
+            break;
+        case EHIHicarBottomEventTypeSearchCar: {
+            NSLog(@"寻找车辆");
+        }
+            break;
+    }
 }
 
 
