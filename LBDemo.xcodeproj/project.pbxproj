@@ -14,6 +14,7 @@
 		2C86F1652112D83600DF516A /* LBDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C86F1642112D83600DF516A /* LBDemoUITests.m */; };
 		2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5D96C2117F8EB007E2FB9 /* LBDemoDelegate.m */; };
 		2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5D9752117F9D7007E2FB9 /* LBHomeVC.m */; };
+		BE881E3523096D9D001BFF7A /* EHICarLicensePlateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BE881E3423096D9D001BFF7A /* EHICarLicensePlateTextField.m */; };
 		E0F45F7176B82EAF138FC476 /* Pods_LBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */; };
 		ED09725F22FC13EC002BE46C /* LBLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09725E22FC13EC002BE46C /* LBLockViewController.m */; };
 		ED09726522FD3F1A002BE46C /* LBEHIDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09726422FD3F1A002BE46C /* LBEHIDemoViewController.m */; };
@@ -89,6 +90,8 @@
 		499B2A141209DAA52AFCE560 /* Pods-LBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LBDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B353408141B2E20FA31FF409 /* Pods-LBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.release.xcconfig"; sourceTree = "<group>"; };
+		BE881E3323096D9D001BFF7A /* EHICarLicensePlateTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICarLicensePlateTextField.h; sourceTree = "<group>"; };
+		BE881E3423096D9D001BFF7A /* EHICarLicensePlateTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICarLicensePlateTextField.m; sourceTree = "<group>"; };
 		ED09725D22FC13EC002BE46C /* LBLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLockViewController.h; sourceTree = "<group>"; };
 		ED09725E22FC13EC002BE46C /* LBLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLockViewController.m; sourceTree = "<group>"; };
 		ED09726322FD3F1A002BE46C /* LBEHIDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBEHIDemoViewController.h; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */,
 				ED6852682302632800E0B3D5 /* EHIHicarOperationBottomView.h */,
 				ED6852692302632800E0B3D5 /* EHIHicarOperationBottomView.m */,
+				BE881E3323096D9D001BFF7A /* EHICarLicensePlateTextField.h */,
+				BE881E3423096D9D001BFF7A /* EHICarLicensePlateTextField.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -894,6 +899,7 @@
 				ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */,
 				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
+				BE881E3523096D9D001BFF7A /* EHICarLicensePlateTextField.m in Sources */,
 				ED69179022E08F5200A919A4 /* LBProtocolDemoVC.m in Sources */,
 				EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
