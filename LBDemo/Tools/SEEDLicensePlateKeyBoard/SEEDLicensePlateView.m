@@ -241,10 +241,207 @@ static UIColor *defaultInputViewBackGroundColor() {
     
 }
 
+- (void)p_updateConstraints {
+    [_contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.inputView.mas_bottom).with.offset(self.renderModel.contentInset.top);
+        make.bottom.mas_equalTo(-self.renderModel.contentInset.bottom);
+        make.left.mas_equalTo(self.renderModel.contentInset.left);
+        make.right.mas_equalTo(-self.renderModel.contentInset.right);
+    }];
+    
+    if (self.renderModel.style == SEDDLicensePlateStyleProvince) {
+        [self p_updatelayoutProvinceViews];
+    } else {
+        [self p_updatelayoutABCViews];
+    }
+    
+    [_deleteButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.bottom.mas_equalTo(0);
+        make.width.mas_equalTo(self.deleteButton.model.size.width);
+        make.height.equalTo(self.itemViews.lastObject);
+    }];
+    
+    [_abcOrProvinceButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.mas_equalTo(0);
+        make.width.mas_equalTo(self.abcOrProvinceButton.model.size.width);
+        make.height.equalTo(self.itemViews.lastObject);
+    }];
+    
+}
+
 - (UIView *)p_createKeyBoardView {
     UIView *contentView = [[UIView alloc] init];
     
     return contentView;
+}
+
+- (void)p_updatelayoutProvinceViews {
+    SEEDLicensePlateItemView *preObjc = self.itemViews.firstObject;
+    SEEDLicensePlateItemView *preLine = self.itemViews.firstObject;
+    
+    for (int i = 0; i < self.itemViews.count; i++) {
+        NSInteger lineIndex = i / self.renderModel.perLineCount;
+        NSInteger columnIdx = i % self.renderModel.perLineCount;
+        SEEDLicensePlateItemView *itemView = self.itemViews[i];
+        if (i == 0) {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.top.mas_equalTo(0);
+            }];
+            preObjc = itemView;
+        } else {
+            if (lineIndex == 0) {
+                [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                    make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
+                    make.top.equalTo(preObjc);
+                    make.bottom.equalTo(preObjc);
+                    make.width.equalTo(preObjc);
+                }];
+                //添加一个靠右约束
+                if (columnIdx == self.renderModel.perLineCount - 1) {
+                    [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                        make.right.mas_equalTo(0);
+                    }];
+                }
+                if (columnIdx == 0) {
+                    preLine = itemView;
+                }
+                preObjc = itemView;
+            } else {
+                if (columnIdx == 0) {
+                    if (lineIndex == self.renderModel.lineCount - 1) {
+                        [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                            make.left.mas_equalTo(self.abcOrProvinceButton.model.size.width + self.renderModel.itemSpace);
+                            make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
+                            make.height.equalTo(preLine);
+                            make.width.equalTo(preLine);
+                        }];
+                        
+                    } else {
+                        [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                            make.left.equalTo(preLine);
+                            make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
+                            make.height.equalTo(preLine);
+                            make.width.equalTo(preLine);
+                        }];
+                    }
+                    
+                    preLine = itemView;
+                    preObjc = itemView;
+                } else {
+                    [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                        make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
+                        make.top.equalTo(preObjc);
+                        make.bottom.equalTo(preObjc);
+                        make.width.equalTo(preObjc);
+                    }];
+                    preObjc = itemView;
+                }
+            }
+        }
+    }
+    
+    [self.itemViews.lastObject mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(0);
+    }];
+}
+
+- (void)p_updatelayoutABCViews {
+    SEEDLicensePlateItemView *preObjc = self.itemViews.firstObject;
+    SEEDLicensePlateItemView *preLine = self.itemViews.firstObject;
+    
+    for (int i = 0; i < 10; i++) {
+        SEEDLicensePlateItemView *itemView = self.itemViews[i];
+        if (i == 0) {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.top.mas_equalTo(0);
+            }];
+            preLine = itemView;
+        } else {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
+                make.top.equalTo(preObjc);
+                make.bottom.equalTo(preObjc);
+                make.width.equalTo(preObjc);
+            }];
+        }
+        
+        if (i == 9) {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.right.mas_equalTo(0);
+            }];
+        }
+        preObjc = itemView;
+    }
+    
+    for (int i = 10; i < 20; i++) {
+        SEEDLicensePlateItemView *itemView = self.itemViews[i];
+        if (i == 10) {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(preLine);
+                make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
+                make.height.equalTo(preLine);
+                make.width.equalTo(preLine);
+            }];
+            preLine = itemView;
+            
+        } else {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
+                make.top.equalTo(preObjc);
+                make.bottom.equalTo(preObjc);
+                make.width.equalTo(preObjc);
+            }];
+        }
+        preObjc = itemView;
+    }
+    
+    for (int i = 20; i < 29; i++) {
+        SEEDLicensePlateItemView *itemView = self.itemViews[i];
+        if (i == 20) {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(autoWidthOf6(30));
+                make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
+                make.height.equalTo(preLine);
+                make.width.equalTo(preLine);
+            }];
+            preLine = itemView;
+            
+        } else {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
+                make.top.equalTo(preObjc);
+                make.bottom.equalTo(preObjc);
+                make.width.equalTo(preObjc);
+            }];
+        }
+        preObjc = itemView;
+    }
+    
+    for (int i = 29; i < self.itemViews.count; i++) {
+        SEEDLicensePlateItemView *itemView = self.itemViews[i];
+        if (i == 29) {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(self.abcOrProvinceButton.model.size.width + self.renderModel.itemSpace);
+                make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
+                make.height.equalTo(preLine);
+                make.width.equalTo(preLine);
+            }];
+            preLine = itemView;
+            
+        } else {
+            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
+                make.top.equalTo(preObjc);
+                make.bottom.equalTo(preObjc);
+                make.width.equalTo(preObjc);
+            }];
+        }
+        preObjc = itemView;
+    }
+    
+    [self.itemViews.lastObject mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(0);
+    }];
 }
 
 - (void)p_layoutProvinceViews {
@@ -371,7 +568,7 @@ static UIColor *defaultInputViewBackGroundColor() {
         SEEDLicensePlateItemView *itemView = self.itemViews[i];
         if (i == 20) {
             [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(preLine);
+                make.left.mas_equalTo(autoWidthOf6(30));
                 make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
                 make.height.equalTo(preLine);
                 make.width.equalTo(preLine);
@@ -389,96 +586,26 @@ static UIColor *defaultInputViewBackGroundColor() {
         preObjc = itemView;
     }
     
-    
-    
-    for (int i = 0; i < self.itemViews.count; i++) {
-        NSInteger lineIndex = i / self.renderModel.perLineCount;
-        NSInteger columnIdx = i % self.renderModel.perLineCount;
+    for (int i = 29; i < self.itemViews.count; i++) {
         SEEDLicensePlateItemView *itemView = self.itemViews[i];
-        if (i == 0) {
-           
+        if (i == 29) {
+            [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.mas_equalTo(self.abcOrProvinceButton.model.size.width + self.renderModel.itemSpace);
+                make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
+                make.height.equalTo(preLine);
+                make.width.equalTo(preLine);
+            }];
+            preLine = itemView;
+            
         } else {
-            if (lineIndex == 0) {
-                [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
-                    make.top.equalTo(preObjc);
-                    make.bottom.equalTo(preObjc);
-                    make.width.equalTo(preObjc);
-                }];
-                //添加一个靠右约束
-                if (columnIdx == self.renderModel.perLineCount - 1) {
-                    [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                        make.right.mas_equalTo(0);
-                    }];
-                }
-                if (columnIdx == 0) {
-                    preLine = itemView;
-                }
-                preObjc = itemView;
-            } else if (lineIndex == 2) {
-                
-                if (columnIdx == 0) {
-                    if (lineIndex == self.renderModel.lineCount - 1) {
-                        [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                            make.left.mas_equalTo(self.abcOrProvinceButton.model.size.width + self.renderModel.itemSpace);
-                            make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
-                            make.height.equalTo(preLine);
-                            make.width.equalTo(preLine);
-                        }];
-                        
-                    } else {
-                        [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                            make.left.equalTo(preLine);
-                            make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
-                            make.height.equalTo(preLine);
-                            make.width.equalTo(preLine);
-                        }];
-                    }
-                    
-                    preLine = itemView;
-                    preObjc = itemView;
-                } else {
-                    [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                        make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
-                        make.top.equalTo(preObjc);
-                        make.bottom.equalTo(preObjc);
-                        make.width.equalTo(preObjc);
-                    }];
-                    preObjc = itemView;
-                }
-                
-            } else {
-                if (columnIdx == 0) {
-                    if (lineIndex == self.renderModel.lineCount - 1) {
-                        [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                            make.left.mas_equalTo(self.abcOrProvinceButton.model.size.width + self.renderModel.itemSpace);
-                            make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
-                            make.height.equalTo(preLine);
-                            make.width.equalTo(preLine);
-                        }];
-                        
-                    } else {
-                        [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                            make.left.equalTo(preLine);
-                            make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
-                            make.height.equalTo(preLine);
-                            make.width.equalTo(preLine);
-                        }];
-                    }
-                    
-                    preLine = itemView;
-                    preObjc = itemView;
-                } else {
-                    [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                        make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
-                        make.top.equalTo(preObjc);
-                        make.bottom.equalTo(preObjc);
-                        make.width.equalTo(preObjc);
-                    }];
-                    preObjc = itemView;
-                }
-            }
+            [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
+                make.top.equalTo(preObjc);
+                make.bottom.equalTo(preObjc);
+                make.width.equalTo(preObjc);
+            }];
         }
+        preObjc = itemView;
     }
     
     [self.itemViews.lastObject mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -501,7 +628,7 @@ static UIColor *defaultInputViewBackGroundColor() {
 /** ABC */
 - (NSArray<NSString *> *)p_getABC {
     NSArray *rst = @[
-                     @"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",
+                      @"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"0",
                       @"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",
                       @"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",
                       @"U",@"V",@"W",@"X",@"Y",@"Z"
@@ -529,6 +656,50 @@ static UIColor *defaultInputViewBackGroundColor() {
 /** 核心reload方法 */
 - (void)p_renderItemView {
     
+    NSArray *temp = [self p_getContentsStrings];
+    
+    if (self.renderModel.style == SEDDLicensePlateStyleProvince) {
+        
+        if (self.itemViews.count < temp.count) {
+            NSMutableArray *arr = self.itemViews.mutableCopy;
+            SEEDLicensePlateItemView *itemView = [[SEEDLicensePlateItemView alloc] init];
+            
+            SEEDLicensePlateItemModel *model = [[SEEDLicensePlateItemModel alloc] init];
+            
+            model.text = [self p_getContentsStrings].lastObject;
+            
+            [itemView renderViewWithModel:model];
+            
+            EHiWeakSelf(self)
+            [itemView addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                EHiStrongSelf(self)
+                [self doClickItemActionWithModel:model];
+            }];
+            [self addSubview:itemView];
+            [arr addObject:itemView];
+            
+            self.itemViews = arr.copy;
+            
+            [self.itemViews.lastObject mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.bottom.mas_equalTo(0);
+            }];
+            [self p_updateConstraints];
+        }
+        
+    } else {
+        if (self.itemViews.count > temp.count) {
+            
+            [self.itemViews.lastObject removeFromSuperview];
+            
+            NSMutableArray *arr = self.itemViews.mutableCopy;
+            [arr removeLastObject];
+            
+            self.itemViews = arr.copy;
+            
+            [self p_updateConstraints];
+        }
+    }
+    
     NSArray<NSString *> *arr = [self p_getContentsStrings];
     [self.renderModel.itemModels enumerateObjectsUsingBlock:^(SEEDLicensePlateItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (idx < arr.count) {
@@ -553,6 +724,8 @@ static UIColor *defaultInputViewBackGroundColor() {
     } else {
         self.abcOrProvinceButton.model.text = @"ABC";
     }
+    
+    [self.abcOrProvinceButton renderViewWithModel:self.abcOrProvinceButton.model];
 }
 
 /** 置空一些view */
