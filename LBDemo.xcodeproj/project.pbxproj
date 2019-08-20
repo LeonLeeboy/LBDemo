@@ -33,7 +33,6 @@
 		ED2C1C3122DC09DC0044893B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C3022DC09DC0044893B /* CoreMotion.framework */; };
 		ED2C1C3322DC09E60044893B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C3222DC09E60044893B /* libz.tbd */; };
 		ED3126D122F80225007FAF47 /* SEEDSelecteView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3126CF22F80224007FAF47 /* SEEDSelecteView.m */; };
-		ED36BB11230A7394009B6E14 /* EHINewEnergyLicensePlateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ED36BB10230A7394009B6E14 /* EHINewEnergyLicensePlateTextField.m */; };
 		ED36BB1D230AA5A1009B6E14 /* EHIManualInputLicensePlasteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED36BB1C230AA5A1009B6E14 /* EHIManualInputLicensePlasteViewController.m */; };
 		ED68526A2302632800E0B3D5 /* EHIHicarOperationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6852692302632800E0B3D5 /* EHIHicarOperationBottomView.m */; };
 		ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED68526D23029F1800E0B3D5 /* SEEDPasswordInputView.m */; };
@@ -123,8 +122,6 @@
 		ED3126D022F80224007FAF47 /* SEEDSelecteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDSelecteView.h; sourceTree = "<group>"; };
 		ED3126D322F80270007FAF47 /* LBAppDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBAppDefines.h; sourceTree = "<group>"; };
 		ED3126D422F8039C007FAF47 /* LBMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBMacro.h; sourceTree = "<group>"; };
-		ED36BB0F230A7394009B6E14 /* EHINewEnergyLicensePlateTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewEnergyLicensePlateTextField.h; sourceTree = "<group>"; };
-		ED36BB10230A7394009B6E14 /* EHINewEnergyLicensePlateTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewEnergyLicensePlateTextField.m; sourceTree = "<group>"; };
 		ED36BB1B230AA5A1009B6E14 /* EHIManualInputLicensePlasteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIManualInputLicensePlasteViewController.h; sourceTree = "<group>"; };
 		ED36BB1C230AA5A1009B6E14 /* EHIManualInputLicensePlasteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIManualInputLicensePlasteViewController.m; sourceTree = "<group>"; };
 		ED6852682302632800E0B3D5 /* EHIHicarOperationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIHicarOperationBottomView.h; sourceTree = "<group>"; };
@@ -375,8 +372,6 @@
 				ED6852692302632800E0B3D5 /* EHIHicarOperationBottomView.m */,
 				BE881E3323096D9D001BFF7A /* EHICarLicensePlateTextField.h */,
 				BE881E3423096D9D001BFF7A /* EHICarLicensePlateTextField.m */,
-				ED36BB0F230A7394009B6E14 /* EHINewEnergyLicensePlateTextField.h */,
-				ED36BB10230A7394009B6E14 /* EHINewEnergyLicensePlateTextField.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -915,7 +910,6 @@
 				EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
 				EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */,
-				ED36BB11230A7394009B6E14 /* EHINewEnergyLicensePlateTextField.m in Sources */,
 				ED09726822FD3F9A002BE46C /* EHiMemberShipRights.m in Sources */,
 				EDEB111922DEC98500E6B7FF /* People.m in Sources */,
 				2C86F1502112D83500DF516A /* main.m in Sources */,

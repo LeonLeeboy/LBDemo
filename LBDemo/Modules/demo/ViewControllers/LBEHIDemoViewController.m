@@ -9,15 +9,15 @@
 #import "LBEHIDemoViewController.h"
 #import "EHIHiCarOperationTopView.h"
 #import "EHIGetAndChangeCarInputView.h"
+#import "EHICarLicensePlateTextField.h"
 
 #import "EHIHicarOperationBottomView.h"
-#import "EHINewEnergyLicensePlateTextField.h"
 
 @interface LBEHIDemoViewController ()
 
 @property (nonatomic, strong) EHIGetAndChangeCarInputView *inputView;
 
-@property (nonatomic, strong) EHINewEnergyLicensePlateTextField *textField;
+@property (nonatomic, strong) EHICarLicensePlateTextField *textField;
 
 @end
 
@@ -68,7 +68,7 @@
     }];
     
 
-    EHINewEnergyLicensePlateTextField *textField = [[EHINewEnergyLicensePlateTextField alloc] init];
+    EHICarLicensePlateTextField *textField = [[EHICarLicensePlateTextField alloc] init];
     [self.view addSubview:textField];
     [textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(bottomView.mas_bottom).with.offset(100);

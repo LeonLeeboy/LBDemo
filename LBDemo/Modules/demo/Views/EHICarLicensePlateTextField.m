@@ -41,7 +41,6 @@ static UIColor *defaultNormalTitleColor() {
 
 @property (nonatomic, strong) EHICarLicensePlateTextFieldItemModel *itemModel;
 
-//@property (nonatomic, strong) UIControl *backGroundView;
 
 - (void)renderViewWithModel:(EHICarLicensePlateTextFieldItemModel *)model;
 
@@ -64,7 +63,43 @@ static UIColor *defaultNormalTitleColor() {
     [self setTitleColor:model.selectedTextColor?:defaultSelectedTitleColor() forState:UIControlStateSelected];
     [self setTitleColor:model.normalBackGroundColor?:defaultNormalTitleColor() forState:UIControlStateNormal];
     
+    UIImage *img = model.newEnergy? [self p_createEnergyBackGroundView].snapshotImage : [UIImage imageWithColor:model.normalBackGroundColor?:defaultNormalBackgroundColor()];
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
+    if (model.newEnergy) {
+        [self setBackgroundImage:[self p_createEnergyBackGroundView].snapshotImage forState:UIControlStateNormal];
+        
+        self.backgroundColor = [UIColor clearColor];
+    } else {
+        [self setBackgroundImage:[UIImage imageWithColor:model.normalBackGroundColor?:defaultNormalBackgroundColor()] forState:UIControlStateNormal];
+    }
+   
+
+   
+    
     self.selected = model.isSelected;
+}
+
+#pragma mark private
+- (UIView *)p_createEnergyBackGroundView {
+    UIView *energyControl = [[UIView alloc] init];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hicar_leaf"]];
+    UILabel *lab = [[UILabel alloc] init];
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.textColor = kEHIHexColor_7B7B7B;
+    lab.text = @"新能源";
+    lab.font = autoFONT(9);
+    
+    [energyControl addSubview:imgView];
+    [energyControl addSubview:lab];
+    
+    imgView.frame = CGRectMake( (autoWidthOf6(34) - autoWidthOf6(18)) / 2, autoHeightOf6(8), autoWidthOf6(18), autoHeightOf6(13));
+    lab.frame = CGRectMake(0, CGRectGetMaxY(imgView.frame) + autoHeightOf6(2), autoWidthOf6(34),autoHeightOf6(17));
+    
+    energyControl.backgroundColor = [kEHIHexColor_29B7B7 colorWithAlphaComponent:0.3];
+    
+    energyControl.frame =CGRectMake(0, 0,  autoWidthOf6(34), CGRectGetMaxY(lab.frame));
+    return energyControl;
 }
 
 #pragma mark getter && setter
@@ -83,7 +118,7 @@ static UIColor *defaultNormalTitleColor() {
 #pragma mark -
 #pragma mark 车牌框的View
 
-static NSInteger textFieldNumbers = 9;
+static NSInteger textFieldNumbers = 8;
 
 @interface EHICarLicensePlateTextField ()<UITextFieldDelegate>
 
@@ -306,6 +341,11 @@ static NSInteger textFieldNumbers = 9;
     }
     model.selected = YES;
     
+    //点击了 就隐藏响应图片
+    if (index == self.itemLength - 1) {
+        self.itemModels.lastObject.newEnergy = NO;
+    }
+    
     //重新渲染
     [self p_renderItemsView];
 }
@@ -334,6 +374,7 @@ static NSInteger textFieldNumbers = 9;
         } else if (self.currentIndex == self.itemLength - 1) {
             self.itemModels[self.currentIndex].text = text;
             self.itemModels[self.currentIndex].selected = YES;
+            self.itemModels.lastObject.newEnergy = NO;
             self.currentIndex = self.itemLength - 1;
         } else {
             self.itemModels[self.currentIndex].text = text;
@@ -342,6 +383,7 @@ static NSInteger textFieldNumbers = 9;
         }
     }
     self.didClickItem = NO;
+    self.textField.text = @"123456";
     
     self.carInfo = [self p_getCarInfo];
     NSLog(@"----carinfo ---- %@", self.carInfo);
@@ -374,7 +416,7 @@ static NSInteger textFieldNumbers = 9;
                 self.itemModels[self.currentIndex].text = text;
                 self.itemModels[self.currentIndex].selected = YES;
             }
-           
+            
         } else {
             self.currentIndex -= 1;
             self.itemModels[self.currentIndex].text = text;
@@ -383,6 +425,7 @@ static NSInteger textFieldNumbers = 9;
     }
     self.didClickItem = NO;
     
+    self.textField.text = @"123456";
     self.carInfo = [self p_getCarInfo];
     NSLog(@"----carinfo ---- %@", self.carInfo);
     //更新UI

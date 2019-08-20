@@ -7,11 +7,11 @@
 //
 
 #import "EHIManualInputLicensePlasteViewController.h"
-#import "EHINewEnergyLicensePlateTextField.h"
+#import "EHICarLicensePlateTextField.h"
 
 @interface EHIManualInputLicensePlasteViewController ()
 
-@property (nonatomic, strong) EHINewEnergyLicensePlateTextField *textField;
+@property (nonatomic, strong) EHICarLicensePlateTextField *textField;
 
 /** carImage */
 @property (nonatomic, strong) UIImageView *carImageView;
@@ -34,6 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = kEHIHexColor_FFFFFF;
     
     [self setupSubViews];
     
@@ -94,7 +96,7 @@
     }];
     
     RAC(self.confirmGetCar,enabled) = [RACObserve(self.textField, carInfo) map:^id _Nullable(NSString *  _Nullable value) {
-        return (value.length == 9 || value.length == 10)?@(YES):@(NO);
+        return (value.length == 7 || value.length == 8)?@(YES):@(NO);
     }];
 }
 
@@ -167,7 +169,6 @@
             make.width.height.mas_equalTo(18);
         }];
         [lab mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(autoWidthOf6(45));
             make.height.mas_greaterThanOrEqualTo(autoWidthOf6(21));
             make.centerY.equalTo(imgView);
             make.left.equalTo(imgView.mas_right).with.offset(autoWidthOf6(2));
@@ -184,9 +185,12 @@
     return _CarDetailControl;
 }
 
-- (EHINewEnergyLicensePlateTextField *)textField {
+- (EHICarLicensePlateTextField *)textField {
     if (!_textField) {
-        _textField = [[EHINewEnergyLicensePlateTextField alloc] init];
+        _textField = [[EHICarLicensePlateTextField alloc] init];
+        _textField.itemModels.lastObject.newEnergy = YES;
+        _textField.itemModels.lastObject.normalBackGroundColor = kEHIHexColor_29B7B7;
+        [_textField renderViewWithItemModels:_textField.itemModels];
     }
     return _textField;
 }

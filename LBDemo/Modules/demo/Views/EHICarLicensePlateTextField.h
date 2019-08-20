@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIColor *selectedTextColor;
 
+@property (nonatomic, assign) BOOL newEnergy;
 @end
 
 #pragma mark -
