@@ -11,37 +11,37 @@
 #pragma mark -
 #pragma mark -  渲染item模型
 
-@interface EHICarLicensePlateTextFieldItemModel : NSObject
-
-@property (nonatomic, assign, getter=isSelected) BOOL selected;
-
-@property (nonatomic, copy) NSString *text;
-
-@property (nonatomic, strong) UIColor *normalBorderColor;
-
-@property (nonatomic, strong) UIColor *selectedBorderColor;
-
-@property (nonatomic, strong) UIColor *normalBackGroundColor;
-
-@property (nonatomic, strong) UIColor *selectedBackGroundColor;
-
-@property (nonatomic, strong) UIColor *normalTextColor;
-
-@property (nonatomic, strong) UIColor *selectedTextColor;
-
-@property (nonatomic, assign) CGSize itemSize;
-
-@end
-
 @implementation EHICarLicensePlateTextFieldItemModel
 
+//YYModelSynthCoderAndHash
+
 @end
+
+
 #pragma mark -
 #pragma mark -  每个item的View
+
+static UIColor *defaultNormalBackgroundColor() {
+    return kEHIHexColor_F8F8F8;
+}
+
+static UIColor *defaultSelectedBackgroundColor() {
+    return  kEHIHexColor_FF7E00;
+}
+
+static UIColor *defaultSelectedTitleColor() {
+    return  kEHIHexColor_333333;
+}
+
+static UIColor *defaultNormalTitleColor() {
+    return  kEHIHexColor_333333;
+}
 
 @interface EHICarLicensePlateTextFieldItem : UIButton
 
 @property (nonatomic, strong) EHICarLicensePlateTextFieldItemModel *itemModel;
+
+//@property (nonatomic, strong) UIControl *backGroundView;
 
 - (void)renderViewWithModel:(EHICarLicensePlateTextFieldItemModel *)model;
 
@@ -49,20 +49,25 @@
 
 @implementation EHICarLicensePlateTextFieldItem
 
+#pragma mark public
+/** 渲染 */
 - (void)renderViewWithModel:(EHICarLicensePlateTextFieldItemModel *)model {
+    
     self.itemModel = model;
-    [self setTitle:model.text forState:UIControlStateNormal];
-    [self setTitle:model.text forState:UIControlStateSelected];
     
-    [self setBackgroundImage:[UIImage imageWithColor:model.normalBackGroundColor] forState:UIControlStateNormal];
-    [self setBackgroundImage:[UIImage imageWithColor:model.selectedBackGroundColor] forState:UIControlStateSelected];
+    [self setTitle:model.text?:@"" forState:UIControlStateNormal];
+    [self setTitle:model.text?:@"" forState:UIControlStateSelected];
     
-    [self setTitleColor:model.selectedTextColor forState:UIControlStateSelected];
-    [self setTitleColor:model.normalBackGroundColor forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage imageWithColor:model.normalBackGroundColor?:defaultNormalBackgroundColor()] forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage imageWithColor:model.selectedBackGroundColor?:defaultSelectedBackgroundColor()] forState:UIControlStateSelected];
+    
+    [self setTitleColor:model.selectedTextColor?:defaultSelectedTitleColor() forState:UIControlStateSelected];
+    [self setTitleColor:model.normalBackGroundColor?:defaultNormalTitleColor() forState:UIControlStateNormal];
     
     self.selected = model.isSelected;
 }
 
+#pragma mark getter && setter
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
     if (selected) {
@@ -76,18 +81,27 @@
 
 
 #pragma mark -
+#pragma mark 车牌框的View
 
 static NSInteger textFieldNumbers = 9;
 
-@interface EHICarLicensePlateTextField ()
+@interface EHICarLicensePlateTextField ()<UITextFieldDelegate>
 
 @property (nonatomic, strong, readwrite) NSArray<EHICarLicensePlateTextFieldItem *> *buttonArray;
 
 @property (nonatomic, strong, readwrite) UITextField *textField;
 
-@property (nonatomic, assign) NSInteger currentIndex;
+/** 当前index */
+@property (nonatomic, assign, readwrite) NSInteger currentIndex;
 
-@property (nonatomic, strong) NSArray<EHICarLicensePlateTextFieldItemModel *> *itemModels;
+@property (nonatomic, strong, readwrite) NSArray<EHICarLicensePlateTextFieldItemModel *> *itemModels;
+
+
+@property (nonatomic, assign, readwrite) NSInteger itemLength;
+
+@property (nonatomic, strong, readwrite) NSString *carInfo;
+
+@property (nonatomic, assign, readwrite) BOOL didClickItem;
 
 @end
 
@@ -96,14 +110,20 @@ static NSInteger textFieldNumbers = 9;
 #pragma mark life cycle
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        
+        self.itemLength = textFieldNumbers;
+        
         [self setupSubViews];
     }
     return self;
 }
 
 - (void)setupSubViews {
-
+    
     [self addSubview:self.textField];
+    
+    self.textField.delegate = self;
+    
     
     EHiWeakSelf(self)
     [self.buttonArray enumerateObjectsUsingBlock:^(EHICarLicensePlateTextFieldItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -111,6 +131,7 @@ static NSInteger textFieldNumbers = 9;
         [self addSubview:obj];
     }];
     
+    //布局
     [self layoutViews];
 }
 
@@ -118,46 +139,328 @@ static NSInteger textFieldNumbers = 9;
     [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
+    
+    //小圆点 之前的两个框
+    EHICarLicensePlateTextFieldItem *firstItem = self.buttonArray[0];
+    EHICarLicensePlateTextFieldItem *secondItem = self.buttonArray[1];
+    [firstItem mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.bottom.mas_equalTo(0);
+        make.height.equalTo(firstItem.superview);
+        make.width.mas_equalTo(autoWidthOf6(34));
+    }];
+    
+    [secondItem mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(firstItem.mas_right).with.offset(autoWidthOf6(9));
+        make.top.bottom.equalTo(firstItem);
+        make.width.mas_equalTo(autoWidthOf6(34));
+    }];
+    
+    //小圆点
+    UIView *dot = [[UIView alloc] init];
+    [self addSubview:dot];
+    dot.backgroundColor = kEHIHexColor_CCCCCC;
+    dot.layer.cornerRadius = autoWidthOf6(3);
+    
+    [dot mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(secondItem.mas_right).with.offset(autoWidthOf6(5));
+        make.width.height.mas_equalTo(autoWidthOf6(6));
+        make.centerY.equalTo(dot.superview);
+    }];
+    
+    //原点之后的框
+    EHICarLicensePlateTextFieldItem *preObjc;
+    for (int i = 2; i < self.buttonArray.count; ++i) {
+        if (i >= self.buttonArray.count) {
+            break;
+        }
+        
+        EHICarLicensePlateTextFieldItem *obj = self.buttonArray[i];
+        if (i == 2) {
+            [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(dot.mas_right).with.offset(autoWidthOf6(5));
+                make.top.bottom.equalTo(obj.superview);
+                make.width.mas_equalTo(autoWidthOf6(34));
+            }];
+            preObjc = obj;
+        } else {
+            [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(preObjc.mas_right).with.offset(autoWidthOf6(9));
+                make.top.bottom.equalTo(preObjc);
+                make.width.equalTo(preObjc);
+            }];
+            preObjc = obj;
+        }
+        
+        //最后一个
+        if (i == self.buttonArray.count - 1) {
+            [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.mas_equalTo(0);
+            }];
+        }
+    }
+}
+
+
+#pragma mark Public
+- (void)licensePlateBecomeFirstResponder {
+    [self.textField becomeFirstResponder];
+}
+
+- (void)renderViewWithItemModels:(NSArray<EHICarLicensePlateTextFieldItemModel *> *)items {
+    
+    [self p_emptyData];
+    [self p_emptySubViews];
+    
+    __block NSInteger index;
+    [items enumerateObjectsUsingBlock:^(EHICarLicensePlateTextFieldItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.isSelected) {
+            index = idx;
+        }
+    }];
+    
+    self.currentIndex = index;
+    self.didClickItem = YES;
+    
+    self.itemLength = items.count;
+    self.itemModels = [items copy];
+    
+    [self setupSubViews];
+    
+    //渲染
+    [self p_renderItemsView];
+    
+    
+}
+
+#pragma mark private
+/** 渲染每一个Item */
+- (void)p_renderItemsView {
+    for (int i = 0; i < self.buttonArray.count; ++i) {
+        EHICarLicensePlateTextFieldItem *obj = self.buttonArray[i];
+        if (i >= self.itemModels.count) {
+            return;
+        }
+        [obj renderViewWithModel:self.itemModels[i]];
+    }
+}
+
+/** 取消所有的选择 */
+- (void)p_cancelAllItemsSelected {
+    [self.itemModels enumerateObjectsUsingBlock:^(EHICarLicensePlateTextFieldItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.selected = NO;
+    }];
+}
+
+/** 是否是删除 */
+- (BOOL)p_isDeleteWithStr:(NSString *)text {
+    BOOL rst = NO;
+    if ([text isEqualToString:@""]) {
+        rst = YES;
+    }
+    return rst;
+}
+
+/** 清空数据 */
+- (void)p_emptyData {
+    self.buttonArray = nil;
+    self.itemModels = nil;
+}
+
+/** 清空子view */
+- (void)p_emptySubViews {
+    [self removeAllSubviews];
+}
+
+/** 获得车牌号 */
+- (NSString *)p_getCarInfo {
+    __block NSString *rst = @"";
+    [self.itemModels enumerateObjectsUsingBlock:^(EHICarLicensePlateTextFieldItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        rst = [NSString stringWithFormat:@"%@%@",rst,obj.text?:@""];
+    }];
+    
+    return rst;
 }
 
 #pragma mark Action
+/** 点击item事件 */
 - (void)didClickItemView:(EHICarLicensePlateTextFieldItem *)sender {
-
+    self.didClickItem = YES;
+    
     [self.textField becomeFirstResponder];
     
     NSInteger index = sender.tag;
+    //暂存选中的index
+    self.currentIndex = index;
     
+    if (sender.selected) {
+        return;
+    }
+    
+    //取消掉所有的选中状态
+    [self p_cancelAllItemsSelected];
+    
+    //设置选中状态
     EHICarLicensePlateTextFieldItemModel *model;
     if (self.itemModels.count > index) {
         model = self.itemModels[index];
     }
-    
     model.selected = YES;
     
-    self.currentIndex = index;
+    //重新渲染
+    [self p_renderItemsView];
 }
 
+/** 输入事件 */
+- (void)doInputActionWithText:(NSString *)text {
+    
+    if (self.currentIndex >= self.itemModels.count) {
+        self.currentIndex -= 1;
+        return;
+    }
+    
+    [self p_cancelAllItemsSelected];
+    
+    if (self.didClickItem) {
+        self.itemModels[self.currentIndex].text = text;
+        self.itemModels[self.currentIndex].selected = YES;
+        if (self.currentIndex != self.itemLength - 1) {
+            self.currentIndex += 1;
+        }
+    } else {
+        if (self.currentIndex == 0) {
+            self.itemModels[self.currentIndex].text = text;
+            self.itemModels[self.currentIndex].selected = YES;
+            self.currentIndex = self.currentIndex + 1;
+        } else if (self.currentIndex == self.itemLength - 1) {
+            self.itemModels[self.currentIndex].text = text;
+            self.itemModels[self.currentIndex].selected = YES;
+            self.currentIndex = self.itemLength - 1;
+        } else {
+            self.itemModels[self.currentIndex].text = text;
+            self.itemModels[self.currentIndex].selected = YES;
+            self.currentIndex = self.currentIndex + 1;
+        }
+    }
+    self.didClickItem = NO;
+    
+    self.carInfo = [self p_getCarInfo];
+    NSLog(@"----carinfo ---- %@", self.carInfo);
+    [self p_renderItemsView];
+    
+}
+
+/** 删除事件 */
+- (void)doDeleteActionWithText:(NSString *)text {
+    if (self.currentIndex >= self.itemModels.count) {
+        self.currentIndex = self.itemModels.count - 1;
+        return;
+    }
+    
+    [self p_cancelAllItemsSelected];
+    
+    if (self.didClickItem) {
+        self.itemModels[self.currentIndex].text = text;
+        self.itemModels[self.currentIndex].selected = YES;
+    } else {
+        if (self.currentIndex == 0) {
+            self.itemModels[self.currentIndex].text = text;
+            self.itemModels[self.currentIndex].selected = YES;
+        }else if (self.currentIndex == self.itemLength - 1) {
+            if ([self.itemModels[self.currentIndex].text isEqualToString:@""]) {
+                self.currentIndex = self.currentIndex - 1;
+                self.itemModels[self.currentIndex].text = text;
+                self.itemModels[self.currentIndex].selected = YES;
+            } else {
+                self.itemModels[self.currentIndex].text = text;
+                self.itemModels[self.currentIndex].selected = YES;
+            }
+           
+        } else {
+            self.currentIndex -= 1;
+            self.itemModels[self.currentIndex].text = text;
+            self.itemModels[self.currentIndex].selected = YES;
+        }
+    }
+    self.didClickItem = NO;
+    
+    self.carInfo = [self p_getCarInfo];
+    NSLog(@"----carinfo ---- %@", self.carInfo);
+    //更新UI
+    [self p_renderItemsView];
+}
+
+#pragma mark delegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSLog(@"----shouldChangeCharactersInRange----%@",textField.text);
+    NSLog(@"----shouldChangeCharactersInRange----%@",string);
+    if ([self p_isDeleteWithStr:string]) {
+        // 删除事件
+        [self doDeleteActionWithText:string];
+    } else {
+        //输入事件
+        [self doInputActionWithText:string];
+    }
+    if (range.location + string.length <= self.itemLength) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
 
 #pragma mark getter
 - (NSArray<EHICarLicensePlateTextFieldItem *> *)buttonArray {
     if (!_buttonArray) {
-        NSMutableArray *contentArr = [NSMutableArray arrayWithCapacity:textFieldNumbers];
-        for (int i = 0; i < textFieldNumbers; ++i) {
+        
+        NSMutableArray *contentArr = [NSMutableArray arrayWithCapacity:self.itemLength];
+        
+        for (int i = 0; i < self.itemLength; ++i) {
+            
             EHICarLicensePlateTextFieldItem *itemView = [[EHICarLicensePlateTextFieldItem alloc] init];
+            
             [itemView addTarget:self action:@selector(didClickItemView:) forControlEvents:UIControlEventTouchUpInside];
+            
             itemView.tag = i;
+            //初始化渲染模型
+            EHICarLicensePlateTextFieldItemModel *model = self.itemModels[i];
+            [itemView renderViewWithModel:model];
+            
             [contentArr addObject:itemView];
         }
+        
         _buttonArray = contentArr.copy;
     }
     return _buttonArray;
 }
 
+- (NSArray<EHICarLicensePlateTextFieldItemModel *> *)itemModels {
+    if (!_itemModels) {
+        NSMutableArray *contentArr = [NSMutableArray arrayWithCapacity:self.itemLength];
+        for (int i = 0; i < self.itemLength; ++i) {
+            EHICarLicensePlateTextFieldItemModel *model = [[EHICarLicensePlateTextFieldItemModel alloc] init];
+            if (i == 0) {
+                model.selected = YES;
+            }
+            [contentArr addObject:model];
+        }
+        _itemModels = contentArr.copy;
+    }
+    return _itemModels;
+}
+
 - (UITextField *)textField {
     if (!_textField) {
         _textField = [[UITextField alloc] init];
+        _textField.tintColor = [UIColor clearColor];
+        _textField.textColor = [UIColor clearColor];
     }
     return _textField;
 }
+
+/** 设置自定义键盘 */
+- (void)setInputView:(UIView *)inputView {
+    self.textField.inputView = inputView;
+}
+
+
 
 @end

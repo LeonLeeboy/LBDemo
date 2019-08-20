@@ -11,10 +11,13 @@
 #import "EHIGetAndChangeCarInputView.h"
 
 #import "EHIHicarOperationBottomView.h"
+#import "EHINewEnergyLicensePlateTextField.h"
 
 @interface LBEHIDemoViewController ()
 
 @property (nonatomic, strong) EHIGetAndChangeCarInputView *inputView;
+
+@property (nonatomic, strong) EHINewEnergyLicensePlateTextField *textField;
 
 @end
 
@@ -47,16 +50,6 @@
     //设置阴影的半径
     topView.layer.shadowRadius = 5;
     
-//    EHIGetAndChangeCarInputView *v = [[EHIGetAndChangeCarInputView alloc] init];
-//    
-//    [self.view addSubview:v];
-//    [v mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(15);
-//        make.top.equalTo(topView.mas_bottom).with.offset(100);
-//        make.height.mas_equalTo(autoWidthOf6(39));
-//    }];
-//    
-//    self.inputView = v;
     
     
     EHIHicarOperationBottomView *bottomView = [[EHIHicarOperationBottomView alloc] initWhtBottomViewWithStyle:EHIHicarBottomViewStyleAssigned];
@@ -73,6 +66,24 @@
         make.top.equalTo(topView.mas_bottom).with.offset(100);
         make.height.mas_greaterThanOrEqualTo(autoHeightOf6(55));
     }];
+    
+
+    EHINewEnergyLicensePlateTextField *textField = [[EHINewEnergyLicensePlateTextField alloc] init];
+    [self.view addSubview:textField];
+    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(bottomView.mas_bottom).with.offset(100);
+        make.left.mas_equalTo(autoWidthOf6(17));
+        make.right.mas_equalTo(-autoWidthOf6(18));
+        make.height.mas_equalTo(autoHeightOf6(45));
+    }];
+    self.textField = textField;
+    [self.textField licensePlateBecomeFirstResponder];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.textField licensePlateBecomeFirstResponder];
 }
 
 #pragma mark private
