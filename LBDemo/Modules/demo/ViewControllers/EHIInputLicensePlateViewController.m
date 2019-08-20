@@ -1,17 +1,18 @@
 //
-//  EHIManualInputLicensePlasteViewController.m
+//  EHIInputLicensePlateViewController.m
 //  1haiiPhone
 //
 //  Created by 李兵 on 2019/8/19.
 //  Copyright © 2019 EHi. All rights reserved.
 //
 
-#import "EHIManualInputLicensePlasteViewController.h"
-#import "EHICarLicensePlateTextField.h"
+#import "EHIInputLicensePlateViewController.h"
+#import "EHINewEnergyLicensePlateTextField.h"
+#import "SEEDLicensePlateView.h"
 
-@interface EHIManualInputLicensePlasteViewController ()
+@interface EHIInputLicensePlateViewController ()
 
-@property (nonatomic, strong) EHICarLicensePlateTextField *textField;
+@property (nonatomic, strong) EHINewEnergyLicensePlateTextField *textField;
 
 /** carImage */
 @property (nonatomic, strong) UIImageView *carImageView;
@@ -28,7 +29,7 @@
 
 @end
 
-@implementation EHIManualInputLicensePlasteViewController
+@implementation EHIInputLicensePlateViewController
 
 #pragma mark life cycle
 
@@ -135,6 +136,8 @@
     return carDetailControl;
 }
 
+
+
 #pragma mark getter
 - (UIImageView *)carImageView {
     if (!_carImageView) {
@@ -171,7 +174,7 @@
         [lab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_greaterThanOrEqualTo(autoWidthOf6(21));
             make.centerY.equalTo(imgView);
-            make.left.equalTo(imgView.mas_right).with.offset(autoWidthOf6(2));
+            make.left.equalTo(imgView.mas_right).with.offset(autoWidthOf6(6));
             make.right.mas_equalTo(0);
         }];
     }
@@ -185,12 +188,9 @@
     return _CarDetailControl;
 }
 
-- (EHICarLicensePlateTextField *)textField {
+- (EHINewEnergyLicensePlateTextField *)textField {
     if (!_textField) {
-        _textField = [[EHICarLicensePlateTextField alloc] init];
-        _textField.itemModels.lastObject.newEnergy = YES;
-        _textField.itemModels.lastObject.normalBackGroundColor = kEHIHexColor_29B7B7;
-        [_textField renderViewWithItemModels:_textField.itemModels];
+        _textField = [[EHINewEnergyLicensePlateTextField alloc] init];
     }
     return _textField;
 }

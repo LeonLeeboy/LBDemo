@@ -63,7 +63,7 @@ static int count = 0;
 
     LBModelHomeView *m2 = LBModelHomeView.new;
     m2.displayName = @"RACSignal 的基本操作";
-    m2.targetName = @"EHIManualInputLicensePlasteViewController";
+    m2.targetName = @"EHIInputLicensePlateViewController";
 
     LBModelHomeView *m3 = LBModelHomeView.new;
     m3.displayName = @"深拷贝，浅拷贝的实现，以及YYKit中帮我们实现的玩意";

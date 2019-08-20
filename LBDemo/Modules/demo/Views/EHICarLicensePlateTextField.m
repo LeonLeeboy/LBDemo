@@ -7,6 +7,7 @@
 //
 
 #import "EHICarLicensePlateTextField.h"
+#import "SEEDLicensePlateView.h"
 
 #pragma mark -
 #pragma mark -  渲染item模型
@@ -63,8 +64,6 @@ static UIColor *defaultNormalTitleColor() {
     [self setTitleColor:model.selectedTextColor?:defaultSelectedTitleColor() forState:UIControlStateSelected];
     [self setTitleColor:model.normalBackGroundColor?:defaultNormalTitleColor() forState:UIControlStateNormal];
     
-    UIImage *img = model.newEnergy? [self p_createEnergyBackGroundView].snapshotImage : [UIImage imageWithColor:model.normalBackGroundColor?:defaultNormalBackgroundColor()];
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
     if (model.newEnergy) {
         [self setBackgroundImage:[self p_createEnergyBackGroundView].snapshotImage forState:UIControlStateNormal];
         
@@ -72,9 +71,9 @@ static UIColor *defaultNormalTitleColor() {
     } else {
         [self setBackgroundImage:[UIImage imageWithColor:model.normalBackGroundColor?:defaultNormalBackgroundColor()] forState:UIControlStateNormal];
     }
-   
-
-   
+    
+    
+    
     
     self.selected = model.isSelected;
 }
@@ -118,9 +117,9 @@ static UIColor *defaultNormalTitleColor() {
 #pragma mark -
 #pragma mark 车牌框的View
 
-static NSInteger textFieldNumbers = 8;
+static NSInteger textFieldNumbers = 7;
 
-@interface EHICarLicensePlateTextField ()<UITextFieldDelegate>
+@interface EHICarLicensePlateTextField ()<UITextFieldDelegate,SEEDLicensePlateDelegate>
 
 @property (nonatomic, strong, readwrite) NSArray<EHICarLicensePlateTextFieldItem *> *buttonArray;
 
@@ -362,10 +361,10 @@ static NSInteger textFieldNumbers = 8;
     
     if (self.didClickItem) {
         self.itemModels[self.currentIndex].text = text;
-        self.itemModels[self.currentIndex].selected = YES;
         if (self.currentIndex != self.itemLength - 1) {
             self.currentIndex += 1;
         }
+        self.itemModels[self.currentIndex].selected = YES;
     } else {
         if (self.currentIndex == 0) {
             self.itemModels[self.currentIndex].text = text;
@@ -378,8 +377,8 @@ static NSInteger textFieldNumbers = 8;
             self.currentIndex = self.itemLength - 1;
         } else {
             self.itemModels[self.currentIndex].text = text;
-            self.itemModels[self.currentIndex].selected = YES;
             self.currentIndex = self.currentIndex + 1;
+            self.itemModels[self.currentIndex].selected = YES;
         }
     }
     self.didClickItem = NO;
@@ -450,6 +449,34 @@ static NSInteger textFieldNumbers = 8;
     }
 }
 
+- (void)licensePlateView:(SEEDLicensePlateView *)licensePlateView didClickText:(NSString *)text clickEvent:(SEDDLicesePlateViewEvent)clickEvent {
+    
+    switch (clickEvent) {
+        case SEDDLicesePlateViewEventClickItem: { // 普通按钮
+            [self doInputActionWithText:text];
+        }
+            break;
+        case SEDDLicesePlateViewEventClickABC: { // 点击ABC
+            [licensePlateView renderViewWithWithStyle:SEDDLicensePlateStyleProvince];
+        }
+            break;
+        case SEDDLicesePlateViewEventClickDel: { //点击删除
+            // 删除事件
+            [self doDeleteActionWithText:text];
+        }
+            break;
+        case SEDDLicesePlateViewEventClickLicensePlate: { //点击车牌
+            [licensePlateView renderViewWithWithStyle:SEDDLicensePlateStyleABC];
+        }
+            break;
+        case SEDDLicesePlateViewEventClickDone: { //完成事件
+            
+        }
+            break;
+    }
+    
+}
+
 #pragma mark getter
 - (NSArray<EHICarLicensePlateTextFieldItem *> *)buttonArray {
     if (!_buttonArray) {
@@ -495,6 +522,10 @@ static NSInteger textFieldNumbers = 8;
         _textField = [[UITextField alloc] init];
         _textField.tintColor = [UIColor clearColor];
         _textField.textColor = [UIColor clearColor];
+        SEEDLicensePlateView *inputView = [[SEEDLicensePlateView alloc] initWithStyle:SEDDLicensePlateStyleProvince];
+        inputView.delegate = self;
+        inputView.frame = CGRectMake(0, 0, Main_Screen_Width, autoHeightOf6(231));
+        _textField.inputView = inputView;
     }
     return _textField;
 }

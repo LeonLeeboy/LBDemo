@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LBDemo/Modules/demo/ViewControllers/LBEHIDemoViewController.m"
-            timestampString = "587962246.005487"
+            timestampString = "587968332.96323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -169,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/Modules/demo/Views/EHINewEnergyLicensePlateTextField.m"
-            timestampString = "587960106.266082"
+            filePath = "LBDemo/Tools/SEEDLicensePlateKeyBoard/SEEDLicensePlateView.m"
+            timestampString = "587996348.771769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-EnergyControlDidClick"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
+            landmarkName = "-p_renderItemView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,13 +185,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/Modules/demo/Views/EHINewEnergyLicensePlateTextField.m"
-            timestampString = "587960106.266229"
+            filePath = "LBDemo/Tools/SEEDLicensePlateKeyBoard/SEEDLicensePlateView.m"
+            timestampString = "587996348.772059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-EnergyControlDidClick"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
+            landmarkName = "-p_renderItemView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,12 +202,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LBDemo/Modules/demo/Views/EHICarLicensePlateTextField.m"
-            timestampString = "587962246.005756"
+            timestampString = "587996348.772249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "-p_createEnergyBackGroundView"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
+            landmarkName = "-licensePlateView:didClickText:clickEvent:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

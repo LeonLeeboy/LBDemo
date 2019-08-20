@@ -1,5 +1,5 @@
 //
-//  EHIManualInputLicensePlasteViewController.h
+//  EHIInputLicensePlateViewController.h
 //  LBDemo
 //
 //  Created by 李兵 on 2019/8/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EHIManualInputLicensePlasteViewController : UIViewController
+@interface EHIInputLicensePlateViewController : UIViewController
 
 //
 ///** 车辆信息 */
