@@ -8,7 +8,11 @@
 
 #import "EHIInputLicensePlateViewController.h"
 #import "EHINewEnergyLicensePlateTextField.h"
-#import "SEEDLicensePlateView.h"
+
+#import "EHiMemberShipRightsView.h"
+#import "EHiMemberShipRightsModel.h"
+#import "EHIPreAuthDetailView.h"
+#import "EHIOnlinePreAuthModel.h"
 
 @interface EHIInputLicensePlateViewController ()
 
@@ -27,6 +31,10 @@
 /** value : "车牌号码" */
 @property (nonatomic, strong) UILabel *carNumberLab;
 
+@property (nonatomic, strong) EHiMemberShipRightsView *memberRightsView;
+
+@property (nonatomic, strong) EHIPreAuthDetailView *onlinePreAuthDetail;
+
 @end
 
 @implementation EHIInputLicensePlateViewController
@@ -36,11 +44,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = kEHIHexColor_FFFFFF;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.title = @"输入车牌";
     
     [self setupSubViews];
+
     
-    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[IQKeyboardManager sharedManager] setEnable:NO];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
+    [self.textField licensePlateResignFirstResponder];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[IQKeyboardManager sharedManager] setEnable:NO];
+    [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
+    [self.textField licensePlateBecomeFirstResponder];
 }
 
 - (void)setupSubViews {
@@ -51,9 +75,10 @@
     [self.view addSubview:self.textField];
     [self.view addSubview:self.scanControl];
     [self.view addSubview:self.confirmGetCar];
+    [self.view addSubview:self.memberRightsView];
+    [self.view addSubview:self.onlinePreAuthDetail];
     
     [self layoutViews];
-    
     
 }
 
@@ -96,9 +121,61 @@
         make.top.equalTo(self.scanControl.mas_bottom).with.offset(autoHeightOf6(29));
     }];
     
+    [_memberRightsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.confirmGetCar.mas_bottom).with.offset(autoHeightOf6(20));
+        make.left.mas_equalTo(autoWidthOf6(22));
+        make.right.mas_equalTo(-autoWidthOf6(15));
+    }];
+    
+    [_onlinePreAuthDetail mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.memberRightsView.mas_bottom).with.offset(autoHeightOf6(20));
+        make.left.mas_equalTo(autoWidthOf6(22));
+        make.right.mas_equalTo(-autoWidthOf6(15));
+    }];
+    
     RAC(self.confirmGetCar,enabled) = [RACObserve(self.textField, carInfo) map:^id _Nullable(NSString *  _Nullable value) {
         return (value.length == 7 || value.length == 8)?@(YES):@(NO);
     }];
+    
+    
+}
+
+#pragma mark Action
+/** 点击扫车牌事件 */
+- (void)doScanLicensePlateAction {
+    NSLog(@"点击扫车牌事件");
+    
+    NSString *str = @"湖aA1234*7";
+    NSMutableArray<NSString *> *arr = [NSMutableArray array];
+    for (int i = 0; i < str.length; i++) {
+        NSRange range = NSMakeRange(i, 1);
+        NSString *sub = [str substringWithRange:range];
+        [arr addObject:sub];
+    }
+    NSLog(@"asdf");
+    
+    [self.textField licensePlateResignFirstResponder];
+}
+
+/** 确认还车事件 */
+- (void)doConfirmGetCarAction {
+    NSLog(@"确认取车事件");
+    [self.textField licensePlateResignFirstResponder];
+    
+}
+
+/** 跳转车辆详情 */
+- (void)doCarDetailAction {
+    NSLog(@"跳转车辆详情");
+    [self.textField licensePlateResignFirstResponder];
+}
+
+- (void)doClickMemberShipActionWithModel:(EHiMemberShipRightsItemModel *)model {
+    NSLog(@"点击了");
+}
+
+- (void)doClickPreAuthActionWithModel:(EHIOnlinePreAuthItemModel *)model {
+     NSLog(@"点击了");
 }
 
 
@@ -135,8 +212,6 @@
     
     return carDetailControl;
 }
-
-
 
 #pragma mark getter
 - (UIImageView *)carImageView {
@@ -177,6 +252,12 @@
             make.left.equalTo(imgView.mas_right).with.offset(autoWidthOf6(6));
             make.right.mas_equalTo(0);
         }];
+        EHiWeakSelf(self)
+        [_scanControl addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            EHiStrongSelf(self)
+            [self doScanLicensePlateAction];
+        }];
+        
     }
     return _scanControl;
 }
@@ -184,6 +265,11 @@
 - (UIControl *)CarDetailControl {
     if (!_CarDetailControl) {
         _CarDetailControl = [self p_getCarDetailView];
+        EHiWeakSelf(self)
+        [_CarDetailControl addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            EHiStrongSelf(self)
+            [self doCarDetailAction];
+        }];
     }
     return _CarDetailControl;
 }
@@ -219,8 +305,38 @@
         
         [_confirmGetCar setTitleColor:kEHIHexColor_FFFFFF forState:UIControlStateNormal];
         [_confirmGetCar setTitleColor:kEHIHexColor_FFFFFF forState:UIControlStateDisabled];
+        
+        EHiWeakSelf(self)
+        [_confirmGetCar addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+            EHiStrongSelf(self)
+            [self doConfirmGetCarAction];
+        }];
     }
     return _confirmGetCar;
+}
+
+- (EHiMemberShipRightsView *)memberRightsView {
+    if (!_memberRightsView) {
+        _memberRightsView = [[EHiMemberShipRightsView alloc] init];
+        EHiWeakSelf(self)
+        _memberRightsView.didClick = ^(id object) {
+            EHiStrongSelf(self)
+            [self doClickMemberShipActionWithModel:object];
+        };
+    }
+    return _memberRightsView;
+}
+
+- (EHIPreAuthDetailView *)onlinePreAuthDetail {
+    if (!_onlinePreAuthDetail) {
+        _onlinePreAuthDetail = [[EHIPreAuthDetailView alloc] init];
+        EHiWeakSelf(self)
+        _onlinePreAuthDetail.didClick = ^(id object) {
+            EHiStrongSelf(self)
+            [self doClickPreAuthActionWithModel:object];
+        };
+    }
+    return _onlinePreAuthDetail;
 }
 
 @end

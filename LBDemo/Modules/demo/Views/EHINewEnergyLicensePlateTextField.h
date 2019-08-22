@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 成为第一响应者 */
 - (void)licensePlateBecomeFirstResponder;
 
+- (void)licensePlateResignFirstResponder;
+
 @end
 
 NS_ASSUME_NONNULL_END

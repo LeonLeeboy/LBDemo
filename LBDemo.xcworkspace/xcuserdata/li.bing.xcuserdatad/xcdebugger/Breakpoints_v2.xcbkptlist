@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LBDemo/Modules/demo/ViewControllers/LBEHIDemoViewController.m"
-            timestampString = "587968332.96323"
+            timestampString = "588150794.6059361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -169,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/Tools/SEEDLicensePlateKeyBoard/SEEDLicensePlateView.m"
-            timestampString = "587996348.771769"
+            filePath = "LBDemo/Modules/demo/ViewControllers/EHIInputLicensePlateViewController.m"
+            timestampString = "588154916.896516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "468"
-            endingLineNumber = "468"
-            landmarkName = "-p_renderItemView"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-doClickMemberShipActionWithModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,13 +185,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/Tools/SEEDLicensePlateKeyBoard/SEEDLicensePlateView.m"
-            timestampString = "587996348.772059"
+            filePath = "LBDemo/Modules/demo/ViewControllers/EHIInputLicensePlateViewController.m"
+            timestampString = "588154916.896791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "476"
-            endingLineNumber = "476"
-            landmarkName = "-p_renderItemView"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "-doClickPreAuthActionWithModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -201,13 +201,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/Modules/demo/Views/EHICarLicensePlateTextField.m"
-            timestampString = "587996348.772249"
+            filePath = "LBDemo/Modules/demo/ViewControllers/EHIInputLicensePlateViewController.m"
+            timestampString = "588154916.896966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
-            landmarkName = "-licensePlateView:didClickText:clickEvent:"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-doScanLicensePlateAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

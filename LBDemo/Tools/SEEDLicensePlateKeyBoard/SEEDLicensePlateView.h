@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger,SEDDLicensePlateStyle) {
 #pragma mark 省份键盘渲染model
 @interface SEEDLicensePlateModel : NSObject
 
-@property (nonatomic, strong) UIColor * backGroundColor;
+@property (nonatomic, strong) UIColor * _Nullable backGroundColor;
 
 @property (nonatomic, assign) SEDDLicensePlateStyle style;
 
@@ -88,6 +88,8 @@ typedef NS_ENUM(NSInteger,SEDDLicensePlateStyle) {
 @property (nonatomic, assign) CGFloat inputViewHeight;
 
 @property (nonatomic, assign) CGFloat lineSpace;
+
+@property (nonatomic, copy) NSString * _Nullable abcOrProvinceText;
 
 @property (nonatomic, strong) UIColor * _Nullable inPutViewBackGroundColor;
 

@@ -11,6 +11,14 @@
 
 #import "UIColor+YYAdd.h"
 
+typedef void (^SelectedCallBack)(id object);
+typedef BOOL (^CheckCallBack)(id object);
+typedef void (^SelectedMultyCallBack)(id object1, id object2);
+
+typedef void (^SelectedAtIndex)(NSInteger index);
+typedef void (^EHIOperationBlock)(BOOL isSuccess);
+typedef void (^ActionBlock)(void);
+
 #pragma mark - App尺寸
 
 #define DeviceFrame         [[UIScreen mainScreen] bounds]  // 整个屏幕尺寸

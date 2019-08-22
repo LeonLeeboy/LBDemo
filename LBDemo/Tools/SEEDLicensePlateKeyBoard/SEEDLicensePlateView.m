@@ -28,20 +28,22 @@ static UIColor *defaultItemNormalBackGroundColor() {
 }
 
 static UIColor *defaultItemHighLightedBackGroundColor() {
-    return kEHIHexColor_000000;
+    return kEHIHexColor_F2F2F2;
 }
 
-static UIColor *defaultItemNormalTitleGroundColor() {
+static UIColor *defaultItemNormalTitleColor() {
     return kEHIHexColor_333333;
 }
 
-static UIColor *defaultItemHighLightedTitleGroundColor() {
+static UIColor *defaultItemHighLightedTitleColor() {
     return kEHIHexColor_333333;
 }
 
 static UIFont *defaultItemTextFont() {
     return autoFONT(21);
 }
+
+#define kEHIHexColor_AAB4BE kEHIHexColor(0xAAB4BE);
 
 @interface SEEDLicensePlateItemView : UIButton
 
@@ -62,21 +64,41 @@ static UIFont *defaultItemTextFont() {
     [self setTitle:model.text?:@"" forState:UIControlStateSelected];
     
     if (model.backGroundImage) {
-        [self setBackgroundColor:model.defaultBackgroundColor];
-        [self setBackgroundImage:model.backGroundImage forState:UIControlStateNormal];
+        [self setBackgroundImage:[self p_createDeletelView:NO].snapshotImage forState:UIControlStateNormal];
+        [self setBackgroundImage:[self p_createDeletelView:YES].snapshotImage forState:UIControlStateHighlighted];
     } else {
         [self setBackgroundColor:[UIColor clearColor]];
         [self setBackgroundImage:[UIImage imageWithColor:model.defaultBackgroundColor?:defaultItemNormalBackGroundColor()] forState:UIControlStateNormal];
         
-        [self setBackgroundImage:[UIImage imageWithColor:model.highLightedTextColor?:defaultItemHighLightedBackGroundColor()] forState:UIControlStateHighlighted];
+        [self setBackgroundImage:[UIImage imageWithColor:model.highLightedBackgroundColor?:defaultItemHighLightedBackGroundColor()] forState:UIControlStateHighlighted];
     }
     
-    [self setTitleColor:model.normalTextColor?:defaultItemNormalTitleGroundColor() forState:UIControlStateNormal];
-    [self setTitleColor:model.highLightedTextColor?:defaultItemHighLightedTitleGroundColor() forState:UIControlStateHighlighted];
+    [self setTitleColor:model.normalTextColor?:defaultItemNormalTitleColor() forState:UIControlStateNormal];
+    [self setTitleColor:model.highLightedTextColor?:defaultItemHighLightedTitleColor() forState:UIControlStateHighlighted];
     
     self.titleLabel.font = model.normalTextFont?:defaultItemTextFont();
     
     self.layer.cornerRadius = model.cornerRadius;
+    
+    self.layer.masksToBounds = YES;
+}
+
+
+- (UIView *)p_createDeletelView:(BOOL)highLighted {
+    UIView *temp = [[UIView alloc] init];
+    if (highLighted) {
+        temp.backgroundColor = kEHIHexColor_F2F2F2;
+    } else {
+        temp.backgroundColor = kEHIHexColor_AAB4BE;
+    }
+    
+    temp.frame = CGRectMake(0, 0, autoWidthOf6(52), autoHeightOf6(49));
+    CGFloat imageW = 25;
+    CGFloat imageH = 20;
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SEED_Delete_image"]];
+    imgView.frame = CGRectMake((autoWidthOf6(52) - imageW) / 2, (autoHeightOf6(49) - imageH) / 2.0, imageW, imageH);
+    [temp addSubview:imgView];
+    return temp;
 }
 
 
@@ -88,8 +110,6 @@ static UIFont *defaultItemTextFont() {
 static UIColor *defaultInputViewBackGroundColor() {
     return kEHIHexColor_F8F8F8;
 }
-
-#define kEHIHexColor_AAB4BE kEHIHexColor(0xAAB4BE);
 
 @interface SEEDLicensePlateView ()
 
@@ -115,7 +135,12 @@ static UIColor *defaultInputViewBackGroundColor() {
 - (instancetype)initWithStyle:(SEDDLicensePlateStyle)style {
     if (self = [super initWithFrame:CGRectZero]) {
         self.renderModel.style = style;
+        
+       [self p_dealRenderModel];
+        
         [self setupSubViews];
+        
+        [self p_renderItemView];
     }
     return self;
 }
@@ -125,7 +150,11 @@ static UIColor *defaultInputViewBackGroundColor() {
         
         self.renderModel = renderModel;
         
+        [self p_dealRenderModel];
+        
         [self setupSubViews];
+        
+        [self p_renderItemView];
     }
     return self;
 }
@@ -135,14 +164,16 @@ static UIColor *defaultInputViewBackGroundColor() {
         //subviews
         [self setupSubViews];
         
+        [self p_renderItemView];
+        
     }
     return self;
 }
 
 - (void)setupSubViews {
-    if (!self.contentView.superview) {
-        [self addSubview:self.contentView];
-    }
+
+    [self addSubview:self.contentView];
+
     
     for (SEEDLicensePlateItemView *obj in self.itemViews) {
         [self.contentView addSubview:obj];
@@ -153,9 +184,9 @@ static UIColor *defaultInputViewBackGroundColor() {
     // 右下角删除键
     [self.contentView addSubview:self.deleteButton];
    
-    [self addSubview:self.inputView];
     
     [self p_layoutViews];
+    
 }
 
 #pragma mark public
@@ -165,7 +196,9 @@ static UIColor *defaultInputViewBackGroundColor() {
     
     self.renderModel = renderModel;
     
-//    [self setupSubViews];
+    [self p_dealRenderModel];
+    
+    [self p_updateConstraints];
     
     [self p_renderItemView];
 }
@@ -176,7 +209,11 @@ static UIColor *defaultInputViewBackGroundColor() {
     
     self.renderModel.style = style;
     
+    [self p_dealRenderModel];
+    
 //    [self setupSubViews];
+    
+    [self p_updateConstraints];
     
     [self p_renderItemView];
 
@@ -211,10 +248,28 @@ static UIColor *defaultInputViewBackGroundColor() {
 }
 
 #pragma mark private
+
+- (void)p_dealRenderModel {
+    NSArray<NSString *> *tmp = [self p_getContentsStrings];
+    NSMutableArray *content = [NSMutableArray arrayWithCapacity:tmp.count];
+    
+    for (int i = 0; i < tmp.count; i++) {
+        SEEDLicensePlateItemModel *model = [[SEEDLicensePlateItemModel alloc] init];
+        model.cornerRadius = 4;
+        model.text = tmp[i];
+        [content addObject:model];
+    }
+    
+    self.renderModel.itemModels = [NSArray arrayWithArray:content];
+    
+    self.renderModel.abcOrProvinceText =
+    (self.renderModel.style == SEDDLicensePlateStyleABC) ? @"省份" : @"ABC" ;
+}
+
 - (void)p_layoutViews {
     
     [_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.inputView.mas_bottom).with.offset(self.renderModel.contentInset.top);
+        make.top.mas_equalTo(self.renderModel.contentInset.top);
         make.bottom.mas_equalTo(-self.renderModel.contentInset.bottom);
         make.left.mas_equalTo(self.renderModel.contentInset.left);
         make.right.mas_equalTo(-self.renderModel.contentInset.right);
@@ -242,8 +297,45 @@ static UIColor *defaultInputViewBackGroundColor() {
 }
 
 - (void)p_updateConstraints {
+
+    if (self.renderModel.style == SEDDLicensePlateStyleProvince) {
+        while (self.itemViews.count < self.renderModel.itemModels.count) {
+            NSMutableArray *arr = self.itemViews.mutableCopy;
+            
+            SEEDLicensePlateItemView *itemView = [[SEEDLicensePlateItemView alloc] init];
+            
+            SEEDLicensePlateItemModel *model = self.renderModel.itemModels.lastObject;
+            
+            [itemView renderViewWithModel:model];
+            
+            EHiWeakSelf(self)
+            [itemView addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+                EHiStrongSelf(self)
+                [self doClickItemActionWithModel:model];
+            }];
+            
+            [self.contentView addSubview:itemView];
+            
+            [arr addObject:itemView];
+            
+            self.itemViews = arr.copy;
+        }
+        
+    } else {
+        
+        while (self.itemViews.count > self.renderModel.itemModels.count) {
+            
+            [self.itemViews.lastObject removeFromSuperview];
+            
+            NSMutableArray *arr = self.itemViews.mutableCopy;
+            [arr removeLastObject];
+            
+            self.itemViews = arr.copy;
+        }
+    }
+    
     [_contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.inputView.mas_bottom).with.offset(self.renderModel.contentInset.top);
+        make.top.mas_equalTo(self.renderModel.contentInset.top);
         make.bottom.mas_equalTo(-self.renderModel.contentInset.bottom);
         make.left.mas_equalTo(self.renderModel.contentInset.left);
         make.right.mas_equalTo(-self.renderModel.contentInset.right);
@@ -298,7 +390,7 @@ static UIColor *defaultInputViewBackGroundColor() {
                 }];
                 //添加一个靠右约束
                 if (columnIdx == self.renderModel.perLineCount - 1) {
-                    [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                    [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
                         make.right.mas_equalTo(0);
                     }];
                 }
@@ -356,6 +448,7 @@ static UIColor *defaultInputViewBackGroundColor() {
                 make.left.top.mas_equalTo(0);
             }];
             preLine = itemView;
+            preObjc = itemView;
         } else {
             [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(preObjc.mas_right).with.offset(self.renderModel.itemSpace);
@@ -366,7 +459,7 @@ static UIColor *defaultInputViewBackGroundColor() {
         }
         
         if (i == 9) {
-            [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.right.mas_equalTo(0);
             }];
         }
@@ -399,7 +492,7 @@ static UIColor *defaultInputViewBackGroundColor() {
         SEEDLicensePlateItemView *itemView = self.itemViews[i];
         if (i == 20) {
             [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(autoWidthOf6(30));
+                make.left.mas_equalTo(autoWidthOf6(20));
                 make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
                 make.height.equalTo(preLine);
                 make.width.equalTo(preLine);
@@ -568,7 +661,7 @@ static UIColor *defaultInputViewBackGroundColor() {
         SEEDLicensePlateItemView *itemView = self.itemViews[i];
         if (i == 20) {
             [itemView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.mas_equalTo(autoWidthOf6(30));
+                make.left.mas_equalTo(autoWidthOf6(20));
                 make.top.equalTo(preLine.mas_bottom).with.offset(self.renderModel.lineSpace);
                 make.height.equalTo(preLine);
                 make.width.equalTo(preLine);
@@ -656,56 +749,6 @@ static UIColor *defaultInputViewBackGroundColor() {
 /** 核心reload方法 */
 - (void)p_renderItemView {
     
-    NSArray *temp = [self p_getContentsStrings];
-    
-    if (self.renderModel.style == SEDDLicensePlateStyleProvince) {
-        
-        if (self.itemViews.count < temp.count) {
-            NSMutableArray *arr = self.itemViews.mutableCopy;
-            SEEDLicensePlateItemView *itemView = [[SEEDLicensePlateItemView alloc] init];
-            
-            SEEDLicensePlateItemModel *model = [[SEEDLicensePlateItemModel alloc] init];
-            
-            model.text = [self p_getContentsStrings].lastObject;
-            
-            [itemView renderViewWithModel:model];
-            
-            EHiWeakSelf(self)
-            [itemView addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
-                EHiStrongSelf(self)
-                [self doClickItemActionWithModel:model];
-            }];
-            [self addSubview:itemView];
-            [arr addObject:itemView];
-            
-            self.itemViews = arr.copy;
-            
-            [self.itemViews.lastObject mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.bottom.mas_equalTo(0);
-            }];
-            [self p_updateConstraints];
-        }
-        
-    } else {
-        if (self.itemViews.count > temp.count) {
-            
-            [self.itemViews.lastObject removeFromSuperview];
-            
-            NSMutableArray *arr = self.itemViews.mutableCopy;
-            [arr removeLastObject];
-            
-            self.itemViews = arr.copy;
-            
-            [self p_updateConstraints];
-        }
-    }
-    
-    NSArray<NSString *> *arr = [self p_getContentsStrings];
-    [self.renderModel.itemModels enumerateObjectsUsingBlock:^(SEEDLicensePlateItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (idx < arr.count) {
-            obj.text = arr[idx];
-        }
-    }];
     
     EHiWeakSelf(self)
     [self.renderModel.itemModels enumerateObjectsUsingBlock:^(SEEDLicensePlateItemModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -715,15 +758,17 @@ static UIColor *defaultInputViewBackGroundColor() {
         }
     }];
     
-    [self p_setProvinceAbcButton];
+    [self p_renderProvinceAbcButton];
 }
 
-- (void)p_setProvinceAbcButton {
+- (void)p_renderProvinceAbcButton {
     if (self.renderModel.style == SEDDLicensePlateStyleProvince) {
-        self.abcOrProvinceButton.model.text = @"省份";
-    } else {
         self.abcOrProvinceButton.model.text = @"ABC";
+    } else {
+        self.abcOrProvinceButton.model.text = @"省份";
     }
+    
+    self.renderModel.abcOrProvinceText = self.abcOrProvinceButton.model.text;
     
     [self.abcOrProvinceButton renderViewWithModel:self.abcOrProvinceButton.model];
 }
@@ -807,17 +852,13 @@ static UIColor *defaultInputViewBackGroundColor() {
         NSMutableArray *content = [NSMutableArray arrayWithCapacity:tmp.count];
 
         for (int i = 0; i < tmp.count; ++i) {
-          SEEDLicensePlateItemView *itemView = [[SEEDLicensePlateItemView alloc] init];
-            
-           SEEDLicensePlateItemModel *model = self.renderModel.itemModels[i];
+            SEEDLicensePlateItemView *itemView = [[SEEDLicensePlateItemView alloc] init];
             
             EHiWeakSelf(self)
             [itemView addBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
                 EHiStrongSelf(self)
-                [self doClickItemActionWithModel:model];
+                [self doClickItemActionWithModel:self.renderModel.itemModels[i]];
             }];
-            
-            [itemView renderViewWithModel:model];
             
             [content addObject:itemView];
         }
@@ -833,7 +874,9 @@ static UIColor *defaultInputViewBackGroundColor() {
         _deleteButton = [[SEEDLicensePlateItemView alloc] init];
         
         SEEDLicensePlateItemModel *model = [[SEEDLicensePlateItemModel alloc] init];
+        model.defaultBackgroundColor = kEHIHexColor_AAB4BE;
         model.backGroundImage = [UIImage imageNamed:@"SEED_Delete_image"];
+        model.highLightedBackgroundColor = defaultItemHighLightedBackGroundColor();
         model.defaultBackgroundColor = kEHIHexColor_000000;
         model.highLightedTextColor = kEHIHexColor_333333;
         model.normalTextFont = autoBoldFONT(16);
@@ -859,6 +902,7 @@ static UIColor *defaultInputViewBackGroundColor() {
         }
         
         model.defaultBackgroundColor = kEHIHexColor_AAB4BE;
+        model.highLightedBackgroundColor = defaultItemHighLightedBackGroundColor();
         model.highLightedTextColor = kEHIHexColor_333333;
         model.normalTextColor = kEHIHexColor_333333;
         model.normalTextFont = autoBoldFONT(16);

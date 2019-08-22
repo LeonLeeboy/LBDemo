@@ -18,7 +18,7 @@
 		E0F45F7176B82EAF138FC476 /* Pods_LBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */; };
 		ED09725F22FC13EC002BE46C /* LBLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09725E22FC13EC002BE46C /* LBLockViewController.m */; };
 		ED09726522FD3F1A002BE46C /* LBEHIDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09726422FD3F1A002BE46C /* LBEHIDemoViewController.m */; };
-		ED09726822FD3F9A002BE46C /* EHiMemberShipRights.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09726722FD3F9A002BE46C /* EHiMemberShipRights.m */; };
+		ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09726722FD3F9A002BE46C /* EHiMemberShipRightsView.m */; };
 		ED0CCCAA22C0B1BD00E4D384 /* LBLoginCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCA922C0B1BD00E4D384 /* LBLoginCenter.m */; };
 		ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCAD22C0B20A00E4D384 /* LBModelLogin.m */; };
 		ED0CCCB522C0B26B00E4D384 /* LBModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCB322C0B26B00E4D384 /* LBModelBase.m */; };
@@ -43,6 +43,8 @@
 		ED69179322E08FBF00A919A4 /* SEEDSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69179222E08FBF00A919A4 /* SEEDSelectModel.m */; };
 		ED69179A22E946A100A919A4 /* LBBlock5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69179922E946A100A919A4 /* LBBlock5ViewController.m */; };
 		ED69179E22E9777D00A919A4 /* LBCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69179D22E9777D00A919A4 /* LBCodeViewController.m */; };
+		ED6C7FA2230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6C7FA1230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m */; };
+		ED6C7FA5230EAC2400B1AF20 /* EHIHiCarDetectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6C7FA3230EAC2400B1AF20 /* EHIHiCarDetectionModel.m */; };
 		EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */; };
 		EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */; };
 		EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6164222B8CC9000525050 /* LBModelHomeView.m */; };
@@ -51,9 +53,12 @@
 		EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727A922F1686000645DAD /* LBLoadFatherModel.m */; };
 		EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727AC22F168DC00645DAD /* LBLoadViewController.m */; };
 		EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727AF22F1694700645DAD /* LBLoadSonModel.m */; };
+		EDD172FA230E3648009B781E /* EHIPreAuthDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172F8230E3648009B781E /* EHIPreAuthDetailView.m */; };
+		EDD172FD230E679E009B781E /* EHIOnlinePreAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172FC230E679E009B781E /* EHIOnlinePreAuthModel.m */; };
 		EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */; };
 		EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111522DEC8BE00E6B7FF /* Language.m */; };
 		EDEB111922DEC98500E6B7FF /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111822DEC98500E6B7FF /* People.m */; };
+		EDFF0F99230E1F78004F6F44 /* EHiMemberShipRightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,8 +104,8 @@
 		ED09725E22FC13EC002BE46C /* LBLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLockViewController.m; sourceTree = "<group>"; };
 		ED09726322FD3F1A002BE46C /* LBEHIDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBEHIDemoViewController.h; sourceTree = "<group>"; };
 		ED09726422FD3F1A002BE46C /* LBEHIDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBEHIDemoViewController.m; sourceTree = "<group>"; };
-		ED09726622FD3F9A002BE46C /* EHiMemberShipRights.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHiMemberShipRights.h; sourceTree = "<group>"; };
-		ED09726722FD3F9A002BE46C /* EHiMemberShipRights.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHiMemberShipRights.m; sourceTree = "<group>"; };
+		ED09726622FD3F9A002BE46C /* EHiMemberShipRightsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHiMemberShipRightsView.h; sourceTree = "<group>"; };
+		ED09726722FD3F9A002BE46C /* EHiMemberShipRightsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHiMemberShipRightsView.m; sourceTree = "<group>"; };
 		ED0CCCA822C0B1BC00E4D384 /* LBLoginCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLoginCenter.h; sourceTree = "<group>"; };
 		ED0CCCA922C0B1BD00E4D384 /* LBLoginCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLoginCenter.m; sourceTree = "<group>"; };
 		ED0CCCAD22C0B20A00E4D384 /* LBModelLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBModelLogin.m; sourceTree = "<group>"; };
@@ -144,6 +149,10 @@
 		ED69179922E946A100A919A4 /* LBBlock5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBBlock5ViewController.m; sourceTree = "<group>"; };
 		ED69179C22E9777D00A919A4 /* LBCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBCodeViewController.h; sourceTree = "<group>"; };
 		ED69179D22E9777D00A919A4 /* LBCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBCodeViewController.m; sourceTree = "<group>"; };
+		ED6C7FA0230EABC400B1AF20 /* EHIHiCarDetectionSingleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIHiCarDetectionSingleView.h; sourceTree = "<group>"; };
+		ED6C7FA1230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIHiCarDetectionSingleView.m; sourceTree = "<group>"; };
+		ED6C7FA3230EAC2400B1AF20 /* EHIHiCarDetectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIHiCarDetectionModel.m; sourceTree = "<group>"; };
+		ED6C7FA4230EAC2400B1AF20 /* EHIHiCarDetectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIHiCarDetectionModel.h; sourceTree = "<group>"; };
 		EDAB3CDE23010A7800C0225E /* EHIHiCarOperationTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIHiCarOperationTopView.h; sourceTree = "<group>"; };
 		EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIHiCarOperationTopView.m; sourceTree = "<group>"; };
 		EDC6163D22B8C8DE00525050 /* LBHomeViewControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeViewControllerViewModel.h; sourceTree = "<group>"; };
@@ -160,12 +169,18 @@
 		EDC727AC22F168DC00645DAD /* LBLoadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadViewController.m; sourceTree = "<group>"; };
 		EDC727AE22F1694700645DAD /* LBLoadSonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLoadSonModel.h; sourceTree = "<group>"; };
 		EDC727AF22F1694700645DAD /* LBLoadSonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadSonModel.m; sourceTree = "<group>"; };
+		EDD172F8230E3648009B781E /* EHIPreAuthDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIPreAuthDetailView.m; sourceTree = "<group>"; };
+		EDD172F9230E3648009B781E /* EHIPreAuthDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIPreAuthDetailView.h; sourceTree = "<group>"; };
+		EDD172FB230E679E009B781E /* EHIOnlinePreAuthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIOnlinePreAuthModel.h; sourceTree = "<group>"; };
+		EDD172FC230E679E009B781E /* EHIOnlinePreAuthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIOnlinePreAuthModel.m; sourceTree = "<group>"; };
 		EDEB111122DEC8A700E6B7FF /* LBGenericTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBGenericTypeViewController.h; sourceTree = "<group>"; };
 		EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBGenericTypeViewController.m; sourceTree = "<group>"; };
 		EDEB111422DEC8BE00E6B7FF /* Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Language.h; sourceTree = "<group>"; };
 		EDEB111522DEC8BE00E6B7FF /* Language.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Language.m; sourceTree = "<group>"; };
 		EDEB111722DEC98500E6B7FF /* People.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
 		EDEB111822DEC98500E6B7FF /* People.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
+		EDFF0F97230E1F78004F6F44 /* EHiMemberShipRightsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHiMemberShipRightsModel.h; sourceTree = "<group>"; };
+		EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHiMemberShipRightsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +365,7 @@
 		ED09726022FD2033002BE46C /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				EDFF0F96230E1F63004F6F44 /* Models */,
 				ED09726122FD3EEE002BE46C /* ViewControllers */,
 				ED09726222FD3EFA002BE46C /* Views */,
 			);
@@ -370,8 +386,12 @@
 		ED09726222FD3EFA002BE46C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ED09726622FD3F9A002BE46C /* EHiMemberShipRights.h */,
-				ED09726722FD3F9A002BE46C /* EHiMemberShipRights.m */,
+				ED6C7FA0230EABC400B1AF20 /* EHIHiCarDetectionSingleView.h */,
+				ED6C7FA1230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m */,
+				EDD172F9230E3648009B781E /* EHIPreAuthDetailView.h */,
+				EDD172F8230E3648009B781E /* EHIPreAuthDetailView.m */,
+				ED09726622FD3F9A002BE46C /* EHiMemberShipRightsView.h */,
+				ED09726722FD3F9A002BE46C /* EHiMemberShipRightsView.m */,
 				EDAB3CDE23010A7800C0225E /* EHIHiCarOperationTopView.h */,
 				EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */,
 				ED6852682302632800E0B3D5 /* EHIHicarOperationBottomView.h */,
@@ -723,6 +743,19 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		EDFF0F96230E1F63004F6F44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED6C7FA4230EAC2400B1AF20 /* EHIHiCarDetectionModel.h */,
+				ED6C7FA3230EAC2400B1AF20 /* EHIHiCarDetectionModel.m */,
+				EDFF0F97230E1F78004F6F44 /* EHiMemberShipRightsModel.h */,
+				EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */,
+				EDD172FB230E679E009B781E /* EHIOnlinePreAuthModel.h */,
+				EDD172FC230E679E009B781E /* EHIOnlinePreAuthModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EF62B6FC41D44A84104DFF77 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -905,6 +938,7 @@
 				ED3126D122F80225007FAF47 /* SEEDSelecteView.m in Sources */,
 				ED6852752303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m in Sources */,
 				ED36BB26230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m in Sources */,
+				EDFF0F99230E1F78004F6F44 /* EHiMemberShipRightsModel.m in Sources */,
 				EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */,
 				ED0CCCAA22C0B1BD00E4D384 /* LBLoginCenter.m in Sources */,
 				ED69179A22E946A100A919A4 /* LBBlock5ViewController.m in Sources */,
@@ -921,15 +955,19 @@
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */,
 				EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */,
+				ED6C7FA2230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m in Sources */,
 				ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */,
 				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
 				BE881E3523096D9D001BFF7A /* EHICarLicensePlateTextField.m in Sources */,
+				EDD172FD230E679E009B781E /* EHIOnlinePreAuthModel.m in Sources */,
 				ED69179022E08F5200A919A4 /* LBProtocolDemoVC.m in Sources */,
+				EDD172FA230E3648009B781E /* EHIPreAuthDetailView.m in Sources */,
 				EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
 				EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */,
-				ED09726822FD3F9A002BE46C /* EHiMemberShipRights.m in Sources */,
+				ED6C7FA5230EAC2400B1AF20 /* EHIHiCarDetectionModel.m in Sources */,
+				ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */,
 				EDEB111922DEC98500E6B7FF /* People.m in Sources */,
 				2C86F1502112D83500DF516A /* main.m in Sources */,
 				EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */,

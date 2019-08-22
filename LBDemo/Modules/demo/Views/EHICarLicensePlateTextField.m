@@ -55,6 +55,12 @@ static UIColor *defaultNormalTitleColor() {
     
     self.itemModel = model;
     
+    if (model.text.length > 0) {
+        self.titleLabel.backgroundColor = [UIColor clearColor];
+    } else {
+        self.titleLabel.backgroundColor = [UIColor whiteColor];
+    }
+    
     [self setTitle:model.text?:@"" forState:UIControlStateNormal];
     [self setTitle:model.text?:@"" forState:UIControlStateSelected];
     
@@ -62,7 +68,7 @@ static UIColor *defaultNormalTitleColor() {
     [self setBackgroundImage:[UIImage imageWithColor:model.selectedBackGroundColor?:defaultSelectedBackgroundColor()] forState:UIControlStateSelected];
     
     [self setTitleColor:model.selectedTextColor?:defaultSelectedTitleColor() forState:UIControlStateSelected];
-    [self setTitleColor:model.normalBackGroundColor?:defaultNormalTitleColor() forState:UIControlStateNormal];
+    [self setTitleColor:model.normalTextColor?:defaultNormalTitleColor() forState:UIControlStateNormal];
     
     if (model.newEnergy) {
         [self setBackgroundImage:[self p_createEnergyBackGroundView].snapshotImage forState:UIControlStateNormal];
@@ -240,6 +246,11 @@ static NSInteger textFieldNumbers = 7;
     [self.textField becomeFirstResponder];
 }
 
+- (void)licensePlateResignFirstResponder {
+    [self.textField resignFirstResponder];
+}
+
+
 - (void)renderViewWithItemModels:(NSArray<EHICarLicensePlateTextFieldItemModel *> *)items {
     
     [self p_emptyData];
@@ -347,6 +358,18 @@ static NSInteger textFieldNumbers = 7;
     
     //重新渲染
     [self p_renderItemsView];
+    
+    if (self.currentIndex == 0) {
+        SEEDLicensePlateView *licensePlate = (SEEDLicensePlateView *)self.textField.inputView;
+        if (licensePlate.renderModel.style != SEDDLicensePlateStyleProvince) {
+            [licensePlate renderViewWithWithStyle:SEDDLicensePlateStyleProvince];
+        }
+    } else {
+        SEEDLicensePlateView *licensePlate = (SEEDLicensePlateView *)self.textField.inputView;
+        if (licensePlate.renderModel.style != SEDDLicensePlateStyleABC) {
+            [licensePlate renderViewWithWithStyle:SEDDLicensePlateStyleABC];
+        }
+    }
 }
 
 /** 输入事件 */
@@ -367,9 +390,10 @@ static NSInteger textFieldNumbers = 7;
         self.itemModels[self.currentIndex].selected = YES;
     } else {
         if (self.currentIndex == 0) {
+            self.itemModels[self.currentIndex + 1].selected = YES;
             self.itemModels[self.currentIndex].text = text;
-            self.itemModels[self.currentIndex].selected = YES;
             self.currentIndex = self.currentIndex + 1;
+            
         } else if (self.currentIndex == self.itemLength - 1) {
             self.itemModels[self.currentIndex].text = text;
             self.itemModels[self.currentIndex].selected = YES;
@@ -386,7 +410,20 @@ static NSInteger textFieldNumbers = 7;
     
     self.carInfo = [self p_getCarInfo];
     NSLog(@"----carinfo ---- %@", self.carInfo);
+    
     [self p_renderItemsView];
+    
+    if (self.currentIndex == 0) {
+        SEEDLicensePlateView *licensePlate = (SEEDLicensePlateView *)self.textField.inputView;
+        if (licensePlate.renderModel.style != SEDDLicensePlateStyleProvince) {
+            [licensePlate renderViewWithWithStyle:SEDDLicensePlateStyleProvince];
+        }
+    } else {
+        SEEDLicensePlateView *licensePlate = (SEEDLicensePlateView *)self.textField.inputView;
+        if (licensePlate.renderModel.style != SEDDLicensePlateStyleABC) {
+            [licensePlate renderViewWithWithStyle:SEDDLicensePlateStyleABC];
+        }
+    }
     
 }
 
@@ -409,8 +446,8 @@ static NSInteger textFieldNumbers = 7;
         }else if (self.currentIndex == self.itemLength - 1) {
             if ([self.itemModels[self.currentIndex].text isEqualToString:@""]) {
                 self.currentIndex = self.currentIndex - 1;
-                self.itemModels[self.currentIndex].text = text;
                 self.itemModels[self.currentIndex].selected = YES;
+                self.itemModels[self.currentIndex].text = text;
             } else {
                 self.itemModels[self.currentIndex].text = text;
                 self.itemModels[self.currentIndex].selected = YES;
@@ -429,6 +466,18 @@ static NSInteger textFieldNumbers = 7;
     NSLog(@"----carinfo ---- %@", self.carInfo);
     //更新UI
     [self p_renderItemsView];
+    
+    if (self.currentIndex == 0) {
+        SEEDLicensePlateView *licensePlate = (SEEDLicensePlateView *)self.textField.inputView;
+        if (licensePlate.renderModel.style != SEDDLicensePlateStyleProvince) {
+            [licensePlate renderViewWithWithStyle:SEDDLicensePlateStyleProvince];
+        }
+    } else {
+        SEEDLicensePlateView *licensePlate = (SEEDLicensePlateView *)self.textField.inputView;
+        if (licensePlate.renderModel.style != SEDDLicensePlateStyleABC) {
+            [licensePlate renderViewWithWithStyle:SEDDLicensePlateStyleABC];
+        }
+    }
 }
 
 #pragma mark delegate
@@ -457,7 +506,7 @@ static NSInteger textFieldNumbers = 7;
         }
             break;
         case SEDDLicesePlateViewEventClickABC: { // 点击ABC
-            [licensePlateView renderViewWithWithStyle:SEDDLicensePlateStyleProvince];
+            [licensePlateView renderViewWithWithStyle:SEDDLicensePlateStyleABC];
         }
             break;
         case SEDDLicesePlateViewEventClickDel: { //点击删除
@@ -465,8 +514,8 @@ static NSInteger textFieldNumbers = 7;
             [self doDeleteActionWithText:text];
         }
             break;
-        case SEDDLicesePlateViewEventClickLicensePlate: { //点击车牌
-            [licensePlateView renderViewWithWithStyle:SEDDLicensePlateStyleABC];
+        case SEDDLicesePlateViewEventClickLicensePlate: { //点击省份
+            [licensePlateView renderViewWithWithStyle:SEDDLicensePlateStyleProvince];
         }
             break;
         case SEDDLicesePlateViewEventClickDone: { //完成事件
@@ -522,7 +571,7 @@ static NSInteger textFieldNumbers = 7;
         _textField = [[UITextField alloc] init];
         _textField.tintColor = [UIColor clearColor];
         _textField.textColor = [UIColor clearColor];
-        SEEDLicensePlateView *inputView = [[SEEDLicensePlateView alloc] initWithStyle:SEDDLicensePlateStyleABC];
+        SEEDLicensePlateView *inputView = [[SEEDLicensePlateView alloc] initWithStyle:SEDDLicensePlateStyleProvince];
         inputView.delegate = self;
         inputView.frame = CGRectMake(0, 0, Main_Screen_Width, autoHeightOf6(231));
         _textField.inputView = inputView;

@@ -1,6 +1,6 @@
 //
 //  EHINewEnergyLicensePlateTextField.m
-//  LBDemo
+//  1haiiPhone
 //
 //  Created by 李兵 on 2019/8/19.
 //  Copyright © 2019 ivan. All rights reserved.
@@ -54,6 +54,14 @@
 #pragma mark public
 - (void)licensePlateBecomeFirstResponder {
     [self.textField licensePlateBecomeFirstResponder];
+}
+
+- (void)licensePlateResignFirstResponder {
+    [self.textField licensePlateResignFirstResponder];
+}
+
+- (void)renderViewWithCarInfo:(NSString *)licensePlate {
+    NSArray *arr = [licensePlate componentsSeparatedByString:@""];
 }
 
 #pragma mark Action

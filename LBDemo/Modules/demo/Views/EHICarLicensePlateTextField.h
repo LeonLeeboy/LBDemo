@@ -46,6 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 成为第一响应者 */
 - (void)licensePlateBecomeFirstResponder;
 
+- (void)licensePlateResignFirstResponder;
+
 - (void)renderViewWithItemModels:(NSArray<EHICarLicensePlateTextFieldItemModel *> *)items;
 
 @end
