@@ -4,6 +4,7 @@ use_frameworks!
 target 'LBDemo' do
 pod 'SVProgressHUD'
 pod 'BlocksKit'
+pod 'pop', '~> 1.0.12'
 pod 'AFNetworking'
 pod 'LBUIKit'
 pod 'IQKeyboardManager'

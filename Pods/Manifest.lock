@@ -34,6 +34,7 @@ PODS:
   - LBUIKit (1.0.1)
   - Masonry (1.1.0)
   - MJRefresh (3.1.16)
+  - pop (1.0.12)
   - ReactiveObjC (3.1.1)
   - SVProgressHUD (2.2.5)
   - YYKit (1.0.9):
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - LBUIKit
   - Masonry
   - MJRefresh
+  - pop (~> 1.0.12)
   - ReactiveObjC
   - SVProgressHUD
   - YYKit (~> 1.0.9)
@@ -61,6 +63,7 @@ SPEC REPOS:
     - LBUIKit
     - Masonry
     - MJRefresh
+    - pop
     - ReactiveObjC
     - SVProgressHUD
     - YYKit
@@ -73,10 +76,11 @@ SPEC CHECKSUMS:
   LBUIKit: bd4c7d5a21d33aa0eba173b43644682267349bc5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 766120ec62a048b08caeb91abefe94b44762875d
+PODFILE CHECKSUM: af4602d3ad2dcd00ed09b34e78a527ca0ca99ade
 
 COCOAPODS: 1.7.4
