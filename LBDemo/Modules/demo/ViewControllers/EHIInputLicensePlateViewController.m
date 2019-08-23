@@ -14,6 +14,9 @@
 #import "EHIPreAuthDetailView.h"
 #import "EHIOnlinePreAuthModel.h"
 #import "EHIHiCarDetectionSingleView.h"
+#import "EHIDetectionViewController.h"
+
+#import "EHIScanCarAnimationView.h"
 
 @interface EHIInputLicensePlateViewController ()
 
@@ -34,9 +37,8 @@
 
 @property (nonatomic, strong) EHiMemberShipRightsView *memberRightsView;
 
-
-@property (nonatomic, strong) EHIHiCarDetectionSingleView *singleView;
 @property (nonatomic, strong) EHIPreAuthDetailView *onlinePreAuthDetail;
+
 
 @end
 
@@ -67,7 +69,7 @@
     [super viewWillAppear:animated];
     [[IQKeyboardManager sharedManager] setEnable:NO];
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
-    [self.textField licensePlateBecomeFirstResponder];
+//    [self.textField licensePlateBecomeFirstResponder];
 }
 
 - (void)setupSubViews {
@@ -80,7 +82,8 @@
     [self.view addSubview:self.confirmGetCar];
     [self.view addSubview:self.memberRightsView];
     [self.view addSubview:self.onlinePreAuthDetail];
-    [self.view addSubview:self.singleView];
+//    [self.view addSubview:self.scanCarView];
+//    [self.view addSubview:self.singleView];
     
     [self layoutViews];
     
@@ -137,19 +140,7 @@
         make.right.mas_equalTo(-autoWidthOf6(15));
     }];
     
-//    [_singleView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.onlinePreAuthDetail.mas_bottom);
-//        make.left.mas_equalTo(20);
-//        make.right.mas_equalTo(-20);
-//        make.height.mas_equalTo( autoHeightOf6(17));
-//    }];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.singleView startAnimation];
-    });
-    
-//    CGFloat pointX = autoWidthOf6(25), spaceV = autoHeightOf6(29), pointY =300;
-//
+
     RAC(self.confirmGetCar,enabled) = [RACObserve(self.textField, carInfo) map:^id _Nullable(NSString *  _Nullable value) {
         return (value.length == 7 || value.length == 8)?@(YES):@(NO);
     }];
@@ -177,6 +168,8 @@
 /** 确认还车事件 */
 - (void)doConfirmGetCarAction {
     NSLog(@"确认取车事件");
+    EHIDetectionViewController *vc = [[EHIDetectionViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
     [self.textField licensePlateResignFirstResponder];
     
 }
@@ -357,17 +350,6 @@
 }
 
 
-- (EHIHiCarDetectionSingleView *)singleView {
-    if (!_singleView) {
-        _singleView = [[EHIHiCarDetectionSingleView alloc] init];
-        _singleView.backgroundColor = [UIColor lightGrayColor];
-        EHIHiCarDetectionDetailModel *model = [[EHIHiCarDetectionDetailModel alloc] init];
-        model.Id = 0;
-        model.Title = @"检测";
-        model.Result = YES;
-        _singleView.detailModel = model;
-        _singleView.frame = CGRectMake(0, 200, 200, 17);
-    }
-    return _singleView;
-}
+
+
 @end
