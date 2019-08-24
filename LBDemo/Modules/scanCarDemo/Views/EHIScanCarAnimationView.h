@@ -23,12 +23,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) CGFloat duration;
 
+
 @end
 
 
 @interface EHIScanCarAnimationView : UIView
 
 - (void)starAnimation;
+
+- (void)stopAnimation;
 
 - (void)renderViewWithModel:(EHIScanCarAnimationModel *)model;
 

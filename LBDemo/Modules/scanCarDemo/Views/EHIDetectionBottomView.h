@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) NSArray<EHIDetecctionItemView *> *itemViews;
 
+@property (nonatomic, copy) EHIOperationBlock didFinishedBock;
+
 - (void)renderViewWithModels:(NSArray *)itemModels;
 
 - (void)startCheck;

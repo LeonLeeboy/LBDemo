@@ -128,8 +128,11 @@
     __block NSInteger index = idx;
     if (idx == self.itemViews.count) {
         if (!statusTemp) {
-
             self.haveError = @(YES);
+        }
+        
+        if (self.didFinishedBock) {
+            self.didFinishedBock(statusTemp);
         }
         return;
     } else {

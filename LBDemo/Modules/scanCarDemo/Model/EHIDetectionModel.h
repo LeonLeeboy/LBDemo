@@ -30,11 +30,17 @@ NS_ASSUME_NONNULL_BEGIN
 /** value: 请确保以下设备均已关闭 */
 @property (nonatomic, copy) NSString *title;
 
+@property (nonatomic, strong) UIColor *titleColor;
+
 /** value: 打开蓝牙，还车速度更快 */
 @property (nonatomic, copy) NSString *subTitle;
 
+@property (nonatomic, strong) UIColor *subTitleColor;
+
 @property (nonatomic, strong) NSArray<EHIDetecctionItemModel *> *itemModels;
 
+/** value: 默认为NO，可以不传 */
+@property (nonatomic, assign) BOOL checkDone;
 
 @end
 

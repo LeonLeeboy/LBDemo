@@ -62,11 +62,11 @@
     self.renderModel = [[EHIDetectionModel alloc] init];
     self.renderModel.title = @"请确保以下设备均已关闭";
     self.renderModel.subTitle = @"打开蓝牙，还车速度更快";
+    self.renderModel.checkDone = NO;
     
     NSArray<NSString *> *strings = [self p_checkStrings];
     NSMutableArray *content = [NSMutableArray array];
     for (int i = 0; i < strings.count; i++) {
-        
         
         EHIDetecctionItemModel *model = [[EHIDetecctionItemModel alloc] init];
         model.itemName = strings[i];
@@ -112,19 +112,64 @@
     
 }
 
+- (void)doDetectionFineshedActionWithRst:(BOOL)rst {
+    
+    if (rst) {//检查通过
+        self.renderModel = [[EHIDetectionModel alloc] init];
+        self.renderModel.title = @"请确保以下设备均已关闭";
+        self.renderModel.subTitle = @"打开蓝牙，还车速度更快";
+        self.renderModel.titleColor = self.renderModel.titleColor?:kEHIHexColor_333333;
+        self.renderModel.subTitleColor = self.renderModel.titleColor?:kEHIHexColor_7B7B7B;
+    } else {//检查没通过
+        self.renderModel = [[EHIDetectionModel alloc] init];
+        self.renderModel.title = @"请确保以下设备均已关闭";
+        self.renderModel.subTitle = @"打开蓝牙，还车速度更快";
+        self.renderModel.titleColor = self.renderModel.titleColor?:kEHIHexColor_F43530;
+        self.renderModel.subTitleColor = self.renderModel.titleColor?:kEHIHexColor_F43530;
+    }
+    
+    self.renderModel.checkDone = rst;
+    [self renderViewWithModel:self.renderModel];
+}
+
 #pragma mark public
 - (void)renderViewWithModel:(EHIDetectionModel *)model {
     self.renderModel = model;
-    self.titleLab.text = self.renderModel.title;
-    self.subTitleLab.text = self.renderModel.title;
+   
+    [self p_renderTopView];
     
-    [self.bottomDetectionView renderViewWithModels:self.renderModel.itemModels];
+    [self p_renderCarAnimationViewWithRst:self.renderModel.checkDone];
+    
+    [self p_renderBottomAnimationView];
     
 }
 
 #pragma mark private
 - (NSArray<NSString *> *)p_checkStrings {
     return @[@"车灯",@"车窗",@"车门",@"后备箱",@"熄火"];
+}
+
+- (void)p_renderTopView {
+    self.titleLab.text = self.renderModel.title;
+    self.subTitleLab.text = self.renderModel.title;
+}
+
+
+/**
+ 渲染中间扫描car的动画
+
+ @param haveDone 检查item的动画结束后是否是成功的
+ */
+- (void)p_renderCarAnimationViewWithRst:(BOOL)haveDone {
+    if (haveDone) {
+        [self.carAnimaitonView stopAnimation];
+    } else {
+        [self.carAnimaitonView starAnimation];
+    }
+}
+
+- (void)p_renderBottomAnimationView {
+    [self.bottomDetectionView renderViewWithModels:self.renderModel.itemModels];
 }
 
 #pragma mark layoutViews
@@ -256,6 +301,11 @@
 - (EHIDetectionBottomView *)bottomDetectionView {
     if (!_bottomDetectionView) {
         _bottomDetectionView = [[EHIDetectionBottomView alloc] init];
+        EHiWeakSelf(self)
+        _bottomDetectionView.didFinishedBock = ^(BOOL isSuccess) {
+             EHiStrongSelf(self)
+            [self doDetectionFineshedActionWithRst:YES];
+        };
     }
     return _bottomDetectionView;
 }
