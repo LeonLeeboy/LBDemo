@@ -38,7 +38,7 @@ static CFMutableArrayRef RACCreateDisposablesArray(void) {
 	// Once this is full, `_disposables` will be created and used for additional
 	// disposables.
 	//
-	// This array should only be manipulated while _mutex is held.
+	// This array should only be manipulated(控制，使用) while _mutex is held（持有）.
 	RACDisposable *_inlineDisposables[RACCompoundDisposableInlineCount];
 	#endif
 

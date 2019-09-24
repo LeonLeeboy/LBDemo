@@ -144,6 +144,10 @@ static inline UIColor * kEHIAlphaColor(UIColor *color, CGFloat alpha) {
 }
 
 
+/** 主要色值 */
+#define kEHIHexColor_FFFFFF kEHIHexColor(0xFFFFFF) // 白色
+#define kEHIHexColor_000000 kEHIHexColor(0x000000) // 黑色：仅用于弹窗背景底色40%不透明度
+
 /** 文字、底色、线 */
 #define kEHIHexColor_333333 kEHIHexColor(0x333333) // 黑色：重要文字用色、按钮（可按、按下、不可按依次按不透明度100%、60%、30%递减）（step2左侧tab底色2%透明度）
 #define kEHIHexColor_7B7B7B kEHIHexColor(0x7B7B7B) // 灰色：仅用于次要文字

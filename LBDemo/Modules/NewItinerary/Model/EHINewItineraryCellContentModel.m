@@ -8,6 +8,19 @@
 
 #import "EHINewItineraryCellContentModel.h"
 
+@implementation EHINewItineraryAddressModel
+
+@end
+
+@implementation EHINewItineraryPassengerModel
+
+@end
+
+@implementation EHINewItineraryDockSiteModel
+
+@end
+
 @implementation EHINewItineraryCellContentModel
+
 
 @end

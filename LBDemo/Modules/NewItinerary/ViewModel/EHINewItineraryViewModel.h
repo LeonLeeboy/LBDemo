@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+@class EHINewItinerayItemModel;
 
 @interface EHINewItineraryViewModel : NSObject
 
+/** 数据源 */
+@property (nonatomic, strong, readonly) NSArray<EHINewItinerayItemModel *> *dataSource;
+
+/** 刷新UI回调 */
+@property (nonatomic, strong) void (^refreshUI)(NSArray<EHINewItinerayItemModel *> *dataSource);
+
+- (void)getMyNewItineraryDataWith:(id)parames;
+
 @end
 
-NS_ASSUME_NONNULL_END

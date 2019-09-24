@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class EHINewItineraryCellContentModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EHINewItineraryCellContentView : UIView
+
+
+- (void)renderViewWithModel:(EHINewItineraryCellContentModel *)contentModel;
 
 @end
 

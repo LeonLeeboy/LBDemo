@@ -10,4 +10,9 @@
 
 @implementation EHINewItineraryMessagesItemModel
 
+- (BOOL)hiddenNormalValue {
+    return (self.des && ![self.des isEqualToString:@""])?YES:NO;
+}
+
+
 @end

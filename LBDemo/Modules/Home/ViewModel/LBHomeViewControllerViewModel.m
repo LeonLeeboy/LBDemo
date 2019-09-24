@@ -56,6 +56,7 @@ static int count = 0;
 
     LBModelHomeView *m = LBModelHomeView.new;
     m.displayName = @"控制器的中间vc剔除跳转";
+    m.targetName = @"EHIUpdateAPPViewController";
  
     LBModelHomeView *m1 = LBModelHomeView.new;
     m1.displayName = @"blcok 中是stack ，还是malloc";
@@ -85,6 +86,10 @@ static int count = 0;
     m7.displayName = @"iOS 各种锁";
     m7.targetName = @"LBLockViewController";
     
+    LBModelHomeView *m8 = LBModelHomeView.new;
+    m8.displayName = @"iOS frame 和 masonry 混用姿势";
+    m8.targetName = @"LBNewItineraryViewController";
+    
     
 
     [homeModels addObject:m];
@@ -95,6 +100,7 @@ static int count = 0;
     [homeModels addObject:m5];
     [homeModels addObject:m6];
     [homeModels addObject:m7];
+    [homeModels addObject:m8];
     return homeModels.copy;
 }
 

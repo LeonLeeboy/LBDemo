@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EHIUpdateAppContentView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EHIUpdateAPPViewController : UIViewController
+
+@property (nonatomic, assign) EHIUpdateAppWay updateWay;
 
 @end
 

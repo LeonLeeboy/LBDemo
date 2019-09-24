@@ -20,10 +20,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    UIView *content1 = [[UIView alloc] init];
+    content1.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.4];
+    
+    UIView *content2 = [[UIView alloc] init];
+    content2.backgroundColor = UIColor.clearColor;
+    
+    [self.view addSubview:content1];
+    [content1 addSubview:content2];
+    
+    [content1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    
+    [content2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    
+    content2.layer.mask = [self p_clearShapeLayer];
+    
     self.title = @"block 对引用计数的影响";
     
     [self dealData];
 }
+
+
+
+- (CAShapeLayer *)p_clearShapeLayer {
+    
+    
+    CGRect rect = CGRectMake(100, 200, 100, 100);
+    //贝塞尔曲线 画一个带有圆角的矩形
+    UIBezierPath *bpath = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:0];
+    
+    [bpath appendPath:[[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:0] bezierPathByReversingPath]];
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.path = bpath.CGPath;
+    
+    return shapeLayer;
+}
+
 
 - (void)dealloc {
     NSLog(@"sdf");

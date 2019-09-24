@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LBNewItineraryDefines : NSObject
 
+typedef NS_ENUM(NSInteger,EHINewItineraryType) {
+    EHINewItineraryTypeChauffeur,       //!> 专车
+    EHINewItineraryTypeSelfDriving      //!> 自驾
+};
+
 @end
 
 NS_ASSUME_NONNULL_END

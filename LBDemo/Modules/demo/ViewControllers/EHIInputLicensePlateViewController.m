@@ -11,12 +11,13 @@
 
 #import "EHiMemberShipRightsView.h"
 #import "EHiMemberShipRightsModel.h"
-#import "EHIPreAuthDetailView.h"
+#import "EHIOnlinePreAuthDetailView.h"
 #import "EHIOnlinePreAuthModel.h"
 #import "EHIHiCarDetectionSingleView.h"
 #import "EHIDetectionViewController.h"
 
 #import "EHIScanCarAnimationView.h"
+#import "EHIUpdateAPPViewController.h"
 
 @interface EHIInputLicensePlateViewController ()
 
@@ -37,7 +38,7 @@
 
 @property (nonatomic, strong) EHiMemberShipRightsView *memberRightsView;
 
-@property (nonatomic, strong) EHIPreAuthDetailView *onlinePreAuthDetail;
+@property (nonatomic, strong) EHIOnlinePreAuthDetailView *onlinePreAuthDetail;
 
 
 @end
@@ -181,10 +182,16 @@
 }
 
 - (void)doClickMemberShipActionWithModel:(EHiMemberShipRightsItemModel *)model {
+    EHIUpdateAPPViewController *vc = [[EHIUpdateAPPViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:vc animated:NO completion:nil];
     NSLog(@"点击了");
 }
 
 - (void)doClickPreAuthActionWithModel:(EHIOnlinePreAuthItemModel *)model {
+    EHIUpdateAPPViewController *vc = [[EHIUpdateAPPViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:vc animated:NO completion:nil];
      NSLog(@"点击了");
 }
 
@@ -337,9 +344,9 @@
     return _memberRightsView;
 }
 
-- (EHIPreAuthDetailView *)onlinePreAuthDetail {
+- (EHIOnlinePreAuthDetailView *)onlinePreAuthDetail {
     if (!_onlinePreAuthDetail) {
-        _onlinePreAuthDetail = [[EHIPreAuthDetailView alloc] init];
+        _onlinePreAuthDetail = [[EHIOnlinePreAuthDetailView alloc] init];
         EHiWeakSelf(self)
         _onlinePreAuthDetail.didClick = ^(id object) {
             EHiStrongSelf(self)

@@ -22,5 +22,8 @@
 #import <YYKit/YYKit.h>
 #import <pop/pop.h>
 
+//
+#import "LBNewItineraryDefines.h"
+
 
 #endif /* LBMacro_h */

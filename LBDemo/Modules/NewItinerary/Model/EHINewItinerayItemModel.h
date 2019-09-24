@@ -1,5 +1,5 @@
 //
-//  EHINewItinerayModel.h
+//  EHINewItinerayItemModel.h
 //  LBDemo
 //
 //  Created by 李兵 on 2019/9/23.
@@ -22,10 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface EHINewItinerayModel : NSObject
 
-@property (nonatomic, strong) NSArray<EHINewItinerayItemModel *> *orderLists;
-
-@end
 
 NS_ASSUME_NONNULL_END
