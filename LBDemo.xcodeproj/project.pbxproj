@@ -40,6 +40,10 @@
 		ED36BB1D230AA5A1009B6E14 /* EHIInputLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED36BB1C230AA5A1009B6E14 /* EHIInputLicensePlateViewController.m */; };
 		ED36BB26230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ED36BB25230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m */; };
 		ED36BB30230B9EB5009B6E14 /* SEEDLicensePlateView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED36BB2F230B9EB5009B6E14 /* SEEDLicensePlateView.m */; };
+		ED637CB3232A13B500F9520D /* EHIUpdateAPPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED637CB2232A13B500F9520D /* EHIUpdateAPPViewController.m */; };
+		ED637CB9232A196D00F9520D /* EHIUpdateAppContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED637CB8232A196D00F9520D /* EHIUpdateAppContentView.m */; };
+		ED637CCF2331C01D00F9520D /* LBNewItineraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED637CCE2331C01D00F9520D /* LBNewItineraryViewController.m */; };
+		ED637CD22331C07700F9520D /* EHIHomeItineraryView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED637CD12331C07700F9520D /* EHIHomeItineraryView.m */; };
 		ED68526A2302632800E0B3D5 /* EHIHicarOperationBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6852692302632800E0B3D5 /* EHIHicarOperationBottomView.m */; };
 		ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED68526D23029F1800E0B3D5 /* SEEDPasswordInputView.m */; };
 		ED6852752303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6852742303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m */; };
@@ -51,6 +55,21 @@
 		ED6C7FA5230EAC2400B1AF20 /* EHIHiCarDetectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6C7FA3230EAC2400B1AF20 /* EHIHiCarDetectionModel.m */; };
 		ED6C7FA8230F728400B1AF20 /* EHIScanCarAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6C7FA7230F728400B1AF20 /* EHIScanCarAnimationView.m */; };
 		EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */; };
+		EDB6C5C12331F52900B9B3BF /* LBItineraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5C02331F52900B9B3BF /* LBItineraryModel.m */; };
+		EDB6C5C42333186900B9B3BF /* EHINewItineraryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5C32333186900B9B3BF /* EHINewItineraryListViewController.m */; };
+		EDB6C5C7233320A000B9B3BF /* EHINewItineraryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5C6233320A000B9B3BF /* EHINewItineraryCell.m */; };
+		EDB6C5CA2333291D00B9B3BF /* EHINewItineraryCellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5C92333291D00B9B3BF /* EHINewItineraryCellContentView.m */; };
+		EDB6C5CE2334724E00B9B3BF /* EHINewItineraryRender.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5CD2334724E00B9B3BF /* EHINewItineraryRender.m */; };
+		EDB6C5D123349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5D023349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.m */; };
+		EDB6C5D423349BDF00B9B3BF /* EHINewItineraryAddressListView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5D323349BDF00B9B3BF /* EHINewItineraryAddressListView.m */; };
+		EDB6C5D723349E9000B9B3BF /* LBNewItineraryDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5D623349E9000B9B3BF /* LBNewItineraryDefines.m */; };
+		EDB6C5DA23349FAD00B9B3BF /* EHINewItineraryTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5D923349FAD00B9B3BF /* EHINewItineraryTopView.m */; };
+		EDB6C5DD2334A09900B9B3BF /* EHINewItineraryMessagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5DC2334A09900B9B3BF /* EHINewItineraryMessagesView.m */; };
+		EDB6C5E02334A22D00B9B3BF /* EHINewItineraryMessagesItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5DF2334A22D00B9B3BF /* EHINewItineraryMessagesItemModel.m */; };
+		EDB6C5E42334AF4000B9B3BF /* EHINewItineraryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5E32334AF4000B9B3BF /* EHINewItineraryViewModel.m */; };
+		EDB6C5E72334D10100B9B3BF /* EHINewItineraryCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5E62334D10100B9B3BF /* EHINewItineraryCellViewModel.m */; };
+		EDB6C5EA2334D20800B9B3BF /* EHINewItineraryCellContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5E92334D20800B9B3BF /* EHINewItineraryCellContentModel.m */; };
+		EDB6C5ED2338579600B9B3BF /* EHINewItinerayItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5EC2338579600B9B3BF /* EHINewItinerayItemModel.m */; };
 		EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */; };
 		EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6164222B8CC9000525050 /* LBModelHomeView.m */; };
 		EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC616A722C0A3C600525050 /* LBHomeCell.m */; };
@@ -58,7 +77,7 @@
 		EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727A922F1686000645DAD /* LBLoadFatherModel.m */; };
 		EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727AC22F168DC00645DAD /* LBLoadViewController.m */; };
 		EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727AF22F1694700645DAD /* LBLoadSonModel.m */; };
-		EDD172FA230E3648009B781E /* EHIPreAuthDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172F8230E3648009B781E /* EHIPreAuthDetailView.m */; };
+		EDD172FA230E3648009B781E /* EHIOnlinePreAuthDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172F8230E3648009B781E /* EHIOnlinePreAuthDetailView.m */; };
 		EDD172FD230E679E009B781E /* EHIOnlinePreAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172FC230E679E009B781E /* EHIOnlinePreAuthModel.m */; };
 		EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */; };
 		EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111522DEC8BE00E6B7FF /* Language.m */; };
@@ -148,6 +167,14 @@
 		ED36BB25230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHINewEnergyLicensePlateTextField.m; sourceTree = "<group>"; };
 		ED36BB2E230B9EB5009B6E14 /* SEEDLicensePlateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDLicensePlateView.h; sourceTree = "<group>"; };
 		ED36BB2F230B9EB5009B6E14 /* SEEDLicensePlateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEEDLicensePlateView.m; sourceTree = "<group>"; };
+		ED637CB1232A13B500F9520D /* EHIUpdateAPPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIUpdateAPPViewController.h; sourceTree = "<group>"; };
+		ED637CB2232A13B500F9520D /* EHIUpdateAPPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIUpdateAPPViewController.m; sourceTree = "<group>"; };
+		ED637CB7232A196D00F9520D /* EHIUpdateAppContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIUpdateAppContentView.h; sourceTree = "<group>"; };
+		ED637CB8232A196D00F9520D /* EHIUpdateAppContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIUpdateAppContentView.m; sourceTree = "<group>"; };
+		ED637CCD2331C01D00F9520D /* LBNewItineraryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBNewItineraryViewController.h; sourceTree = "<group>"; };
+		ED637CCE2331C01D00F9520D /* LBNewItineraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBNewItineraryViewController.m; sourceTree = "<group>"; };
+		ED637CD02331C07700F9520D /* EHIHomeItineraryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIHomeItineraryView.h; sourceTree = "<group>"; };
+		ED637CD12331C07700F9520D /* EHIHomeItineraryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIHomeItineraryView.m; sourceTree = "<group>"; };
 		ED6852682302632800E0B3D5 /* EHIHicarOperationBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIHicarOperationBottomView.h; sourceTree = "<group>"; };
 		ED6852692302632800E0B3D5 /* EHIHicarOperationBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIHicarOperationBottomView.m; sourceTree = "<group>"; };
 		ED68526C23029F1800E0B3D5 /* SEEDPasswordInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDPasswordInputView.h; sourceTree = "<group>"; };
@@ -170,6 +197,36 @@
 		ED6C7FA7230F728400B1AF20 /* EHIScanCarAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIScanCarAnimationView.m; sourceTree = "<group>"; };
 		EDAB3CDE23010A7800C0225E /* EHIHiCarOperationTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIHiCarOperationTopView.h; sourceTree = "<group>"; };
 		EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIHiCarOperationTopView.m; sourceTree = "<group>"; };
+		EDB6C5BF2331F52900B9B3BF /* LBItineraryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBItineraryModel.h; sourceTree = "<group>"; };
+		EDB6C5C02331F52900B9B3BF /* LBItineraryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBItineraryModel.m; sourceTree = "<group>"; };
+		EDB6C5C22333186900B9B3BF /* EHINewItineraryListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryListViewController.h; sourceTree = "<group>"; };
+		EDB6C5C32333186900B9B3BF /* EHINewItineraryListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryListViewController.m; sourceTree = "<group>"; };
+		EDB6C5C5233320A000B9B3BF /* EHINewItineraryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryCell.h; sourceTree = "<group>"; };
+		EDB6C5C6233320A000B9B3BF /* EHINewItineraryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryCell.m; sourceTree = "<group>"; };
+		EDB6C5C82333291D00B9B3BF /* EHINewItineraryCellContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryCellContentView.h; sourceTree = "<group>"; };
+		EDB6C5C92333291D00B9B3BF /* EHINewItineraryCellContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryCellContentView.m; sourceTree = "<group>"; };
+		EDB6C5CC2334724E00B9B3BF /* EHINewItineraryRender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryRender.h; sourceTree = "<group>"; };
+		EDB6C5CD2334724E00B9B3BF /* EHINewItineraryRender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryRender.m; sourceTree = "<group>"; };
+		EDB6C5CF23349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItinerarySectionHeaderView.h; sourceTree = "<group>"; };
+		EDB6C5D023349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItinerarySectionHeaderView.m; sourceTree = "<group>"; };
+		EDB6C5D223349BDF00B9B3BF /* EHINewItineraryAddressListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryAddressListView.h; sourceTree = "<group>"; };
+		EDB6C5D323349BDF00B9B3BF /* EHINewItineraryAddressListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryAddressListView.m; sourceTree = "<group>"; };
+		EDB6C5D523349E9000B9B3BF /* LBNewItineraryDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBNewItineraryDefines.h; sourceTree = "<group>"; };
+		EDB6C5D623349E9000B9B3BF /* LBNewItineraryDefines.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBNewItineraryDefines.m; sourceTree = "<group>"; };
+		EDB6C5D823349FAD00B9B3BF /* EHINewItineraryTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryTopView.h; sourceTree = "<group>"; };
+		EDB6C5D923349FAD00B9B3BF /* EHINewItineraryTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryTopView.m; sourceTree = "<group>"; };
+		EDB6C5DB2334A09900B9B3BF /* EHINewItineraryMessagesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryMessagesView.h; sourceTree = "<group>"; };
+		EDB6C5DC2334A09900B9B3BF /* EHINewItineraryMessagesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryMessagesView.m; sourceTree = "<group>"; };
+		EDB6C5DE2334A22D00B9B3BF /* EHINewItineraryMessagesItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryMessagesItemModel.h; sourceTree = "<group>"; };
+		EDB6C5DF2334A22D00B9B3BF /* EHINewItineraryMessagesItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryMessagesItemModel.m; sourceTree = "<group>"; };
+		EDB6C5E22334AF4000B9B3BF /* EHINewItineraryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryViewModel.h; sourceTree = "<group>"; };
+		EDB6C5E32334AF4000B9B3BF /* EHINewItineraryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryViewModel.m; sourceTree = "<group>"; };
+		EDB6C5E52334D10100B9B3BF /* EHINewItineraryCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryCellViewModel.h; sourceTree = "<group>"; };
+		EDB6C5E62334D10100B9B3BF /* EHINewItineraryCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryCellViewModel.m; sourceTree = "<group>"; };
+		EDB6C5E82334D20800B9B3BF /* EHINewItineraryCellContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItineraryCellContentModel.h; sourceTree = "<group>"; };
+		EDB6C5E92334D20800B9B3BF /* EHINewItineraryCellContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItineraryCellContentModel.m; sourceTree = "<group>"; };
+		EDB6C5EB2338579600B9B3BF /* EHINewItinerayItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHINewItinerayItemModel.h; sourceTree = "<group>"; };
+		EDB6C5EC2338579600B9B3BF /* EHINewItinerayItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHINewItinerayItemModel.m; sourceTree = "<group>"; };
 		EDC6163D22B8C8DE00525050 /* LBHomeViewControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeViewControllerViewModel.h; sourceTree = "<group>"; };
 		EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewControllerViewModel.m; sourceTree = "<group>"; };
 		EDC6164122B8CC9000525050 /* LBModelHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBModelHomeView.h; sourceTree = "<group>"; };
@@ -184,8 +241,8 @@
 		EDC727AC22F168DC00645DAD /* LBLoadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadViewController.m; sourceTree = "<group>"; };
 		EDC727AE22F1694700645DAD /* LBLoadSonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLoadSonModel.h; sourceTree = "<group>"; };
 		EDC727AF22F1694700645DAD /* LBLoadSonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadSonModel.m; sourceTree = "<group>"; };
-		EDD172F8230E3648009B781E /* EHIPreAuthDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIPreAuthDetailView.m; sourceTree = "<group>"; };
-		EDD172F9230E3648009B781E /* EHIPreAuthDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIPreAuthDetailView.h; sourceTree = "<group>"; };
+		EDD172F8230E3648009B781E /* EHIOnlinePreAuthDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIOnlinePreAuthDetailView.m; sourceTree = "<group>"; };
+		EDD172F9230E3648009B781E /* EHIOnlinePreAuthDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIOnlinePreAuthDetailView.h; sourceTree = "<group>"; };
 		EDD172FB230E679E009B781E /* EHIOnlinePreAuthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIOnlinePreAuthModel.h; sourceTree = "<group>"; };
 		EDD172FC230E679E009B781E /* EHIOnlinePreAuthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIOnlinePreAuthModel.m; sourceTree = "<group>"; };
 		EDEB111122DEC8A700E6B7FF /* LBGenericTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBGenericTypeViewController.h; sourceTree = "<group>"; };
@@ -257,6 +314,7 @@
 		2C86F13F2112D82F00DF516A /* LBDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ED637CB0232A138800F9520D /* Helpers */,
 				ED3126D222F8024C007FAF47 /* Defines */,
 				2CB5D96A2117F8EB007E2FB9 /* Application */,
 				ED3126CD22F801E7007FAF47 /* Tools */,
@@ -298,6 +356,7 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ED637CCA2331BFD700F9520D /* NewItinerary */,
 				ED0D8727230F942600CC86F8 /* scanCarDemo */,
 				ED6852712303D5C800E0B3D5 /* CGDemo */,
 				ED09726022FD2033002BE46C /* demo */,
@@ -404,8 +463,8 @@
 			children = (
 				ED6C7FA0230EABC400B1AF20 /* EHIHiCarDetectionSingleView.h */,
 				ED6C7FA1230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m */,
-				EDD172F9230E3648009B781E /* EHIPreAuthDetailView.h */,
-				EDD172F8230E3648009B781E /* EHIPreAuthDetailView.m */,
+				EDD172F9230E3648009B781E /* EHIOnlinePreAuthDetailView.h */,
+				EDD172F8230E3648009B781E /* EHIOnlinePreAuthDetailView.m */,
 				ED09726622FD3F9A002BE46C /* EHiMemberShipRightsView.h */,
 				ED09726722FD3F9A002BE46C /* EHiMemberShipRightsView.m */,
 				EDAB3CDE23010A7800C0225E /* EHIHiCarOperationTopView.h */,
@@ -575,6 +634,88 @@
 			path = SEEDLicensePlateKeyBoard;
 			sourceTree = "<group>";
 		};
+		ED637CB0232A138800F9520D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ED637CB4232A192000F9520D /* UpdateApp */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ED637CB4232A192000F9520D /* UpdateApp */ = {
+			isa = PBXGroup;
+			children = (
+				ED637CB6232A194200F9520D /* Views */,
+				ED637CB5232A192C00F9520D /* ViewControllers */,
+			);
+			path = UpdateApp;
+			sourceTree = "<group>";
+		};
+		ED637CB5232A192C00F9520D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED637CB1232A13B500F9520D /* EHIUpdateAPPViewController.h */,
+				ED637CB2232A13B500F9520D /* EHIUpdateAPPViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ED637CB6232A194200F9520D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED637CB7232A196D00F9520D /* EHIUpdateAppContentView.h */,
+				ED637CB8232A196D00F9520D /* EHIUpdateAppContentView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED637CCA2331BFD700F9520D /* NewItinerary */ = {
+			isa = PBXGroup;
+			children = (
+				EDB6C5D523349E9000B9B3BF /* LBNewItineraryDefines.h */,
+				EDB6C5D623349E9000B9B3BF /* LBNewItineraryDefines.m */,
+				EDB6C5E12334AF1B00B9B3BF /* ViewModel */,
+				EDB6C5BE2331F50C00B9B3BF /* Model */,
+				ED637CCB2331BFE600F9520D /* Viewcontroller */,
+				ED637CCC2331BFF300F9520D /* Views */,
+			);
+			path = NewItinerary;
+			sourceTree = "<group>";
+		};
+		ED637CCB2331BFE600F9520D /* Viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				ED637CCD2331C01D00F9520D /* LBNewItineraryViewController.h */,
+				ED637CCE2331C01D00F9520D /* LBNewItineraryViewController.m */,
+				EDB6C5C22333186900B9B3BF /* EHINewItineraryListViewController.h */,
+				EDB6C5C32333186900B9B3BF /* EHINewItineraryListViewController.m */,
+			);
+			path = Viewcontroller;
+			sourceTree = "<group>";
+		};
+		ED637CCC2331BFF300F9520D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED637CD02331C07700F9520D /* EHIHomeItineraryView.h */,
+				ED637CD12331C07700F9520D /* EHIHomeItineraryView.m */,
+				EDB6C5C5233320A000B9B3BF /* EHINewItineraryCell.h */,
+				EDB6C5C6233320A000B9B3BF /* EHINewItineraryCell.m */,
+				EDB6C5CF23349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.h */,
+				EDB6C5D023349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.m */,
+				EDB6C5C82333291D00B9B3BF /* EHINewItineraryCellContentView.h */,
+				EDB6C5C92333291D00B9B3BF /* EHINewItineraryCellContentView.m */,
+				EDB6C5D823349FAD00B9B3BF /* EHINewItineraryTopView.h */,
+				EDB6C5D923349FAD00B9B3BF /* EHINewItineraryTopView.m */,
+				EDB6C5D223349BDF00B9B3BF /* EHINewItineraryAddressListView.h */,
+				EDB6C5D323349BDF00B9B3BF /* EHINewItineraryAddressListView.m */,
+				EDB6C5DB2334A09900B9B3BF /* EHINewItineraryMessagesView.h */,
+				EDB6C5DC2334A09900B9B3BF /* EHINewItineraryMessagesView.m */,
+				EDB6C5CC2334724E00B9B3BF /* EHINewItineraryRender.h */,
+				EDB6C5CD2334724E00B9B3BF /* EHINewItineraryRender.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ED68526B23029EE900E0B3D5 /* SEEDPassWordTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +809,32 @@
 				ED69179722E9466F00A919A4 /* ViewControllers */,
 			);
 			path = Block5;
+			sourceTree = "<group>";
+		};
+		EDB6C5BE2331F50C00B9B3BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDB6C5BF2331F52900B9B3BF /* LBItineraryModel.h */,
+				EDB6C5C02331F52900B9B3BF /* LBItineraryModel.m */,
+				EDB6C5EB2338579600B9B3BF /* EHINewItinerayItemModel.h */,
+				EDB6C5EC2338579600B9B3BF /* EHINewItinerayItemModel.m */,
+				EDB6C5E82334D20800B9B3BF /* EHINewItineraryCellContentModel.h */,
+				EDB6C5E92334D20800B9B3BF /* EHINewItineraryCellContentModel.m */,
+				EDB6C5DE2334A22D00B9B3BF /* EHINewItineraryMessagesItemModel.h */,
+				EDB6C5DF2334A22D00B9B3BF /* EHINewItineraryMessagesItemModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDB6C5E12334AF1B00B9B3BF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDB6C5E22334AF4000B9B3BF /* EHINewItineraryViewModel.h */,
+				EDB6C5E32334AF4000B9B3BF /* EHINewItineraryViewModel.m */,
+				EDB6C5E52334D10100B9B3BF /* EHINewItineraryCellViewModel.h */,
+				EDB6C5E62334D10100B9B3BF /* EHINewItineraryCellViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		EDC6163C22B8C8A200525050 /* ViewModel */ = {
@@ -992,12 +1159,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED6C7FA8230F728400B1AF20 /* EHIScanCarAnimationView.m in Sources */,
+				EDB6C5D423349BDF00B9B3BF /* EHINewItineraryAddressListView.m in Sources */,
+				EDB6C5DD2334A09900B9B3BF /* EHINewItineraryMessagesView.m in Sources */,
 				EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */,
+				EDB6C5E42334AF4000B9B3BF /* EHINewItineraryViewModel.m in Sources */,
+				ED637CD22331C07700F9520D /* EHIHomeItineraryView.m in Sources */,
 				ED3126D122F80225007FAF47 /* SEEDSelecteView.m in Sources */,
 				ED6852752303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m in Sources */,
 				ED36BB26230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m in Sources */,
+				EDB6C5ED2338579600B9B3BF /* EHINewItinerayItemModel.m in Sources */,
+				EDB6C5EA2334D20800B9B3BF /* EHINewItineraryCellContentModel.m in Sources */,
 				EDFF0F99230E1F78004F6F44 /* EHiMemberShipRightsModel.m in Sources */,
 				EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */,
+				EDB6C5CA2333291D00B9B3BF /* EHINewItineraryCellContentView.m in Sources */,
 				ED0CCCAA22C0B1BD00E4D384 /* LBLoginCenter.m in Sources */,
 				ED2F17BF230FDE1F00E4FEB9 /* EHIDetectionBottomView.m in Sources */,
 				ED69179A22E946A100A919A4 /* LBBlock5ViewController.m in Sources */,
@@ -1005,36 +1179,48 @@
 				EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */,
 				ED36BB1D230AA5A1009B6E14 /* EHIInputLicensePlateViewController.m in Sources */,
 				ED09726522FD3F1A002BE46C /* LBEHIDemoViewController.m in Sources */,
+				EDB6C5E02334A22D00B9B3BF /* EHINewItineraryMessagesItemModel.m in Sources */,
 				ED0D872C230F946E00CC86F8 /* EHIDetectionViewController.m in Sources */,
 				ED0D8730230FAF3900CC86F8 /* EHIDetectionModel.m in Sources */,
 				ED09725F22FC13EC002BE46C /* LBLockViewController.m in Sources */,
 				ED0CCCB922C1B08000E4D384 /* LBLoginViewModel.m in Sources */,
 				ED68526A2302632800E0B3D5 /* EHIHicarOperationBottomView.m in Sources */,
+				ED637CB3232A13B500F9520D /* EHIUpdateAPPViewController.m in Sources */,
 				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
+				EDB6C5D123349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.m in Sources */,
 				EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */,
 				ED69179E22E9777D00A919A4 /* LBCodeViewController.m in Sources */,
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */,
 				EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */,
 				ED6C7FA2230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m in Sources */,
+				EDB6C5C42333186900B9B3BF /* EHINewItineraryListViewController.m in Sources */,
 				ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */,
 				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
+				EDB6C5E72334D10100B9B3BF /* EHINewItineraryCellViewModel.m in Sources */,
+				EDB6C5C7233320A000B9B3BF /* EHINewItineraryCell.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
 				BE881E3523096D9D001BFF7A /* EHICarLicensePlateTextField.m in Sources */,
 				EDD172FD230E679E009B781E /* EHIOnlinePreAuthModel.m in Sources */,
 				ED69179022E08F5200A919A4 /* LBProtocolDemoVC.m in Sources */,
-				EDD172FA230E3648009B781E /* EHIPreAuthDetailView.m in Sources */,
+				EDD172FA230E3648009B781E /* EHIOnlinePreAuthDetailView.m in Sources */,
+				EDB6C5C12331F52900B9B3BF /* LBItineraryModel.m in Sources */,
+				EDB6C5DA23349FAD00B9B3BF /* EHINewItineraryTopView.m in Sources */,
 				EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
 				EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */,
 				ED6C7FA5230EAC2400B1AF20 /* EHIHiCarDetectionModel.m in Sources */,
 				ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */,
 				EDEB111922DEC98500E6B7FF /* People.m in Sources */,
+				EDB6C5D723349E9000B9B3BF /* LBNewItineraryDefines.m in Sources */,
 				ED0D8733230FB6C000CC86F8 /* EHIDetecctionItemView.m in Sources */,
+				EDB6C5CE2334724E00B9B3BF /* EHINewItineraryRender.m in Sources */,
 				2C86F1502112D83500DF516A /* main.m in Sources */,
 				EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */,
 				ED36BB30230B9EB5009B6E14 /* SEEDLicensePlateView.m in Sources */,
+				ED637CB9232A196D00F9520D /* EHIUpdateAppContentView.m in Sources */,
 				ED69179322E08FBF00A919A4 /* SEEDSelectModel.m in Sources */,
+				ED637CCF2331C01D00F9520D /* LBNewItineraryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
