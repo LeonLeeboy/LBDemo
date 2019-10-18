@@ -14,6 +14,9 @@
 
 #import "LBMacro.h"
 
+/** 加解密，hash */
+#import "NSString+Hash.h"
+#import "RSACryptor.h"
 
 
 #endif /* LBPrefixHeader_pch */

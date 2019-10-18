@@ -26,6 +26,9 @@
 		ED0D872C230F946E00CC86F8 /* EHIDetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0D872B230F946E00CC86F8 /* EHIDetectionViewController.m */; };
 		ED0D8730230FAF3900CC86F8 /* EHIDetectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0D872F230FAF3900CC86F8 /* EHIDetectionModel.m */; };
 		ED0D8733230FB6C000CC86F8 /* EHIDetecctionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0D8732230FB6C000CC86F8 /* EHIDetecctionItemView.m */; };
+		ED0E5EC9235079520079F982 /* LBObjcMsgSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E5EC8235079520079F982 /* LBObjcMsgSendViewController.m */; };
+		ED0E5ECD235079810079F982 /* LBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E5ECC235079810079F982 /* LBPerson.m */; };
+		ED0E5ED0235079980079F982 /* LBStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E5ECF235079980079F982 /* LBStudent.m */; };
 		ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED203C6922C49EA100FF022D /* LBBlockVC.m */; };
 		ED2C1C2522DC08A90044893B /* libZampSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2422DC08A90044893B /* libZampSDK.a */; };
 		ED2C1C2722DC09950044893B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2622DC09950044893B /* AdSupport.framework */; };
@@ -74,6 +77,10 @@
 		EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6164222B8CC9000525050 /* LBModelHomeView.m */; };
 		EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC616A722C0A3C600525050 /* LBHomeCell.m */; };
 		EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC616AC22C0AD7200525050 /* LoginViewController.m */; };
+		EDC710A72356F38700E8C570 /* LBRACHotClodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC710A62356F38700E8C570 /* LBRACHotClodViewController.m */; };
+		EDC710AC235839BA00E8C570 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC710AA235839BA00E8C570 /* NSString+Hash.m */; };
+		EDC710B0235839C700E8C570 /* RSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC710AF235839C700E8C570 /* RSACryptor.m */; };
+		EDC710B723583AC900E8C570 /* LBHashStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC710B623583AC900E8C570 /* LBHashStudyViewController.m */; };
 		EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727A922F1686000645DAD /* LBLoadFatherModel.m */; };
 		EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727AC22F168DC00645DAD /* LBLoadViewController.m */; };
 		EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727AF22F1694700645DAD /* LBLoadSonModel.m */; };
@@ -144,6 +151,12 @@
 		ED0D872F230FAF3900CC86F8 /* EHIDetectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIDetectionModel.m; sourceTree = "<group>"; };
 		ED0D8731230FB6C000CC86F8 /* EHIDetecctionItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIDetecctionItemView.h; sourceTree = "<group>"; };
 		ED0D8732230FB6C000CC86F8 /* EHIDetecctionItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIDetecctionItemView.m; sourceTree = "<group>"; };
+		ED0E5EC7235079520079F982 /* LBObjcMsgSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBObjcMsgSendViewController.h; sourceTree = "<group>"; };
+		ED0E5EC8235079520079F982 /* LBObjcMsgSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBObjcMsgSendViewController.m; sourceTree = "<group>"; };
+		ED0E5ECB235079810079F982 /* LBPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBPerson.h; sourceTree = "<group>"; };
+		ED0E5ECC235079810079F982 /* LBPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBPerson.m; sourceTree = "<group>"; };
+		ED0E5ECE235079980079F982 /* LBStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBStudent.h; sourceTree = "<group>"; };
+		ED0E5ECF235079980079F982 /* LBStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBStudent.m; sourceTree = "<group>"; };
 		ED203C6822C49EA100FF022D /* LBBlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBBlockVC.h; sourceTree = "<group>"; };
 		ED203C6922C49EA100FF022D /* LBBlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBBlockVC.m; sourceTree = "<group>"; };
 		ED2C1C2322DC08A20044893B /* ZampAppAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZampAppAnalytics.h; sourceTree = "<group>"; };
@@ -235,6 +248,14 @@
 		EDC616A722C0A3C600525050 /* LBHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeCell.m; sourceTree = "<group>"; };
 		EDC616AB22C0AD7100525050 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EDC616AC22C0AD7200525050 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EDC710A52356F38700E8C570 /* LBRACHotClodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBRACHotClodViewController.h; sourceTree = "<group>"; };
+		EDC710A62356F38700E8C570 /* LBRACHotClodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBRACHotClodViewController.m; sourceTree = "<group>"; };
+		EDC710AA235839BA00E8C570 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		EDC710AB235839BA00E8C570 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		EDC710AE235839C700E8C570 /* RSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSACryptor.h; sourceTree = "<group>"; };
+		EDC710AF235839C700E8C570 /* RSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSACryptor.m; sourceTree = "<group>"; };
+		EDC710B523583AC900E8C570 /* LBHashStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHashStudyViewController.h; sourceTree = "<group>"; };
+		EDC710B623583AC900E8C570 /* LBHashStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHashStudyViewController.m; sourceTree = "<group>"; };
 		EDC727A822F1686000645DAD /* LBLoadFatherModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLoadFatherModel.h; sourceTree = "<group>"; };
 		EDC727A922F1686000645DAD /* LBLoadFatherModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadFatherModel.m; sourceTree = "<group>"; };
 		EDC727AB22F168DC00645DAD /* LBLoadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLoadViewController.h; sourceTree = "<group>"; };
@@ -314,6 +335,7 @@
 		2C86F13F2112D82F00DF516A /* LBDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EDC710A8235808B000E8C570 /* Sources */,
 				ED637CB0232A138800F9520D /* Helpers */,
 				ED3126D222F8024C007FAF47 /* Defines */,
 				2CB5D96A2117F8EB007E2FB9 /* Application */,
@@ -356,6 +378,9 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EDC710B123583A5C00E8C570 /* securityStudy */,
+				EDC710A12356F34100E8C570 /* RACSignal */,
+				ED0E5EC5235078FA0079F982 /* LBObjcMsgSend */,
 				ED637CCA2331BFD700F9520D /* NewItinerary */,
 				ED0D8727230F942600CC86F8 /* scanCarDemo */,
 				ED6852712303D5C800E0B3D5 /* CGDemo */,
@@ -547,6 +572,35 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ED0E5EC5235078FA0079F982 /* LBObjcMsgSend */ = {
+			isa = PBXGroup;
+			children = (
+				ED0E5ECA235079640079F982 /* Models */,
+				ED0E5EC62350792A0079F982 /* ViewControllers */,
+			);
+			path = LBObjcMsgSend;
+			sourceTree = "<group>";
+		};
+		ED0E5EC62350792A0079F982 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED0E5EC7235079520079F982 /* LBObjcMsgSendViewController.h */,
+				ED0E5EC8235079520079F982 /* LBObjcMsgSendViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ED0E5ECA235079640079F982 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED0E5ECB235079810079F982 /* LBPerson.h */,
+				ED0E5ECC235079810079F982 /* LBPerson.m */,
+				ED0E5ECE235079980079F982 /* LBStudent.h */,
+				ED0E5ECF235079980079F982 /* LBStudent.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		ED203C6722C49E6000FF022D /* block */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +654,8 @@
 		ED3126CD22F801E7007FAF47 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EDC710AD235839C700E8C570 /* Cipher-RSA */,
+				EDC710A9235839BA00E8C570 /* Security */,
 				ED36BB2D230B9E4A009B6E14 /* SEEDLicensePlateKeyBoard */,
 				ED68526B23029EE900E0B3D5 /* SEEDPassWordTextField */,
 				ED3126CE22F80207007FAF47 /* SEEDSelectView */,
@@ -883,6 +939,97 @@
 				EDC616AC22C0AD7200525050 /* LoginViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EDC710A12356F34100E8C570 /* RACSignal */ = {
+			isa = PBXGroup;
+			children = (
+				EDC710A42356F36200E8C570 /* Model */,
+				EDC710A32356F35700E8C570 /* ViewControllers */,
+				EDC710A22356F34B00E8C570 /* ViewModels */,
+			);
+			path = RACSignal;
+			sourceTree = "<group>";
+		};
+		EDC710A22356F34B00E8C570 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EDC710A32356F35700E8C570 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDC710A52356F38700E8C570 /* LBRACHotClodViewController.h */,
+				EDC710A62356F38700E8C570 /* LBRACHotClodViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EDC710A42356F36200E8C570 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDC710A8235808B000E8C570 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EDC710A9235839BA00E8C570 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				EDC710AB235839BA00E8C570 /* NSString+Hash.h */,
+				EDC710AA235839BA00E8C570 /* NSString+Hash.m */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		EDC710AD235839C700E8C570 /* Cipher-RSA */ = {
+			isa = PBXGroup;
+			children = (
+				EDC710AE235839C700E8C570 /* RSACryptor.h */,
+				EDC710AF235839C700E8C570 /* RSACryptor.m */,
+			);
+			path = "Cipher-RSA";
+			sourceTree = "<group>";
+		};
+		EDC710B123583A5C00E8C570 /* securityStudy */ = {
+			isa = PBXGroup;
+			children = (
+				EDC710B323583A7600E8C570 /* HashStudy */,
+				EDC710B223583A7000E8C570 /* RSA */,
+			);
+			path = securityStudy;
+			sourceTree = "<group>";
+		};
+		EDC710B223583A7000E8C570 /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RSA;
+			sourceTree = "<group>";
+		};
+		EDC710B323583A7600E8C570 /* HashStudy */ = {
+			isa = PBXGroup;
+			children = (
+				EDC710B423583AAB00E8C570 /* ViewControllers */,
+			);
+			path = HashStudy;
+			sourceTree = "<group>";
+		};
+		EDC710B423583AAB00E8C570 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDC710B523583AC900E8C570 /* LBHashStudyViewController.h */,
+				EDC710B623583AC900E8C570 /* LBHashStudyViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		EDC727A322F167FC00645DAD /* Load */ = {
@@ -1188,6 +1335,7 @@
 				ED637CB3232A13B500F9520D /* EHIUpdateAPPViewController.m in Sources */,
 				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
 				EDB6C5D123349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.m in Sources */,
+				EDC710B0235839C700E8C570 /* RSACryptor.m in Sources */,
 				EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */,
 				ED69179E22E9777D00A919A4 /* LBCodeViewController.m in Sources */,
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
@@ -1199,6 +1347,7 @@
 				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
 				EDB6C5E72334D10100B9B3BF /* EHINewItineraryCellViewModel.m in Sources */,
 				EDB6C5C7233320A000B9B3BF /* EHINewItineraryCell.m in Sources */,
+				EDC710A72356F38700E8C570 /* LBRACHotClodViewController.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
 				BE881E3523096D9D001BFF7A /* EHICarLicensePlateTextField.m in Sources */,
 				EDD172FD230E679E009B781E /* EHIOnlinePreAuthModel.m in Sources */,
@@ -1209,8 +1358,12 @@
 				EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
 				EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */,
+				ED0E5ED0235079980079F982 /* LBStudent.m in Sources */,
 				ED6C7FA5230EAC2400B1AF20 /* EHIHiCarDetectionModel.m in Sources */,
+				ED0E5EC9235079520079F982 /* LBObjcMsgSendViewController.m in Sources */,
 				ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */,
+				ED0E5ECD235079810079F982 /* LBPerson.m in Sources */,
+				EDC710AC235839BA00E8C570 /* NSString+Hash.m in Sources */,
 				EDEB111922DEC98500E6B7FF /* People.m in Sources */,
 				EDB6C5D723349E9000B9B3BF /* LBNewItineraryDefines.m in Sources */,
 				ED0D8733230FB6C000CC86F8 /* EHIDetecctionItemView.m in Sources */,
@@ -1218,6 +1371,7 @@
 				2C86F1502112D83500DF516A /* main.m in Sources */,
 				EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */,
 				ED36BB30230B9EB5009B6E14 /* SEEDLicensePlateView.m in Sources */,
+				EDC710B723583AC900E8C570 /* LBHashStudyViewController.m in Sources */,
 				ED637CB9232A196D00F9520D /* EHIUpdateAppContentView.m in Sources */,
 				ED69179322E08FBF00A919A4 /* SEEDSelectModel.m in Sources */,
 				ED637CCF2331C01D00F9520D /* LBNewItineraryViewController.m in Sources */,

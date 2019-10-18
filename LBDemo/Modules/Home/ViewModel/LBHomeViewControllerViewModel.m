@@ -90,6 +90,18 @@ static int count = 0;
     m8.displayName = @"iOS frame 和 masonry 混用姿势";
     m8.targetName = @"LBNewItineraryViewController";
     
+    LBModelHomeView *m9 = LBModelHomeView.new;
+    m8.displayName = @"消息发送探究";
+    m8.targetName = @"LBObjcMsgSendViewController";
+    
+    LBModelHomeView *m10 = LBModelHomeView.new;
+    m10.displayName = @"RACSignal 冷热信号";
+    m10.targetName = @"LBRACHotClodViewController";
+    
+    LBModelHomeView *m11 = LBModelHomeView.new;
+    m11.displayName = @"MD5 HashString";
+    m11.targetName = @"LBHashStudyViewController";
+    
     
 
     [homeModels addObject:m];
@@ -101,6 +113,10 @@ static int count = 0;
     [homeModels addObject:m6];
     [homeModels addObject:m7];
     [homeModels addObject:m8];
+    [homeModels addObject:m9];
+    [homeModels addObject:m10];
+    [homeModels addObject:m11];
+    
     return homeModels.copy;
 }
 

@@ -63,6 +63,7 @@
 
 #pragma mark RACSubscriber
 
+/** next 的信号实在对象销毁的时候，销毁 */
 - (void)sendNext:(id)value {
 	@synchronized (self) {
 		void (^nextBlock)(id) = [self.next copy];
