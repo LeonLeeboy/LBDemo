@@ -32,7 +32,7 @@ static CGFloat kAnimationDuration() {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [kEHIHexColor_000000 colorWithAlphaComponent:0];
+    self.view.backgroundColor =kEHIHexColor_FFFFFF;
     
     
 }
@@ -81,9 +81,27 @@ static CGFloat kAnimationDuration() {
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"----1");
+        
+//    [self performSelector:@selector(test) onThread:[NSThread currentThread] withObject:nil waitUntilDone:YES];
+//        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:NSDate.date];
+//        [self performSelector:@selector(test) withObject:nil afterDelay:1.0];
+        //        [[NSRunLoop currentRunLoop] run];
+        NSLog(@"-----3");
+    });
+}
+
 #pragma mark - Action
 - (void)doNowUpdateAciton {
+   
     [self p_dismiss];
+}
+
+- (void)test{
+    NSLog(@"2");
 }
 
 - (void)doNextTimeAction {

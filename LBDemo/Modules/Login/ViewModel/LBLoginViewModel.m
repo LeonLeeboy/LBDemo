@@ -24,6 +24,7 @@ static inline UIColor *HexColor(int v) {
 + (RACSignal *)logInButtondEnabled:(RACTuple *)signals {
     RACSignal *nameSignal = signals.first;
     RACSignal *pwdSignal = signals.second;
+    //任意有一个变化都会发生变化，我们想想如果不用信号我们怎么操作呢
     return [RACSignal combineLatest:@[nameSignal , pwdSignal] reduce:^id _Nonnull(NSString *userName,NSString *pwd){
         return @([LBLoginViewModel p_evaluateName:userName pwd:pwd]);
     }];
@@ -31,6 +32,7 @@ static inline UIColor *HexColor(int v) {
 
 /// 登陆按钮 userName.length = 11 && pwd.length > 6 正常显示，否则灰色
 + (RACSignal *)logInButtondBackGroundColor:(RACTuple *)signals {
+    // 用信号流的方法传递变化
     return [[LBLoginViewModel logInButtondEnabled:signals] map:^id _Nullable(NSNumber *  _Nullable value) {
         UIColor *bgColor;
         if ([value boolValue]) {

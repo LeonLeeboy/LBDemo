@@ -34,6 +34,7 @@
 - (RACDisposable *)schedule:(void (^)(void))block {
 	NSCParameterAssert(block != NULL);
 
+    // 没有操作，并且也不是住线程
 	if (RACScheduler.currentScheduler == nil) return [self.backgroundScheduler schedule:block];
 
 	block();

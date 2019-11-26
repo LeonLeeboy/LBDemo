@@ -102,6 +102,27 @@ static int count = 0;
     m11.displayName = @"MD5 HashString";
     m11.targetName = @"LBHashStudyViewController";
     
+    LBModelHomeView *m12 = LBModelHomeView.new;
+    m12.displayName = @"瀑布流";
+    m12.targetName = @"LBWaterFallViewController";
+    
+    LBModelHomeView *m13 = LBModelHomeView.new;
+    m13.displayName = @"YYAsyncLayer 探索";
+    m13.targetName =@"LBYYAsyncLayerViewController";
+    
+    LBModelHomeView *m14 = LBModelHomeView.new;
+    m14.displayName = @"runloop timer 探索";
+    m14.targetName =@"LBRunLoopViewController";
+    
+    
+    LBModelHomeView *m15 = LBModelHomeView.new;
+    m15.displayName = @"autoReleasePool 探索";
+    m15.targetName =@"LBAutoReleasePoolViewController";
+    
+    LBModelHomeView *m16 = LBModelHomeView.new;
+    m16.displayName = @"FIFO 内存置换算法";
+    m16.targetName =@"LBDoubleLinkedListViewController";
+    
     
 
     [homeModels addObject:m];
@@ -116,6 +137,11 @@ static int count = 0;
     [homeModels addObject:m9];
     [homeModels addObject:m10];
     [homeModels addObject:m11];
+    [homeModels addObject:m12];
+    [homeModels addObject:m13];
+    [homeModels addObject:m14];
+    [homeModels addObject:m15];
+    [homeModels addObject:m16];
     
     return homeModels.copy;
 }

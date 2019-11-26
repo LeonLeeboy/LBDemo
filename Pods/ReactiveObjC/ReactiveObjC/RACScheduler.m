@@ -92,6 +92,7 @@ NSString * const RACSchedulerCurrentSchedulerKey = @"RACSchedulerCurrentSchedule
 }
 
 + (RACScheduler *)currentScheduler {
+    /** 当前的调度者判断 */
 	RACScheduler *scheduler = NSThread.currentThread.threadDictionary[RACSchedulerCurrentSchedulerKey];
 	if (scheduler != nil) return scheduler;
 	if ([self.class isOnMainThread]) return RACScheduler.mainThreadScheduler;
