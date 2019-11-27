@@ -64,17 +64,37 @@
 }
 
 - (void)put:(id)value key:(id)key {
+    if (self.capacity == 0) {
+        return;
+    }
     
 }
 
 #pragma mark - private
 /** 跟新节点频率的操作 */
 - (void)p_updateFreq:(LFUNode *)node {
+    // 删除
     NSInteger freq = node.freq;
-    NSString *key = [NSString stringWithFormat:@"%ld",(long)freq];
+    NSString *key = [self p_getFreqMapKey:freq];
     DoubleLinkedList *list = self.freqMap[key];
-    [list remove:node];
-    
+    if (list) {
+        [list remove:node];
+    }
+   
+    // 更新
+    freq += 1;
+    node.freq = freq;
+    key = [self p_getFreqMapKey:freq];
+    if (![self.freqMap containsObjectForKey:key]) {
+        self.freqMap[key] = [[DoubleLinkedList alloc] initWithCapcity:self.capacity?:1000];
+    } else {
+        DoubleLinkedList *l = self.freqMap[key];
+        [l append:node];
+    }
+}
+
+- (NSString *)p_getFreqMapKey:(NSInteger)freq {
+    return [NSString stringWithFormat:@"%ld",(long)freq];
 }
 
 @end
