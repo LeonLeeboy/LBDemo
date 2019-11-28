@@ -39,7 +39,7 @@
 - (void)appendFront:(ListNode *)listNode;
 
 /** 添加尾部节点 */
-- (void)append:(ListNode *)listNode;
+- (ListNode *)append:(ListNode *)listNode;
 
 /** 删除 */
 - (ListNode *)remove:(ListNode *)node;

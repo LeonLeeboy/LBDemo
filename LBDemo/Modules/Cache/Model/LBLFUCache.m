@@ -55,12 +55,27 @@
     return self;
 }
 
+- (id)getHighFreqValue {
+    NSInteger maxFreq = [self p_getMaxFeq:self.freqMap];
+    DoubleLinkedList *l = [self p_getFreqList:maxFreq];
+    LFUNode *node = (LFUNode *)[l pop];
+    return node.value;
+}
+
+-(id)getLowFreqValue {
+    NSInteger minFreq = [self p_getMinFeq:self.freqMap];
+    DoubleLinkedList *l = [self p_getFreqList:minFreq];
+    LFUNode *node = (LFUNode *)[l pop];
+    return node.value;
+}
+
 - (id)get:(id)key {
-    if ([self.map containsObjectForKey:key]) {
-        LFUNode *node = self.map[key];
-        return node.value;
+    if (![self.map containsObjectForKey:key]) {
+        return nil;
     }
-    return nil;
+    LFUNode *node = self.map[key];
+    [self p_updateFreq:node];
+    return node.value;
 }
 
 - (void)put:(id)value key:(id)key {
@@ -68,6 +83,40 @@
         return;
     }
     
+    if ([self.map containsObjectForKey:key]) {//缓存命中
+        LFUNode *node = self.map[key];
+        node.value = value;
+        [self p_updateFreq:node];
+    } else { // 缓存没有命中
+        if (self.capacity == self.size) {
+            NSInteger minFreq = [self p_getMinFeq:self.freqMap];
+            DoubleLinkedList *list = [self p_getFreqList:minFreq];
+            [list pop];
+            [self.map removeObjectForKey:key];
+            self.size -= 1;
+        }
+        LFUNode *node = [[LFUNode alloc] initWithValue:value key:key];
+        node.freq = 1;
+        self.map[key] = node;
+        NSString *freqKey = [self p_getFreqMapKey:node.freq];
+        if (![self.freqMap containsObjectForKey:freqKey]) {
+            self.freqMap[freqKey] = [[DoubleLinkedList alloc] initWithCapcity:self.capacity];
+        }
+        DoubleLinkedList *linkedList = self.freqMap[freqKey];
+        [linkedList append:node];
+        self.size += 1;
+    }
+}
+
+- (void)print {
+    NSLog(@"************************");
+    NSDictionary <NSString *, DoubleLinkedList *> *freqMap = self.freqMap;
+    [self.freqMap enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, DoubleLinkedList * _Nonnull obj, BOOL * _Nonnull stop) {
+        NSLog(@"Freq = %@\n",key);
+        [obj print];
+    }];
+    NSLog(@"************************");
+    NSLog(@"\n");
 }
 
 #pragma mark - private
@@ -87,14 +136,35 @@
     key = [self p_getFreqMapKey:freq];
     if (![self.freqMap containsObjectForKey:key]) {
         self.freqMap[key] = [[DoubleLinkedList alloc] initWithCapcity:self.capacity?:1000];
-    } else {
-        DoubleLinkedList *l = self.freqMap[key];
-        [l append:node];
     }
+    DoubleLinkedList *l = self.freqMap[key];
+    [l append:node];
 }
 
 - (NSString *)p_getFreqMapKey:(NSInteger)freq {
     return [NSString stringWithFormat:@"%ld",(long)freq];
+}
+
+/** 频率最低的freq */
+- (NSInteger)p_getMinFeq:(NSDictionary *)freqMap {
+    NSArray *allKeys = [freqMap.allKeys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2];
+    }];
+    return [allKeys.firstObject integerValue];
+}
+
+/** 最高频率 */
+- (NSInteger)p_getMaxFeq:(NSDictionary *)freqMap {
+    NSArray *allKeys = [freqMap.allKeys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2];
+    }];
+    return [allKeys.lastObject integerValue];
+}
+
+/** 频率 -> list */
+- (DoubleLinkedList *)p_getFreqList:(NSInteger)freq {
+    NSString *key = [self p_getFreqMapKey:freq];
+    return self.freqMap[key];
 }
 
 @end

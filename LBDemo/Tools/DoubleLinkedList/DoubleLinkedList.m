@@ -58,8 +58,8 @@
     return [self p_delHead];
 }
 
-- (void)append:(ListNode *)listNode {
-    [self p_addTail:listNode];
+- (ListNode *)append:(ListNode *)listNode {
+    return [self p_addTail:listNode];
 }
 
 - (void)appendFront:(ListNode *)listNode {
