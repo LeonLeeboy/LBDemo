@@ -24,6 +24,8 @@
 		ED09E5D2238D0E0F0025F669 /* LBFIFOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09E5D1238D0E0F0025F669 /* LBFIFOCache.m */; };
 		ED09E5D5238D15F90025F669 /* LBLRUCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09E5D4238D15F90025F669 /* LBLRUCache.m */; };
 		ED09E5D8238D24F10025F669 /* LBLFUCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09E5D7238D24F10025F669 /* LBLFUCache.m */; };
+		ED09E5DC2394AB2D0025F669 /* BinarySearchTree.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09E5DB2394AB2C0025F669 /* BinarySearchTree.m */; };
+		ED09E5DF2394AB6C0025F669 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09E5DE2394AB6C0025F669 /* Node.m */; };
 		ED0CCCAA22C0B1BD00E4D384 /* LBLoginCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCA922C0B1BD00E4D384 /* LBLoginCenter.m */; };
 		ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCAD22C0B20A00E4D384 /* LBModelLogin.m */; };
 		ED0CCCB522C0B26B00E4D384 /* LBModelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0CCCB322C0B26B00E4D384 /* LBModelBase.m */; };
@@ -157,6 +159,10 @@
 		ED09E5D4238D15F90025F669 /* LBLRUCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLRUCache.m; sourceTree = "<group>"; };
 		ED09E5D6238D24F10025F669 /* LBLFUCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLFUCache.h; sourceTree = "<group>"; };
 		ED09E5D7238D24F10025F669 /* LBLFUCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLFUCache.m; sourceTree = "<group>"; };
+		ED09E5DA2394AB2C0025F669 /* BinarySearchTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinarySearchTree.h; sourceTree = "<group>"; };
+		ED09E5DB2394AB2C0025F669 /* BinarySearchTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinarySearchTree.m; sourceTree = "<group>"; };
+		ED09E5DD2394AB6C0025F669 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		ED09E5DE2394AB6C0025F669 /* Node.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
 		ED0CCCA822C0B1BC00E4D384 /* LBLoginCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLoginCenter.h; sourceTree = "<group>"; };
 		ED0CCCA922C0B1BD00E4D384 /* LBLoginCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLoginCenter.m; sourceTree = "<group>"; };
 		ED0CCCAD22C0B20A00E4D384 /* LBModelLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBModelLogin.m; sourceTree = "<group>"; };
@@ -578,6 +584,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ED09E5D92394AAB70025F669 /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				ED09E5DA2394AB2C0025F669 /* BinarySearchTree.h */,
+				ED09E5DB2394AB2C0025F669 /* BinarySearchTree.m */,
+				ED09E5DD2394AB6C0025F669 /* Node.h */,
+				ED09E5DE2394AB6C0025F669 /* Node.m */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
 		ED0CCCAB22C0B1FF00E4D384 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,6 +745,7 @@
 		ED3126CD22F801E7007FAF47 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED09E5D92394AAB70025F669 /* Tree */,
 				ED09E5C2238D0B4F0025F669 /* DoubleLinkedList */,
 				EDF19668236680E4000EFE4B /* WaterFall */,
 				EDC710AD235839C700E8C570 /* Cipher-RSA */,
@@ -1497,6 +1515,7 @@
 				EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */,
 				EDC2DB6C237BD0120088960B /* LBAutoReleasePoolViewController.m in Sources */,
 				ED36BB1D230AA5A1009B6E14 /* EHIInputLicensePlateViewController.m in Sources */,
+				ED09E5DC2394AB2D0025F669 /* BinarySearchTree.m in Sources */,
 				ED09726522FD3F1A002BE46C /* LBEHIDemoViewController.m in Sources */,
 				EDB6C5E02334A22D00B9B3BF /* EHINewItineraryMessagesItemModel.m in Sources */,
 				ED0D872C230F946E00CC86F8 /* EHIDetectionViewController.m in Sources */,
@@ -1541,6 +1560,7 @@
 				ED0E5EC9235079520079F982 /* LBObjcMsgSendViewController.m in Sources */,
 				ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */,
 				ED0E5ECD235079810079F982 /* LBPerson.m in Sources */,
+				ED09E5DF2394AB6C0025F669 /* Node.m in Sources */,
 				EDC710AC235839BA00E8C570 /* NSString+Hash.m in Sources */,
 				ED09E5C5238D0BA20025F669 /* DoubleLinkedList.m in Sources */,
 				EDEB111922DEC98500E6B7FF /* People.m in Sources */,
