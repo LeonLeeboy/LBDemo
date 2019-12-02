@@ -123,6 +123,9 @@ static int count = 0;
     m16.displayName = @"FIFO 内存置换算法";
     m16.targetName =@"LBDoubleLinkedListViewController";
     
+    LBModelHomeView *m17 = LBModelHomeView.new;
+    m17.displayName = @"条件变量";
+    m17.targetName =@"LBConditionLockViewController";
     
 
     [homeModels addObject:m];
@@ -142,6 +145,7 @@ static int count = 0;
     [homeModels addObject:m14];
     [homeModels addObject:m15];
     [homeModels addObject:m16];
+    [homeModels addObject:m17];
     
     return homeModels.copy;
 }
