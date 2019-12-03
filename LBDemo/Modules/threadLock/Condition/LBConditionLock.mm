@@ -33,7 +33,7 @@ void *producer (void *) {
         printf("生产一个产品，当前数量%d\n",num);
         sleep(3);
         pthread_cond_signal(&cond);
-        printf("通知消费者\n");
+        printf("通知消费者...\n");
         pthread_mutex_unlock(&mutex);
         sleep(1);
     }
@@ -51,7 +51,7 @@ void *consumer(void *) {
         printf("消费一个产品，当前数量：%d\n",num);
         sleep(1);
         pthread_cond_signal(&cond);
-        printf("通知生产者消费者\n");
+        printf("通知生产者...\n");
         pthread_mutex_unlock(&mutex);
     }
 }

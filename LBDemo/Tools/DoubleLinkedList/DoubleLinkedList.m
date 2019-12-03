@@ -36,7 +36,7 @@
 
 @property (nonatomic, assign) NSInteger capacity;
 
-@property (nonatomic, assign) NSInteger size;
+@property (nonatomic, assign, readwrite) NSInteger size;
 
 @end
 

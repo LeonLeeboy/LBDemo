@@ -127,6 +127,10 @@ static int count = 0;
     m17.displayName = @"条件变量";
     m17.targetName =@"LBConditionLockViewController";
     
+    LBModelHomeView *m18 = LBModelHomeView.new;
+    m18.displayName = @"线程安全队列";
+    m18.targetName =@"LBThreadSafeQueueViewController";
+    
 
     [homeModels addObject:m];
     [homeModels addObject:m1];
@@ -146,6 +150,7 @@ static int count = 0;
     [homeModels addObject:m15];
     [homeModels addObject:m16];
     [homeModels addObject:m17];
+    [homeModels addObject:m18];
     
     return homeModels.copy;
 }

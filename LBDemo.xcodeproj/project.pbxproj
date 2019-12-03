@@ -39,6 +39,9 @@
 		ED0E5ED0235079980079F982 /* LBStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E5ECF235079980079F982 /* LBStudent.m */; };
 		ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED203C6922C49EA100FF022D /* LBBlockVC.m */; };
 		ED2A5FD12395147E001ED6D8 /* LBConditionLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FD02395147E001ED6D8 /* LBConditionLockViewController.m */; };
+		ED2A5FD82396424D001ED6D8 /* LBMutexLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FD72396424D001ED6D8 /* LBMutexLockDemo.m */; };
+		ED2A5FDC23964C28001ED6D8 /* ThreadSafeQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FDB23964C28001ED6D8 /* ThreadSafeQueue.m */; };
+		ED2A5FE023965DFB001ED6D8 /* LBThreadSafeQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FDF23965DFB001ED6D8 /* LBThreadSafeQueueViewController.m */; };
 		ED2C1C2522DC08A90044893B /* libZampSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2422DC08A90044893B /* libZampSDK.a */; };
 		ED2C1C2722DC09950044893B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2622DC09950044893B /* AdSupport.framework */; };
 		ED2C1C2922DC09A10044893B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2822DC09A10044893B /* SystemConfiguration.framework */; };
@@ -191,6 +194,12 @@
 		ED203C6922C49EA100FF022D /* LBBlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBBlockVC.m; sourceTree = "<group>"; };
 		ED2A5FCF2395147E001ED6D8 /* LBConditionLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBConditionLockViewController.h; sourceTree = "<group>"; };
 		ED2A5FD02395147E001ED6D8 /* LBConditionLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBConditionLockViewController.m; sourceTree = "<group>"; };
+		ED2A5FD62396424D001ED6D8 /* LBMutexLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBMutexLockDemo.h; sourceTree = "<group>"; };
+		ED2A5FD72396424D001ED6D8 /* LBMutexLockDemo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBMutexLockDemo.m; sourceTree = "<group>"; };
+		ED2A5FDA23964C28001ED6D8 /* ThreadSafeQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadSafeQueue.h; sourceTree = "<group>"; };
+		ED2A5FDB23964C28001ED6D8 /* ThreadSafeQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeQueue.m; sourceTree = "<group>"; };
+		ED2A5FDE23965DFB001ED6D8 /* LBThreadSafeQueueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBThreadSafeQueueViewController.h; sourceTree = "<group>"; };
+		ED2A5FDF23965DFB001ED6D8 /* LBThreadSafeQueueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBThreadSafeQueueViewController.m; sourceTree = "<group>"; };
 		ED2C1C2322DC08A20044893B /* ZampAppAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZampAppAnalytics.h; sourceTree = "<group>"; };
 		ED2C1C2422DC08A90044893B /* libZampSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZampSDK.a; sourceTree = "<group>"; };
 		ED2C1C2622DC09950044893B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -420,6 +429,7 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ED2A5FD223960263001ED6D8 /* GraphTree */,
 				ED09E5E02395064A0025F669 /* threadLock */,
 				ED09E5BE238D0AF30025F669 /* Cache */,
 				EDC2DB65237BCFAF0088960B /* AutoReleasePool */,
@@ -605,6 +615,9 @@
 		ED09E5E02395064A0025F669 /* threadLock */ = {
 			isa = PBXGroup;
 			children = (
+				ED2A5FDD23965DD6001ED6D8 /* ViewController */,
+				ED2A5FD923964C0A001ED6D8 /* operateSystem */,
+				ED2A5FD523964231001ED6D8 /* MutexLock */,
 				ED09E5E9239511650025F669 /* Condition */,
 			);
 			path = threadLock;
@@ -733,6 +746,56 @@
 				ED203C6922C49EA100FF022D /* LBBlockVC.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ED2A5FD223960263001ED6D8 /* GraphTree */ = {
+			isa = PBXGroup;
+			children = (
+				ED2A5FD42396027F001ED6D8 /* DFS */,
+				ED2A5FD323960271001ED6D8 /* BFS */,
+			);
+			path = GraphTree;
+			sourceTree = "<group>";
+		};
+		ED2A5FD323960271001ED6D8 /* BFS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BFS;
+			sourceTree = "<group>";
+		};
+		ED2A5FD42396027F001ED6D8 /* DFS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DFS;
+			sourceTree = "<group>";
+		};
+		ED2A5FD523964231001ED6D8 /* MutexLock */ = {
+			isa = PBXGroup;
+			children = (
+				ED2A5FD62396424D001ED6D8 /* LBMutexLockDemo.h */,
+				ED2A5FD72396424D001ED6D8 /* LBMutexLockDemo.m */,
+			);
+			path = MutexLock;
+			sourceTree = "<group>";
+		};
+		ED2A5FD923964C0A001ED6D8 /* operateSystem */ = {
+			isa = PBXGroup;
+			children = (
+				ED2A5FDA23964C28001ED6D8 /* ThreadSafeQueue.h */,
+				ED2A5FDB23964C28001ED6D8 /* ThreadSafeQueue.m */,
+			);
+			path = operateSystem;
+			sourceTree = "<group>";
+		};
+		ED2A5FDD23965DD6001ED6D8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED2A5FDE23965DFB001ED6D8 /* LBThreadSafeQueueViewController.h */,
+				ED2A5FDF23965DFB001ED6D8 /* LBThreadSafeQueueViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		ED2C1C1F22DC07EF0044893B /* Vendors */ = {
@@ -1562,6 +1625,7 @@
 				EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */,
 				ED6C7FA2230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m in Sources */,
 				EDB6C5C42333186900B9B3BF /* EHINewItineraryListViewController.m in Sources */,
+				ED2A5FDC23964C28001ED6D8 /* ThreadSafeQueue.m in Sources */,
 				ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */,
 				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
 				ED7CA9D6237A49ED007AD106 /* LBRunLoopViewController.m in Sources */,
@@ -1572,6 +1636,7 @@
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
 				ED2A5FD12395147E001ED6D8 /* LBConditionLockViewController.m in Sources */,
 				BE881E3523096D9D001BFF7A /* EHICarLicensePlateTextField.m in Sources */,
+				ED2A5FE023965DFB001ED6D8 /* LBThreadSafeQueueViewController.m in Sources */,
 				EDD172FD230E679E009B781E /* EHIOnlinePreAuthModel.m in Sources */,
 				ED69179022E08F5200A919A4 /* LBProtocolDemoVC.m in Sources */,
 				EDD172FA230E3648009B781E /* EHIOnlinePreAuthDetailView.m in Sources */,
@@ -1586,6 +1651,7 @@
 				ED6C7FA5230EAC2400B1AF20 /* EHIHiCarDetectionModel.m in Sources */,
 				ED0E5EC9235079520079F982 /* LBObjcMsgSendViewController.m in Sources */,
 				ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */,
+				ED2A5FD82396424D001ED6D8 /* LBMutexLockDemo.m in Sources */,
 				ED0E5ECD235079810079F982 /* LBPerson.m in Sources */,
 				ED09E5EC2395118A0025F669 /* LBConditionLock.mm in Sources */,
 				ED09E5DF2394AB6C0025F669 /* Node.m in Sources */,

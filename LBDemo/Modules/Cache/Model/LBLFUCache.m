@@ -110,7 +110,6 @@
 
 - (void)print {
     NSLog(@"************************");
-    NSDictionary <NSString *, DoubleLinkedList *> *freqMap = self.freqMap;
     [self.freqMap enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, DoubleLinkedList * _Nonnull obj, BOOL * _Nonnull stop) {
         NSLog(@"Freq = %@\n",key);
         [obj print];

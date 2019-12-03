@@ -31,6 +31,8 @@
 
 @property (nonatomic, strong) ListNode *tail;
 
+@property (nonatomic, assign, readonly) NSInteger size;
+
 #pragma mark - Method
 /** 构造方法 */
 - (instancetype)initWithCapcity:(NSInteger)capacity;
