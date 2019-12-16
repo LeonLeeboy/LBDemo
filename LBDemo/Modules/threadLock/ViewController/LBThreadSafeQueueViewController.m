@@ -23,6 +23,9 @@
     self.title = @"线程安全队列";
     
     [self test];
+    
+    /** 任务执行 */
+    [self taskTest];
 }
 
 - (void)test {
@@ -37,6 +40,10 @@
     [thread1 start];
     [thread2 start];
     [thread3 start];
+}
+
+- (void)taskTest {
+    
 }
 
 - (void)producer {

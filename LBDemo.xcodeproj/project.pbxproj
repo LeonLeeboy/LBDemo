@@ -16,6 +16,7 @@
 		2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5D9752117F9D7007E2FB9 /* LBHomeVC.m */; };
 		BE881E3523096D9D001BFF7A /* EHICarLicensePlateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BE881E3423096D9D001BFF7A /* EHICarLicensePlateTextField.m */; };
 		E0F45F7176B82EAF138FC476 /* Pods_LBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A4CF45B738B0BC4DF81FDC /* Pods_LBDemo.framework */; };
+		ED009F5823A221200033F505 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = ED009F5723A221200033F505 /* LinkedList.m */; };
 		ED09725F22FC13EC002BE46C /* LBLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09725E22FC13EC002BE46C /* LBLockViewController.m */; };
 		ED09726522FD3F1A002BE46C /* LBEHIDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09726422FD3F1A002BE46C /* LBEHIDemoViewController.m */; };
 		ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED09726722FD3F9A002BE46C /* EHiMemberShipRightsView.m */; };
@@ -38,11 +39,14 @@
 		ED0E5ECD235079810079F982 /* LBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E5ECC235079810079F982 /* LBPerson.m */; };
 		ED0E5ED0235079980079F982 /* LBStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E5ECF235079980079F982 /* LBStudent.m */; };
 		ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED203C6922C49EA100FF022D /* LBBlockVC.m */; };
+		ED26985B23A381830007E7B1 /* LBDoubleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = ED26985A23A381830007E7B1 /* LBDoubleLinkedList.m */; };
 		ED2A5FD12395147E001ED6D8 /* LBConditionLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FD02395147E001ED6D8 /* LBConditionLockViewController.m */; };
 		ED2A5FD82396424D001ED6D8 /* LBMutexLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FD72396424D001ED6D8 /* LBMutexLockDemo.m */; };
 		ED2A5FDC23964C28001ED6D8 /* ThreadSafeQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FDB23964C28001ED6D8 /* ThreadSafeQueue.m */; };
 		ED2A5FE023965DFB001ED6D8 /* LBThreadSafeQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FDF23965DFB001ED6D8 /* LBThreadSafeQueueViewController.m */; };
-		ED2C1C2522DC08A90044893B /* libZampSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2422DC08A90044893B /* libZampSDK.a */; };
+		ED2A5FE6239A2F95001ED6D8 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FE5239A2F95001ED6D8 /* Task.m */; };
+		ED2A5FEA239A309C001ED6D8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FE9239A309C001ED6D8 /* Utils.m */; };
+		ED2A5FED239A377A001ED6D8 /* Pool.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FEC239A377A001ED6D8 /* Pool.m */; };
 		ED2C1C2722DC09950044893B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2622DC09950044893B /* AdSupport.framework */; };
 		ED2C1C2922DC09A10044893B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2822DC09A10044893B /* SystemConfiguration.framework */; };
 		ED2C1C2B22DC09B60044893B /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C1C2A22DC09B60044893B /* libsqlite3.0.tbd */; };
@@ -72,6 +76,7 @@
 		ED7CA9D123795C87007AD106 /* LBYYAsyncLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7CA9D023795C87007AD106 /* LBYYAsyncLayerViewController.m */; };
 		ED7CA9D6237A49ED007AD106 /* LBRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7CA9D5237A49ED007AD106 /* LBRunLoopViewController.m */; };
 		ED7CA9DA237A578C007AD106 /* LBRunLoopViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7CA9D9237A578C007AD106 /* LBRunLoopViewModel.m */; };
+		ED918A4323A7594B002910FF /* LBDemoDelegate+UniversalLink.m in Sources */ = {isa = PBXBuildFile; fileRef = ED918A4223A7594B002910FF /* LBDemoDelegate+UniversalLink.m */; };
 		EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */; };
 		EDB6C5C12331F52900B9B3BF /* LBItineraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5C02331F52900B9B3BF /* LBItineraryModel.m */; };
 		EDB6C5C42333186900B9B3BF /* EHINewItineraryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5C32333186900B9B3BF /* EHINewItineraryListViewController.m */; };
@@ -148,6 +153,8 @@
 		B353408141B2E20FA31FF409 /* Pods-LBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LBDemo/Pods-LBDemo.release.xcconfig"; sourceTree = "<group>"; };
 		BE881E3323096D9D001BFF7A /* EHICarLicensePlateTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICarLicensePlateTextField.h; sourceTree = "<group>"; };
 		BE881E3423096D9D001BFF7A /* EHICarLicensePlateTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICarLicensePlateTextField.m; sourceTree = "<group>"; };
+		ED009F5623A221200033F505 /* LinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
+		ED009F5723A221200033F505 /* LinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedList.m; sourceTree = "<group>"; };
 		ED09725D22FC13EC002BE46C /* LBLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLockViewController.h; sourceTree = "<group>"; };
 		ED09725E22FC13EC002BE46C /* LBLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLockViewController.m; sourceTree = "<group>"; };
 		ED09726322FD3F1A002BE46C /* LBEHIDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBEHIDemoViewController.h; sourceTree = "<group>"; };
@@ -192,6 +199,8 @@
 		ED0E5ECF235079980079F982 /* LBStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBStudent.m; sourceTree = "<group>"; };
 		ED203C6822C49EA100FF022D /* LBBlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBBlockVC.h; sourceTree = "<group>"; };
 		ED203C6922C49EA100FF022D /* LBBlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBBlockVC.m; sourceTree = "<group>"; };
+		ED26985923A381830007E7B1 /* LBDoubleLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBDoubleLinkedList.h; sourceTree = "<group>"; };
+		ED26985A23A381830007E7B1 /* LBDoubleLinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBDoubleLinkedList.m; sourceTree = "<group>"; };
 		ED2A5FCF2395147E001ED6D8 /* LBConditionLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBConditionLockViewController.h; sourceTree = "<group>"; };
 		ED2A5FD02395147E001ED6D8 /* LBConditionLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBConditionLockViewController.m; sourceTree = "<group>"; };
 		ED2A5FD62396424D001ED6D8 /* LBMutexLockDemo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBMutexLockDemo.h; sourceTree = "<group>"; };
@@ -200,8 +209,12 @@
 		ED2A5FDB23964C28001ED6D8 /* ThreadSafeQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeQueue.m; sourceTree = "<group>"; };
 		ED2A5FDE23965DFB001ED6D8 /* LBThreadSafeQueueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBThreadSafeQueueViewController.h; sourceTree = "<group>"; };
 		ED2A5FDF23965DFB001ED6D8 /* LBThreadSafeQueueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBThreadSafeQueueViewController.m; sourceTree = "<group>"; };
-		ED2C1C2322DC08A20044893B /* ZampAppAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZampAppAnalytics.h; sourceTree = "<group>"; };
-		ED2C1C2422DC08A90044893B /* libZampSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libZampSDK.a; sourceTree = "<group>"; };
+		ED2A5FE4239A2F95001ED6D8 /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		ED2A5FE5239A2F95001ED6D8 /* Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		ED2A5FE8239A309C001ED6D8 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		ED2A5FE9239A309C001ED6D8 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		ED2A5FEB239A377A001ED6D8 /* Pool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
+		ED2A5FEC239A377A001ED6D8 /* Pool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pool.m; sourceTree = "<group>"; };
 		ED2C1C2622DC09950044893B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		ED2C1C2822DC09A10044893B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ED2C1C2A22DC09B60044893B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -255,6 +268,9 @@
 		ED7CA9D5237A49ED007AD106 /* LBRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBRunLoopViewController.m; sourceTree = "<group>"; };
 		ED7CA9D8237A578C007AD106 /* LBRunLoopViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBRunLoopViewModel.h; sourceTree = "<group>"; };
 		ED7CA9D9237A578C007AD106 /* LBRunLoopViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBRunLoopViewModel.m; sourceTree = "<group>"; };
+		ED918A3E23A74EA2002910FF /* LBDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LBDemo.entitlements; sourceTree = "<group>"; };
+		ED918A4123A7594B002910FF /* LBDemoDelegate+UniversalLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LBDemoDelegate+UniversalLink.h"; sourceTree = "<group>"; };
+		ED918A4223A7594B002910FF /* LBDemoDelegate+UniversalLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LBDemoDelegate+UniversalLink.m"; sourceTree = "<group>"; };
 		EDAB3CDE23010A7800C0225E /* EHIHiCarOperationTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIHiCarOperationTopView.h; sourceTree = "<group>"; };
 		EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIHiCarOperationTopView.m; sourceTree = "<group>"; };
 		EDB6C5BF2331F52900B9B3BF /* LBItineraryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBItineraryModel.h; sourceTree = "<group>"; };
@@ -339,7 +355,6 @@
 				ED2C1C2B22DC09B60044893B /* libsqlite3.0.tbd in Frameworks */,
 				ED2C1C2922DC09A10044893B /* SystemConfiguration.framework in Frameworks */,
 				ED2C1C2722DC09950044893B /* AdSupport.framework in Frameworks */,
-				ED2C1C2522DC08A90044893B /* libZampSDK.a in Frameworks */,
 				E0F45F7176B82EAF138FC476 /* Pods_LBDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +401,7 @@
 		2C86F13F2112D82F00DF516A /* LBDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ED918A3E23A74EA2002910FF /* LBDemo.entitlements */,
 				EDC710A8235808B000E8C570 /* Sources */,
 				ED637CB0232A138800F9520D /* Helpers */,
 				ED3126D222F8024C007FAF47 /* Defines */,
@@ -420,6 +436,7 @@
 		2CB5D96A2117F8EB007E2FB9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				ED918A3F23A75920002910FF /* category */,
 				2CB5D96B2117F8EB007E2FB9 /* LBDemoDelegate.h */,
 				2CB5D96C2117F8EB007E2FB9 /* LBDemoDelegate.m */,
 			);
@@ -429,6 +446,7 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ED09E5D0238D0E0F0025F669 /* LBFIFOCache.h */,
 				ED2A5FD223960263001ED6D8 /* GraphTree */,
 				ED09E5E02395064A0025F669 /* threadLock */,
 				ED09E5BE238D0AF30025F669 /* Cache */,
@@ -584,6 +602,8 @@
 			children = (
 				ED09E5C4238D0BA20025F669 /* DoubleLinkedList.h */,
 				ED09E5C3238D0BA20025F669 /* DoubleLinkedList.m */,
+				ED26985923A381830007E7B1 /* LBDoubleLinkedList.h */,
+				ED26985A23A381830007E7B1 /* LBDoubleLinkedList.m */,
 			);
 			path = DoubleLinkedList;
 			sourceTree = "<group>";
@@ -591,7 +611,6 @@
 		ED09E5CC238D0DAE0025F669 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ED09E5D0238D0E0F0025F669 /* LBFIFOCache.h */,
 				ED09E5D1238D0E0F0025F669 /* LBFIFOCache.m */,
 				ED09E5D3238D15F90025F669 /* LBLRUCache.h */,
 				ED09E5D4238D15F90025F669 /* LBLRUCache.m */,
@@ -785,6 +804,10 @@
 			children = (
 				ED2A5FDA23964C28001ED6D8 /* ThreadSafeQueue.h */,
 				ED2A5FDB23964C28001ED6D8 /* ThreadSafeQueue.m */,
+				ED2A5FE4239A2F95001ED6D8 /* Task.h */,
+				ED2A5FE5239A2F95001ED6D8 /* Task.m */,
+				ED2A5FEB239A377A001ED6D8 /* Pool.h */,
+				ED2A5FEC239A377A001ED6D8 /* Pool.m */,
 			);
 			path = operateSystem;
 			sourceTree = "<group>";
@@ -798,42 +821,28 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		ED2A5FE7239A308B001ED6D8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ED2A5FE8239A309C001ED6D8 /* Utils.h */,
+				ED2A5FE9239A309C001ED6D8 /* Utils.m */,
+				ED009F5623A221200033F505 /* LinkedList.h */,
+				ED009F5723A221200033F505 /* LinkedList.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		ED2C1C1F22DC07EF0044893B /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				ED2C1C2022DC080B0044893B /* zamp */,
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		ED2C1C2022DC080B0044893B /* zamp */ = {
-			isa = PBXGroup;
-			children = (
-				ED2C1C2422DC08A90044893B /* libZampSDK.a */,
-				ED2C1C2122DC08A20044893B /* include */,
-			);
-			path = zamp;
-			sourceTree = "<group>";
-		};
-		ED2C1C2122DC08A20044893B /* include */ = {
-			isa = PBXGroup;
-			children = (
-				ED2C1C2222DC08A20044893B /* ZampSDK */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		ED2C1C2222DC08A20044893B /* ZampSDK */ = {
-			isa = PBXGroup;
-			children = (
-				ED2C1C2322DC08A20044893B /* ZampAppAnalytics.h */,
-			);
-			path = ZampSDK;
 			sourceTree = "<group>";
 		};
 		ED3126CD22F801E7007FAF47 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED2A5FE7239A308B001ED6D8 /* Utils */,
 				ED09E5D92394AAB70025F669 /* Tree */,
 				ED09E5C2238D0B4F0025F669 /* DoubleLinkedList */,
 				EDF19668236680E4000EFE4B /* WaterFall */,
@@ -1084,6 +1093,15 @@
 				ED7CA9D9237A578C007AD106 /* LBRunLoopViewModel.m */,
 			);
 			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		ED918A3F23A75920002910FF /* category */ = {
+			isa = PBXGroup;
+			children = (
+				ED918A4123A7594B002910FF /* LBDemoDelegate+UniversalLink.h */,
+				ED918A4223A7594B002910FF /* LBDemoDelegate+UniversalLink.m */,
+			);
+			path = category;
 			sourceTree = "<group>";
 		};
 		ED9F102C22E93C7E0008DD24 /* Block5 */ = {
@@ -1601,6 +1619,7 @@
 				ED2F17BF230FDE1F00E4FEB9 /* EHIDetectionBottomView.m in Sources */,
 				ED69179A22E946A100A919A4 /* LBBlock5ViewController.m in Sources */,
 				ED0CCCB522C0B26B00E4D384 /* LBModelBase.m in Sources */,
+				ED26985B23A381830007E7B1 /* LBDoubleLinkedList.m in Sources */,
 				EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */,
 				EDC2DB6C237BD0120088960B /* LBAutoReleasePoolViewController.m in Sources */,
 				ED36BB1D230AA5A1009B6E14 /* EHIInputLicensePlateViewController.m in Sources */,
@@ -1617,14 +1636,18 @@
 				EDB6C5D123349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.m in Sources */,
 				EDC710B0235839C700E8C570 /* RSACryptor.m in Sources */,
 				EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */,
+				ED2A5FED239A377A001ED6D8 /* Pool.m in Sources */,
 				ED09E5CB238D0CF70025F669 /* LBDoubleLinkedListViewController.m in Sources */,
+				ED2A5FE6239A2F95001ED6D8 /* Task.m in Sources */,
 				ED69179E22E9777D00A919A4 /* LBCodeViewController.m in Sources */,
 				ED09E5D2238D0E0F0025F669 /* LBFIFOCache.m in Sources */,
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */,
 				EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */,
+				ED009F5823A221200033F505 /* LinkedList.m in Sources */,
 				ED6C7FA2230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m in Sources */,
 				EDB6C5C42333186900B9B3BF /* EHINewItineraryListViewController.m in Sources */,
+				ED2A5FEA239A309C001ED6D8 /* Utils.m in Sources */,
 				ED2A5FDC23964C28001ED6D8 /* ThreadSafeQueue.m in Sources */,
 				ED68526E23029F1900E0B3D5 /* SEEDPasswordInputView.m in Sources */,
 				ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */,
@@ -1653,6 +1676,7 @@
 				ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */,
 				ED2A5FD82396424D001ED6D8 /* LBMutexLockDemo.m in Sources */,
 				ED0E5ECD235079810079F982 /* LBPerson.m in Sources */,
+				ED918A4323A7594B002910FF /* LBDemoDelegate+UniversalLink.m in Sources */,
 				ED09E5EC2395118A0025F669 /* LBConditionLock.mm in Sources */,
 				ED09E5DF2394AB6C0025F669 /* Node.m in Sources */,
 				EDC710AC235839BA00E8C570 /* NSString+Hash.m in Sources */,
@@ -1830,12 +1854,14 @@
 			baseConfigurationReference = 499B2A141209DAA52AFCE560 /* Pods-LBDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LBDemo/LBDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F28K9YM5CV;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LBDemo/supportingFiles/LBPrefixHeader.pch";
 				INFOPLIST_FILE = LBDemo/supportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1844,7 +1870,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LBDemo/Vendors/zamp",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xsunt.LBDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = LB.personnal.UniversalLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1857,12 +1883,14 @@
 			baseConfigurationReference = B353408141B2E20FA31FF409 /* Pods-LBDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LBDemo/LBDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F28K9YM5CV;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LBDemo/supportingFiles/LBPrefixHeader.pch";
 				INFOPLIST_FILE = LBDemo/supportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1871,7 +1899,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LBDemo/Vendors/zamp",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xsunt.LBDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = LB.personnal.UniversalLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

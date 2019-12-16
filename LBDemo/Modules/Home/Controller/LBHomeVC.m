@@ -10,7 +10,6 @@
 #import "LBHomeCell.h"
 #import "LBLoginCenter.h"
 #import "LBModelHomeView.h"
-#import "ZampAppAnalytics.h"
 
 
 @interface LBHomeVC ()<UITableViewDelegate , UITableViewDataSource>
@@ -37,7 +36,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super  viewWillAppear:animated];
-    [ZampAppAnalytics onPageStart:@"首页"];
+//    [ZampAppAnalytics onPageStart:@"首页"];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

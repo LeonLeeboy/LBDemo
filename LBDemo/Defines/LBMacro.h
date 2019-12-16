@@ -24,6 +24,7 @@
 
 //
 #import "LBNewItineraryDefines.h"
+#import "Utils.h"
 
 
 #endif /* LBMacro_h */

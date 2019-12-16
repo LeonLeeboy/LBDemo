@@ -19,3 +19,7 @@
 @implementation swift
 
 @end
+
+@implementation swift5
+
+@end
