@@ -131,6 +131,17 @@ static int count = 0;
     m18.displayName = @"线程安全队列";
     m18.targetName =@"LBThreadSafeQueueViewController";
     
+    LBModelHomeView *m19 = LBModelHomeView.new;
+    m19.displayName = @"指针探索";
+    m19.targetName =@"LBPtrViewController";
+    
+    LBModelHomeView *m20 = LBModelHomeView.new;
+    m20.displayName = @"对象探索";
+    m20.targetName =@"EHIInstanceObjcViewController";
+    
+    LBModelHomeView *m21 = LBModelHomeView.new;
+    m21.displayName = @"对齐算法";
+    m21.targetName =@"LBAlimentViewController";
 
     [homeModels addObject:m];
     [homeModels addObject:m1];
@@ -151,6 +162,9 @@ static int count = 0;
     [homeModels addObject:m16];
     [homeModels addObject:m17];
     [homeModels addObject:m18];
+    [homeModels addObject:m19];
+    [homeModels addObject:m20];
+    [homeModels addObject:m21];
     
     return homeModels.copy;
 }

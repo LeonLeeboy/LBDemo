@@ -39,6 +39,7 @@
 		ED0E5ECD235079810079F982 /* LBPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E5ECC235079810079F982 /* LBPerson.m */; };
 		ED0E5ED0235079980079F982 /* LBStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0E5ECF235079980079F982 /* LBStudent.m */; };
 		ED203C6A22C49EA100FF022D /* LBBlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ED203C6922C49EA100FF022D /* LBBlockVC.m */; };
+		ED21872723A8CDD5004E0D0D /* LBPtrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED21872623A8CDD5004E0D0D /* LBPtrViewController.m */; };
 		ED26985B23A381830007E7B1 /* LBDoubleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = ED26985A23A381830007E7B1 /* LBDoubleLinkedList.m */; };
 		ED2A5FD12395147E001ED6D8 /* LBConditionLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FD02395147E001ED6D8 /* LBConditionLockViewController.m */; };
 		ED2A5FD82396424D001ED6D8 /* LBMutexLockDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2A5FD72396424D001ED6D8 /* LBMutexLockDemo.m */; };
@@ -59,6 +60,7 @@
 		ED36BB1D230AA5A1009B6E14 /* EHIInputLicensePlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED36BB1C230AA5A1009B6E14 /* EHIInputLicensePlateViewController.m */; };
 		ED36BB26230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = ED36BB25230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m */; };
 		ED36BB30230B9EB5009B6E14 /* SEEDLicensePlateView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED36BB2F230B9EB5009B6E14 /* SEEDLicensePlateView.m */; };
+		ED3DE60723B34305004DE413 /* EHIInstanceObjcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3DE60623B34305004DE413 /* EHIInstanceObjcViewController.m */; };
 		ED637CB3232A13B500F9520D /* EHIUpdateAPPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED637CB2232A13B500F9520D /* EHIUpdateAPPViewController.m */; };
 		ED637CB9232A196D00F9520D /* EHIUpdateAppContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED637CB8232A196D00F9520D /* EHIUpdateAppContentView.m */; };
 		ED637CCF2331C01D00F9520D /* LBNewItineraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED637CCE2331C01D00F9520D /* LBNewItineraryViewController.m */; };
@@ -106,11 +108,15 @@
 		EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727A922F1686000645DAD /* LBLoadFatherModel.m */; };
 		EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727AC22F168DC00645DAD /* LBLoadViewController.m */; };
 		EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC727AF22F1694700645DAD /* LBLoadSonModel.m */; };
+		EDCECD0F23AB5260009D3E9A /* LBInstanceObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCECD0E23AB5260009D3E9A /* LBInstanceObjectViewController.m */; };
+		EDCECDED23B05DEA009D3E9A /* LBNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCECDEC23B05DEA009D3E9A /* LBNavigator.m */; };
 		EDD172FA230E3648009B781E /* EHIOnlinePreAuthDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172F8230E3648009B781E /* EHIOnlinePreAuthDetailView.m */; };
 		EDD172FD230E679E009B781E /* EHIOnlinePreAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172FC230E679E009B781E /* EHIOnlinePreAuthModel.m */; };
 		EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */; };
 		EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111522DEC8BE00E6B7FF /* Language.m */; };
 		EDEB111922DEC98500E6B7FF /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111822DEC98500E6B7FF /* People.m */; };
+		EDF3EBDB23C3044000EC2216 /* LBAlimentAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF3EBDA23C3044000EC2216 /* LBAlimentAlgorithm.m */; };
+		EDF3EBDF23C3046800EC2216 /* LBAlimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF3EBDE23C3046800EC2216 /* LBAlimentViewController.m */; };
 		EDFF0F99230E1F78004F6F44 /* EHiMemberShipRightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */; };
 /* End PBXBuildFile section */
 
@@ -199,6 +205,8 @@
 		ED0E5ECF235079980079F982 /* LBStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBStudent.m; sourceTree = "<group>"; };
 		ED203C6822C49EA100FF022D /* LBBlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBBlockVC.h; sourceTree = "<group>"; };
 		ED203C6922C49EA100FF022D /* LBBlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBBlockVC.m; sourceTree = "<group>"; };
+		ED21872523A8CDD5004E0D0D /* LBPtrViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBPtrViewController.h; sourceTree = "<group>"; };
+		ED21872623A8CDD5004E0D0D /* LBPtrViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBPtrViewController.m; sourceTree = "<group>"; };
 		ED26985923A381830007E7B1 /* LBDoubleLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBDoubleLinkedList.h; sourceTree = "<group>"; };
 		ED26985A23A381830007E7B1 /* LBDoubleLinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBDoubleLinkedList.m; sourceTree = "<group>"; };
 		ED2A5FCF2395147E001ED6D8 /* LBConditionLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBConditionLockViewController.h; sourceTree = "<group>"; };
@@ -234,6 +242,8 @@
 		ED36BB25230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHINewEnergyLicensePlateTextField.m; sourceTree = "<group>"; };
 		ED36BB2E230B9EB5009B6E14 /* SEEDLicensePlateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDLicensePlateView.h; sourceTree = "<group>"; };
 		ED36BB2F230B9EB5009B6E14 /* SEEDLicensePlateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEEDLicensePlateView.m; sourceTree = "<group>"; };
+		ED3DE60523B34305004DE413 /* EHIInstanceObjcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIInstanceObjcViewController.h; sourceTree = "<group>"; };
+		ED3DE60623B34305004DE413 /* EHIInstanceObjcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIInstanceObjcViewController.m; sourceTree = "<group>"; };
 		ED637CB1232A13B500F9520D /* EHIUpdateAPPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIUpdateAPPViewController.h; sourceTree = "<group>"; };
 		ED637CB2232A13B500F9520D /* EHIUpdateAPPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIUpdateAPPViewController.m; sourceTree = "<group>"; };
 		ED637CB7232A196D00F9520D /* EHIUpdateAppContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIUpdateAppContentView.h; sourceTree = "<group>"; };
@@ -329,6 +339,10 @@
 		EDC727AC22F168DC00645DAD /* LBLoadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadViewController.m; sourceTree = "<group>"; };
 		EDC727AE22F1694700645DAD /* LBLoadSonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBLoadSonModel.h; sourceTree = "<group>"; };
 		EDC727AF22F1694700645DAD /* LBLoadSonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBLoadSonModel.m; sourceTree = "<group>"; };
+		EDCECD0D23AB5260009D3E9A /* LBInstanceObjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBInstanceObjectViewController.h; sourceTree = "<group>"; };
+		EDCECD0E23AB5260009D3E9A /* LBInstanceObjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBInstanceObjectViewController.m; sourceTree = "<group>"; };
+		EDCECDEB23B05DEA009D3E9A /* LBNavigator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBNavigator.h; sourceTree = "<group>"; };
+		EDCECDEC23B05DEA009D3E9A /* LBNavigator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBNavigator.m; sourceTree = "<group>"; };
 		EDD172F8230E3648009B781E /* EHIOnlinePreAuthDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIOnlinePreAuthDetailView.m; sourceTree = "<group>"; };
 		EDD172F9230E3648009B781E /* EHIOnlinePreAuthDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIOnlinePreAuthDetailView.h; sourceTree = "<group>"; };
 		EDD172FB230E679E009B781E /* EHIOnlinePreAuthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIOnlinePreAuthModel.h; sourceTree = "<group>"; };
@@ -339,6 +353,10 @@
 		EDEB111522DEC8BE00E6B7FF /* Language.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Language.m; sourceTree = "<group>"; };
 		EDEB111722DEC98500E6B7FF /* People.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
 		EDEB111822DEC98500E6B7FF /* People.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
+		EDF3EBD923C3044000EC2216 /* LBAlimentAlgorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBAlimentAlgorithm.h; sourceTree = "<group>"; };
+		EDF3EBDA23C3044000EC2216 /* LBAlimentAlgorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBAlimentAlgorithm.m; sourceTree = "<group>"; };
+		EDF3EBDD23C3046800EC2216 /* LBAlimentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBAlimentViewController.h; sourceTree = "<group>"; };
+		EDF3EBDE23C3046800EC2216 /* LBAlimentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBAlimentViewController.m; sourceTree = "<group>"; };
 		EDFF0F97230E1F78004F6F44 /* EHiMemberShipRightsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHiMemberShipRightsModel.h; sourceTree = "<group>"; };
 		EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHiMemberShipRightsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -436,9 +454,9 @@
 		2CB5D96A2117F8EB007E2FB9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				ED918A3F23A75920002910FF /* category */,
 				2CB5D96B2117F8EB007E2FB9 /* LBDemoDelegate.h */,
 				2CB5D96C2117F8EB007E2FB9 /* LBDemoDelegate.m */,
+				ED918A3F23A75920002910FF /* category */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -446,7 +464,10 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				ED09E5D0238D0E0F0025F669 /* LBFIFOCache.h */,
+				EDF3EBD723C3041A00EC2216 /* alimentAlgo */,
+				ED3DE60223B342CB004DE413 /* InstanceObjc */,
+				EDCECD0B23AB520E009D3E9A /* OCInstanceDemo */,
+				ED21872323A8CDA7004E0D0D /* PtrDemo */,
 				ED2A5FD223960263001ED6D8 /* GraphTree */,
 				ED09E5E02395064A0025F669 /* threadLock */,
 				ED09E5BE238D0AF30025F669 /* Cache */,
@@ -611,6 +632,7 @@
 		ED09E5CC238D0DAE0025F669 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ED09E5D0238D0E0F0025F669 /* LBFIFOCache.h */,
 				ED09E5D1238D0E0F0025F669 /* LBFIFOCache.m */,
 				ED09E5D3238D15F90025F669 /* LBLRUCache.h */,
 				ED09E5D4238D15F90025F669 /* LBLRUCache.m */,
@@ -767,6 +789,23 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		ED21872323A8CDA7004E0D0D /* PtrDemo */ = {
+			isa = PBXGroup;
+			children = (
+				ED21872423A8CDB9004E0D0D /* ViewControllers */,
+			);
+			path = PtrDemo;
+			sourceTree = "<group>";
+		};
+		ED21872423A8CDB9004E0D0D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED21872523A8CDD5004E0D0D /* LBPtrViewController.h */,
+				ED21872623A8CDD5004E0D0D /* LBPtrViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		ED2A5FD223960263001ED6D8 /* GraphTree */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +881,7 @@
 		ED3126CD22F801E7007FAF47 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EDCECDEA23B05DA3009D3E9A /* Navigator */,
 				ED2A5FE7239A308B001ED6D8 /* Utils */,
 				ED09E5D92394AAB70025F669 /* Tree */,
 				ED09E5C2238D0B4F0025F669 /* DoubleLinkedList */,
@@ -880,6 +920,31 @@
 				ED36BB2F230B9EB5009B6E14 /* SEEDLicensePlateView.m */,
 			);
 			path = SEEDLicensePlateKeyBoard;
+			sourceTree = "<group>";
+		};
+		ED3DE60223B342CB004DE413 /* InstanceObjc */ = {
+			isa = PBXGroup;
+			children = (
+				ED3DE60423B342E8004DE413 /* Views */,
+				ED3DE60323B342E2004DE413 /* ViewController */,
+			);
+			path = InstanceObjc;
+			sourceTree = "<group>";
+		};
+		ED3DE60323B342E2004DE413 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED3DE60523B34305004DE413 /* EHIInstanceObjcViewController.h */,
+				ED3DE60623B34305004DE413 /* EHIInstanceObjcViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ED3DE60423B342E8004DE413 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ED637CB0232A138800F9520D /* Helpers */ = {
@@ -1365,6 +1430,32 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		EDCECD0B23AB520E009D3E9A /* OCInstanceDemo */ = {
+			isa = PBXGroup;
+			children = (
+				EDCECD0C23AB5228009D3E9A /* ViewController */,
+			);
+			path = OCInstanceDemo;
+			sourceTree = "<group>";
+		};
+		EDCECD0C23AB5228009D3E9A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDCECD0D23AB5260009D3E9A /* LBInstanceObjectViewController.h */,
+				EDCECD0E23AB5260009D3E9A /* LBInstanceObjectViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EDCECDEA23B05DA3009D3E9A /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				EDCECDEB23B05DEA009D3E9A /* LBNavigator.h */,
+				EDCECDEC23B05DEA009D3E9A /* LBNavigator.m */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
 		EDEB110D22DEC84E00E6B7FF /* GenericType */ = {
 			isa = PBXGroup;
 			children = (
@@ -1407,6 +1498,33 @@
 			children = (
 			);
 			path = WaterFall;
+			sourceTree = "<group>";
+		};
+		EDF3EBD723C3041A00EC2216 /* alimentAlgo */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3EBDC23C3044F00EC2216 /* ViewControllers */,
+				EDF3EBD823C3042700EC2216 /* Model */,
+			);
+			path = alimentAlgo;
+			sourceTree = "<group>";
+		};
+		EDF3EBD823C3042700EC2216 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3EBD923C3044000EC2216 /* LBAlimentAlgorithm.h */,
+				EDF3EBDA23C3044000EC2216 /* LBAlimentAlgorithm.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDF3EBDC23C3044F00EC2216 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3EBDD23C3046800EC2216 /* LBAlimentViewController.h */,
+				EDF3EBDE23C3046800EC2216 /* LBAlimentViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		EDFF0F96230E1F63004F6F44 /* Models */ = {
@@ -1601,6 +1719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED6C7FA8230F728400B1AF20 /* EHIScanCarAnimationView.m in Sources */,
+				EDCECDED23B05DEA009D3E9A /* LBNavigator.m in Sources */,
 				EDB6C5D423349BDF00B9B3BF /* EHINewItineraryAddressListView.m in Sources */,
 				EDB6C5DD2334A09900B9B3BF /* EHINewItineraryMessagesView.m in Sources */,
 				EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */,
@@ -1630,6 +1749,7 @@
 				ED0D8730230FAF3900CC86F8 /* EHIDetectionModel.m in Sources */,
 				ED09725F22FC13EC002BE46C /* LBLockViewController.m in Sources */,
 				ED0CCCB922C1B08000E4D384 /* LBLoginViewModel.m in Sources */,
+				EDCECD0F23AB5260009D3E9A /* LBInstanceObjectViewController.m in Sources */,
 				ED68526A2302632800E0B3D5 /* EHIHicarOperationBottomView.m in Sources */,
 				ED637CB3232A13B500F9520D /* EHIUpdateAPPViewController.m in Sources */,
 				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
@@ -1644,6 +1764,7 @@
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */,
 				EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */,
+				EDF3EBDB23C3044000EC2216 /* LBAlimentAlgorithm.m in Sources */,
 				ED009F5823A221200033F505 /* LinkedList.m in Sources */,
 				ED6C7FA2230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m in Sources */,
 				EDB6C5C42333186900B9B3BF /* EHINewItineraryListViewController.m in Sources */,
@@ -1655,6 +1776,7 @@
 				EDB6C5E72334D10100B9B3BF /* EHINewItineraryCellViewModel.m in Sources */,
 				EDB6C5C7233320A000B9B3BF /* EHINewItineraryCell.m in Sources */,
 				EDC710A72356F38700E8C570 /* LBRACHotClodViewController.m in Sources */,
+				EDF3EBDF23C3046800EC2216 /* LBAlimentViewController.m in Sources */,
 				ED09E5D8238D24F10025F669 /* LBLFUCache.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
 				ED2A5FD12395147E001ED6D8 /* LBConditionLockViewController.m in Sources */,
@@ -1681,6 +1803,8 @@
 				ED09E5DF2394AB6C0025F669 /* Node.m in Sources */,
 				EDC710AC235839BA00E8C570 /* NSString+Hash.m in Sources */,
 				ED09E5C5238D0BA20025F669 /* DoubleLinkedList.m in Sources */,
+				ED21872723A8CDD5004E0D0D /* LBPtrViewController.m in Sources */,
+				ED3DE60723B34305004DE413 /* EHIInstanceObjcViewController.m in Sources */,
 				EDEB111922DEC98500E6B7FF /* People.m in Sources */,
 				EDB6C5D723349E9000B9B3BF /* LBNewItineraryDefines.m in Sources */,
 				ED0D8733230FB6C000CC86F8 /* EHIDetecctionItemView.m in Sources */,
@@ -1870,7 +1994,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LBDemo/Vendors/zamp",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LB.personnal.UniversalLink;
+				PRODUCT_BUNDLE_IDENTIFIER = LB.personal.LBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1899,7 +2023,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LBDemo/Vendors/zamp",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LB.personnal.UniversalLink;
+				PRODUCT_BUNDLE_IDENTIFIER = LB.personal.LBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
