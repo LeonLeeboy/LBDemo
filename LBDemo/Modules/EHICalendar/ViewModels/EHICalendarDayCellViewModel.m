@@ -122,8 +122,4 @@ static CGFloat itemHeight() {
     return @"EHICalendarCollecitionCell";
 }
 
-- (Class)seed_CellClass {
-    return NSClassFromString(@"EHICalendarCollecitionCell");
-}
-
 @end
