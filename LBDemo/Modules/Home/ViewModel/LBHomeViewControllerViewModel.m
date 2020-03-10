@@ -142,6 +142,11 @@ static int count = 0;
     LBModelHomeView *m21 = LBModelHomeView.new;
     m21.displayName = @"对齐算法";
     m21.targetName =@"LBAlimentViewController";
+    
+    LBModelHomeView *m22 = LBModelHomeView.new;
+    m22.displayName = @"日历控件";
+    m22.targetName =@"EHICalendarViewController";
+    
 
     [homeModels addObject:m];
     [homeModels addObject:m1];
@@ -165,6 +170,7 @@ static int count = 0;
     [homeModels addObject:m19];
     [homeModels addObject:m20];
     [homeModels addObject:m21];
+    [homeModels addObject:m22];
     
     return homeModels.copy;
 }

@@ -78,6 +78,12 @@
 		ED7CA9D123795C87007AD106 /* LBYYAsyncLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7CA9D023795C87007AD106 /* LBYYAsyncLayerViewController.m */; };
 		ED7CA9D6237A49ED007AD106 /* LBRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7CA9D5237A49ED007AD106 /* LBRunLoopViewController.m */; };
 		ED7CA9DA237A578C007AD106 /* LBRunLoopViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7CA9D9237A578C007AD106 /* LBRunLoopViewModel.m */; };
+		ED7D02D624176FC200313550 /* SEEDCollectionSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02C724176FC200313550 /* SEEDCollectionSectionItem.m */; };
+		ED7D02D724176FC200313550 /* SEEDCollectionProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02C824176FC200313550 /* SEEDCollectionProxy.m */; };
+		ED7D02D824176FC200313550 /* SEEDCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02C924176FC200313550 /* SEEDCollectionView.m */; };
+		ED7D02D924176FC200313550 /* SEEDCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02CC24176FC200313550 /* SEEDCollectionReusableView.m */; };
+		ED7D02DA24176FC200313550 /* SEEDCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02CD24176FC200313550 /* SEEDCollectionViewLayoutAttributes.m */; };
+		ED7D02DB24176FC200313550 /* SEEDCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02D324176FC200313550 /* SEEDCollectionViewLayout.m */; };
 		ED918A4323A7594B002910FF /* LBDemoDelegate+UniversalLink.m in Sources */ = {isa = PBXBuildFile; fileRef = ED918A4223A7594B002910FF /* LBDemoDelegate+UniversalLink.m */; };
 		EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */; };
 		EDB6C5C12331F52900B9B3BF /* LBItineraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5C02331F52900B9B3BF /* LBItineraryModel.m */; };
@@ -97,6 +103,9 @@
 		EDB6C5ED2338579600B9B3BF /* EHINewItinerayItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5EC2338579600B9B3BF /* EHINewItinerayItemModel.m */; };
 		EDC2DB6C237BD0120088960B /* LBAutoReleasePoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC2DB6B237BD0110088960B /* LBAutoReleasePoolViewController.m */; };
 		EDC2DB6F237BD0A60088960B /* LBAutoReleasePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC2DB6E237BD0A60088960B /* LBAutoReleasePerson.m */; };
+		EDC33AC52415ECC800E16E7B /* EHICalendarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC33AC42415ECC800E16E7B /* EHICalendarFlowLayout.m */; };
+		EDC33AC824160F2600E16E7B /* EHICalendarCollecitionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC33AC724160F2600E16E7B /* EHICalendarCollecitionCell.m */; };
+		EDC33ACB241616CE00E16E7B /* NSDate+EHICalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC33ACA241616CE00E16E7B /* NSDate+EHICalendar.m */; };
 		EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */; };
 		EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC6164222B8CC9000525050 /* LBModelHomeView.m */; };
 		EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC616A722C0A3C600525050 /* LBHomeCell.m */; };
@@ -112,6 +121,14 @@
 		EDCECDED23B05DEA009D3E9A /* LBNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCECDEC23B05DEA009D3E9A /* LBNavigator.m */; };
 		EDD172FA230E3648009B781E /* EHIOnlinePreAuthDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172F8230E3648009B781E /* EHIOnlinePreAuthDetailView.m */; };
 		EDD172FD230E679E009B781E /* EHIOnlinePreAuthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD172FC230E679E009B781E /* EHIOnlinePreAuthModel.m */; };
+		EDDF86DF24122A12008804E1 /* EHICalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF86DE24122A12008804E1 /* EHICalendarViewController.m */; };
+		EDDF86E524122AF0008804E1 /* EHICalendarViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = EDDF86E424122AF0008804E1 /* EHICalendarViewHeader.m */; };
+		EDE478CA241245EF006B190A /* EHICalendarTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE478C9241245EF006B190A /* EHICalendarTopView.m */; };
+		EDE478CD241245FE006B190A /* EHICalendarBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE478CC241245FE006B190A /* EHICalendarBottomView.m */; };
+		EDE478D024124657006B190A /* EHICalendarDayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE478CF24124657006B190A /* EHICalendarDayModel.m */; };
+		EDE478D324124B79006B190A /* EHICalendarDayCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE478D224124B79006B190A /* EHICalendarDayCellViewModel.m */; };
+		EDE478D72415E056006B190A /* EHICalendarDayViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE478D62415E056006B190A /* EHICalendarDayViewModel.m */; };
+		EDE478DA2415E502006B190A /* EHICalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE478D92415E502006B190A /* EHICalendarView.m */; };
 		EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */; };
 		EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111522DEC8BE00E6B7FF /* Language.m */; };
 		EDEB111922DEC98500E6B7FF /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111822DEC98500E6B7FF /* People.m */; };
@@ -278,6 +295,22 @@
 		ED7CA9D5237A49ED007AD106 /* LBRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBRunLoopViewController.m; sourceTree = "<group>"; };
 		ED7CA9D8237A578C007AD106 /* LBRunLoopViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBRunLoopViewModel.h; sourceTree = "<group>"; };
 		ED7CA9D9237A578C007AD106 /* LBRunLoopViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBRunLoopViewModel.m; sourceTree = "<group>"; };
+		ED7D02C624176FC200313550 /* SEEDCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		ED7D02C724176FC200313550 /* SEEDCollectionSectionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDCollectionSectionItem.m; sourceTree = "<group>"; };
+		ED7D02C824176FC200313550 /* SEEDCollectionProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDCollectionProxy.m; sourceTree = "<group>"; };
+		ED7D02C924176FC200313550 /* SEEDCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDCollectionView.m; sourceTree = "<group>"; };
+		ED7D02CA24176FC200313550 /* SEEDCollectionViewLayoutDataSourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionViewLayoutDataSourse.h; sourceTree = "<group>"; };
+		ED7D02CB24176FC200313550 /* SEEDCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionViewLayout.h; sourceTree = "<group>"; };
+		ED7D02CC24176FC200313550 /* SEEDCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDCollectionReusableView.m; sourceTree = "<group>"; };
+		ED7D02CD24176FC200313550 /* SEEDCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		ED7D02CE24176FC200313550 /* SEEDCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionView.h; sourceTree = "<group>"; };
+		ED7D02CF24176FC200313550 /* SEEDCollectionCellItemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionCellItemProtocol.h; sourceTree = "<group>"; };
+		ED7D02D024176FC200313550 /* SEEDCollectionProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionProxy.h; sourceTree = "<group>"; };
+		ED7D02D124176FC200313550 /* SEEDCollectionSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionSectionItem.h; sourceTree = "<group>"; };
+		ED7D02D224176FC200313550 /* SEEDCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionReusableView.h; sourceTree = "<group>"; };
+		ED7D02D324176FC200313550 /* SEEDCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDCollectionViewLayout.m; sourceTree = "<group>"; };
+		ED7D02D424176FC200313550 /* SEEDCollectionViewLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionViewLayoutDelegate.h; sourceTree = "<group>"; };
+		ED7D02D524176FC200313550 /* SEEDCollectionCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionCellProtocol.h; sourceTree = "<group>"; };
 		ED918A3E23A74EA2002910FF /* LBDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LBDemo.entitlements; sourceTree = "<group>"; };
 		ED918A4123A7594B002910FF /* LBDemoDelegate+UniversalLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LBDemoDelegate+UniversalLink.h"; sourceTree = "<group>"; };
 		ED918A4223A7594B002910FF /* LBDemoDelegate+UniversalLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LBDemoDelegate+UniversalLink.m"; sourceTree = "<group>"; };
@@ -317,6 +350,12 @@
 		EDC2DB6B237BD0110088960B /* LBAutoReleasePoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBAutoReleasePoolViewController.m; sourceTree = "<group>"; };
 		EDC2DB6D237BD0A60088960B /* LBAutoReleasePerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBAutoReleasePerson.h; sourceTree = "<group>"; };
 		EDC2DB6E237BD0A60088960B /* LBAutoReleasePerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBAutoReleasePerson.m; sourceTree = "<group>"; };
+		EDC33AC32415ECC800E16E7B /* EHICalendarFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarFlowLayout.h; sourceTree = "<group>"; };
+		EDC33AC42415ECC800E16E7B /* EHICalendarFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarFlowLayout.m; sourceTree = "<group>"; };
+		EDC33AC624160F2600E16E7B /* EHICalendarCollecitionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarCollecitionCell.h; sourceTree = "<group>"; };
+		EDC33AC724160F2600E16E7B /* EHICalendarCollecitionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarCollecitionCell.m; sourceTree = "<group>"; };
+		EDC33AC9241616CE00E16E7B /* NSDate+EHICalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+EHICalendar.h"; sourceTree = "<group>"; };
+		EDC33ACA241616CE00E16E7B /* NSDate+EHICalendar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EHICalendar.m"; sourceTree = "<group>"; };
 		EDC6163D22B8C8DE00525050 /* LBHomeViewControllerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBHomeViewControllerViewModel.h; sourceTree = "<group>"; };
 		EDC6163E22B8C8DE00525050 /* LBHomeViewControllerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBHomeViewControllerViewModel.m; sourceTree = "<group>"; };
 		EDC6164122B8CC9000525050 /* LBModelHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBModelHomeView.h; sourceTree = "<group>"; };
@@ -347,6 +386,22 @@
 		EDD172F9230E3648009B781E /* EHIOnlinePreAuthDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIOnlinePreAuthDetailView.h; sourceTree = "<group>"; };
 		EDD172FB230E679E009B781E /* EHIOnlinePreAuthModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIOnlinePreAuthModel.h; sourceTree = "<group>"; };
 		EDD172FC230E679E009B781E /* EHIOnlinePreAuthModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIOnlinePreAuthModel.m; sourceTree = "<group>"; };
+		EDDF86DD24122A12008804E1 /* EHICalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarViewController.h; sourceTree = "<group>"; };
+		EDDF86DE24122A12008804E1 /* EHICalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarViewController.m; sourceTree = "<group>"; };
+		EDDF86E324122AF0008804E1 /* EHICalendarViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarViewHeader.h; sourceTree = "<group>"; };
+		EDDF86E424122AF0008804E1 /* EHICalendarViewHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarViewHeader.m; sourceTree = "<group>"; };
+		EDE478C8241245EF006B190A /* EHICalendarTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarTopView.h; sourceTree = "<group>"; };
+		EDE478C9241245EF006B190A /* EHICalendarTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarTopView.m; sourceTree = "<group>"; };
+		EDE478CB241245FE006B190A /* EHICalendarBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarBottomView.h; sourceTree = "<group>"; };
+		EDE478CC241245FE006B190A /* EHICalendarBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarBottomView.m; sourceTree = "<group>"; };
+		EDE478CE24124657006B190A /* EHICalendarDayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarDayModel.h; sourceTree = "<group>"; };
+		EDE478CF24124657006B190A /* EHICalendarDayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarDayModel.m; sourceTree = "<group>"; };
+		EDE478D124124B79006B190A /* EHICalendarDayCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarDayCellViewModel.h; sourceTree = "<group>"; };
+		EDE478D224124B79006B190A /* EHICalendarDayCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarDayCellViewModel.m; sourceTree = "<group>"; };
+		EDE478D52415E056006B190A /* EHICalendarDayViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarDayViewModel.h; sourceTree = "<group>"; };
+		EDE478D62415E056006B190A /* EHICalendarDayViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarDayViewModel.m; sourceTree = "<group>"; };
+		EDE478D82415E502006B190A /* EHICalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarView.h; sourceTree = "<group>"; };
+		EDE478D92415E502006B190A /* EHICalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarView.m; sourceTree = "<group>"; };
 		EDEB111122DEC8A700E6B7FF /* LBGenericTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBGenericTypeViewController.h; sourceTree = "<group>"; };
 		EDEB111222DEC8A700E6B7FF /* LBGenericTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBGenericTypeViewController.m; sourceTree = "<group>"; };
 		EDEB111422DEC8BE00E6B7FF /* Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Language.h; sourceTree = "<group>"; };
@@ -464,6 +519,7 @@
 		2CB5D96E2117F960007E2FB9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EDDF86D9241229D6008804E1 /* EHICalendar */,
 				EDF3EBD723C3041A00EC2216 /* alimentAlgo */,
 				ED3DE60223B342CB004DE413 /* InstanceObjc */,
 				EDCECD0B23AB520E009D3E9A /* OCInstanceDemo */,
@@ -881,6 +937,8 @@
 		ED3126CD22F801E7007FAF47 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED7D02C524176FC200313550 /* SEEDCollection */,
+				EDDF86D8241229AF008804E1 /* EHICalendar */,
 				EDCECDEA23B05DA3009D3E9A /* Navigator */,
 				ED2A5FE7239A308B001ED6D8 /* Utils */,
 				ED09E5D92394AAB70025F669 /* Tree */,
@@ -891,6 +949,8 @@
 				ED36BB2D230B9E4A009B6E14 /* SEEDLicensePlateKeyBoard */,
 				ED68526B23029EE900E0B3D5 /* SEEDPassWordTextField */,
 				ED3126CE22F80207007FAF47 /* SEEDSelectView */,
+				EDC33AC9241616CE00E16E7B /* NSDate+EHICalendar.h */,
+				EDC33ACA241616CE00E16E7B /* NSDate+EHICalendar.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1158,6 +1218,29 @@
 				ED7CA9D9237A578C007AD106 /* LBRunLoopViewModel.m */,
 			);
 			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		ED7D02C524176FC200313550 /* SEEDCollection */ = {
+			isa = PBXGroup;
+			children = (
+				ED7D02D524176FC200313550 /* SEEDCollectionCellProtocol.h */,
+				ED7D02CF24176FC200313550 /* SEEDCollectionCellItemProtocol.h */,
+				ED7D02D424176FC200313550 /* SEEDCollectionViewLayoutDelegate.h */,
+				ED7D02CA24176FC200313550 /* SEEDCollectionViewLayoutDataSourse.h */,
+				ED7D02D124176FC200313550 /* SEEDCollectionSectionItem.h */,
+				ED7D02C724176FC200313550 /* SEEDCollectionSectionItem.m */,
+				ED7D02CE24176FC200313550 /* SEEDCollectionView.h */,
+				ED7D02C924176FC200313550 /* SEEDCollectionView.m */,
+				ED7D02D224176FC200313550 /* SEEDCollectionReusableView.h */,
+				ED7D02CC24176FC200313550 /* SEEDCollectionReusableView.m */,
+				ED7D02C624176FC200313550 /* SEEDCollectionViewLayoutAttributes.h */,
+				ED7D02CD24176FC200313550 /* SEEDCollectionViewLayoutAttributes.m */,
+				ED7D02D024176FC200313550 /* SEEDCollectionProxy.h */,
+				ED7D02C824176FC200313550 /* SEEDCollectionProxy.m */,
+				ED7D02CB24176FC200313550 /* SEEDCollectionViewLayout.h */,
+				ED7D02D324176FC200313550 /* SEEDCollectionViewLayout.m */,
+			);
+			path = SEEDCollection;
 			sourceTree = "<group>";
 		};
 		ED918A3F23A75920002910FF /* category */ = {
@@ -1456,6 +1539,72 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
+		EDDF86D8241229AF008804E1 /* EHICalendar */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF86E324122AF0008804E1 /* EHICalendarViewHeader.h */,
+				EDDF86E424122AF0008804E1 /* EHICalendarViewHeader.m */,
+			);
+			path = EHICalendar;
+			sourceTree = "<group>";
+		};
+		EDDF86D9241229D6008804E1 /* EHICalendar */ = {
+			isa = PBXGroup;
+			children = (
+				EDE478D42415E03A006B190A /* ViewModels */,
+				EDDF86DC241229F0008804E1 /* Views */,
+				EDDF86DB241229E7008804E1 /* Models */,
+				EDDF86DA241229DE008804E1 /* ViewController */,
+			);
+			path = EHICalendar;
+			sourceTree = "<group>";
+		};
+		EDDF86DA241229DE008804E1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDDF86DD24122A12008804E1 /* EHICalendarViewController.h */,
+				EDDF86DE24122A12008804E1 /* EHICalendarViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EDDF86DB241229E7008804E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDE478CE24124657006B190A /* EHICalendarDayModel.h */,
+				EDE478CF24124657006B190A /* EHICalendarDayModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EDDF86DC241229F0008804E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDE478C8241245EF006B190A /* EHICalendarTopView.h */,
+				EDE478C9241245EF006B190A /* EHICalendarTopView.m */,
+				EDE478CB241245FE006B190A /* EHICalendarBottomView.h */,
+				EDE478CC241245FE006B190A /* EHICalendarBottomView.m */,
+				EDE478D82415E502006B190A /* EHICalendarView.h */,
+				EDE478D92415E502006B190A /* EHICalendarView.m */,
+				EDC33AC32415ECC800E16E7B /* EHICalendarFlowLayout.h */,
+				EDC33AC42415ECC800E16E7B /* EHICalendarFlowLayout.m */,
+				EDC33AC624160F2600E16E7B /* EHICalendarCollecitionCell.h */,
+				EDC33AC724160F2600E16E7B /* EHICalendarCollecitionCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EDE478D42415E03A006B190A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EDE478D124124B79006B190A /* EHICalendarDayCellViewModel.h */,
+				EDE478D224124B79006B190A /* EHICalendarDayCellViewModel.m */,
+				EDE478D52415E056006B190A /* EHICalendarDayViewModel.h */,
+				EDE478D62415E056006B190A /* EHICalendarDayViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		EDEB110D22DEC84E00E6B7FF /* GenericType */ = {
 			isa = PBXGroup;
 			children = (
@@ -1720,6 +1869,7 @@
 			files = (
 				ED6C7FA8230F728400B1AF20 /* EHIScanCarAnimationView.m in Sources */,
 				EDCECDED23B05DEA009D3E9A /* LBNavigator.m in Sources */,
+				EDE478CA241245EF006B190A /* EHICalendarTopView.m in Sources */,
 				EDB6C5D423349BDF00B9B3BF /* EHINewItineraryAddressListView.m in Sources */,
 				EDB6C5DD2334A09900B9B3BF /* EHINewItineraryMessagesView.m in Sources */,
 				EDC616A822C0A3C600525050 /* LBHomeCell.m in Sources */,
@@ -1727,10 +1877,12 @@
 				ED637CD22331C07700F9520D /* EHIHomeItineraryView.m in Sources */,
 				ED3126D122F80225007FAF47 /* SEEDSelecteView.m in Sources */,
 				ED6852752303D61A00E0B3D5 /* EHIGetAndChangeCarInputView.m in Sources */,
+				EDE478CD241245FE006B190A /* EHICalendarBottomView.m in Sources */,
 				ED36BB26230B9A5B009B6E14 /* EHINewEnergyLicensePlateTextField.m in Sources */,
 				EDC2DB6F237BD0A60088960B /* LBAutoReleasePerson.m in Sources */,
 				EDB6C5ED2338579600B9B3BF /* EHINewItinerayItemModel.m in Sources */,
 				EDB6C5EA2334D20800B9B3BF /* EHINewItineraryCellContentModel.m in Sources */,
+				ED7D02D624176FC200313550 /* SEEDCollectionSectionItem.m in Sources */,
 				EDFF0F99230E1F78004F6F44 /* EHiMemberShipRightsModel.m in Sources */,
 				EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */,
 				EDB6C5CA2333291D00B9B3BF /* EHINewItineraryCellContentView.m in Sources */,
@@ -1740,6 +1892,7 @@
 				ED0CCCB522C0B26B00E4D384 /* LBModelBase.m in Sources */,
 				ED26985B23A381830007E7B1 /* LBDoubleLinkedList.m in Sources */,
 				EDC6163F22B8C8DE00525050 /* LBHomeViewControllerViewModel.m in Sources */,
+				EDE478D324124B79006B190A /* EHICalendarDayCellViewModel.m in Sources */,
 				EDC2DB6C237BD0120088960B /* LBAutoReleasePoolViewController.m in Sources */,
 				ED36BB1D230AA5A1009B6E14 /* EHIInputLicensePlateViewController.m in Sources */,
 				ED09E5DC2394AB2D0025F669 /* BinarySearchTree.m in Sources */,
@@ -1748,6 +1901,7 @@
 				ED0D872C230F946E00CC86F8 /* EHIDetectionViewController.m in Sources */,
 				ED0D8730230FAF3900CC86F8 /* EHIDetectionModel.m in Sources */,
 				ED09725F22FC13EC002BE46C /* LBLockViewController.m in Sources */,
+				EDC33AC824160F2600E16E7B /* EHICalendarCollecitionCell.m in Sources */,
 				ED0CCCB922C1B08000E4D384 /* LBLoginViewModel.m in Sources */,
 				EDCECD0F23AB5260009D3E9A /* LBInstanceObjectViewController.m in Sources */,
 				ED68526A2302632800E0B3D5 /* EHIHicarOperationBottomView.m in Sources */,
@@ -1763,9 +1917,12 @@
 				ED09E5D2238D0E0F0025F669 /* LBFIFOCache.m in Sources */,
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
 				ED0CCCB122C0B20A00E4D384 /* LBModelLogin.m in Sources */,
+				EDDF86DF24122A12008804E1 /* EHICalendarViewController.m in Sources */,
 				EDEB111322DEC8A700E6B7FF /* LBGenericTypeViewController.m in Sources */,
 				EDF3EBDB23C3044000EC2216 /* LBAlimentAlgorithm.m in Sources */,
 				ED009F5823A221200033F505 /* LinkedList.m in Sources */,
+				EDC33ACB241616CE00E16E7B /* NSDate+EHICalendar.m in Sources */,
+				EDC33AC52415ECC800E16E7B /* EHICalendarFlowLayout.m in Sources */,
 				ED6C7FA2230EABC400B1AF20 /* EHIHiCarDetectionSingleView.m in Sources */,
 				EDB6C5C42333186900B9B3BF /* EHINewItineraryListViewController.m in Sources */,
 				ED2A5FEA239A309C001ED6D8 /* Utils.m in Sources */,
@@ -1776,6 +1933,8 @@
 				EDB6C5E72334D10100B9B3BF /* EHINewItineraryCellViewModel.m in Sources */,
 				EDB6C5C7233320A000B9B3BF /* EHINewItineraryCell.m in Sources */,
 				EDC710A72356F38700E8C570 /* LBRACHotClodViewController.m in Sources */,
+				ED7D02D824176FC200313550 /* SEEDCollectionView.m in Sources */,
+				ED7D02DB24176FC200313550 /* SEEDCollectionViewLayout.m in Sources */,
 				EDF3EBDF23C3046800EC2216 /* LBAlimentViewController.m in Sources */,
 				ED09E5D8238D24F10025F669 /* LBLFUCache.m in Sources */,
 				EDC616AD22C0AD7200525050 /* LoginViewController.m in Sources */,
@@ -1788,6 +1947,7 @@
 				EDB6C5C12331F52900B9B3BF /* LBItineraryModel.m in Sources */,
 				EDB6C5DA23349FAD00B9B3BF /* EHINewItineraryTopView.m in Sources */,
 				ED09E5D5238D15F90025F669 /* LBLRUCache.m in Sources */,
+				ED7D02DA24176FC200313550 /* SEEDCollectionViewLayoutAttributes.m in Sources */,
 				ED7CA9DA237A578C007AD106 /* LBRunLoopViewModel.m in Sources */,
 				EDC727B022F1694700645DAD /* LBLoadSonModel.m in Sources */,
 				2CB5D9762117F9D7007E2FB9 /* LBHomeVC.m in Sources */,
@@ -1797,11 +1957,14 @@
 				ED0E5EC9235079520079F982 /* LBObjcMsgSendViewController.m in Sources */,
 				ED09726822FD3F9A002BE46C /* EHiMemberShipRightsView.m in Sources */,
 				ED2A5FD82396424D001ED6D8 /* LBMutexLockDemo.m in Sources */,
+				EDE478DA2415E502006B190A /* EHICalendarView.m in Sources */,
 				ED0E5ECD235079810079F982 /* LBPerson.m in Sources */,
 				ED918A4323A7594B002910FF /* LBDemoDelegate+UniversalLink.m in Sources */,
 				ED09E5EC2395118A0025F669 /* LBConditionLock.mm in Sources */,
 				ED09E5DF2394AB6C0025F669 /* Node.m in Sources */,
 				EDC710AC235839BA00E8C570 /* NSString+Hash.m in Sources */,
+				ED7D02D924176FC200313550 /* SEEDCollectionReusableView.m in Sources */,
+				EDDF86E524122AF0008804E1 /* EHICalendarViewHeader.m in Sources */,
 				ED09E5C5238D0BA20025F669 /* DoubleLinkedList.m in Sources */,
 				ED21872723A8CDD5004E0D0D /* LBPtrViewController.m in Sources */,
 				ED3DE60723B34305004DE413 /* EHIInstanceObjcViewController.m in Sources */,
@@ -1811,12 +1974,15 @@
 				EDB6C5CE2334724E00B9B3BF /* EHINewItineraryRender.m in Sources */,
 				2C86F1502112D83500DF516A /* main.m in Sources */,
 				EDEB111622DEC8BE00E6B7FF /* Language.m in Sources */,
+				EDE478D72415E056006B190A /* EHICalendarDayViewModel.m in Sources */,
 				ED7CA9D123795C87007AD106 /* LBYYAsyncLayerViewController.m in Sources */,
+				EDE478D024124657006B190A /* EHICalendarDayModel.m in Sources */,
 				ED36BB30230B9EB5009B6E14 /* SEEDLicensePlateView.m in Sources */,
 				EDC710B723583AC900E8C570 /* LBHashStudyViewController.m in Sources */,
 				ED637CB9232A196D00F9520D /* EHIUpdateAppContentView.m in Sources */,
 				ED69179322E08FBF00A919A4 /* SEEDSelectModel.m in Sources */,
 				ED637CCF2331C01D00F9520D /* LBNewItineraryViewController.m in Sources */,
+				ED7D02D724176FC200313550 /* SEEDCollectionProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
