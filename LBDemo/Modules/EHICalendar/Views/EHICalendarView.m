@@ -7,18 +7,21 @@
 //
 
 #import "EHICalendarView.h"
-#import "EHICalendarFlowLayout.h"
+
 #import "EHICalendarDayViewModel.h"
 #import "EHICalendarDayCellViewModel.h"
 #import "EHICalendarCollecitionCell.h"
+#import "SEEDCollectionView.h"
+#import "EHICalendarSectinonViewModel.h"
 
-@interface EHICalendarView ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) UICollectionView *collecitonView;
+@interface EHICalendarView ()
+
+@property (nonatomic, strong) SEEDCollectionView *collecitonView;
 
 @property (nonatomic, strong) EHICalendarDayViewModel *viewModel;
 
-@property (nonatomic, strong) NSArray<NSArray<EHICalendarDayCellViewModel *> *> *dataSource;
+@property (nonatomic, strong) NSArray<EHICalendarSectinonViewModel *> *dataSource;
 
 @end
 
@@ -30,9 +33,10 @@
         [self setupSubViews];
         
         EHiWeakSelf(self)
-        self.viewModel.refreshUIBlock = ^(NSArray<NSArray<EHICalendarDayCellViewModel *> *> * _Nonnull dataSource) {
+        self.viewModel.refreshUIBlock = ^(NSArray<EHICalendarSectinonViewModel *> * _Nonnull dataSource) {
             EHiStrongSelf(self)
             self.dataSource = dataSource;
+            self.collecitonView.items = dataSource.mutableCopy;
             [self.collecitonView reloadData];
         };
         [self.viewModel getData];
@@ -51,75 +55,10 @@
     }];
 }
 
-#pragma mark - public
-
-#pragma mark - Action
-
-#pragma mark - private
-
-#pragma mark - delgate
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.dataSource.count;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (self.dataSource.count > section) {
-        NSArray<EHICalendarDayCellViewModel *> *items = self.dataSource[section];
-        return items.count;
-    }
-    return 0;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    // 准备数据
-    NSArray<EHICalendarDayCellViewModel *> *cellViewModels  = [NSMutableArray array];
-    if (self.dataSource.count > indexPath.section) {
-       cellViewModels = self.dataSource[indexPath.section];
-    }
-    EHICalendarDayCellViewModel *cellViewModel = nil;
-    if (cellViewModels.count > indexPath.row) {
-       cellViewModel = cellViewModels[indexPath.row];
-    }
-    
-    // 取view对象
-    NSString *identifier = cellViewModel? cellViewModel.reuseIdentifier : [EHICalendarCollecitionCell reuseIdentifier];
-    EHICalendarCollecitionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    
-    // 渲染
-    if (cellViewModels.count > indexPath.row) {
-       cell.viewModel = cellViewModels[indexPath.row];
-    }
-    
-    return cell;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    // 准备数据
-      NSArray<EHICalendarDayCellViewModel *> *cellViewModels  = [NSMutableArray array];
-      if (self.dataSource.count > indexPath.section) {
-         cellViewModels = self.dataSource[indexPath.section];
-      }
-      EHICalendarDayCellViewModel *cellViewModel = nil;
-      if (cellViewModels.count > indexPath.row) {
-         cellViewModel = cellViewModels[indexPath.row];
-      }
-    
-    return cellViewModel.itemSize;
-    
-}
-
-#pragma mark - Getter && Setter
-- (UICollectionView *)collecitonView {
+- (SEEDCollectionView *)collecitonView {
     if (!_collecitonView) {
-        EHICalendarFlowLayout *flowLayout = [[EHICalendarFlowLayout alloc] init];
-        _collecitonView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collecitonView = [[SEEDCollectionView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, autoHeightOf6(150))];
         _collecitonView.backgroundColor = [UIColor whiteColor];
-        _collecitonView.delegate = self;
-        _collecitonView.dataSource = self;
-        _collecitonView.showsVerticalScrollIndicator = NO;
-        _collecitonView.showsHorizontalScrollIndicator = NO;
-        
-        [_collecitonView registerClass:[EHICalendarCollecitionCell class] forCellWithReuseIdentifier:EHICalendarCollecitionCell.reuseIdentifier];
     }
     return _collecitonView;
 }

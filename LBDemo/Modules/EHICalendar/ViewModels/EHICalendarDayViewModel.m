@@ -10,14 +10,18 @@
 #import "EHICalendarDayCellViewModel.h"
 #import "EHICalendarDayModel.h"
 #import "NSDate+EHICalendar.h"
+#import "EHICalendarSectinonViewModel.h"
+
+#import "SEEDCollectionSectionItem.h"
 
 #define MonthCount 5 //5个月
+#define perweekDays 7
 
 @interface EHICalendarDayViewModel ()
 
 @property (nonatomic, strong) NSArray<NSArray<EHICalendarDayModel *> *> *originDataSource;
 
-@property (nonatomic, strong) NSArray<NSArray<EHICalendarDayCellViewModel *> *> *datasource;
+@property (nonatomic, strong) NSArray<EHICalendarSectinonViewModel *> *datasource;
 
 @end
 
@@ -88,22 +92,15 @@
 
 - (NSMutableArray *)p_dealOriginData {
     NSMutableArray *rst = [NSMutableArray array];
+   
     for (NSArray<EHICalendarDayModel *> *arr in self.originDataSource) {
-         NSMutableArray *rst2 = [NSMutableArray array];
-        for (int i = 0; i < arr.count; i++) {
-            EHICalendarDayModel *dayModel = arr[i];
-            EHICalendarDayCellViewModel *cv = [[EHICalendarDayCellViewModel alloc] init];
-            
-            if (dayModel.month <= [NSDate date].month && dayModel.getDate.isItPassday) { // 过去的时间
-                [cv generateViewModelWithModel:dayModel type:EHICalendarDayCellTypeDisabled];
-            } else { // 正常显示
-                [cv generateViewModelWithModel:dayModel type:EHICalendarDayCellTypeNormal];
-            }
-            [rst2 addObject:cv];
-        }
-        [rst addObject:rst2];
         
+        EHICalendarSectinonViewModel *sectionVm = [[EHICalendarSectinonViewModel alloc] init];
+        sectionVm.columnCount = perweekDays;
+        [sectionVm updateWithModel:arr];
+        [rst addObject:sectionVm];
     }
+    
     return rst;
 }
 

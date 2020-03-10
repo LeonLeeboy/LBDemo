@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SEEDCollectionCellItemProtocol.h"
 
 #pragma mark -
 
@@ -21,8 +21,7 @@ typedef NS_ENUM(NSInteger,EHICalendarDayCellType) {
     EHICalendarDayCellTypeIntecell       //!> 左右两个切圆中间
 };
 
-@interface EHICalendarDayCellViewModel : NSObject
-
+@interface EHICalendarDayCellViewModel : NSObject<SEEDCollectionCellItemProtocol>
 
 #pragma mark  getter
 
@@ -59,8 +58,8 @@ typedef NS_ENUM(NSInteger,EHICalendarDayCellType) {
 #pragma mark  
 - (void)generateViewModelWithModel:(EHICalendarDayModel *)model type:(EHICalendarDayCellType)type;
 
-- (NSString *)reuseIdentifier;
-
+/// 对应cell的类
+- (Class )seed_CellClass;
 
 @end
 

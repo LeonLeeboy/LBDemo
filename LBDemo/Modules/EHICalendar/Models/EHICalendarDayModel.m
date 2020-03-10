@@ -12,6 +12,8 @@
 
 @implementation EHICalendarDayModel
 
+//YYModelSynthCoderAndHash
+
 
 + (EHICalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     

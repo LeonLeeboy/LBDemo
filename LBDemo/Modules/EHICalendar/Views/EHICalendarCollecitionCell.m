@@ -44,17 +44,10 @@ static CGFloat calendarTextWidth() {
     }];
 }
 
-- (void)setViewModel:(EHICalendarDayCellViewModel *)viewModel {
-    _viewModel = viewModel;
-    
-    self.textLab.textColor = viewModel.textColor;
-    self.textLab.text = viewModel.display;
-    
-}
-
 #pragma mark - public
-+ (NSString *)reuseIdentifier {
-    return @"EHICalendarCollecitionCell";
+- (void)seed_cellWithData:(EHICalendarDayCellViewModel *)itemModel {
+    self.textLab.textColor = itemModel.textColor;
+       self.textLab.text = itemModel.display;
 }
 
 #pragma mark - private

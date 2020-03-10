@@ -8,17 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class EHICalendarDayCellViewModel;
-
-NS_ASSUME_NONNULL_BEGIN
+@class EHICalendarSectinonViewModel;
 
 @interface EHICalendarDayViewModel : NSObject
 
 
-@property (nonatomic, strong) void(^refreshUIBlock)(NSArray<NSArray<EHICalendarDayCellViewModel *> *> *dataSource);
+@property (nonatomic, strong) void(^refreshUIBlock)(NSArray<EHICalendarSectinonViewModel *> *dataSource);
 
 - (void)getData;
 
 @end
 
-NS_ASSUME_NONNULL_END

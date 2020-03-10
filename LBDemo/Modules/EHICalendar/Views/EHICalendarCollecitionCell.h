@@ -15,11 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EHICalendarCollecitionCell : UICollectionViewCell <SEEDCollectionCellProtocol>
 
+- (void)seed_cellWithData:(EHICalendarDayCellViewModel *)itemModel;
 
-@property (nonatomic, strong) EHICalendarDayCellViewModel *viewModel;
-
-
-+ (NSString *)reuseIdentifier;
 
 
 @end

@@ -84,6 +84,7 @@
 		ED7D02D924176FC200313550 /* SEEDCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02CC24176FC200313550 /* SEEDCollectionReusableView.m */; };
 		ED7D02DA24176FC200313550 /* SEEDCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02CD24176FC200313550 /* SEEDCollectionViewLayoutAttributes.m */; };
 		ED7D02DB24176FC200313550 /* SEEDCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02D324176FC200313550 /* SEEDCollectionViewLayout.m */; };
+		ED7D02E424177FE300313550 /* EHICalendarSectinonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7D02E324177FE300313550 /* EHICalendarSectinonViewModel.m */; };
 		ED918A4323A7594B002910FF /* LBDemoDelegate+UniversalLink.m in Sources */ = {isa = PBXBuildFile; fileRef = ED918A4223A7594B002910FF /* LBDemoDelegate+UniversalLink.m */; };
 		EDAB3CE023010A7800C0225E /* EHIHiCarOperationTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3CDF23010A7800C0225E /* EHIHiCarOperationTopView.m */; };
 		EDB6C5C12331F52900B9B3BF /* LBItineraryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB6C5C02331F52900B9B3BF /* LBItineraryModel.m */; };
@@ -311,6 +312,8 @@
 		ED7D02D324176FC200313550 /* SEEDCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDCollectionViewLayout.m; sourceTree = "<group>"; };
 		ED7D02D424176FC200313550 /* SEEDCollectionViewLayoutDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionViewLayoutDelegate.h; sourceTree = "<group>"; };
 		ED7D02D524176FC200313550 /* SEEDCollectionCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDCollectionCellProtocol.h; sourceTree = "<group>"; };
+		ED7D02E224177FE300313550 /* EHICalendarSectinonViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarSectinonViewModel.h; sourceTree = "<group>"; };
+		ED7D02E324177FE300313550 /* EHICalendarSectinonViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarSectinonViewModel.m; sourceTree = "<group>"; };
 		ED918A3E23A74EA2002910FF /* LBDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LBDemo.entitlements; sourceTree = "<group>"; };
 		ED918A4123A7594B002910FF /* LBDemoDelegate+UniversalLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LBDemoDelegate+UniversalLink.h"; sourceTree = "<group>"; };
 		ED918A4223A7594B002910FF /* LBDemoDelegate+UniversalLink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LBDemoDelegate+UniversalLink.m"; sourceTree = "<group>"; };
@@ -937,6 +940,7 @@
 		ED3126CD22F801E7007FAF47 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				ED7D02E5241784E600313550 /* vendors */,
 				ED7D02C524176FC200313550 /* SEEDCollection */,
 				EDDF86D8241229AF008804E1 /* EHICalendar */,
 				EDCECDEA23B05DA3009D3E9A /* Navigator */,
@@ -1241,6 +1245,13 @@
 				ED7D02D324176FC200313550 /* SEEDCollectionViewLayout.m */,
 			);
 			path = SEEDCollection;
+			sourceTree = "<group>";
+		};
+		ED7D02E5241784E600313550 /* vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = vendors;
 			sourceTree = "<group>";
 		};
 		ED918A3F23A75920002910FF /* category */ = {
@@ -1601,6 +1612,8 @@
 				EDE478D224124B79006B190A /* EHICalendarDayCellViewModel.m */,
 				EDE478D52415E056006B190A /* EHICalendarDayViewModel.h */,
 				EDE478D62415E056006B190A /* EHICalendarDayViewModel.m */,
+				ED7D02E224177FE300313550 /* EHICalendarSectinonViewModel.h */,
+				ED7D02E324177FE300313550 /* EHICalendarSectinonViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1907,6 +1920,7 @@
 				ED68526A2302632800E0B3D5 /* EHIHicarOperationBottomView.m in Sources */,
 				ED637CB3232A13B500F9520D /* EHIUpdateAPPViewController.m in Sources */,
 				2CB5D96D2117F8EC007E2FB9 /* LBDemoDelegate.m in Sources */,
+				ED7D02E424177FE300313550 /* EHICalendarSectinonViewModel.m in Sources */,
 				EDB6C5D123349B5E00B9B3BF /* EHINewItinerarySectionHeaderView.m in Sources */,
 				EDC710B0235839C700E8C570 /* RSACryptor.m in Sources */,
 				EDC727AA22F1686000645DAD /* LBLoadFatherModel.m in Sources */,

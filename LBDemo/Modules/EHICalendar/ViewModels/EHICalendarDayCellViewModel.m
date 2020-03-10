@@ -114,12 +114,19 @@ static CGFloat itemHeight() {
 
 - (void)p_calculate {
     static const NSInteger daysPerWeek = 7;
-    self.itemSize = CGSizeMake(DeviceSize.width / daysPerWeek, itemHeight());
+    self.seed_cellSize = CGSizeMake(DeviceSize.width / daysPerWeek, itemHeight());
 }
 
-#pragma mark - public
-- (NSString *)reuseIdentifier {
-    return @"EHICalendarCollecitionCell";
+
+#pragma mark -
+- (nonnull Class)seed_CellClass {
+    return NSClassFromString(@"EHICalendarCollecitionCell");
 }
+
+@synthesize seed_cellSize;
+@synthesize seed_indexPath;
+@synthesize seed_refreshBlock;
+@synthesize seed_didSelectActionBlock;
+
 
 @end
