@@ -10,6 +10,7 @@
 #import "LBHomeCell.h"
 #import "LBLoginCenter.h"
 #import "LBModelHomeView.h"
+#import "EHICalendarViewController.h"
 
 
 @interface LBHomeVC ()<UITableViewDelegate , UITableViewDataSource>
@@ -110,10 +111,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *targetName = [self.outputData objectAtIndex:indexPath.row].targetName;
-    if ([targetName isEqualToString:@""] || !targetName) {
+    if ([targetName isEqualToString:@""] || !targetName || [targetName isEqualToString:@"EHICalendarViewController"]) {
+        EHICalendarDayModel *start = [EHICalendarDayModel calendarDayWithYear:2020 month:3 day:31];
+        EHICalendarDayModel *end = [EHICalendarDayModel calendarDayWithYear:2020 month:4 day:1];
+        
+        EHICalendarViewController *vc = [[EHICalendarViewController alloc] initWithStartDate:start endDate:end];
+        [self.navigationController pushViewController:vc animated:YES];
         return;
     }
-    [self.navigationController pushViewController:[[NSClassFromString(targetName) alloc] init] animated:YES];
+    
+    UIViewController *vc = [[NSClassFromString(targetName) alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark getter

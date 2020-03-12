@@ -1361,62 +1361,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A186A18A-D987-4CF6-8D3B-98F16BEFEDFD"
+            uuid = "8D99AD34-77F1-4229-9E02-65650B5A9C92"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/Modules/EHICalendar/Views/EHICalendarView.m"
+            filePath = "LBDemo/Modules/EHICalendar/ViewModels/EHICalendarDayViewModel.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134">
+            startingLineNumber = "330"
+            endingLineNumber = "330"
+            landmarkName = "-p_clear"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8D99AD34-77F1-4229-9E02-65650B5A9C92 - ebcadbfbb8445012"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EHICalendarDayViewModel p_clear]"
+                  moduleName = "LBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/EHICalendar/ViewModels/EHICalendarDayViewModel.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "8D99AD34-77F1-4229-9E02-65650B5A9C92 - ebcadbfbb8445012"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EHICalendarDayViewModel p_clear]"
+                  moduleName = "LBDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/li.bing/Documents/LBDemo/LBDemo/Modules/EHICalendar/ViewModels/EHICalendarDayViewModel.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FC34EAC0-FD5F-4984-8A2B-73223F0076F7"
+            uuid = "8CC06A28-ECD1-4613-831A-66F4F8959FBA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/Tools/SEEDCollection/SEEDCollectionView.m"
+            filePath = "LBDemo/Modules/EHICalendar/ViewModels/EHICalendarDayViewModel.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "-p_dealCells:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "14815895-250F-4A97-AEA6-2F7A18ABE191"
+            uuid = "7800C798-5E79-421F-9E5E-95762070EA1C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LBDemo/Tools/SEEDCollection/SEEDCollectionView.m"
+            filePath = "LBDemo/Modules/EHICalendar/ViewModels/EHICalendarDayViewModel.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-collectionView:numberOfItemsInSection:"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-getData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ACE18E0B-25C8-4674-9E12-FF32C89D630A"
+            uuid = "F0C8FB2E-691D-4E0E-A170-58C1C823FCAB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LBDemo/Modules/EHICalendar/Views/EHICalendarView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-p_dealUI:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2EE9297-6C29-4984-8F22-34D15D5D4923"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBDemo/Modules/EHICalendar/ViewModels/EHICalendarDayViewModel.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-getData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0EADE56-43AC-41BF-8F74-5E1EA75F4FEE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBDemo/Modules/EHICalendar/ViewController/EHICalendarViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9672731C-D5C6-4139-A818-1472CB7F2095"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBDemo/Modules/EHICalendar/Views/EHICalendarView.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-initWithFrame:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D1277FB-21F8-4FD1-A5B3-27BAB9B48225"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LBDemo/Modules/EHICalendar/Views/EHICalendarView.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-initWithStartDate:endDate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

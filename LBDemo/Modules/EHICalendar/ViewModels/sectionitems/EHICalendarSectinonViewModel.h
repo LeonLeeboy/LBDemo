@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EHICalendarSectinonViewModel : SEEDCollectionSectionItem
 
-@property (nonatomic, strong) NSAttributedString *titleAttributed;
-
 /** 传入每个月的天数模型 */
 - (void)updateWithModel:(NSArray<EHICalendarDayModel *> *)models;
 

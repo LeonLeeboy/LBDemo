@@ -22,12 +22,14 @@ typedef NS_ENUM(NSInteger, EHICalendarDayType) {
 @property (nonatomic, assign) NSUInteger year;//年
 @property (nonatomic, assign) NSUInteger month;//月
 @property (nonatomic, assign) NSUInteger day;//天
+@property (nonatomic, assign) NSUInteger Hour;//小时
+@property (nonatomic, assign) NSUInteger miniutes;//分钟
 
 
 //选择的时间 如 06:45
 @property (nonatomic, copy) NSString *timeStr;
 
-
+// 必须要用这个方法初始化
 + (EHICalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day;
 
 - (NSDate *)getDate;

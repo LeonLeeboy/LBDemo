@@ -7,11 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EHICalendarDayCellViewModel.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@class EHICalendarView;
 
-@interface EHICalendarView : UIView
+@protocol EHICalendarViewProtocol <NSObject>
+
+- (BOOL)calendarView:(EHICalendarView *)view clickableOfCellViewModel:(EHICalendarDayCellViewModel *)cellVm;
+
+- (void)calendarView:(EHICalendarView *)view afterGeneratedCellViewModel:(EHICalendarDayCellViewModel *)cellVm;
 
 @end
 
-NS_ASSUME_NONNULL_END
+
+@interface EHICalendarView : UIView
+
+@property (nonatomic, weak) id<EHICalendarViewProtocol> delegate;
+
+- (instancetype)initWithStartDate:(EHICalendarDayModel *)starModel endDate:(EHICalendarDayModel *)endModel;
+
+
+@end
+
