@@ -40,10 +40,9 @@
     EHICalendarView *view = [[EHICalendarView alloc] initWithStartDate:self.dates.firstObject endDate:self.dates.lastObject];
     [self.view addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.mas_equalTo(UIEdgeInsetsMake(84, 0, 0, 0));
     }];
     
-    NSLog(@"dsf");
 }
 
 

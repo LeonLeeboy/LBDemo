@@ -137,6 +137,7 @@
 		EDEB111922DEC98500E6B7FF /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = EDEB111822DEC98500E6B7FF /* People.m */; };
 		EDF3EBDB23C3044000EC2216 /* LBAlimentAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF3EBDA23C3044000EC2216 /* LBAlimentAlgorithm.m */; };
 		EDF3EBDF23C3046800EC2216 /* LBAlimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF3EBDE23C3046800EC2216 /* LBAlimentViewController.m */; };
+		EDFA2612241A3F28001341C3 /* EHIDaysTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA2611241A3F28001341C3 /* EHIDaysTopView.m */; };
 		EDFF0F99230E1F78004F6F44 /* EHiMemberShipRightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */; };
 /* End PBXBuildFile section */
 
@@ -420,6 +421,8 @@
 		EDF3EBDA23C3044000EC2216 /* LBAlimentAlgorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBAlimentAlgorithm.m; sourceTree = "<group>"; };
 		EDF3EBDD23C3046800EC2216 /* LBAlimentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBAlimentViewController.h; sourceTree = "<group>"; };
 		EDF3EBDE23C3046800EC2216 /* LBAlimentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBAlimentViewController.m; sourceTree = "<group>"; };
+		EDFA2610241A3F28001341C3 /* EHIDaysTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIDaysTopView.h; sourceTree = "<group>"; };
+		EDFA2611241A3F28001341C3 /* EHIDaysTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIDaysTopView.m; sourceTree = "<group>"; };
 		EDFF0F97230E1F78004F6F44 /* EHiMemberShipRightsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHiMemberShipRightsModel.h; sourceTree = "<group>"; };
 		EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHiMemberShipRightsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1616,6 +1619,8 @@
 				ED7D02ED2417931D00313550 /* EHICalendarHeaderCell.h */,
 				ED7D02EE2417931D00313550 /* EHICalendarHeaderCell.m */,
 				ED7D02EF2417931D00313550 /* EHICalendarHeaderCell.xib */,
+				EDFA2610241A3F28001341C3 /* EHIDaysTopView.h */,
+				EDFA2611241A3F28001341C3 /* EHIDaysTopView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2019,6 +2024,7 @@
 				EDE478D024124657006B190A /* EHICalendarDayModel.m in Sources */,
 				ED36BB30230B9EB5009B6E14 /* SEEDLicensePlateView.m in Sources */,
 				EDC710B723583AC900E8C570 /* LBHashStudyViewController.m in Sources */,
+				EDFA2612241A3F28001341C3 /* EHIDaysTopView.m in Sources */,
 				ED637CB9232A196D00F9520D /* EHIUpdateAppContentView.m in Sources */,
 				ED69179322E08FBF00A919A4 /* SEEDSelectModel.m in Sources */,
 				ED637CCF2331C01D00F9520D /* LBNewItineraryViewController.m in Sources */,

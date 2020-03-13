@@ -13,9 +13,12 @@
 #import "EHICalendarCollecitionCell.h"
 #import "SEEDCollectionView.h"
 #import "EHICalendarSectinonViewModel.h"
+#import "EHIDaysTopView.h"
 
 
 @interface EHICalendarView ()<EHICalendarDayViewModelDataSource>
+
+@property (nonatomic, strong) EHIDaysTopView *topWeeksView;
 
 @property (nonatomic, strong) SEEDCollectionView *collecitonView;
 
@@ -77,12 +80,23 @@
 
 - (void)setupSubViews {
     [self addSubview:self.collecitonView];
+    [self addSubview:self.topWeeksView];
     [self layoutViews];
 }
 
 - (void)layoutViews {
+    
+    _topWeeksView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"calendar_top_weeks"].CGImage);
+    
+    [_topWeeksView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(0);
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(63.5);
+    }];
+    
     [_collecitonView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.top.equalTo(self.topWeeksView.mas_bottom);
+        make.left.right.bottom.mas_equalTo(0);
     }];
 }
 
@@ -119,4 +133,10 @@
     return _viewModel;
 }
 
+- (EHIDaysTopView *)topWeeksView {
+    if (!_topWeeksView) {
+        _topWeeksView = [[EHIDaysTopView alloc] init];
+    }
+    return _topWeeksView;
+}
 @end

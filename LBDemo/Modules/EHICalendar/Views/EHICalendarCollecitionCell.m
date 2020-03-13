@@ -133,7 +133,7 @@
     CGFloat radius = h / 2.0;
     CGRect frame = CGRectMake(0, disPlayTextTop(), w, h);
       
-    CGRect pathFrame = CGRectMake(0, 0, w, h);
+    CGRect pathFrame = CGRectMake(-1, 0, w+1, h);
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:pathFrame byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight cornerRadii:CGSizeMake(radius, radius)];
     CAShapeLayer *mask = [[CAShapeLayer alloc] init];
     mask.path = path.CGPath;
@@ -158,7 +158,7 @@
     
     CGRect frame = CGRectMake(leftAndRight, disPlayTextTop(), w, h);
     
-    CGRect pathFrame = CGRectMake(0, 0, w, h);
+    CGRect pathFrame = CGRectMake(0, 0, w+1, h);
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:pathFrame byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft cornerRadii:CGSizeMake(radius, radius)];
     CAShapeLayer *mask = [[CAShapeLayer alloc] init];
     mask.path = path.CGPath;
