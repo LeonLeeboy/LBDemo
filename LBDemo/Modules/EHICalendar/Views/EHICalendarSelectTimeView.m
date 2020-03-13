@@ -31,6 +31,11 @@ typedef NS_ENUM(NSInteger,EHIPickTimeComponentType) {
 
 @implementation EHICalendarSelectTimeView
 
++ (instancetype)createView {
+    EHICalendarSelectTimeView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EHICalendarSelectTimeView class]) owner:self options:nil]lastObject];
+    return view;
+}
+
 #pragma mark - life cycle
 
 #pragma mark - public

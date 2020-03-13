@@ -18,6 +18,8 @@
 /** 还车时间源 */
 @property (nonatomic, strong) EHIStoreOpenCloseModel *closeModel;
 
++ (instancetype)createView;
+
 
 @end
 

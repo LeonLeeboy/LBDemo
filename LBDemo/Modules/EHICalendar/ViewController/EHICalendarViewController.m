@@ -143,7 +143,7 @@
 
 - (EHICalendarSelectTimeView *)pickTimeView {
     if (!_pickTimeView) {
-        _pickTimeView = [[EHICalendarSelectTimeView alloc] init];
+        _pickTimeView = [EHICalendarSelectTimeView createView];
     }
     return _pickTimeView;
 }
