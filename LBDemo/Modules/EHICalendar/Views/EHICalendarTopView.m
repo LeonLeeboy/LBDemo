@@ -123,14 +123,25 @@
 - (void)setLeftModel:(EHICalendarDayModel *)leftModel {
     _leftModel = leftModel;
     
+    if (leftModel == nil) {
+        self.LDateLbl.text = @"取车日期";
+        self.LTimeLbl.text = @"请选择";
+        return;
+    }
     self.LDateLbl.text = [self p_dealDate:leftModel];
     self.LTimeLbl.text = [self p_dealTime:leftModel];
 }
 
 - (void)setRightModel:(EHICalendarDayModel *)rightModel {
     _rightModel = rightModel;
+    
+    if (rightModel == nil) {
+        self.RDateLbl.text = @"取车日期";
+        self.RTimeLbl.text = @"请选择";
+        return;
+    }
     self.RDateLbl.text = [self p_dealDate:rightModel];
-     self.RTimeLbl.text = [self p_dealTime:rightModel];
+    self.RTimeLbl.text = [self p_dealTime:rightModel];
 }
 
 /** 创建一个Label */

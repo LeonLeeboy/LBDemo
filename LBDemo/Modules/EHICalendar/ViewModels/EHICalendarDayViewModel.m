@@ -33,6 +33,8 @@
 /** 初始化传值暂存 */
 @property (nonatomic, strong) NSMutableArray<EHICalendarDayCellViewModel *> *shows;
 
+//@property (nonatomic, assign, readonly) EHICalendarDayCellTimeType clickTimes;
+
 @end
 
 @implementation EHICalendarDayViewModel
@@ -71,6 +73,8 @@
         
     }
     
+    self.shows = self.dates;
+    
     if (self.datasource.count > 0 && self.refreshUIBlock) {
         self.refreshUIBlock(self.datasource);
     }
@@ -83,7 +87,7 @@
     // 第二次点击进来 小于当前时间 删除原来的插入新的时间
     // 第二次点击进来 大于等于当前时间 插入
     // 第三次点击进来 清空 插入
-    
+
     EHICalendarDayCellViewModel *cv = model;
     if (self.dates.count == 0) { // 第一次点击进来
         [cv generateViewModelWithModel:model.model type:EHICalendarDayCellTypeLeftRightConcidence contentInset:model.sectionInset desText:@"取车"];
@@ -137,7 +141,12 @@
         [self.dates addObject:cv];
     }
     
-    self.shows = self.dates;
+    if ([self.delegate respondsToSelector:@selector(dayViewModel:didClickForCell:beginDate:endDate:)]) {
+        EHICalendarDayModel *start = self.dates.firstObject.model;
+        EHICalendarDayModel *end = (self.dates.count > 1) ? self.dates.lastObject.model : nil;
+        [self.delegate dayViewModel:self didClickForCell:cv.model beginDate:start endDate:end];
+    }
+    
     //刷新
     if (self.datasource.count > 0 && self.refreshUIBlock) {
         self.refreshUIBlock(self.datasource);

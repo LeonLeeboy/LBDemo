@@ -12,11 +12,20 @@
 @class EHICalendarDayCellViewModel;
 @class EHICalendarDayModel;
 
+typedef NS_ENUM(NSInteger,EHICalendarDayCellTimeType) {
+    EHICalendarDayCellTimeTypeFirst,             //!> 第一次
+    EHICalendarDayCellTimeTypeSecond,             //!> 第二次次
+    EHICalendarDayCellTimeTypeThird,             //!> 第三次
+};
+
+
 @protocol EHICalendarDayViewModelDataSource <NSObject>
 
 - (BOOL)dayViewModel:(EHICalendarDayViewModel *)viewModel clickableOfCellViewModel:(EHICalendarDayCellViewModel *)cellVm;
 
 - (void)dayViewModel:(EHICalendarDayViewModel *)viewModel afterGeneratedCellViewModel:(EHICalendarDayCellViewModel *)cellVm;
+
+- (void)dayViewModel:(EHICalendarDayViewModel *)viewModel didClickForCell:(EHICalendarDayModel *)vm beginDate:(EHICalendarDayModel *)beginDate endDate:(EHICalendarDayModel *)endModel;
 
 @end
 

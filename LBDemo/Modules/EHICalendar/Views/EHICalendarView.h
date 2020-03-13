@@ -13,9 +13,12 @@
 
 @protocol EHICalendarViewProtocol <NSObject>
 
+@optional
 - (BOOL)calendarView:(EHICalendarView *)view clickableOfCellViewModel:(EHICalendarDayCellViewModel *)cellVm;
 
 - (void)calendarView:(EHICalendarView *)view afterGeneratedCellViewModel:(EHICalendarDayCellViewModel *)cellVm;
+
+- (void)calendarView:(EHICalendarView *)view didClickForCell:(EHICalendarDayModel *)vm beginDate:(EHICalendarDayModel *)beginDate endDate:(EHICalendarDayModel *)endModel;
 
 @end
 

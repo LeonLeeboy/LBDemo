@@ -10,7 +10,7 @@
 #import "EHICalendarView.h"
 #import "EHICalendarTopView.h"
 
-@interface EHICalendarViewController ()
+@interface EHICalendarViewController ()<EHICalendarViewProtocol>
 
 @property (nonatomic, strong) NSMutableArray *dates;
 
@@ -32,11 +32,11 @@
     
     if ([EHICalendarViewController modelisValid:starModel]) {
         vc.startDate = starModel;
+        if ([EHICalendarViewController modelisValid:endModel]) {
+            vc.endDate = endModel;
+        }
     }
     
-    if ([EHICalendarViewController modelisValid:endModel]) {
-        vc.endDate = endModel;
-    }
     return vc;
     
 }
@@ -80,6 +80,17 @@
 }
 
 
+#pragma mark - delegate
+
+- (void)calendarView:(EHICalendarView *)view didClickForCell:(EHICalendarDayModel *)vm beginDate:(EHICalendarDayModel *)beginDate endDate:(EHICalendarDayModel *)endModel {
+    self.startDate = beginDate;
+    self.endDate = endModel;
+    self.topView.leftModel = self.startDate;
+    self.topView.rightModel = self.endDate;
+}
+
+
+
 #pragma mark - getter
 - (NSMutableArray<EHICalendarDayModel *> *)dates {
     if (!_dates) {
@@ -103,7 +114,8 @@
 
 - (EHICalendarView *)calendarView {
     if (!_calendarView) {
-        EHICalendarView *calendarView = [[EHICalendarView alloc] initWithStartDate:self.startDate endDate:self.endDate];;
+        EHICalendarView *calendarView = [[EHICalendarView alloc] initWithStartDate:self.startDate endDate:self.endDate];
+        calendarView.delegate = self;
         _calendarView = calendarView;
     }
     return _calendarView;

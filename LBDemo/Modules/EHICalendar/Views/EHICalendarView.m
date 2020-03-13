@@ -115,6 +115,13 @@
     }
 }
 
+- (void)dayViewModel:(EHICalendarDayViewModel *)viewModel didClickForCell:(EHICalendarDayModel *)vm beginDate:(EHICalendarDayModel *)beginDate endDate:(EHICalendarDayModel *)endModel {
+    if ([self.delegate respondsToSelector:@selector(calendarView:didClickForCell:beginDate:endDate:)]) {
+        [self.delegate calendarView:self didClickForCell:vm beginDate:beginDate endDate:endModel];
+    }
+}
+
+
 #pragma mark - Getter
 - (SEEDCollectionView *)collecitonView {
     if (!_collecitonView) {
