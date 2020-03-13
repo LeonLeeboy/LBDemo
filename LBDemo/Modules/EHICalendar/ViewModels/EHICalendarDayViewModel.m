@@ -17,23 +17,20 @@
 #define MonthCount 10 //5个月
 #define perweekDays 7
 
-@class SEEDCollectionSectionItem;
 @interface EHICalendarDayViewModel ()
 
 @property (nonatomic, strong) NSArray<NSArray<EHICalendarDayModel *> *> *originDataSource;
 
-@property (nonatomic, strong) NSArray<SEEDCollectionSectionItem *> *datasource;
-
 /** 选择的开始和结束时间CellVM */
 @property (nonatomic, strong) NSMutableArray<EHICalendarDayCellViewModel *> *dates;
-
-/** 选择的中间的cellVMs */
-@property (nonatomic, strong) NSMutableArray<EHICalendarDayCellViewModel *> *interCellVms;
 
 /** 初始化传值暂存 */
 @property (nonatomic, strong) NSMutableArray<EHICalendarDayCellViewModel *> *shows;
 
-//@property (nonatomic, assign, readonly) EHICalendarDayCellTimeType clickTimes;
+/** 选择的中间的cellVMs */
+@property (nonatomic, strong) NSMutableArray<EHICalendarDayCellViewModel *> *interCellVms;
+
+@property (nonatomic, strong) NSArray<SEEDCollectionSectionItem *> *datasource;
 
 @end
 
@@ -87,64 +84,11 @@
     // 第二次点击进来 小于当前时间 删除原来的插入新的时间
     // 第二次点击进来 大于等于当前时间 插入
     // 第三次点击进来 清空 插入
-
-    EHICalendarDayCellViewModel *cv = model;
-    if (self.dates.count == 0) { // 第一次点击进来
-        [cv generateViewModelWithModel:model.model type:EHICalendarDayCellTypeLeftRightConcidence contentInset:model.sectionInset desText:@"取车"];
-        
-        [self.dates addObject:cv];
-    } else if (self.dates.count == 1) { // 第二次点击进来
-        EHICalendarDayCellViewModel *firtCV = self.dates.firstObject;
-        NSDate *firstDate = firtCV.model.getDate;
-        NSDate *clickDate = model.model.getDate;
-        
-        NSComparisonResult rst = [clickDate compare:firstDate];
-        
-        switch (rst) {
-            case NSOrderedDescending: {// 降 大于第一次点击时间
-                // 处理头尾
-                [firtCV generateViewModelWithModel:firtCV.model type:EHICalendarDayCellTypeLeftCorner contentInset:firtCV.sectionInset desText:@"取车"];
-                [cv generateViewModelWithModel:model.model type:EHICalendarDayCellTypeRightCoorner contentInset:model.sectionInset desText:@"还车"];
-                [self.dates addObject:cv];
-                //处理中间
-                [self p_dealIntellCellVm];
-                // 再次处理头尾
-                if (firtCV.model.month != cv.model.month && (firtCV.model.day == firtCV.model.getDate.totalDaysInMonth)) { //没有中间cell 并且 跨月份
-                     [firtCV generateViewModelWithModel:firtCV.model type:EHICalendarDayCellTypeLeftRightConcidence contentInset:firtCV.sectionInset desText:@"取车"];
-                }
-                if (firtCV.model.month != cv.model.month && (cv.model.day == 1)) {
-                     [cv generateViewModelWithModel:model.model type:EHICalendarDayCellTypeLeftRightConcidence contentInset:model.sectionInset desText:@"还车"];
-                }
-            }
-                break;
-            case NSOrderedAscending: {// 升 小于第一次点击时间
-                [self p_clear]; // 清除
-                [cv generateViewModelWithModel:model.model type:EHICalendarDayCellTypeLeftRightConcidence contentInset:model.sectionInset desText:@"取车"];
-                
-                [self.dates addObject:cv];
-            }
-                break;
-            case NSOrderedSame: {// 当前时间
-                [cv generateViewModelWithModel:model.model type:EHICalendarDayCellTypeLeftRightConcidence contentInset:model.sectionInset desText:@"取/还车"];
-                
-                [self.dates addObject:cv];
-            }
-                break;
-                
-            default:
-                break;
-        }
-     
-    } else if (self.dates.count == 2) {// 第三次点击进来
-        [self p_clear]; // 清除
-        [cv generateViewModelWithModel:model.model type:EHICalendarDayCellTypeLeftRightConcidence contentInset:model.sectionInset desText:@"取车"];
-        [self.dates addObject:cv];
-    }
-    
+    [self.clickObj doClickItemAction:model WithDates:self.dates sectionItems:self.datasource];
     if ([self.delegate respondsToSelector:@selector(dayViewModel:didClickForCell:beginDate:endDate:)]) {
         EHICalendarDayModel *start = self.dates.firstObject.model;
         EHICalendarDayModel *end = (self.dates.count > 1) ? self.dates.lastObject.model : nil;
-        [self.delegate dayViewModel:self didClickForCell:cv.model beginDate:start endDate:end];
+        [self.delegate dayViewModel:self didClickForCell:model.model beginDate:start endDate:end];
     }
     
     //刷新
@@ -279,77 +223,7 @@
 
 }
 
-- (NSArray<EHICalendarDayCellViewModel *> *)p_dealIntellCellVm {
-    EHICalendarDayCellViewModel *begin = self.dates.firstObject;
-    EHICalendarDayCellViewModel *end = self.dates.lastObject;
-    
-    NSTimeInterval beginTimeInterval = [begin.model.getDate timeIntervalSince1970];
-    NSTimeInterval endTimeInterval = [end.model.getDate timeIntervalSince1970];
-    
-    if (!begin || !end) {
-        return self.interCellVms;
-    }
-    // 当前时间
-    NSDate *currentDate = [NSDate date];
-    // 获得对应的月份 对应的section
-    // a(n) = 1 + 2 * n : a(n) 是对应的index
-    NSInteger beginIndex = 1 + 2 * (begin.model.month - currentDate.month);
-    NSInteger endIndex = 1 + 2 * (end.model.month - currentDate.month);
-    for (NSInteger i = beginIndex; i <= endIndex ; i++) {
-        if (self.datasource.count > i) {
-            SEEDCollectionSectionItem *sectionItem = self.datasource[i];
-            if ([sectionItem isKindOfClass:[EHICalendarSectinonViewModel class]]) {// 如果是headerView 就不处理
-                continue;
-            }
-            for (EHICalendarDayCellViewModel *obj in sectionItem.cellItems) {
-                // 在开始和结束日期中间 渲染样式
-                if (!obj.model) {
-                    continue;
-                }
-                NSInteger day = obj.model.day;
-                if (day == 0) {
-                    continue;
-                }
-                
-                NSTimeInterval currentTimeInterval = [obj.model.getDate timeIntervalSince1970];
-                if (beginTimeInterval < currentTimeInterval && currentTimeInterval < endTimeInterval) {
-                    // 每个月 最后一天，第一天
-                    if (day == 1) {
-                        [obj generateViewModelWithModel:obj.model type:EHICalendarDayCellTypeIntecellLeft contentInset:obj.sectionInset desText:@""];
-                    } else if (day == obj.model.getDate.totalDaysInMonth) {
-                        [obj generateViewModelWithModel:obj.model type:EHICalendarDayCellTypeIntecellRight contentInset:obj.sectionInset desText:@""];
-                    } else {
-                        [obj generateViewModelWithModel:obj.model type:EHICalendarDayCellTypeIntecellNomal contentInset:obj.sectionInset desText:@""];
-                    }
-                    
-                    [self.interCellVms addObject:obj];
-                    
-                }
-                    
-            }
-        }
-    }
-    
-    return self.interCellVms;
-}
 
-/** 清除选中的效果 */
-- (void)p_clear {
-    // 将首位,末尾清除 还原
-    for (EHICalendarDayCellViewModel *cv in self.dates) {
-        if (cv) {
-            [cv generateViewModelWithModel:cv.model type:EHICalendarDayCellTypeNormal contentInset:cv.sectionInset desText:@""];
-        }
-    }
-    // 将中间还原
-    for (EHICalendarDayCellViewModel *obj in self.interCellVms) {
-        if (obj) {
-            [obj generateViewModelWithModel:obj.model type:EHICalendarDayCellTypeNormal contentInset:obj.sectionInset desText:@""];
-        }
-    }
-    [self.interCellVms removeAllObjects];
-    [self.dates removeAllObjects];
-}
 
 #pragma mark - getter
 - (NSMutableArray *)dates {

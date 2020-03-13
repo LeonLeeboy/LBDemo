@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, EHICalendarDayType) {
 //选择的时间 如 06:45
 @property (nonatomic, copy) NSString *timeStr;
 
-// 必须要用这个方法初始化
+
 + (EHICalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day;
 
 + (EHICalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day hour:(NSUInteger)hour minutes:(NSUInteger)minutes;

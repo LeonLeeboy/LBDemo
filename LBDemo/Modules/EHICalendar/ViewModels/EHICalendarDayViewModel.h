@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EHICalendarClickActionProtol.h"
 
 @class EHICalendarDayViewModel;
-@class EHICalendarDayCellViewModel;
 @class EHICalendarDayModel;
 
 typedef NS_ENUM(NSInteger,EHICalendarDayCellTimeType) {
     EHICalendarDayCellTimeTypeFirst,             //!> 第一次
-    EHICalendarDayCellTimeTypeSecond,             //!> 第二次次
+    EHICalendarDayCellTimeTypeSecond,             //!> 第二次
     EHICalendarDayCellTimeTypeThird,             //!> 第三次
 };
 
@@ -34,6 +34,9 @@ typedef NS_ENUM(NSInteger,EHICalendarDayCellTimeType) {
 @interface EHICalendarDayViewModel : NSObject
 
 - (instancetype)initWithDates:(NSArray <EHICalendarDayModel *>*)dates;
+
+// 需要设置
+@property (nonatomic, strong) id<EHICalendarClickActionProtol> clickObj;
 
 @property (nonatomic, weak) id<EHICalendarDayViewModelDataSource> delegate;
 

@@ -14,6 +14,8 @@
 #import "SEEDCollectionView.h"
 #import "EHICalendarSectinonViewModel.h"
 #import "EHIDaysTopView.h"
+#import "EHICalendarClickActionOrder.h"
+#import "EHICalendarSelectTimeView.h"
 
 
 @interface EHICalendarView ()<EHICalendarDayViewModelDataSource>
@@ -45,6 +47,7 @@
             [rst addObject:endModel];
         }
         self.viewModel = [[EHICalendarDayViewModel alloc] initWithDates:rst.copy];
+        self.viewModel.clickObj = [[EHICalendarClickActionOrder alloc] init];
         self.viewModel.delegate = self;
         
         [self p_dealUI:self];
@@ -98,6 +101,7 @@
         make.top.equalTo(self.topWeeksView.mas_bottom);
         make.left.right.bottom.mas_equalTo(0);
     }];
+    
 }
 
 #pragma mark - delegate
@@ -135,6 +139,7 @@
 - (EHICalendarDayViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel  = [[EHICalendarDayViewModel alloc] init];
+        _viewModel.clickObj = [[EHICalendarClickActionOrder alloc] init];
         _viewModel.delegate = self;
     }
     return _viewModel;

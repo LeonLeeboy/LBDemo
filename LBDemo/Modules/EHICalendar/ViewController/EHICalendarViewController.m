@@ -9,6 +9,8 @@
 #import "EHICalendarViewController.h"
 #import "EHICalendarView.h"
 #import "EHICalendarTopView.h"
+#import "EHIStoreOpenCloseModel.h"
+#import "EHICalendarSelectTimeView.h"
 
 @interface EHICalendarViewController ()<EHICalendarViewProtocol>
 
@@ -21,6 +23,10 @@
 @property (nonatomic, strong) EHICalendarDayModel *startDate;
 
 @property (nonatomic, strong) EHICalendarDayModel *endDate;
+
+@property (nonatomic, strong) EHIStoreOpenCloseModel *openCloseModel;
+
+@property (nonatomic, strong) EHICalendarSelectTimeView *pickTimeView;
 
 @end
 
@@ -62,6 +68,7 @@
 - (void)setUpUI {
     [self.view addSubview:self.topView];
     [self.view addSubview:self.calendarView];
+    [self.view addSubview:self.pickTimeView];
     [self layoutViews];
 }
 
@@ -76,6 +83,11 @@
         make.left.right.equalTo(self.topView);
         make.top.equalTo(self.topView.mas_bottom);
         make.height.mas_equalTo(300);
+    }];
+    
+    [_pickTimeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_equalTo(0);
+        make.top.equalTo(self.calendarView.mas_bottom);
     }];
 }
 
@@ -121,8 +133,20 @@
     return _calendarView;
 }
 
+- (EHIStoreOpenCloseModel *)openCloseModel {
+    if (!_openCloseModel) {
+        _openCloseModel = [[EHIStoreOpenCloseModel alloc] initWithPickCarOpenTimeStr:@"09:00" pickCarCloseTimeStr:@"18:00" returnCarOpenTime:@"09:00" returnCarCloseTimeStr:@"21:00"];
+    }
+    return _openCloseModel;
+}
 
 
+- (EHICalendarSelectTimeView *)pickTimeView {
+    if (!_pickTimeView) {
+        _pickTimeView = [[EHICalendarSelectTimeView alloc] init];
+    }
+    return _pickTimeView;
+}
 #pragma mark - static
 + (BOOL)modelisValid:(EHICalendarDayModel *)model {
     BOOL rst = NO;

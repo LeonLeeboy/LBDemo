@@ -138,6 +138,11 @@
 		EDF3EBDB23C3044000EC2216 /* LBAlimentAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF3EBDA23C3044000EC2216 /* LBAlimentAlgorithm.m */; };
 		EDF3EBDF23C3046800EC2216 /* LBAlimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF3EBDE23C3046800EC2216 /* LBAlimentViewController.m */; };
 		EDFA2612241A3F28001341C3 /* EHIDaysTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA2611241A3F28001341C3 /* EHIDaysTopView.m */; };
+		EDFA2619241B51E7001341C3 /* EHICalendarClickActionOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA2618241B51E7001341C3 /* EHICalendarClickActionOrder.m */; };
+		EDFA261E241B55D1001341C3 /* EHICalendarClickActionPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA261D241B55D1001341C3 /* EHICalendarClickActionPrivate.m */; };
+		EDFA2621241B6DAB001341C3 /* EHICalendarSelectTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA2620241B6DAB001341C3 /* EHICalendarSelectTimeView.m */; };
+		EDFA2623241B6DEF001341C3 /* EHICalendarSelectTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDFA2622241B6DEF001341C3 /* EHICalendarSelectTimeView.xib */; };
+		EDFA2633241B9067001341C3 /* EHIStoreOpenCloseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA2632241B9067001341C3 /* EHIStoreOpenCloseModel.m */; };
 		EDFF0F99230E1F78004F6F44 /* EHiMemberShipRightsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */; };
 /* End PBXBuildFile section */
 
@@ -423,6 +428,16 @@
 		EDF3EBDE23C3046800EC2216 /* LBAlimentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBAlimentViewController.m; sourceTree = "<group>"; };
 		EDFA2610241A3F28001341C3 /* EHIDaysTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIDaysTopView.h; sourceTree = "<group>"; };
 		EDFA2611241A3F28001341C3 /* EHIDaysTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIDaysTopView.m; sourceTree = "<group>"; };
+		EDFA2615241B5146001341C3 /* EHICalendarClickActionProtol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarClickActionProtol.h; sourceTree = "<group>"; };
+		EDFA2617241B51E7001341C3 /* EHICalendarClickActionOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarClickActionOrder.h; sourceTree = "<group>"; };
+		EDFA2618241B51E7001341C3 /* EHICalendarClickActionOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarClickActionOrder.m; sourceTree = "<group>"; };
+		EDFA261C241B55D1001341C3 /* EHICalendarClickActionPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarClickActionPrivate.h; sourceTree = "<group>"; };
+		EDFA261D241B55D1001341C3 /* EHICalendarClickActionPrivate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarClickActionPrivate.m; sourceTree = "<group>"; };
+		EDFA261F241B6DAB001341C3 /* EHICalendarSelectTimeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICalendarSelectTimeView.h; sourceTree = "<group>"; };
+		EDFA2620241B6DAB001341C3 /* EHICalendarSelectTimeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHICalendarSelectTimeView.m; sourceTree = "<group>"; };
+		EDFA2622241B6DEF001341C3 /* EHICalendarSelectTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EHICalendarSelectTimeView.xib; sourceTree = "<group>"; };
+		EDFA2631241B9067001341C3 /* EHIStoreOpenCloseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHIStoreOpenCloseModel.h; sourceTree = "<group>"; };
+		EDFA2632241B9067001341C3 /* EHIStoreOpenCloseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHIStoreOpenCloseModel.m; sourceTree = "<group>"; };
 		EDFF0F97230E1F78004F6F44 /* EHiMemberShipRightsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHiMemberShipRightsModel.h; sourceTree = "<group>"; };
 		EDFF0F98230E1F78004F6F44 /* EHiMemberShipRightsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHiMemberShipRightsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1601,6 +1616,8 @@
 			children = (
 				EDE478CE24124657006B190A /* EHICalendarDayModel.h */,
 				EDE478CF24124657006B190A /* EHICalendarDayModel.m */,
+				EDFA2631241B9067001341C3 /* EHIStoreOpenCloseModel.h */,
+				EDFA2632241B9067001341C3 /* EHIStoreOpenCloseModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1621,6 +1638,9 @@
 				ED7D02EF2417931D00313550 /* EHICalendarHeaderCell.xib */,
 				EDFA2610241A3F28001341C3 /* EHIDaysTopView.h */,
 				EDFA2611241A3F28001341C3 /* EHIDaysTopView.m */,
+				EDFA261F241B6DAB001341C3 /* EHICalendarSelectTimeView.h */,
+				EDFA2620241B6DAB001341C3 /* EHICalendarSelectTimeView.m */,
+				EDFA2622241B6DEF001341C3 /* EHICalendarSelectTimeView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1630,6 +1650,8 @@
 			children = (
 				EDE478D52415E056006B190A /* EHICalendarDayViewModel.h */,
 				EDE478D62415E056006B190A /* EHICalendarDayViewModel.m */,
+				EDFA2614241B5088001341C3 /* initialize */,
+				EDFA2613241B505E001341C3 /* Actions */,
 				ED7D02F524179B1900313550 /* sectionitems */,
 				EDFA260824187E77001341C3 /* cellViewModels */,
 			);
@@ -1716,6 +1738,33 @@
 				ED7D02F3241795A100313550 /* EHICalendarHeaderCellViewModel.m */,
 			);
 			path = cellViewModels;
+			sourceTree = "<group>";
+		};
+		EDFA2613241B505E001341C3 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				EDFA2615241B5146001341C3 /* EHICalendarClickActionProtol.h */,
+				EDFA2617241B51E7001341C3 /* EHICalendarClickActionOrder.h */,
+				EDFA2618241B51E7001341C3 /* EHICalendarClickActionOrder.m */,
+				EDFA261A241B559C001341C3 /* Base */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		EDFA2614241B5088001341C3 /* initialize */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = initialize;
+			sourceTree = "<group>";
+		};
+		EDFA261A241B559C001341C3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EDFA261C241B55D1001341C3 /* EHICalendarClickActionPrivate.h */,
+				EDFA261D241B55D1001341C3 /* EHICalendarClickActionPrivate.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		EDFF0F96230E1F63004F6F44 /* Models */ = {
@@ -1845,6 +1894,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFA2623241B6DEF001341C3 /* EHICalendarSelectTimeView.xib in Resources */,
 				2C86F14D2112D83500DF516A /* LaunchScreen.storyboard in Resources */,
 				ED7D02F12417931D00313550 /* EHICalendarHeaderCell.xib in Resources */,
 				2C86F14A2112D83500DF516A /* Assets.xcassets in Resources */,
@@ -1912,6 +1962,7 @@
 			files = (
 				ED6C7FA8230F728400B1AF20 /* EHIScanCarAnimationView.m in Sources */,
 				EDCECDED23B05DEA009D3E9A /* LBNavigator.m in Sources */,
+				EDFA2621241B6DAB001341C3 /* EHICalendarSelectTimeView.m in Sources */,
 				EDE478CA241245EF006B190A /* EHICalendarTopView.m in Sources */,
 				EDB6C5D423349BDF00B9B3BF /* EHINewItineraryAddressListView.m in Sources */,
 				EDB6C5DD2334A09900B9B3BF /* EHINewItineraryMessagesView.m in Sources */,
@@ -1926,6 +1977,7 @@
 				EDC2DB6F237BD0A60088960B /* LBAutoReleasePerson.m in Sources */,
 				EDB6C5ED2338579600B9B3BF /* EHINewItinerayItemModel.m in Sources */,
 				EDB6C5EA2334D20800B9B3BF /* EHINewItineraryCellContentModel.m in Sources */,
+				EDFA2633241B9067001341C3 /* EHIStoreOpenCloseModel.m in Sources */,
 				ED7D02D624176FC200313550 /* SEEDCollectionSectionItem.m in Sources */,
 				EDFF0F99230E1F78004F6F44 /* EHiMemberShipRightsModel.m in Sources */,
 				EDC727AD22F168DC00645DAD /* LBLoadViewController.m in Sources */,
@@ -1958,6 +2010,7 @@
 				ED2A5FED239A377A001ED6D8 /* Pool.m in Sources */,
 				ED09E5CB238D0CF70025F669 /* LBDoubleLinkedListViewController.m in Sources */,
 				ED2A5FE6239A2F95001ED6D8 /* Task.m in Sources */,
+				EDFA2619241B51E7001341C3 /* EHICalendarClickActionOrder.m in Sources */,
 				ED69179E22E9777D00A919A4 /* LBCodeViewController.m in Sources */,
 				ED09E5D2238D0E0F0025F669 /* LBFIFOCache.m in Sources */,
 				EDC6164322B8CC9000525050 /* LBModelHomeView.m in Sources */,
@@ -2006,6 +2059,7 @@
 				ED918A4323A7594B002910FF /* LBDemoDelegate+UniversalLink.m in Sources */,
 				ED09E5EC2395118A0025F669 /* LBConditionLock.mm in Sources */,
 				ED09E5DF2394AB6C0025F669 /* Node.m in Sources */,
+				EDFA261E241B55D1001341C3 /* EHICalendarClickActionPrivate.m in Sources */,
 				EDC710AC235839BA00E8C570 /* NSString+Hash.m in Sources */,
 				ED7D02D924176FC200313550 /* SEEDCollectionReusableView.m in Sources */,
 				EDDF86E524122AF0008804E1 /* EHICalendarViewHeader.m in Sources */,
