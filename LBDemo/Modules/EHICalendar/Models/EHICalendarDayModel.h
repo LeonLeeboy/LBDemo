@@ -32,7 +32,13 @@ typedef NS_ENUM(NSInteger, EHICalendarDayType) {
 // 必须要用这个方法初始化
 + (EHICalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day;
 
++ (EHICalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day hour:(NSUInteger)hour minutes:(NSUInteger)minutes;
+
+/** 获得年月日 */
 - (NSDate *)getDate;
+
+/** 获取年月日小时分 */
+- (NSDate *)getFullDate;
 
 - (NSInteger)getWeek;
 

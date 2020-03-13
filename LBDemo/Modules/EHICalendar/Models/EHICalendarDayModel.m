@@ -24,11 +24,31 @@
     return calendarDay;
 }
 
++ (EHICalendarDayModel *)calendarDayWithYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day hour:(NSUInteger)hour minutes:(NSUInteger)minutes {
+    EHICalendarDayModel *calendarDay = [[EHICalendarDayModel alloc] init];//初始化自身
+    calendarDay.year = year;//年
+    calendarDay.month = month;//月
+    calendarDay.day = day;//日
+    calendarDay.Hour = hour;
+    calendarDay.miniutes = minutes;
+    return calendarDay;
+}
+
 - (NSDate *)getDate {
     NSDateComponents *c = [[NSDateComponents alloc] init];
     c.year = self.year;
     c.month = self.month;
     c.day = self.day;
+    return [[NSCalendar currentCalendar] dateFromComponents:c];
+}
+
+- (NSDate *)getFullDate {
+    NSDateComponents *c = [[NSDateComponents alloc] init];
+    c.year = self.year;
+    c.month = self.month;
+    c.day = self.day;
+    c.hour = self.Hour;
+    c.minute = self.miniutes;
     return [[NSCalendar currentCalendar] dateFromComponents:c];
 }
 

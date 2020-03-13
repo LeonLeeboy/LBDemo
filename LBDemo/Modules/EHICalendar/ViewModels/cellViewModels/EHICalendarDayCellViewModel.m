@@ -36,7 +36,6 @@ static CGFloat itemHeight() {
 
 @implementation EHICalendarDayCellViewModel
 
-
 - (void)generateViewModelWithModel:(EHICalendarDayModel *)model type:(EHICalendarDayCellType)type contentInset:(UIEdgeInsets)contentInset desText:(NSString *)desText {
     self.sectionInset = contentInset;
     self.identityType = type;
@@ -50,12 +49,19 @@ static CGFloat itemHeight() {
 
 /** 获得日历文字 */
 - (NSAttributedString *)p_getDayAttributed:(EHICalendarDayModel *)day color:(UIColor *)textColor {
+    
     NSString *dayStr = (day.day == 0) ? @"" : [NSString stringWithFormat:@"%lu",(unsigned long)self.model.day];
-     
+  
+    
+    if (day.getDate.isToday) {
+        dayStr = @"今";
+    }
+    
     NSAttributedString *attri = [EHICalendarDayCellViewModel p_getAttributedStr:dayStr color:textColor font:autoFONT(16)];
     
     return attri;
 }
+
 
 /** 获得描述文字 */
 - (NSAttributedString *)p_getDesAttributed:(UIColor *)color {
@@ -80,7 +86,13 @@ static CGFloat itemHeight() {
         }
         case EHICalendarDayCellTypeNormal: { // 正常显示
             self.bgColor = kEHIHexColor_FFFFFF;
-            self.displayAttributed = [self p_getDayAttributed:model color:kEHIHexColor_333333];
+            if (model.getDate.isToday) {
+                
+                self.displayAttributed = [self p_getDayAttributed:model color:kEHIHexColor_29B7B7];
+            } else {
+                self.displayAttributed = [self p_getDayAttributed:model color:kEHIHexColor_333333];
+            }
+           
             self.desDisplayAttributed = [self p_getDesAttributed:kEHIHexColor_7B7B7B];
             self.cycleColor = UIColor.clearColor;
             self.layerColor = UIColor.clearColor;

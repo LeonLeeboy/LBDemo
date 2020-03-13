@@ -8,11 +8,19 @@
 
 #import "EHICalendarViewController.h"
 #import "EHICalendarView.h"
+#import "EHICalendarTopView.h"
 
 @interface EHICalendarViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dates;
 
+@property (nonatomic, strong) EHICalendarTopView *topView;
+
+@property (nonatomic, strong) EHICalendarView *calendarView;
+
+@property (nonatomic, strong) EHICalendarDayModel *startDate;
+
+@property (nonatomic, strong) EHICalendarDayModel *endDate;
 
 @end
 
@@ -21,12 +29,13 @@
 - (instancetype)initWithStartDate:(EHICalendarDayModel *)starModel endDate:(EHICalendarDayModel *)endModel {
     EHICalendarViewController *vc = [[EHICalendarViewController alloc] init];
    
+    
     if ([EHICalendarViewController modelisValid:starModel]) {
-        [vc.dates addObject:starModel];
+        vc.startDate = starModel;
     }
     
     if ([EHICalendarViewController modelisValid:endModel]) {
-        [vc.dates addObject:endModel];
+        vc.endDate = endModel;
     }
     return vc;
     
@@ -36,13 +45,38 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = kEHIHexColor_FFFFFF;
-  
-    EHICalendarView *view = [[EHICalendarView alloc] initWithStartDate:self.dates.firstObject endDate:self.dates.lastObject];
-    [self.view addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(84, 0, 0, 0));
+    
+    [self setUpUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
+- (void)setUpUI {
+    [self.view addSubview:self.topView];
+    [self.view addSubview:self.calendarView];
+    [self layoutViews];
+}
+
+- (void)layoutViews {
+    [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(84);
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(78);
     }];
     
+    [_calendarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.topView);
+        make.top.equalTo(self.topView.mas_bottom);
+        make.height.mas_equalTo(300);
+    }];
 }
 
 
@@ -56,6 +90,27 @@
     return _dates;
 }
 
+
+- (EHICalendarTopView *)topView {
+    if (!_topView) {
+        EHICalendarTopView *topView = [[EHICalendarTopView alloc] init];
+        topView.leftModel = self.startDate;
+        topView.rightModel = self.endDate;
+        _topView = topView;
+    }
+    return _topView;
+}
+
+- (EHICalendarView *)calendarView {
+    if (!_calendarView) {
+        EHICalendarView *calendarView = [[EHICalendarView alloc] initWithStartDate:self.startDate endDate:self.endDate];;
+        _calendarView = calendarView;
+    }
+    return _calendarView;
+}
+
+
+
 #pragma mark - static
 + (BOOL)modelisValid:(EHICalendarDayModel *)model {
     BOOL rst = NO;
@@ -66,6 +121,7 @@
     
     return rst;
 }
+
 
 
 @end

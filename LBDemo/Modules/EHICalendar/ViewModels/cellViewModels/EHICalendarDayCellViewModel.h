@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "SEEDCollectionCellItemProtocol.h"
 
-#pragma mark -
-
 @class EHICalendarDayModel;
 
 static CGFloat disPlayTextHeight() {

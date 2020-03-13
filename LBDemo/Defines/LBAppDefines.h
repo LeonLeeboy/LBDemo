@@ -174,6 +174,158 @@ static inline UIColor * kEHIAlphaColor(UIColor *color, CGFloat alpha) {
 #define kEHIHexColor_34B9FB kEHIHexColor(0x34B9FB)
 #define kEHIHexColor_6F717A kEHIHexColor(0x6F717A)
 
+
+
+
+static inline UIColor *Color333333() {
+#warning Dark Mode Color
+    UIColor *backColor = kEHIHexColor_333333;
+    if (@available(iOS 13,*)) {
+        backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return kEHIHexColor_333333;
+            } else {
+                return kEHIHexColor_FFFFFF;
+            }
+        }];
+        return backColor;
+    } else {
+        return backColor;
+    }
+}
+
+static inline UIColor *ColorFFFFFF() {
+#warning Dark Mode Color
+    UIColor *backColor = kEHIHexColor_FFFFFF;
+    if (@available(iOS 13,*)) {
+        backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return kEHIHexColor_FFFFFF;
+            } else {
+                return kEHIHexColor(0x1B1B1D);
+            }
+        }];
+        return backColor;
+    } else {
+        return backColor;
+    }
+}
+
+static inline UIColor *ColorFFFFFF_AlertBack() {
+#warning Dark Mode Color
+    UIColor *backColor = kEHIHexColor_FFFFFF;
+    if (@available(iOS 13,*)) {
+        backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return kEHIHexColor_FFFFFF;
+            } else {
+                return kEHIHexAlphaColor(0x404040, 0.9);
+            }
+        }];
+        return backColor;
+    } else {
+        return backColor;
+    }
+}
+
+static inline UIColor *ColorEEEEEE() {
+#warning Dark Mode Color
+    UIColor *backColor = kEHIHexColor_EEEEEE;
+    if (@available(iOS 13,*)) {
+        backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return kEHIHexColor_EEEEEE;
+            } else {
+                return kEHIHexColor(0x36363A);
+            }
+        }];
+        return backColor;
+    } else {
+       return backColor;
+   }
+}
+
+static inline UIColor *ColorF2F2F2() {
+#warning Dark Mode Color
+    UIColor *backColor = kEHIHexColor_F2F2F2;
+    if (@available(iOS 13,*)) {
+        backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return kEHIHexColor_F2F2F2;
+            } else {
+                return kEHIHexColor(0x000001);
+            }
+        }];
+        return backColor;
+    } else {
+      return backColor;
+  }
+}
+
+static inline UIColor *Color000000() {
+#warning Dark Mode Color
+    UIColor *backColor = kEHIHexColor_000000;
+    if (@available(iOS 13,*)) {
+        backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return kEHIHexColor_000000;
+            } else {
+                return kEHIHexColor_FFFFFF;
+            }
+        }];
+        return backColor;
+    } else {
+      return backColor;
+    }
+}
+
+static inline UIColor *Color7B7B7B() {
+#warning Dark Mode Color
+    UIColor *backColor = kEHIHexColor_7B7B7B;
+    if (@available(iOS 13,*)) {
+        backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return kEHIHexColor_7B7B7B;
+            } else {
+                return kEHIHexColor(0x8B8B8B);
+            }
+        }];
+        return backColor;
+    } else {
+      return backColor;
+    }
+}
+
+static inline UIColor *ColorF8F8F8() {
+#warning Dark Mode Color
+    UIColor *backColor = kEHIHexColor_F8F8F8;
+    if (@available(iOS 13,*)) {
+        backColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
+                return kEHIHexColor_F8F8F8;
+            } else {
+                return kEHIHexColor(0x36363A);
+            }
+        }];
+        return backColor;
+    } else {
+      return backColor;
+    }
+}
+
+// UIColor转#ffffff格式的字符串
+static inline NSString *StringFromColor(UIColor *color) {
+    const CGFloat *components = CGColorGetComponents(color.CGColor);
+    CGFloat r = components[0];
+    CGFloat g = components[1];
+    CGFloat b = components[2];
+    return [NSString stringWithFormat:@"#%02lX%02lX%02lX",
+            lroundf(r * 255),
+            lroundf(g * 255),
+            lroundf(b * 255)];
+}
+
+
 #pragma mark - 方法
 
 /** weak & strong */

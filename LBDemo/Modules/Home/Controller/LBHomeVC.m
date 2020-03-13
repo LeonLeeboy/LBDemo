@@ -112,8 +112,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *targetName = [self.outputData objectAtIndex:indexPath.row].targetName;
     if ([targetName isEqualToString:@""] || !targetName || [targetName isEqualToString:@"EHICalendarViewController"]) {
-        EHICalendarDayModel *start = [EHICalendarDayModel calendarDayWithYear:2020 month:3 day:31];
-        EHICalendarDayModel *end = [EHICalendarDayModel calendarDayWithYear:2020 month:4 day:1];
+        EHICalendarDayModel *start = [EHICalendarDayModel calendarDayWithYear:2020 month:3 day:31 hour:3 minutes:0];
+        EHICalendarDayModel *end = [EHICalendarDayModel calendarDayWithYear:2020 month:4 day:1 hour:4 minutes:35];
         
         EHICalendarViewController *vc = [[EHICalendarViewController alloc] initWithStartDate:start endDate:end];
         [self.navigationController pushViewController:vc animated:YES];
